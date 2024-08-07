@@ -1,19 +1,16 @@
 import React, { useState } from 'react';
 import { saveAs } from 'file-saver';
 
-const IntervalDates = { startDate: Date, endDate: Date, category: String };
-
 const TimeDifferenceCalculator = () => {
-
   const [initialStartTime, setInitialStartTime] = useState(null);
   const [startTime1, setStartTime1] = useState(null);
   const [endTime1, setEndTime1] = useState(null);
   const [timeIsRuning, setTimeIsRuning] = useState(true);
   const [lastStartDate, setLastStartDate] = useState(null);
-  const [intevalDates, setIntervalDates] = useState([]);
+  const [intervalDates, setIntervalDates] = useState([]);
   const [item, setItem] = useState('1');
   const [showSetup, setShowSetup] = useState(true);
-  
+
   const categoryItem = [
     { id: 1, value: 'Setup' },
     { id: 2, value: 'Praca' },
@@ -23,7 +20,7 @@ const TimeDifferenceCalculator = () => {
 
   const mapCategoryToOptions = categoryItem.map(({ id, value }) => {
     if(showSetup && value !== "Setup") {
-      return null;
+      return null;      
     }
     if(!showSetup && value === "Setup") {
       return null;
@@ -31,20 +28,19 @@ const TimeDifferenceCalculator = () => {
     return (
       <option key={id} value={id}>{value}</option>
     );
-    setItem(id);
   });
 
-  const handleStart1 = () => {
-    const now = new Date();
-    if(!initialStartTime) {
-      setInitialStartTime(now);
-    }
-    setLastStartDate(now);
-    setStartTime1(now);
-    setEndTime1(null);
-    setTimeIsRuning(!timeIsRuning);
-    console.log(mapCategoryToOptions);
-  };
+    const handleStart1 = () => {
+      const now = new Date();
+      if(!initialStartTime) {
+        setInitialStartTime(now);
+      }
+      setLastStartDate(now);
+      setStartTime1(now);
+      setEndTime1(null);
+      setTimeIsRuning(!timeIsRuning);
+      console.log(mapCategoryToOptions);
+    };
 
   const handleStop1 = () => {
     const now = new Date();
@@ -58,35 +54,34 @@ const TimeDifferenceCalculator = () => {
 
     setTimeIsRuning(!timeIsRuning);
 
-    intevalDates.push(id);
+    intervalDates.push(id);
     setShowSetup(false);
+    setItem('3');
+
   };
 
-
-  
-  const getItrenalDiff = (id) => {
+  const getIntervalDiff = (id) => {
     return ((id.endDate - id.startDate) / 1000).toFixed(1);
   };
-  
 
   const handleFinish1 = () => {
-    if(!initialStartTime || !endTime1) return;
+    if (!initialStartTime || !endTime1) return;
 
     const firstStartTime = initialStartTime;
     console.log(`First Start Time: ${firstStartTime}`);
 
     const finalEndTime = endTime1;
     console.log(`Final End Time: ${finalEndTime}`);
-   
+
     const totalTime = (finalEndTime - initialStartTime) / 1000;
     console.log(`Total Time: ${totalTime}`);
-   
-    console.log(intevalDates.length);
+
+    console.log(intervalDates.length);
 
     let output = '';
 
-    intevalDates.forEach(id => {
-      console.log(getItrenalDiff(id));
+    intervalDates.forEach(id => {
+      console.log(getIntervalDiff(id));
       output += id.startDate.getTime().toLocaleString() + `: ${id.endDate.getTime().toLocaleString()}` + `: ${id.category}`+ '\n'
     })
 
@@ -96,12 +91,11 @@ const TimeDifferenceCalculator = () => {
       Total Time: ${totalTime.toFixed(2)} sec
     `;
 
-
     const blob = new Blob([output], { type: 'text/plain;charset=utf-8' });
     saveAs(blob, 'time-difference.txt');
 
     resetTimers();
-  }
+  };
 
   const resetTimers = () => {
     setInitialStartTime(null);
@@ -110,9 +104,9 @@ const TimeDifferenceCalculator = () => {
     setTimeIsRuning(true);
     setLastStartDate(null);
     setIntervalDates([]);
-    setShowSetup(true);
+    setItem('1');
   };
-  
+
   return (
     <div>
       <button onClick={handleStart1} disabled={!timeIsRuning}>Start</button>
