@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import { saveAs } from 'file-saver';
-
-const IntervalDates = { startDate: Date, endDate: Date, category: String };
-
+import { categoryItem, timeElement, categoryAwaria } from "./Interfaces";
+import "./App.css"
 
 const TimeDifferenceCalculator = () => {
   const [initialStartTime, setInitialStartTime] = useState(null);
@@ -12,26 +11,43 @@ const TimeDifferenceCalculator = () => {
   const [lastStartDate, setLastStartDate] = useState(null);
   const [intervalDates, setIntervalDates] = useState([]);
   const [item, setItem] = useState('1');
-  const [showSetup, setShowSetup] = useState(true);
+  const [selectAwariaOption, setSelectAwariaOption] = useState([]);
 
-  const categoryItem = [
-    { id: 1, value: 'Setup' },
-    { id: 2, value: 'Praca' },
-    { id: 3, value: 'Awaria' }, 
-    { id: 4, value: 'Przerwa' },
-  ];
+  const getActiveCattegory = () => {
+    let ci = categoryItem;
+    let result = [];
+    if(intervalDates.length == 0) return  [categoryItem[0]];
 
-  const mapCategoryToOptions = categoryItem.map(({ id, value }) => {
-    if(showSetup && value !== "Setup") {
-      return null;      
-    }
-    if(!showSetup && value === "Setup") {
-      return null;
-    }
-    return (
-      <option key={id} value={id}>{value}</option>
-    );
+    ci.forEach( ciit => {
+          let addToList = true;
+          intervalDates.forEach(it => {
+            if (it.category == ciit.id && ciit.single == 1) {
+              addToList = false;
+            }
+          });
+          if (addToList == true) {
+            result.push(ciit);
+          }
+        });
+    return result;
+  }
+
+
+  const mapCategoryToOptions = getActiveCattegory().map(({ id, value }) => {
+      return (
+        <label>
+          <input 
+            type='radio'
+            name='category'
+            value={id}
+            checked={item === id.toString()}
+            onChange={() => setItem(id.toString())}
+          />
+          {value}
+        </label>
+      );
   });
+
 
     const handleStart1 = () => {
       const now = new Date();
@@ -42,25 +58,18 @@ const TimeDifferenceCalculator = () => {
       setStartTime1(now);
       setEndTime1(null);
       setTimeIsRuning(!timeIsRuning);
-      console.log(mapCategoryToOptions);
     };
 
   const handleStop1 = () => {
     const now = new Date();
     setEndTime1(now);
 
-    let id = {
-      startDate: lastStartDate, 
-      endDate: now, 
-      category: item,
-    };
+    let id = timeElement(lastStartDate,now,item);
 
     setTimeIsRuning(!timeIsRuning);
 
     intervalDates.push(id);
-    setShowSetup(false);
-    setItem('3');
-
+    setItem('2');
   };
 
   const getIntervalDiff = (id) => {
@@ -85,7 +94,13 @@ const TimeDifferenceCalculator = () => {
 
     intervalDates.forEach(id => {
       console.log(getIntervalDiff(id));
-      output += id.startDate.getTime().toLocaleString() + `: ${id.endDate.getTime().toLocaleString()}` + `: ${id.category}`+ '\n'
+      output += id.startDate.getTime().toLocaleString() + `: ${id.endDate.getTime().toLocaleString()}` + `: ${id.category}`;
+      
+      if(id.category === '3' && selectAwariaOption.length > 0) {
+        output += `: ${selectAwariaOption.join(', ')}`;
+      }
+
+      output += '\n';
     })
 
     const textToSave = 
@@ -108,38 +123,77 @@ const TimeDifferenceCalculator = () => {
     setLastStartDate(null);
     setIntervalDates([]);
     setItem('1');
+    setSelectAwariaOption([]);
+  };
+
+  const handleAwariaOptionChange = (id) => {
+    setSelectAwariaOption(prev =>
+      prev.includes(id)
+        ? prev.filter(optId => optId !== id)
+        : [...prev, id]
+    );
+  };
+
+  const renderAwariaOption = () => {
+    if (item !== '3') return null;
+
+    return (
+      <div>
+        <h4>Awaria Options:</h4>
+        {categoryAwaria.map(({ id, value }) => (
+          <div key={id}>
+            <label>
+              <input
+                type="checkbox"
+                value={id}
+                checked={selectAwariaOption.includes(id)}
+                onChange={() => handleAwariaOptionChange(id)}
+              />
+              {value}
+            </label>
+          </div>
+        ))}
+      </div>
+    );
   };
 
   return (
-    <div>
-      <button onClick={handleStart1} disabled={!timeIsRuning}>Start</button>
-      <button onClick={handleStop1} disabled={timeIsRuning}>Stop</button>
-      <button onClick={handleFinish1} disabled={initialStartTime == null || !timeIsRuning}>Finish</button>
+    <div className='main-container'>
+      <div className='btn-container'>
+        <button onClick={handleStart1} disabled={!timeIsRuning} className='btn-start'>Start</button>
+        <button onClick={handleStop1} disabled={timeIsRuning} className='btn-stop'>Stop</button>
+        <button onClick={handleFinish1} disabled={initialStartTime == null || !timeIsRuning} className='btn-finish'>Finish</button>
+      </div>
 
-      <label>
-        Choose category:
-        <select name='category' value={item} onChange={(e) => setItem(e.target.value)}>
-          {mapCategoryToOptions}
-        </select>
-      </label>
+        <div className='category-container'>
 
-      {startTime1 && (
-        <div>
-          <p>Start: {startTime1.toLocaleString()}</p>
-        </div>
-      )}
-      
-      {endTime1 && (
-        <div>
-          <p>Stop: {endTime1.toLocaleString()}</p>
-        </div>
-      )}
+          <div className='item-container'>
+            <h4>Choose category:</h4>
+            {mapCategoryToOptions}
+          </div>
 
-      {initialStartTime && (
-        <div>
-          <p>Initial Start Time: {initialStartTime.toLocaleString()}</p>
+          {renderAwariaOption()}
         </div>
-      )}
+
+      <div className='container-with-time'>
+        {startTime1 && (
+          <div>
+            <p>Start: {startTime1.toLocaleString()}</p>
+          </div>
+        )}
+        
+        {endTime1 && (
+          <div>
+            <p>Stop: {endTime1.toLocaleString()}</p>
+          </div>
+        )}
+
+        {initialStartTime && (
+          <div>
+            <p>Initial Start Time: {initialStartTime.toLocaleString()}</p>
+          </div>
+        )}
+      </div>
     </div>
   );
 };

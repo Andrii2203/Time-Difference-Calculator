@@ -1,7 +1,7 @@
 {
     "compilerOptions": {
-        "module": "CommonJS",
-        // "moduleResolution": "Bundler",
+        "module": "ES6",
+        "moduleResolution": "Bundler",
         "target": "ESNext",
         "jsx": "react",
         "allowImportingTsExtensions": true,
