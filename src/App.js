@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { saveAs } from 'file-saver';
-import {categoryItem,timeElement} from "./Interfaces"
+
+const IntervalDates = { startDate: Date, endDate: Date, category: String };
+
 
 const TimeDifferenceCalculator = () => {
   const [initialStartTime, setInitialStartTime] = useState(null);
@@ -10,34 +12,25 @@ const TimeDifferenceCalculator = () => {
   const [lastStartDate, setLastStartDate] = useState(null);
   const [intervalDates, setIntervalDates] = useState([]);
   const [item, setItem] = useState('1');
+  const [showSetup, setShowSetup] = useState(true);
 
+  const categoryItem = [
+    { id: 1, value: 'Setup' },
+    { id: 2, value: 'Praca' },
+    { id: 3, value: 'Awaria' }, 
+    { id: 4, value: 'Przerwa' },
+  ];
 
-  const getActiveCattegory = () => {
-    let ci = categoryItem
-    let result = []
-    if(intervalDates.length == 0) return  [categoryItem[0]]
-
-    ci.forEach( ciit => {
-          let addToList: Boolean = true
-          intervalDates.forEach(it => {
-            if (it.category == ciit.id && ciit.single == 1) {
-              addToList = false
-            }
-
-          })
-          if (addToList == true) {
-            result.push(ciit)
-          }
-        }
-    )
-    return result
-  }
-
-  const mapCategoryToOptions = getActiveCattegory().map(({ id, value }) => {
-      return (
-          <option key={id} value={id}>{value}</option>
-      );
-
+  const mapCategoryToOptions = categoryItem.map(({ id, value }) => {
+    if(showSetup && value !== "Setup") {
+      return null;      
+    }
+    if(!showSetup && value === "Setup") {
+      return null;
+    }
+    return (
+      <option key={id} value={id}>{value}</option>
+    );
   });
 
     const handleStart1 = () => {
@@ -49,18 +42,24 @@ const TimeDifferenceCalculator = () => {
       setStartTime1(now);
       setEndTime1(null);
       setTimeIsRuning(!timeIsRuning);
+      console.log(mapCategoryToOptions);
     };
 
   const handleStop1 = () => {
     const now = new Date();
     setEndTime1(now);
 
-    let id = timeElement(lastStartDate,now,item)
+    let id = {
+      startDate: lastStartDate, 
+      endDate: now, 
+      category: item,
+    };
 
     setTimeIsRuning(!timeIsRuning);
 
     intervalDates.push(id);
-    setItem('2');
+    setShowSetup(false);
+    setItem('3');
 
   };
 

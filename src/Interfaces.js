@@ -5,7 +5,7 @@ export const categoryItem = [
     { id: 4, value: 'Przerwa',single: 1 },
 ];
 
-export function timeElement(startDate:Date,endDate:Date,categoryNumber:Number)  {
+export function timeElement(startDate, endDate, categoryNumber )  {
     //
    return  {
       startDate: startDate,
