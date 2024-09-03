@@ -1,51 +1,82 @@
 import React, { useState } from 'react';
 import { saveAs } from 'file-saver';
-import { categoryItem, timeElement, categoryAwaria } from "./Interfaces";
+import { categoryItem, createTimeElement, categoryAwaria, TimeElement, CategoryItem } from "./Interfaces";
 import "./App.css"
 
-const TimeDifferenceCalculator = () => {
-  const [initialStartTime, setInitialStartTime] = useState(null);
-  const [startTime1, setStartTime1] = useState(null);
-  const [endTime1, setEndTime1] = useState(null);
-  const [timeIsRuning, setTimeIsRuning] = useState(true);
-  const [lastStartDate, setLastStartDate] = useState(null);
-  const [intervalDates, setIntervalDates] = useState([]);
-  const [item, setItem] = useState('1');
-  const [selectAwariaOption, setSelectAwariaOption] = useState([]);
+const TimeDifferenceCalculator: React.FC = () => {
+  const [initialStartTime, setInitialStartTime] = useState<Date | null>(null);
+  const [startTime1, setStartTime1] = useState<Date | null>(null);
+  const [endTime1, setEndTime1] = useState<Date | null>(null);
+  const [timeIsRuning, setTimeIsRuning] = useState<boolean>(true);
+  const [lastStartDate, setLastStartDate] = useState<Date | null>(null);
+  const [intervalDates, setIntervalDates] = useState<TimeElement[]>([]);
+  const [item, setItem] = useState<string>('1');
+  const [selectAwariaOption, setSelectAwariaOption] = useState<number[]>([]);
 
-  const getActiveCattegory = () => {
-    let ci = categoryItem;
-    let result = [];
-    if(intervalDates.length == 0) return  [categoryItem[0]];
+  // const getActiveCattegory = () => {
+  //   let ci = categoryItem;
+  //   let result = [];
+  //   if(intervalDates.length == 0) return  [categoryItem[0]];
 
-    ci.forEach( ciit => {
-          let addToList = true;
-          intervalDates.forEach(it => {
-            if (it.category == ciit.id && ciit.single == 1) {
-              addToList = false;
-            }
-          });
-          if (addToList == true) {
-            result.push(ciit);
-          }
-        });
+  //   ci.forEach( ciit => {
+  //         let addToList = true;
+  //         intervalDates.forEach(it => {
+  //           if (it.category == ciit.id && ciit.single == 1) {
+  //             addToList = false;
+  //           }
+  //         });
+  //         if (addToList == true) {
+  //           result.push(ciit);
+  //         }
+  //       });
+  //   return result;
+  // }
+
+  const getActiveCattegory = (): CategoryItem[] => {
+    const result: CategoryItem[] = [];
+    if(intervalDates.length === 0) return [categoryItem[0]];
+
+    categoryItem.forEach(ciit => {
+      let addToList = true;
+      intervalDates.forEach(it => {
+        if(it.category === ciit.id && ciit.single === 1) {
+          addToList = false;
+        }
+      });
+      if(addToList) {
+        result.push(ciit);
+      }
+    });
     return result;
   }
 
-
+  // const mapCategoryToOptions = getActiveCattegory().map(({ id, value }) => {
+  //     return (
+  //       <label>
+  //         <input 
+  //           type='radio'
+  //           name='category'
+  //           value={id}
+  //           checked={item === id.toString()}
+  //           onChange={() => setItem(id.toString())}
+  //         />
+  //         {value}
+  //       </label>
+  //     );
+  // });
   const mapCategoryToOptions = getActiveCattegory().map(({ id, value }) => {
-      return (
-        <label>
-          <input 
-            type='radio'
-            name='category'
-            value={id}
-            checked={item === id.toString()}
-            onChange={() => setItem(id.toString())}
-          />
-          {value}
-        </label>
-      );
+        return (  
+          <label key={id}>
+            <input 
+              type='radio'
+              name='category'
+              value={id}
+              checked={item === id.toString()}
+              onChange={() => setItem(id.toString())}
+            />
+            {value}
+          </label>
+        )
   });
 
 
@@ -60,33 +91,40 @@ const TimeDifferenceCalculator = () => {
       setTimeIsRuning(!timeIsRuning);
     };
 
+  // const handleStop1 = () => {
+  //   const now = new Date();
+  //   setEndTime1(now);
+
+  //   let id = timeElement(lastStartDate,now,item);
+
+  //   setTimeIsRuning(!timeIsRuning);
+
+  //   intervalDates.push(id);
+  //   setItem('2');
+  // };
+
   const handleStop1 = () => {
     const now = new Date();
     setEndTime1(now);
 
-    let id = timeElement(lastStartDate,now,item);
+    if(lastStartDate) {
+      const id = createTimeElement(lastStartDate, now, parseInt(item));
+      setTimeIsRuning(!timeIsRuning);
+      setIntervalDates([...intervalDates, id]);
+      setItem('2');
+    }
+  }
 
-    setTimeIsRuning(!timeIsRuning);
-
-    intervalDates.push(id);
-    setItem('2');
-  };
-
-  const getIntervalDiff = (id) => {
-    return ((id.endDate - id.startDate) / 1000).toFixed(1);
+  const getIntervalDiff = (id: TimeElement) => {
+    return ((id.endDate.getTime() - id.startDate.getTime()) / 1000).toFixed(1);
   };
 
   const handleFinish1 = () => {
     if (!initialStartTime || !endTime1) return;
 
     const firstStartTime = initialStartTime;
-    console.log(`First Start Time: ${firstStartTime}`);
-
     const finalEndTime = endTime1;
-    console.log(`Final End Time: ${finalEndTime}`);
-
-    const totalTime = (finalEndTime - initialStartTime) / 1000;
-    console.log(`Total Time: ${totalTime}`);
+    const totalTime = (finalEndTime.getTime() - firstStartTime.getTime()) / 1000;
 
     console.log(intervalDates.length);
 
@@ -96,7 +134,7 @@ const TimeDifferenceCalculator = () => {
       console.log(getIntervalDiff(id));
       output += id.startDate.getTime().toLocaleString() + `: ${id.endDate.getTime().toLocaleString()}` + `: ${id.category}`;
       
-      if(id.category === '3' && selectAwariaOption.length > 0) {
+      if(id.category === 3 && selectAwariaOption.length > 0) {
         output += `: ${selectAwariaOption.join(', ')}`;
       }
 
@@ -126,7 +164,7 @@ const TimeDifferenceCalculator = () => {
     setSelectAwariaOption([]);
   };
 
-  const handleAwariaOptionChange = (id) => {
+  const handleAwariaOptionChange = (id: number) => {
     setSelectAwariaOption(prev =>
       prev.includes(id)
         ? prev.filter(optId => optId !== id)
