@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { saveAs } from 'file-saver';
-import { categoryItem, createTimeElement, categoryAwaria, TimeElement, CategoryItem } from "./Interfaces";
+import { createTimeElement, CategoryAwaria, TimeElement, categoryAwaria } from "./Interfaces";
 import "./App.css"
 
 const TimeDifferenceCalculator: React.FC = () => {
@@ -13,12 +13,11 @@ const TimeDifferenceCalculator: React.FC = () => {
   const [item, setItem] = useState<string>('1');
   const [selectAwariaOption, setSelectAwariaOption] = useState<number[]>([]);
 
+  const getActiveCattegory = (): CategoryAwaria[] => {
+    const result: CategoryAwaria[] = [];
+    if(intervalDates.length === 0) return [categoryAwaria[0]];
 
-  const getActiveCattegory = (): CategoryItem[] => {
-    const result: CategoryItem[] = [];
-    if(intervalDates.length === 0) return [categoryItem[0]];
-
-    categoryItem.forEach(ciit => {
+    categoryAwaria.forEach(ciit => {
       let addToList = true;
       intervalDates.forEach(it => {
         if(it.category === ciit.id && ciit.single === 1) {
@@ -32,20 +31,6 @@ const TimeDifferenceCalculator: React.FC = () => {
     return result;
   }
 
-  // const mapCategoryToOptions = getActiveCattegory().map(({ id, value }) => {
-  //     return (
-  //       <label>
-  //         <input 
-  //           type='radio'
-  //           name='category'
-  //           value={id}
-  //           checked={item === id.toString()}
-  //           onChange={() => setItem(id.toString())}
-  //         />
-  //         {value}
-  //       </label>
-  //     );
-  // });
   const mapCategoryToOptions = getActiveCattegory().map(({ id, value }) => {
         return (  
           <label key={id}>
@@ -72,18 +57,6 @@ const TimeDifferenceCalculator: React.FC = () => {
       setEndTime1(null);
       setTimeIsRuning(!timeIsRuning);
     };
-
-  // const handleStop1 = () => {
-  //   const now = new Date();
-  //   setEndTime1(now);
-
-  //   let id = timeElement(lastStartDate,now,item);
-
-  //   setTimeIsRuning(!timeIsRuning);
-
-  //   intervalDates.push(id);
-  //   setItem('2');
-  // };
 
   const handleStop1 = () => {
     const now = new Date();
@@ -155,12 +128,23 @@ const TimeDifferenceCalculator: React.FC = () => {
   };
 
   const renderAwariaOption = () => {
-    if (item !== '3') return null;
+
+    const selectedCategoryId = parseInt(item);
+
+    const selectCategoryItem = categoryAwaria.find(
+      (categoty) => categoty.id === selectedCategoryId
+    );
+
+    if(!selectCategoryItem) return null;
+
+    const filteredAwariaOption = categoryAwaria.filter(
+      (awaria) => awaria.parent === selectCategoryItem.id
+    );
 
     return (
       <div>
-        <h4>Awaria Options:</h4>
-        {categoryAwaria.map(({ id, value }) => (
+        <h4>Awaria Options for {selectCategoryItem.value}:</h4>
+        {filteredAwariaOption.map(({ id, value }) => (
           <div key={id}>
             <label>
               <input
