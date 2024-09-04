@@ -13,24 +13,6 @@ const TimeDifferenceCalculator: React.FC = () => {
   const [item, setItem] = useState<string>('1');
   const [selectAwariaOption, setSelectAwariaOption] = useState<number[]>([]);
 
-  // const getActiveCattegory = () => {
-  //   let ci = categoryItem;
-  //   let result = [];
-  //   if(intervalDates.length == 0) return  [categoryItem[0]];
-
-  //   ci.forEach( ciit => {
-  //         let addToList = true;
-  //         intervalDates.forEach(it => {
-  //           if (it.category == ciit.id && ciit.single == 1) {
-  //             addToList = false;build/static build/asset-manifest.json build/favicon.ico build/index.html build/logo192.png build/logo512.png build/manifest.json build/robots.txt
-  //           }
-  //         });
-  //         if (addToList == true) {
-  //           result.push(ciit);
-  //         }
-  //       });
-  //   return result;
-  // }
 
   const getActiveCattegory = (): CategoryItem[] => {
     const result: CategoryItem[] = [];
@@ -198,55 +180,55 @@ const TimeDifferenceCalculator: React.FC = () => {
   return (
     <div className='main-container'>
       <div className='btn-container'>
-        <button 
-          onClick={handleStart1} 
-          disabled={!timeIsRuning} 
-          className={`btn-start ${!timeIsRuning ? "btn-disabled" : ""}`}
-          >
-            Start
+        <button
+            onClick={handleStart1}
+            disabled={!timeIsRuning}
+            className={`btn-start ${!timeIsRuning ? "btn-disabled" : ""}`}
+        >
+          Start
         </button>
-        <button 
-          onClick={handleStop1} 
-          disabled={timeIsRuning} 
-          className={`btn-stop ${timeIsRuning ? "btn-disabled" : ""}`}
-          >
-            Stop
+        <button
+            onClick={handleStop1}
+            disabled={timeIsRuning}
+            className={`btn-stop ${timeIsRuning ? "btn-disabled" : ""}`}
+        >
+          Stop
         </button>
-        <button 
-          onClick={handleFinish1} 
-          disabled={initialStartTime == null || !timeIsRuning} 
-          className={`btn-finish ${!timeIsRuning ? "btn-disabled" : ""}`}
-          >
-            Finish
+        <button
+            onClick={handleFinish1}
+            disabled={initialStartTime == null || !timeIsRuning}
+            className={`btn-finish ${!timeIsRuning ? "btn-disabled" : ""}`}
+        >
+          Finish
         </button>
       </div>
 
-        <div className='category-container'>
+      <div className='category-container'>
 
-          <div className='item-container'>
-            <h4>Choose category:</h4>
-            {mapCategoryToOptions}
-          </div>
-
-          {renderAwariaOption()}
+        <div className='item-container'>
+          <h4>Choose category:</h4>
+          {mapCategoryToOptions}
         </div>
+
+        {renderAwariaOption()}
+      </div>
 
       <div className='container-with-time'>
         {startTime1 && (
-          <div>
-            <p>Start: {startTime1.toLocaleString()}</p>
-          </div>
+            <div>
+              <p>Start: {startTime1.toLocaleString()}</p>
+            </div>
         )}
-        
+
         {endTime1 && (
-          <div>
-            <p>Stop: {endTime1.toLocaleString()}</p>
-          </div>
+            <div>
+              <p>Stop: {endTime1.toLocaleString()}</p>
+            </div>
         )}
 
         {initialStartTime && (
-          <div>
-            <p>Initial Start Time: {initialStartTime.toLocaleString()}</p>
+            <div>
+              <p>Initial Start Time: {initialStartTime.toLocaleString()}</p>
           </div>
         )}
       </div>
