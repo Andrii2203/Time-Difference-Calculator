@@ -13,24 +13,6 @@ const TimeDifferenceCalculator: React.FC = () => {
   const [item, setItem] = useState<string>('1');
   const [selectAwariaOption, setSelectAwariaOption] = useState<number[]>([]);
 
-  // const getActiveCattegory = () => {
-  //   let ci = categoryItem;
-  //   let result = [];
-  //   if(intervalDates.length == 0) return  [categoryItem[0]];
-
-  //   ci.forEach( ciit => {
-  //         let addToList = true;
-  //         intervalDates.forEach(it => {
-  //           if (it.category == ciit.id && ciit.single == 1) {
-  //             addToList = false;
-  //           }
-  //         });
-  //         if (addToList == true) {
-  //           result.push(ciit);
-  //         }
-  //       });
-  //   return result;
-  // }
 
   const getActiveCattegory = (): CategoryItem[] => {
     const result: CategoryItem[] = [];
