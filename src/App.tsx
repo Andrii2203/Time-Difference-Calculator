@@ -22,7 +22,7 @@ const TimeDifferenceCalculator: React.FC = () => {
   //         let addToList = true;
   //         intervalDates.forEach(it => {
   //           if (it.category == ciit.id && ciit.single == 1) {
-  //             addToList = false;
+  //             addToList = false;build/static build/asset-manifest.json build/favicon.ico build/index.html build/logo192.png build/logo512.png build/manifest.json build/robots.txt
   //           }
   //         });
   //         if (addToList == true) {
@@ -198,9 +198,27 @@ const TimeDifferenceCalculator: React.FC = () => {
   return (
     <div className='main-container'>
       <div className='btn-container'>
-        <button onClick={handleStart1} disabled={!timeIsRuning} className='btn-start'>Start</button>
-        <button onClick={handleStop1} disabled={timeIsRuning} className='btn-stop'>Stop</button>
-        <button onClick={handleFinish1} disabled={initialStartTime == null || !timeIsRuning} className='btn-finish'>Finish</button>
+        <button 
+          onClick={handleStart1} 
+          disabled={!timeIsRuning} 
+          className={`btn-start ${!timeIsRuning ? "btn-disabled" : ""}`}
+          >
+            Start
+        </button>
+        <button 
+          onClick={handleStop1} 
+          disabled={timeIsRuning} 
+          className={`btn-stop ${timeIsRuning ? "btn-disabled" : ""}`}
+          >
+            Stop
+        </button>
+        <button 
+          onClick={handleFinish1} 
+          disabled={initialStartTime == null || !timeIsRuning} 
+          className={`btn-finish ${!timeIsRuning ? "btn-disabled" : ""}`}
+          >
+            Finish
+        </button>
       </div>
 
         <div className='category-container'>
