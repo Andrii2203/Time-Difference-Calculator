@@ -56,7 +56,7 @@ export const categoryAwaria: CategoryAwaria[] = [
     { id: 8.1, value: 'Awaria Spawna', single: 0, parent: 8},
     { id: 8.2, value: 'Awaria Stołu', single: 0 , parent:8},
     { id: 8.3, value: 'Awaria Buławy', single: 0 , parent:8},
-    { id: 8.4, value: 'Awaria Wagi', single: 0, parent: }8,
+    { id: 8.4, value: 'Awaria Wagi', single: 0, parent: 8},
     { id: 9.1, value: 'Zator', single: 0, parent: 9},
     { id: 9.2, value: 'Rozerwany Worek', single: 0, parent:9 },
     { id: 9.3, value: 'Ślizganie Worków', single: 0 , parent:9},

@@ -180,37 +180,55 @@ const TimeDifferenceCalculator: React.FC = () => {
   return (
     <div className='main-container'>
       <div className='btn-container'>
-        <button onClick={handleStart1} disabled={!timeIsRuning} className='btn-start'>Start</button>
-        <button onClick={handleStop1} disabled={timeIsRuning} className='btn-stop'>Stop</button>
-        <button onClick={handleFinish1} disabled={initialStartTime == null || !timeIsRuning} className='btn-finish'>Finish</button>
+        <button
+            onClick={handleStart1}
+            disabled={!timeIsRuning}
+            className={`btn-start ${!timeIsRuning ? "btn-disabled" : ""}`}
+        >
+          Start
+        </button>
+        <button
+            onClick={handleStop1}
+            disabled={timeIsRuning}
+            className={`btn-stop ${timeIsRuning ? "btn-disabled" : ""}`}
+        >
+          Stop
+        </button>
+        <button
+            onClick={handleFinish1}
+            disabled={initialStartTime == null || !timeIsRuning}
+            className={`btn-finish ${!timeIsRuning ? "btn-disabled" : ""}`}
+        >
+          Finish
+        </button>
       </div>
 
-        <div className='category-container'>
+      <div className='category-container'>
 
-          <div className='item-container'>
-            <h4>Choose category:</h4>
-            {mapCategoryToOptions}
-          </div>
-
-          {renderAwariaOption()}
+        <div className='item-container'>
+          <h4>Choose category:</h4>
+          {mapCategoryToOptions}
         </div>
+
+        {renderAwariaOption()}
+      </div>
 
       <div className='container-with-time'>
         {startTime1 && (
-          <div>
-            <p>Start: {startTime1.toLocaleString()}</p>
-          </div>
+            <div>
+              <p>Start: {startTime1.toLocaleString()}</p>
+            </div>
         )}
-        
+
         {endTime1 && (
-          <div>
-            <p>Stop: {endTime1.toLocaleString()}</p>
-          </div>
+            <div>
+              <p>Stop: {endTime1.toLocaleString()}</p>
+            </div>
         )}
 
         {initialStartTime && (
-          <div>
-            <p>Initial Start Time: {initialStartTime.toLocaleString()}</p>
+            <div>
+              <p>Initial Start Time: {initialStartTime.toLocaleString()}</p>
           </div>
         )}
       </div>
