@@ -7,7 +7,7 @@
 .btn-container {
   display: flex;
   justify-content: space-evenly;
-  }
+}
 
 .btn-start,
 .btn-stop,
@@ -37,8 +37,10 @@
 .btn-stop:hover,
 .btn-finish:hover {
   background-color: rgb(110, 218, 182);
+  box-shadow: 1px 4px rgba(0, 0, 0, 0.1);
   transition: 
     0.3s ease background-color,
+    0.5s ease box-shadow,
 }
 
 .btn-start:active,
@@ -47,6 +49,13 @@
   background-color: rgb(71, 148, 122);
   box-shadow: 1px 1px rgba(0, 0, 0, 0.3);
   transform: translateY(4px);
+}
+
+.btn-disabled {
+  background-color: rgba(87, 178, 148, 0.5);
+  cursor: not-allowed;
+  box-shadow: none;
+  opacity: 0.7;
 }
 .category-container {
   margin: .8em .2em;
