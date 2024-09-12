@@ -64,35 +64,6 @@ const TimeDifferenceCalculator: React.FC<TimeDifferenceCalculatorProps> = ({
       return updatedPath;
     });
   };
-  const handleOptionChange = (selectedId: number) => {
-    const selectedSubcategory = categoryAwaria.find(cat => cat.id === selectedId);
-  
-    if (selectedSubcategory) {
-      setSelectAwariaOption(prev => {
-        const updatedOptions = prev.includes(selectedId)
-          ? prev.filter(id => id !== selectedId)
-          : [...prev, selectedId];
-
-        setPath((prevPath) => {
-          const updatedPath = [...prevPath];
-
-          const subCategories = updatedOptions.map(subCatId => {
-            const subCategory = categoryAwaria.find(cat => cat.id === subCatId);
-            return subCategory ? subCategory.value : '';
-          });
-
-          if (updatedPath.length === 2) {
-            updatedPath.push(subCategories.join(', '));
-            updatedPath[2] = subCategories.join(', ');
-          }
-
-          return updatedPath;
-        });
-
-        return updatedOptions;
-      });
-    }
-  };
 
   const handleStart1 = () => {
     const now = new Date();
@@ -170,21 +141,21 @@ const TimeDifferenceCalculator: React.FC<TimeDifferenceCalculatorProps> = ({
     setPath([currentCategry]);
   };
 
-//   const handleOptionChange = (selectedId: number) => {
-//     const selectedSubcategory = categoryAwaria.find(cat => cat.id === selectedId);
+  const handleOptionChange = (selectedId: number) => {
+    const selectedSubcategory = categoryAwaria.find(cat => cat.id === selectedId);
   
-//     if (selectedSubcategory) {
-//       console.log('Selected subcategory parent ID:', selectedSubcategory.parent);
-//     }
+    if (selectedSubcategory) {
+      console.log('Selected subcategory parent ID:', selectedSubcategory.parent);
+    }
   
-//     setSelectAwariaOption(prev => {
-//       if (prev.includes(selectedId)) {
-//         return prev.filter(id => id !== selectedId);
-//       } else {
-//         return [...prev, selectedId];
-//       }
-//     });
-// };
+    setSelectAwariaOption(prev => {
+      if (prev.includes(selectedId)) {
+        return prev.filter(id => id !== selectedId);
+      } else {
+        return [...prev, selectedId];
+      }
+    });
+};
 
   useEffect(() => {
     console.log("Updated selectAwariaOption:", selectAwariaOption);
