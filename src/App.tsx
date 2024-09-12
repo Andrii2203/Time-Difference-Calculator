@@ -82,9 +82,8 @@ const TimeDifferenceCalculator: React.FC<TimeDifferenceCalculatorProps> = ({
           });
 
           if (updatedPath.length === 2) {
-            updatedPath.push(subCategories.join(', '));  // Додаємо підкатегорії
-          } else {
-            updatedPath[2] = subCategories.join(', ');  // Оновлюємо підкатегорії
+            updatedPath.push(subCategories.join(', '));
+            updatedPath[2] = subCategories.join(', ');
           }
 
           return updatedPath;
