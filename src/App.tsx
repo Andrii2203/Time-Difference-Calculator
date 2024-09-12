@@ -53,14 +53,19 @@ const TimeDifferenceCalculator: React.FC<TimeDifferenceCalculatorProps> = ({
 
   const handleCategorySelect = (id: number, value: string) => {
     setItem(id.toString());
-
+  
     setPath((prevPath) => {
       const updatedPath = [...prevPath];
-      if(updatedPath.length === 1) {
+  
+      if (updatedPath.length === 1) {
         updatedPath.push(value);
-      }else {
-        updatedPath[1] = value;
-      }
+      } else if (updatedPath.length === 2) {
+        updatedPath.push(value);
+      } else if (updatedPath.length === 3) {
+        updatedPath[2] = value;
+      } 
+  
+      console.log("Updated Path:", updatedPath);
       return updatedPath;
     });
   };
@@ -140,7 +145,7 @@ const TimeDifferenceCalculator: React.FC<TimeDifferenceCalculatorProps> = ({
     setSelectAwariaOption([]);
     setPath([currentCategry]);
   };
-
+  
   const handleOptionChange = (selectedId: number) => {
     const selectedSubcategory = categoryAwaria.find(cat => cat.id === selectedId);
   
