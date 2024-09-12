@@ -1,23 +1,30 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { saveAs } from 'file-saver';
-import { createTimeElement, CategoryAwaria, TimeElement, categoryAwaria } from "./Interfaces";
+import { createTimeElement, CategoryAwaria, TimeElement, categoryAwaria, TimeDifferenceCalculatorProps } from "./Interfaces";
 import "./App.css"
 
-const TimeDifferenceCalculator: React.FC = () => {
+const TimeDifferenceCalculator: React.FC<TimeDifferenceCalculatorProps> = ({ 
+    filteredCategories, 
+    currentCategry,
+ }) => {
   const [initialStartTime, setInitialStartTime] = useState<Date | null>(null);
   const [startTime1, setStartTime1] = useState<Date | null>(null);
   const [endTime1, setEndTime1] = useState<Date | null>(null);
   const [timeIsRuning, setTimeIsRuning] = useState<boolean>(true);
   const [lastStartDate, setLastStartDate] = useState<Date | null>(null);
   const [intervalDates, setIntervalDates] = useState<TimeElement[]>([]);
-  const [item, setItem] = useState<string>('1');
+  const [item, setItem] = useState<string>('0');
   const [selectAwariaOption, setSelectAwariaOption] = useState<number[]>([]);
+  
+  const [path, setPath] = useState<string[]>([currentCategry]);
+  
+  console.log('item', item)
 
   const getActiveCattegory = (): CategoryAwaria[] => {
     const result: CategoryAwaria[] = [];
-    if(intervalDates.length === 0) return [categoryAwaria[0]];
+    if(intervalDates.length === 0) return [filteredCategories[0]];
 
-    categoryAwaria.forEach(ciit => {
+    filteredCategories.forEach(ciit => {
       let addToList = true;
       intervalDates.forEach(it => {
         if(it.category === ciit.id && ciit.single === 1) {
@@ -33,30 +40,71 @@ const TimeDifferenceCalculator: React.FC = () => {
 
   const mapCategoryToOptions = getActiveCattegory().map(({ id, value }) => {
         return (  
-          <label key={id}>
-            <input 
-              type='radio'
-              name='category'
-              value={id}
-              checked={item === id.toString()}
-              onChange={() => setItem(id.toString())}
-            />
-            {value}
-          </label>
+          <button
+            key={id}
+            className={item === id.toString() ? "selected" : "not-selected"}
+            // onClick={() => setItem(id.toString())}
+            onClick={() => handleCategorySelect(id, value)}
+          >
+            {value} {item === id.toString() && '✓'}
+          </button>
         )
   });
 
+  const handleCategorySelect = (id: number, value: string) => {
+    setItem(id.toString());
 
-    const handleStart1 = () => {
-      const now = new Date();
-      if(!initialStartTime) {
-        setInitialStartTime(now);
+    setPath((prevPath) => {
+      const updatedPath = [...prevPath];
+      if(updatedPath.length === 1) {
+        updatedPath.push(value);
+      }else {
+        updatedPath[1] = value;
       }
-      setLastStartDate(now);
-      setStartTime1(now);
-      setEndTime1(null);
-      setTimeIsRuning(!timeIsRuning);
-    };
+      return updatedPath;
+    });
+  };
+  const handleOptionChange = (selectedId: number) => {
+    const selectedSubcategory = categoryAwaria.find(cat => cat.id === selectedId);
+  
+    if (selectedSubcategory) {
+      setSelectAwariaOption(prev => {
+        const updatedOptions = prev.includes(selectedId)
+          ? prev.filter(id => id !== selectedId)
+          : [...prev, selectedId];
+
+        setPath((prevPath) => {
+          const updatedPath = [...prevPath];
+
+          const subCategories = updatedOptions.map(subCatId => {
+            const subCategory = categoryAwaria.find(cat => cat.id === subCatId);
+            return subCategory ? subCategory.value : '';
+          });
+
+          if (updatedPath.length === 2) {
+            updatedPath.push(subCategories.join(', '));  // Додаємо підкатегорії
+          } else {
+            updatedPath[2] = subCategories.join(', ');  // Оновлюємо підкатегорії
+          }
+
+          return updatedPath;
+        });
+
+        return updatedOptions;
+      });
+    }
+  };
+
+  const handleStart1 = () => {
+    const now = new Date();
+    if(!initialStartTime) {
+      setInitialStartTime(now);
+    }
+    setLastStartDate(now);
+    setStartTime1(now);
+    setEndTime1(null);
+    setTimeIsRuning(!timeIsRuning);
+  };
 
   const handleStop1 = () => {
     const now = new Date();
@@ -66,7 +114,7 @@ const TimeDifferenceCalculator: React.FC = () => {
       const id = createTimeElement(lastStartDate, now, parseInt(item));
       setTimeIsRuning(!timeIsRuning);
       setIntervalDates([...intervalDates, id]);
-      setItem('2');
+      setItem('');
     }
   }
 
@@ -89,8 +137,11 @@ const TimeDifferenceCalculator: React.FC = () => {
       console.log(getIntervalDiff(id));
       output += id.startDate.getTime().toLocaleString() + `: ${id.endDate.getTime().toLocaleString()}` + `: ${id.category}`;
       
-      if(id.category === 3 && selectAwariaOption.length > 0) {
-        output += `: ${selectAwariaOption.join(', ')}`;
+      const hasSubcategories = selectAwariaOption.some(subCat => Math.floor(subCat) === id.category);
+
+      if(hasSubcategories) {
+        const selectedSubcategories = selectAwariaOption.filter(subCat => Math.floor(subCat) === id.category);
+        output += `: ${selectedSubcategories.join(', ')}`;
       }
 
       output += '\n';
@@ -117,52 +168,49 @@ const TimeDifferenceCalculator: React.FC = () => {
     setIntervalDates([]);
     setItem('1');
     setSelectAwariaOption([]);
+    setPath([currentCategry]);
   };
 
-  const handleAwariaOptionChange = (id: number) => {
-    setSelectAwariaOption(prev =>
-      prev.includes(id)
-        ? prev.filter(optId => optId !== id)
-        : [...prev, id]
-    );
-  };
+//   const handleOptionChange = (selectedId: number) => {
+//     const selectedSubcategory = categoryAwaria.find(cat => cat.id === selectedId);
+  
+//     if (selectedSubcategory) {
+//       console.log('Selected subcategory parent ID:', selectedSubcategory.parent);
+//     }
+  
+//     setSelectAwariaOption(prev => {
+//       if (prev.includes(selectedId)) {
+//         return prev.filter(id => id !== selectedId);
+//       } else {
+//         return [...prev, selectedId];
+//       }
+//     });
+// };
 
+  useEffect(() => {
+    console.log("Updated selectAwariaOption:", selectAwariaOption);
+  }, [selectAwariaOption]);
+  
   const renderAwariaOption = () => {
-
-    const selectedCategoryId = parseInt(item);
-
-    const selectCategoryItem = categoryAwaria.find(
-      (categoty) => categoty.id === selectedCategoryId
+    const subCategories = categoryAwaria.filter(cat => 
+      cat.parent === parseInt(item, 10)
     );
-
-    if(!selectCategoryItem) return null;
-
-    const filteredAwariaOption = categoryAwaria.filter(
-      (awaria) => awaria.parent === selectCategoryItem.id
-    );
-
-    return (
-      <div>
-        <h4>Awaria Options for {selectCategoryItem.value}:</h4>
-        {filteredAwariaOption.map(({ id, value }) => (
-          <div key={id}>
-            <label>
-              <input
-                type="checkbox"
-                value={id}
-                checked={selectAwariaOption.includes(id)}
-                onChange={() => handleAwariaOptionChange(id)}
-              />
-              {value}
-            </label>
-          </div>
-        ))}
+  
+    return subCategories.map(subcat => (
+      <div key={subcat.id}>
+          <button 
+            className={selectAwariaOption.includes(subcat.id) ? "selected" : "not-selected"}
+            onClick={() => handleOptionChange(subcat.id)}
+          >
+          {subcat.value} {selectAwariaOption.includes(subcat.id) && '✓'}
+        </button>
       </div>
-    );
+    ));
   };
-
+  
   return (
     <div className='main-container'>
+      <p>{path.join(' / ')}</p>
       <div className='btn-container'>
         <button
             onClick={handleStart1}
@@ -190,11 +238,13 @@ const TimeDifferenceCalculator: React.FC = () => {
       <div className='category-container'>
 
         <div className='item-container'>
-          <h4>Choose category:</h4>
+          <h4 className='item-container-text'>Choose category:</h4>
           {mapCategoryToOptions}
         </div>
 
-        {renderAwariaOption()}
+        <div className='sub-container'>
+          {renderAwariaOption()}
+        </div>
       </div>
 
       <div className='container-with-time'>
@@ -215,6 +265,11 @@ const TimeDifferenceCalculator: React.FC = () => {
               <p>Initial Start Time: {initialStartTime.toLocaleString()}</p>
           </div>
         )}
+      </div>
+      <div className='current-categry-text'>
+        <p>
+          Current: {currentCategry}
+        </p>
       </div>
     </div>
   );

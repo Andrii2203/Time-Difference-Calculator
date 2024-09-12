@@ -1,3 +1,5 @@
+import { Dispatch, SetStateAction } from "react";
+
 export interface CategoryAwaria {
     id: number;
     value: string;
@@ -5,9 +7,9 @@ export interface CategoryAwaria {
     parent: number;
 }
 export const categoryAwaria: CategoryAwaria[] = [
-    { id: 1, value: 'Setup', single: 1, parent: -1 },
-    { id: 1, value: 'Zmiana Produktu', single: 0, parent: -1 },
-    { id: 1, value: 'Zmiana Asortymentu', single: 0, parent: -1 },
+    { id: 0, value: 'Setup', single: 1, parent: -1 },
+    { id: 1.0, value: 'Zmiana Produktu', single: 0, parent: -1 },
+    { id: 1.1, value: 'Zmiana Asortymentu', single: 0, parent: -1 },
     { id: 2, value: 'Praca', single: 0, parent: -1 },
     { id: 3, value: 'Awaria', single: 3, parent: -1 },
     { id: 4, value: 'Przerwa', single: 1, parent: -1 },
@@ -113,4 +115,7 @@ export const createTimeElement = ( startDate: Date, endDate: Date, categoryNumbe
 }
 
 
-
+export interface TimeDifferenceCalculatorProps {
+    filteredCategories: CategoryAwaria[];
+    currentCategry: string;
+}
