@@ -53,10 +53,10 @@ const TimeDifferenceCalculator: React.FC<TimeDifferenceCalculatorProps> = ({
 
   const handleCategorySelect = (id: number, value: string) => {
     setItem(id.toString());
-  
+    
     setPath((prevPath) => {
       const updatedPath = [...prevPath];
-  
+
       if (updatedPath.length === 1) {
         updatedPath.push(value);
       } else if (updatedPath.length === 2) {
@@ -110,7 +110,7 @@ const TimeDifferenceCalculator: React.FC<TimeDifferenceCalculatorProps> = ({
 
     intervalDates.forEach(id => {
       console.log(getIntervalDiff(id));
-      output += id.startDate.getTime().toLocaleString() + `: ${id.endDate.getTime().toLocaleString()}` + `: ${id.category}`;
+      output += id.startDate.toLocaleString() + `: ${id.endDate.toLocaleString()}` + `: ${id.category}`;
       
       const hasSubcategories = selectAwariaOption.some(subCat => Math.floor(subCat) === id.category);
 
@@ -183,6 +183,8 @@ const TimeDifferenceCalculator: React.FC<TimeDifferenceCalculatorProps> = ({
     ));
   };
   
+
+
   return (
     <div className='main-container'>
       <p>{path.join(' / ')}</p>
