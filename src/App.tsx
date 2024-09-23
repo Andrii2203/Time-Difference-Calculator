@@ -15,57 +15,30 @@ const TimeDifferenceCalculator: React.FC<TimeDifferenceCalculatorProps> = ({
   const [intervalDates, setIntervalDates] = useState<TimeElement[]>([]);
   const [item, setItem] = useState<string>('0');
   const [selectAwariaOption, setSelectAwariaOption] = useState<number[]>([]);
-  
+  const [selectAwariaSubcategoryOption, setSelectAwariaSubcategoryOption] = useState<number | null>(null);
   const [path, setPath] = useState<string[]>([currentCategry]);
   
-  console.log('item', item)
+  useEffect(() => {
+    console.log('Updated selectAwariaSubcategoryOption:', selectAwariaSubcategoryOption)
+  }, [selectAwariaSubcategoryOption]);
 
-  const getActiveCattegory = (): CategoryAwaria[] => {
-    const result: CategoryAwaria[] = [];
-    if(intervalDates.length === 0) return [filteredCategories[0]];
-
-    filteredCategories.forEach(ciit => {
-      let addToList = true;
-      intervalDates.forEach(it => {
-        if(it.category === ciit.id && ciit.single === 1) {
-          addToList = false;
-        }
-      });
-      if(addToList) {
-        result.push(ciit);
-      }
-    });
-    return result;
-  }
-
-  const mapCategoryToOptions = getActiveCattegory().map(({ id, value }) => {
-        return (  
-          <button
-            key={id}
-            className={item === id.toString() ? "selected" : "not-selected"}
-            // onClick={() => setItem(id.toString())}
-            onClick={() => handleCategorySelect(id, value)}
-          >
-            {value} {item === id.toString() && '✓'}
-          </button>
-        )
-  });
+  useEffect(() => {
+    console.log('Updated item state:', item);
+    console.log('Selected subcategories:', selectAwariaOption);
+  }, [item, selectAwariaOption]);
 
   const handleCategorySelect = (id: number, value: string) => {
     setItem(id.toString());
-    
-    setPath((prevPath) => {
+    setSelectAwariaSubcategoryOption(null);
+    setPath(prevPath => {
       const updatedPath = [...prevPath];
-
       if (updatedPath.length === 1) {
         updatedPath.push(value);
       } else if (updatedPath.length === 2) {
         updatedPath.push(value);
       } else if (updatedPath.length === 3) {
         updatedPath[2] = value;
-      } 
-  
-      console.log("Updated Path:", updatedPath);
+      }   
       return updatedPath;
     });
   };
@@ -134,18 +107,74 @@ const TimeDifferenceCalculator: React.FC<TimeDifferenceCalculatorProps> = ({
     resetTimers();
   };
 
-  const resetTimers = () => {
-    setInitialStartTime(null);
-    setStartTime1(null);
-    setEndTime1(null);
-    setTimeIsRuning(true);
-    setLastStartDate(null);
-    setIntervalDates([]);
-    setItem('1');
-    setSelectAwariaOption([]);
-    setPath([currentCategry]);
+  const getActiveCattegory = (): CategoryAwaria[] => {
+    const result: CategoryAwaria[] = [];
+
+    const mainCategoies = categoryAwaria.filter(
+      (category) =>
+        Number.isInteger(category.id) &&
+        category.parent === -1 &&
+        category.single !== 0
+    );
+
+    if(intervalDates.length === 0) {
+      return [mainCategoies[0]]
+    } 
+
+    mainCategoies.forEach(ciit => {
+      let addToList = true;
+      intervalDates.forEach(it => {
+        if(it.category === ciit.id && ciit.single === 1) {
+          addToList = false;
+        }
+      });
+      if(addToList) {
+        result.push(ciit);
+      }
+    });
+    return result;
+  }
+  const handleMapCatToOption = (id: number) => {
+    setItem(id.toString());
+  }
+
+  const mapCategoryToOptions = getActiveCattegory().map(({ id, value }) => {
+    return (  
+      <button
+        key={id}
+        className={item === id.toString() ? "selected" : "not-selected"}
+        // onClick={() => handleMapCatToOption(id)}
+        onClick={() => handleCategorySelect(id, value)}
+      >
+        {value} {item === id.toString() && '✓'}
+      </button>
+    )
+  });
+
+  const handleSubCategorySelect = (subCategoryId : number) => {
+    setSelectAwariaSubcategoryOption(subCategoryId)
   };
   
+  const awariaOption = () => {
+
+    if (item === '3') {
+      return (
+        <div>
+          {filteredCategories.map((cat) => (
+            <button
+              key={cat.id}
+              className={selectAwariaSubcategoryOption === cat.id ? "selected" : "not-selected"}
+              onClick={() => handleSubCategorySelect(cat.id)}
+            >
+              {cat.value} {selectAwariaSubcategoryOption === cat.id && '✓'}
+            </button>
+          ))}
+        </div>
+      );
+    } 
+    return null;
+  };
+
   const handleOptionChange = (selectedId: number) => {
     const selectedSubcategory = categoryAwaria.find(cat => cat.id === selectedId);
   
@@ -160,17 +189,14 @@ const TimeDifferenceCalculator: React.FC<TimeDifferenceCalculatorProps> = ({
         return [...prev, selectedId];
       }
     });
-};
-
-  useEffect(() => {
-    console.log("Updated selectAwariaOption:", selectAwariaOption);
-  }, [selectAwariaOption]);
+  };
   
+
   const renderAwariaOption = () => {
     const subCategories = categoryAwaria.filter(cat => 
-      cat.parent === parseInt(item, 10)
+      cat.parent === selectAwariaSubcategoryOption && item === '3'
     );
-  
+
     return subCategories.map(subcat => (
       <div key={subcat.id}>
           <button 
@@ -182,8 +208,19 @@ const TimeDifferenceCalculator: React.FC<TimeDifferenceCalculatorProps> = ({
       </div>
     ));
   };
-  
 
+  const resetTimers = () => {
+    setInitialStartTime(null);
+    setStartTime1(null);
+    setEndTime1(null);
+    setTimeIsRuning(true);
+    setLastStartDate(null);
+    setIntervalDates([]);
+    setItem('1');
+    setSelectAwariaOption([]);
+    setSelectAwariaSubcategoryOption(null);
+    setPath([currentCategry]);
+  };
 
   return (
     <div className='main-container'>
@@ -219,7 +256,13 @@ const TimeDifferenceCalculator: React.FC<TimeDifferenceCalculatorProps> = ({
           {mapCategoryToOptions}
         </div>
 
+        <div className='second-container'>
+          {/* <h4 className='item-container-text'>Choose category Awaria:</h4> */}
+          {awariaOption()}
+        </div>
+
         <div className='sub-container'>
+          {/* <h4 className='item-container-text'>Choose Subcategory:</h4> */}
           {renderAwariaOption()}
         </div>
       </div>

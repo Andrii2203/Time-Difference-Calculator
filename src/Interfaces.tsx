@@ -6,9 +6,7 @@ export interface CategoryAwaria {
 }
 export const categoryAwaria: CategoryAwaria[] = [
     { id: 0, value: 'Setup', single: 1, parent: -1 },
-    { id: 1.0, value: 'Zmiana Produktu', single: 0, parent: -1 },
-    { id: 1.1, value: 'Zmiana Asortymentu', single: 0, parent: -1 },
-    { id: 2, value: 'Praca', single: 0, parent: -1 },
+    { id: 2, value: 'Praca', single: 2, parent: -1 },
     { id: 3, value: 'Awaria', single: 3, parent: -1 },
     { id: 4, value: 'Przerwa', single: 1, parent: -1 },
     { id: 5, value: 'Silosy', single: 0, parent: -1 },
@@ -31,6 +29,8 @@ export const categoryAwaria: CategoryAwaria[] = [
     { id: 22, value: 'Podajnik Palet', single: 0, parent: -1 },
     { id: 23, value: 'Rolotoki', single: 0, parent: -1 },
     { id: 1000, value: 'Inne', single: 0, parent: -1 },
+    { id: 1.1, value: 'Zmiana Produktu', single: 0, parent: -1 },
+    { id: 1.2, value: 'Zmiana Asortymentu', single: 0, parent: -1 },
     { id: 3.1, value: 'Maszyny', single: 0 ,parent:3 },
     { id: 3.2, value: 'Linia produkcyjna', single: 0 , parent:3 },
     { id: 3.3, value: 'Składniki', single: 0  , parent:3},

@@ -4,11 +4,11 @@
   font-size: 1.2rem;
   font-size: 18px;
 }
+
 .btn-container {
   display: flex;
   justify-content: space-evenly;
 }
-
 .btn-start,
 .btn-stop,
 .btn-finish {
@@ -23,15 +23,13 @@
   border-radius: 10px;
   text-align: center;
   text-decoration: none;
-  /* outline: none; */
-  /* border: none; */
+  outline: none;
   box-shadow: 2px 8px rgba(125, 125, 125, 1);
 
   transition: 
     0.3s ease color, 
     0.3s ease background-color,
     0.3s ease border-radius;
-
 }
 .btn-start:hover,
 .btn-stop:hover,
@@ -42,7 +40,6 @@
     0.3s ease background-color,
     0.5s ease box-shadow,
 }
-
 .btn-start:active,
 .btn-stop:active,
 .btn-finish:active {
@@ -50,37 +47,37 @@
   box-shadow: 1px 1px rgba(0, 0, 0, 0.3);
   transform: translateY(4px);
 }
-
 .btn-disabled {
   background-color: rgba(87, 178, 148, 0.5);
   cursor: not-allowed;
   box-shadow: none;
   opacity: 0.7;
 }
+
+
 .category-container {
   width: 50vw;
   margin: .8em .2em;
   display: flex;
   justify-content: space-between;
 }
-
-.item-container {
-  width: 50vw;
+.item-container button{
+  width: 15vw;
   display: flex;
-  flex-direction: column;
-  margin-left: 0;
+}
+.second-container button {
+  width: 15vw;
+  display: flex;
+}
+.sub-container button {
+  width: 15vw;
+  display: flex;
 }
 .item-container-text {
   margin: 5px 10px;
 }
-.sub-container {
-  width: 50vw;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  margin-right: 0;
 
-}
+
 .container-with-time {
   margin: 10px;
 }
@@ -89,7 +86,7 @@
 button.selected,
 button.not-selected {
   padding: 7px;
-  margin: 7px;
+  margin: 10px;
   border-radius: 50px;
   font-weight: 700;
   font-size: 16px;
@@ -99,7 +96,6 @@ button.not-selected {
     0.5s ease box-shadow,
 
 }
-
 .selected {
   background-color: rgb(110, 218, 182);
   color: azure;
@@ -108,18 +104,16 @@ button.not-selected {
 .selected:hover {
   background-color: rgb(110, 218, 182);
   color: azure;
-
 }
-
 .not-selected:hover {
   background-color: rgba(0, 123, 255, 0.5);
   color: azure;
   background-color: rgb(110, 218, 182);
   box-shadow: 1px 4px rgba(0, 0, 0, 0.1);
+
   transition: 
     0.2s ease background-color,
     0.5s ease box-shadow,
-
 }
 .current-categry-text {
   position: fixed;
