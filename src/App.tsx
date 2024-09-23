@@ -252,7 +252,7 @@ const TimeDifferenceCalculator: React.FC<TimeDifferenceCalculatorProps> = ({
       <div className='category-container'>
 
         <div className='item-container'>
-          <h4 className='item-container-text'>Choose category:</h4>
+          {/* <h4 className='item-container-text'>Choose category:</h4> */}
           {mapCategoryToOptions}
         </div>
 

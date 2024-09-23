@@ -59,41 +59,32 @@
   width: 50vw;
   margin: .8em .2em;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  align-items: center;
 }
-.item-container button{
+.item-container button,
+.second-container button,
+.sub-container button  {
   width: 15vw;
   display: flex;
+  justify-content: center;
 }
-.second-container button {
-  width: 15vw;
-  display: flex;
-}
-.sub-container button {
-  width: 15vw;
-  display: flex;
-}
-.item-container-text {
-  margin: 5px 10px;
-}
-
 
 .container-with-time {
   margin: 10px;
 }
 
-
 button.selected,
 button.not-selected {
   padding: 7px;
-  margin: 10px;
+  margin: 15px;
   border-radius: 50px;
   font-weight: 700;
   font-size: 16px;
   box-shadow: 2px 8px rgba(125, 125, 125, 1);
   transition: 
     0.2s ease background-color,
-    0.5s ease box-shadow,
+    0.4s ease box-shadow,
 
 }
 .selected {
@@ -103,17 +94,15 @@ button.not-selected {
 } 
 .selected:hover {
   background-color: rgb(110, 218, 182);
-  color: azure;
 }
 .not-selected:hover {
-  background-color: rgba(0, 123, 255, 0.5);
   color: azure;
   background-color: rgb(110, 218, 182);
   box-shadow: 1px 4px rgba(0, 0, 0, 0.1);
 
   transition: 
     0.2s ease background-color,
-    0.5s ease box-shadow,
+    0.4s ease box-shadow,
 }
 .current-categry-text {
   position: fixed;
@@ -124,4 +113,67 @@ button.not-selected {
   border-radius: 20px;
   font-weight: 700;
   font-size: 24px;
+}
+
+@media (max-width: 768px) {
+  .btn-start,
+  .btn-stop,
+  .btn-finish {
+    font-size: 20px;
+    padding: 5% 9%;
+  }
+
+  .category-container {
+    width: 90vw;
+  }
+
+  .item-container button,
+  .second-container button,
+  .sub-container button {
+    width: 28vw;
+    padding: 6%;
+    margin-bottom: 20px;
+  }
+
+  .current-categry-text {
+    top: 1vh;
+    background-color: transparent;
+    pointer-events: none;
+  }
+  .current-categry-text p {
+    background-color: transparent;
+  }
+
+}
+@media (max-width: 1080px) {
+  .btn-start,
+  .btn-stop,
+  .btn-finish {
+    font-size: 84px;
+  }
+
+  .category-container {
+    width: 100vw;
+  }
+
+  .item-container button,
+  .second-container button,
+  .sub-container button {
+    width: 28vw;
+    padding: 6%;
+    margin-bottom: 25px;
+    font-size: 50px;
+    word-break: break-word;
+  }
+
+  .current-categry-text {
+    top: 1vh;
+    background-color: transparent;
+    pointer-events: none;
+  }
+  .current-categry-text p {
+    font-size: 46px;
+    background-color: transparent;
+  }
+
 }
