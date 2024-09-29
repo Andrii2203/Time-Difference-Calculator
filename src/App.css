@@ -54,6 +54,23 @@
   opacity: 0.7;
 }
 
+.wstecz-button {
+  font-size: 60px;
+  cursor: pointer;
+  margin: 0;
+  padding: 0;
+  border: none;
+  transition: 
+    0.2s ease transform,
+    0.1s ease text-shadow,
+}
+.wstecz-button:hover {
+  transform: translateX(-50px);
+  text-shadow: 0px 0px rgba(0, 0, 0, 0.5);
+  transition: 
+    0.2s ease transform,
+    0.1s ease text-shadow,
+}
 
 .category-container {
   width: 50vw;
@@ -65,7 +82,7 @@
 .item-container button,
 .second-container button,
 .sub-container button  {
-  width: 15vw;
+  width: 23vw;
   display: flex;
   justify-content: center;
 }
@@ -76,8 +93,8 @@
 
 button.selected,
 button.not-selected {
-  padding: 7px;
-  margin: 15px;
+  padding: 9px;
+  margin: 18px;
   border-radius: 50px;
   font-weight: 700;
   font-size: 16px;
@@ -115,12 +132,11 @@ button.not-selected {
   font-size: 24px;
 }
 
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
   .btn-start,
   .btn-stop,
   .btn-finish {
-    font-size: 20px;
-    padding: 5% 9%;
+    font-size: 54px;
   }
 
   .category-container {
@@ -130,7 +146,7 @@ button.not-selected {
   .item-container button,
   .second-container button,
   .sub-container button {
-    width: 28vw;
+    width: 25vw;
     padding: 6%;
     margin-bottom: 20px;
   }
@@ -144,8 +160,21 @@ button.not-selected {
     background-color: transparent;
   }
 
-}
-@media (max-width: 1080px) {
+} */
+
+
+/* tutaj zminec z powrotem na 1080 */
+/* @media (max-width: 780px) {
+  p {
+    font-size: 50px;
+    margin: 10px 0px;
+  }
+  .main-container {
+    width: 95vw;
+    margin: 0;
+    padding: 0;
+  }
+
   .btn-start,
   .btn-stop,
   .btn-finish {
@@ -153,13 +182,13 @@ button.not-selected {
   }
 
   .category-container {
-    width: 100vw;
+    width: 95vw;
   }
 
   .item-container button,
   .second-container button,
   .sub-container button {
-    width: 28vw;
+    width: 27vw;
     padding: 6%;
     margin-bottom: 25px;
     font-size: 50px;
@@ -176,4 +205,4 @@ button.not-selected {
     background-color: transparent;
   }
 
-}
+} */

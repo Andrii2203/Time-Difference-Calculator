@@ -5,7 +5,7 @@ export interface CategoryAwaria {
     parent: number;
 }
 export const categoryAwaria: CategoryAwaria[] = [
-    { id: 0, value: 'Setup', single: 1, parent: -1 },
+    { id: 0, value: 'Prygotowanie', single: 1, parent: -1 },
     { id: 2, value: 'Praca', single: 2, parent: -1 },
     { id: 3, value: 'Awaria', single: 3, parent: -1 },
     { id: 4, value: 'Przerwa', single: 1, parent: -1 },

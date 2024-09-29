@@ -23,7 +23,7 @@ const ChooseYourL1L2: React.FC = () => {
                 category.parent === -1 &&
                 category.single === 0
         );
-        console.log("awariesCategoies", awariesCategoies);
+        // console.log("awariesCategoies", awariesCategoies);
 
         const half = Math.ceil(awariesCategoies.length / 2);
         const L1Categories = awariesCategoies.slice(0, half);
