@@ -71,7 +71,6 @@ const TimeDifferenceCalculator: React.FC<TimeDifferenceCalculatorProps> = ({
   //   })
   // }, [item, selectAwariaOption, selectAwariaSubcategoryOption, currentCategry]);
   useEffect(() => {
-    // Шукаємо значення для item, selectAwariaSubcategoryOption, selectAwariaOption
     const selectedItem = categoryAwaria.find(cat => cat.id.toString() === item);
     const itemValue = selectedItem ? selectedItem.value : "N/A";
   
@@ -85,11 +84,9 @@ const TimeDifferenceCalculator: React.FC<TimeDifferenceCalculatorProps> = ({
     console.log('Updated selectAwariaSubcategoryOption:', awariaValue);
     console.log('Selected subcategory value:', optionValue);
     
-    // Оновлюємо path, починаючи з currentCategry, а потім додаємо вибрані значення
     setPath(prev => {
-      const updatedPath = [currentCategry]; // Стежка завжди починається з currentCategry
+      const updatedPath = [currentCategry]; 
   
-      // Додаємо вибрані значення (item, selectAwariaSubcategoryOption, selectAwariaOption), якщо вони не "N/A"
       if (itemValue !== "N/A" && !updatedPath.includes(itemValue)) {
         updatedPath.push(itemValue);
       }
@@ -100,10 +97,10 @@ const TimeDifferenceCalculator: React.FC<TimeDifferenceCalculatorProps> = ({
         updatedPath.push(optionValue);
       }
   
-      return updatedPath; // Повертаємо оновлену стежку
+      return updatedPath; 
     });
     
-  }, [item, selectAwariaOption, selectAwariaSubcategoryOption, currentCategry]);  // currentCategry теж в залежностях
+  }, [item, selectAwariaOption, selectAwariaSubcategoryOption, currentCategry]);
   
   const handleCategorySelect = useCallback((id: number, value: string, isSubcategory: boolean = false) => {
     setItem(id.toString());
