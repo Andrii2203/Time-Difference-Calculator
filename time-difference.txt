@@ -1,0 +1,27 @@
+{
+  "initialStartTime": "02.10.2024, 19:13:45",
+  "finalEndTime": "02.10.2024, 19:13:54",
+  "totalTime": "8.42",
+  "intervals": [
+    {
+      "startDate": "02.10.2024, 19:13:45",
+      "endtDate": "02.10.2024, 19:13:46",
+      "category": 0
+    },
+    {
+      "startDate": "02.10.2024, 19:13:47",
+      "endtDate": "02.10.2024, 19:13:47",
+      "category": 2
+    },
+    {
+      "startDate": "02.10.2024, 19:13:49",
+      "endtDate": "02.10.2024, 19:13:49",
+      "category": 4
+    },
+    {
+      "startDate": "02.10.2024, 19:13:53",
+      "endtDate": "02.10.2024, 19:13:54",
+      "category": 3
+    }
+  ]
+}

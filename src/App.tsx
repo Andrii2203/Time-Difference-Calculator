@@ -1,7 +1,9 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { saveAs } from 'file-saver';
+import axios from 'axios';
 import { createTimeElement, CategoryAwaria, TimeElement, categoryAwaria, TimeDifferenceCalculatorProps } from "./Interfaces";
 import "./App.css"
+import { response } from 'express';
 
 const TimeDifferenceCalculator: React.FC<TimeDifferenceCalculatorProps> = ({ 
     filteredCategories, 
@@ -16,12 +18,21 @@ const TimeDifferenceCalculator: React.FC<TimeDifferenceCalculatorProps> = ({
   const [item, setItem] = useState<string>('0');
   const [selectAwariaOption, setSelectAwariaOption] = useState<number | null>(null);
   const [selectAwariaSubcategoryOption, setSelectAwariaSubcategoryOption] = useState<number | null>(null);
-  const [path, setPath] = useState<string[]>([currentCategry]);
+  const [path, setPath] = useState<string>(currentCategry);
   const [showMainCategories, setShowMainCategories] = useState<boolean>(true);
   
   // useEffect(() => {
-  //   console.log('Updated selectAwariaSubcategoryOption:', selectAwariaSubcategoryOption)
-  // }, [selectAwariaSubcategoryOption]);
+  //   const mainCategories = categoryAwaria.filter(
+  //     (category) =>
+  //       Number.isInteger(category.id) &&
+  //       category.parent === -1 &&
+  //       category.single !== 0
+  //   );
+
+  //   if(mainCategories.length > 0) {
+  //     setPath(prev => [...prev, mainCategories[0].value]);
+  //   }
+  // }, [currentCategry]);
 
   useEffect(() => {
     console.log('Updated showMainCategories:', showMainCategories);
@@ -29,115 +40,36 @@ const TimeDifferenceCalculator: React.FC<TimeDifferenceCalculatorProps> = ({
 
   }, [showMainCategories, path]);
 
-  // useEffect(() => {
-  //   const selectedItem = categoryAwaria.find(cat => cat.id.toString() === item);
-  //   const itemValue = selectedItem ? selectedItem.value : "N/A";
-
-  //   const awariaOption = categoryAwaria.find(cat => cat.id === selectAwariaSubcategoryOption);
-  //   const awariaValue = awariaOption ? awariaOption.value : "N/A"; 
-
-  //   const selectedOption = categoryAwaria.find(cat => cat.id === selectAwariaOption);
-  //   const optionValue = selectedOption ? selectedOption.value : "N/A";
-    
-  //   console.log('Updated item value:', itemValue);
-  //   console.log('Updated selectAwariaSubcategoryOption:', awariaValue);
-  //   console.log('Selected subcategory value:', optionValue);
-  
-  //   // setPath(prev => {
-  //   //   const updetedPath = [...prev];
-  //   //   if(itemValue !== "N/A" && !updetedPath.includes(itemValue)) {
-  //   //     updetedPath.push(itemValue);
-  //   //   }
-  //   //   if(awariaValue !== "N/A" && !updetedPath.includes(awariaValue)) {
-  //   //     updetedPath.push(awariaValue);
-  //   //   }
-  //   //   if(optionValue !== "N/A" && !updetedPath.includes(optionValue)) {
-  //   //     updetedPath.push(optionValue);
-  //   //   }
-  //   //   return updetedPath;
-  //   // })
-  //   setPath(prev => {
-  //     const updetedPath = [currentCategry];
-  //     if(itemValue !== "N/A" && !updetedPath.includes(itemValue)) {
-  //       updetedPath.push(itemValue);
-  //     }
-  //     if(awariaValue !== "N/A" && !updetedPath.includes(awariaValue)) {
-  //       updetedPath.push(awariaValue);
-  //     }
-  //     if(optionValue !== "N/A" && !updetedPath.includes(optionValue)) {
-  //       updetedPath.push(optionValue);
-  //     }
-  //     return updetedPath;
-  //   })
-  // }, [item, selectAwariaOption, selectAwariaSubcategoryOption, currentCategry]);
-  useEffect(() => {
-    const selectedItem = categoryAwaria.find(cat => cat.id.toString() === item);
-    const itemValue = selectedItem ? selectedItem.value : "N/A";
-  
-    const awariaOption = categoryAwaria.find(cat => cat.id === selectAwariaSubcategoryOption);
-    const awariaValue = awariaOption ? awariaOption.value : "N/A";
-  
-    const selectedOption = categoryAwaria.find(cat => cat.id === selectAwariaOption);
-    const optionValue = selectedOption ? selectedOption.value : "N/A";
-    
-    console.log('Updated item value:', itemValue);
-    console.log('Updated selectAwariaSubcategoryOption:', awariaValue);
-    console.log('Selected subcategory value:', optionValue);
-    
-    setPath(prev => {
-      const updatedPath = [currentCategry]; 
-  
-      if (itemValue !== "N/A" && !updatedPath.includes(itemValue)) {
-        updatedPath.push(itemValue);
-      }
-      if (awariaValue !== "N/A" && !updatedPath.includes(awariaValue)) {
-        updatedPath.push(awariaValue);
-      }
-      if (optionValue !== "N/A" && !updatedPath.includes(optionValue)) {
-        updatedPath.push(optionValue);
-      }
-  
-      return updatedPath; 
-    });
-    
-  }, [item, selectAwariaOption, selectAwariaSubcategoryOption, currentCategry]);
-  
   const handleCategorySelect = useCallback((id: number, value: string, isSubcategory: boolean = false) => {
-    setItem(id.toString());
-  
-    setPath(prev => {
-      const uptdPth = [...prev];
-      console.log('const uptdPth:', prev)
+  setItem(id.toString());
+  let updatedPath = path + " / " + value;
 
-      if (id === 0) {
-            if (!uptdPth.includes(value)) {
-            uptdPth.push(value);
-            console.log('Додано значення для id 0:', value);
-      }}
+  setPath(prev => {
+    let updatedPath = path + " / " + value;
+    
 
-      if (selectAwariaOption) {
-        const awariaOption = categoryAwaria.find(cat => cat.id === selectAwariaOption);
-        if (awariaOption && !uptdPth.includes(awariaOption.value)) {
-          uptdPth.push(awariaOption.value);
-        }
+    if (selectAwariaOption) {
+      const awariaOption = categoryAwaria.find(cat => cat.id === selectAwariaOption)?.value;
+      if (awariaOption && !updatedPath.includes(awariaOption)) {
+        updatedPath += awariaOption.toString();
       }
-  
-      if (isSubcategory && selectAwariaSubcategoryOption) {
-        const awariaSubcategory = categoryAwaria.find(cat => cat.id === selectAwariaSubcategoryOption);
-        if (awariaSubcategory && !uptdPth.includes(awariaSubcategory.value)) {
-          uptdPth.push(awariaSubcategory.value);
-        }
-      }
-  
-      if (id === 3 && !isSubcategory) {
-        setShowMainCategories(false);
-      }
-  
-      return uptdPth;
-    });
-  }, [currentCategry, selectAwariaOption, selectAwariaSubcategoryOption]);
-  
+    }
 
+    if (isSubcategory && selectAwariaSubcategoryOption) {
+      const awariaSubcategory = categoryAwaria.find(cat => cat.id === selectAwariaSubcategoryOption)?.value;
+      if (awariaSubcategory && !updatedPath.includes(awariaSubcategory)) {
+        updatedPath += awariaSubcategory.toString();
+      }
+    }
+
+    if (id === 3 && !isSubcategory) {
+      setShowMainCategories(false);
+    }
+
+    return updatedPath;
+  }
+);
+}, [selectAwariaOption, selectAwariaSubcategoryOption]);
 
   const handleStart1 = () => {
     const now = new Date();
@@ -166,6 +98,43 @@ const TimeDifferenceCalculator: React.FC<TimeDifferenceCalculatorProps> = ({
     return ((id.endDate.getTime() - id.startDate.getTime()) / 1000).toFixed(1);
   };
 
+  // const handleFinish1 = () => {
+  //   if (!initialStartTime || !endTime1) return;
+
+  //   const firstStartTime = initialStartTime;
+  //   const finalEndTime = endTime1;
+  //   const totalTime = (finalEndTime.getTime() - firstStartTime.getTime()) / 1000;
+
+  //   console.log(intervalDates.length);
+
+  //   let output = '';
+
+  //   intervalDates.forEach(id => {
+  //     console.log(getIntervalDiff(id));
+  //     output += id.startDate.toLocaleString() + `: ${id.endDate.toLocaleString()}` + `: ${id.category}`;
+      
+  //     if(Array.isArray(selectAwariaOption)) {
+  //       const hasSubcategories = selectAwariaOption.some((subCat : number) => Math.floor(subCat) === id.category);
+  //       if(hasSubcategories) {
+  //         const selectedSubcategories = selectAwariaOption.filter((subCat : number) => Math.floor(subCat) === id.category);
+  //         output += `: ${selectedSubcategories.join(', ')}`;
+  //       }
+  //     }
+
+  //     output += '\n';
+  //   })
+
+  //   const textToSave = 
+  //     `Initial Start Time: ${initialStartTime.toLocaleString()}
+  //     Final End Time: ${finalEndTime.toLocaleString()}
+  //     Total Time: ${totalTime.toFixed(2)} sec
+  //   `;
+
+  //   const blob = new Blob([output], { type: 'text/plain;charset=utf-8' });
+  //   saveAs(blob, 'time-difference.txt');
+
+  //   resetTimers();
+  // };
   const handleFinish1 = () => {
     if (!initialStartTime || !endTime1) return;
 
@@ -173,36 +142,92 @@ const TimeDifferenceCalculator: React.FC<TimeDifferenceCalculatorProps> = ({
     const finalEndTime = endTime1;
     const totalTime = (finalEndTime.getTime() - firstStartTime.getTime()) / 1000;
 
-    console.log(intervalDates.length);
+    const dataToSend = {
+      initialStartTime: initialStartTime.toLocaleString(),
+      finalEndTime: finalEndTime.toLocaleString(),
+      totalTime: totalTime.toFixed(2),
+      intervals: intervalDates.map(id => ({
+        startDate: id.startDate.toLocaleString(),
+        endtDate: id.endDate.toLocaleString(),
+        category: id.category
+      }))
+    };
 
-    let output = '';
-
-    intervalDates.forEach(id => {
-      console.log(getIntervalDiff(id));
-      output += id.startDate.toLocaleString() + `: ${id.endDate.toLocaleString()}` + `: ${id.category}`;
-      
-      if(Array.isArray(selectAwariaOption)) {
-        const hasSubcategories = selectAwariaOption.some((subCat : number) => Math.floor(subCat) === id.category);
-        if(hasSubcategories) {
-          const selectedSubcategories = selectAwariaOption.filter((subCat : number) => Math.floor(subCat) === id.category);
-          output += `: ${selectedSubcategories.join(', ')}`;
-        }
-      }
-
-      output += '\n';
-    })
-
-    const textToSave = 
-      `Initial Start Time: ${initialStartTime.toLocaleString()}
-      Final End Time: ${finalEndTime.toLocaleString()}
-      Total Time: ${totalTime.toFixed(2)} sec
-    `;
-
-    const blob = new Blob([output], { type: 'text/plain;charset=utf-8' });
-    saveAs(blob, 'time-difference.txt');
+    axios.post('http://localhost:5000/save-time-data', dataToSend)
+      .then(response => {
+        console.log("Odpowiedż z serwera:", response.data);
+      })
+      .catch(error => {
+        console.error("Bląd podczas wysyłania danych na serwer:", error);
+      });
 
     resetTimers();
   };
+
+//   const downloadFile = () => {
+//     axios.get('http://localhost:5000/get-time-data')
+//       .then(response => {
+//         let fileData = response.data;
+//         // let fileData = '';
+//         console.log('fileData:', fileData);
+
+//             intervalDates.forEach(id => {
+              
+//               fileData += id.startDate.toLocaleString() + `: ${id.endDate.toLocaleString()}` + `: ${id.category}`;
+              
+//               if(Array.isArray(selectAwariaOption)) {
+//                 const hasSubcategories = selectAwariaOption.some((subCat : number) => Math.floor(subCat) === id.category);
+//                 if(hasSubcategories) {
+//                   const selectedSubcategories = selectAwariaOption.filter((subCat : number) => Math.floor(subCat) === id.category);
+//                   fileData += `: ${selectedSubcategories.join(', ')}`;
+//                 }
+//               }
+
+//               fileData += '\n';
+//             })
+
+//         const blob = new Blob([fileData], { type: 'text/plain;charset=utf-8' });
+//         saveAs(blob, 'time-difference.txt');
+
+//         const url = window.URL.createObjectURL(blob);
+//         const link = document.createElement('a');
+//         link.href = url;
+//         link.setAttribute('download', 'time-difference.txt');
+//         document.body.appendChild(link);
+//         link.click();
+//         document.body.removeChild(link);
+//     })
+//     .catch(error => {
+//         console.error('Błąd podczas pobierania pliku:', error);
+//     });
+// };
+
+const downloadFile = () => {
+  axios.get('http://localhost:5000/get-time-data')
+    .then(response => {
+      let fileData = response.data;
+
+      intervalDates.forEach(id => {
+        fileData += id.startDate.toLocaleString() + `: ${id.endDate.toLocaleString()}` + `: ${id.category}`;
+
+        if (Array.isArray(selectAwariaOption)) {
+          const hasSubcategories = selectAwariaOption.some((subCat : number) => Math.floor(subCat) === id.category);
+          if (hasSubcategories) {
+            const selectedSubcategories = selectAwariaOption.filter((subCat : number) => Math.floor(subCat) === id.category);
+            fileData += `: ${selectedSubcategories.join(', ')}`;
+          }
+        }
+
+        fileData += '\n';
+      });
+
+      const blob = new Blob([fileData], { type: 'text/plain;charset=utf-8' });
+      saveAs(blob, 'time-difference.txt');
+    })
+    .catch(error => {
+      console.error('Błąd podczas pobierania pliku:', error);
+    });
+};
 
   const getActiveCattegory = (): CategoryAwaria[] => {
     const result: CategoryAwaria[] = [];
@@ -250,7 +275,7 @@ const TimeDifferenceCalculator: React.FC<TimeDifferenceCalculatorProps> = ({
 };
 
   const handleSubCategorySelect = useCallback((subCategoryId : number) => {
-    setSelectAwariaSubcategoryOption(subCategoryId)
+    setSelectAwariaSubcategoryOption(subCategoryId);
   }, []);
 
   const toggleCategoriesVisibility = () => {
@@ -330,12 +355,12 @@ const TimeDifferenceCalculator: React.FC<TimeDifferenceCalculatorProps> = ({
     setItem('1');
     setSelectAwariaOption(null);
     setSelectAwariaSubcategoryOption(null);
-    setPath([currentCategry]);
+    setPath(currentCategry);
   };
 
   return (
     <div className='main-container'>
-      <p>{path.join(' / ')}</p>
+      <p>{path}</p>
       <div className='btn-container'>
         <button
             onClick={handleStart1}
@@ -358,6 +383,7 @@ const TimeDifferenceCalculator: React.FC<TimeDifferenceCalculatorProps> = ({
         >
           Finish
         </button>
+        <button onClick={downloadFile}>Pobierz plik</button>
       </div>
 
       <div className='category-container'>
