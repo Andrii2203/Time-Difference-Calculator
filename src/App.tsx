@@ -21,31 +21,11 @@ const TimeDifferenceCalculator: React.FC<TimeDifferenceCalculatorProps> = ({
   const [path, setPath] = useState<string>('');
   const [showMainCategories, setShowMainCategories] = useState<boolean>(true);
   
-  // useEffect(() => {
-  //   const mainCategories = categoryAwaria.filter(
-  //     (category) =>
-  //       Number.isInteger(category.id) &&
-  //       category.parent === -1 &&
-  //       category.single !== 0
-  //   );
-
-  //   if(mainCategories.length > 0) {
-  //     setPath(prev => [...prev, mainCategories[0].value]);
-  //   }
-  // }, [currentCategry]);
-
-  // useEffect(() => {
-  //   console.log('Updated showMainCategories:', showMainCategories);
-  //   console.log('Updated path:', path);
-    
-  // }, [showMainCategories, path]);
-
   const fullPath = (id : number) => {
     console.log('fullPath', id);
     let searchId = id;
     let pathComplited = false;
     let newFullPathComplited = '';
-
 
     while(pathComplited === false) {
       pathComplited = true;
@@ -65,8 +45,6 @@ const TimeDifferenceCalculator: React.FC<TimeDifferenceCalculatorProps> = ({
     }
     console.log('newFullPathComplited', newFullPathComplited);
     setPath(newFullPathComplited);
-
-
   }
 
 
@@ -74,29 +52,13 @@ const TimeDifferenceCalculator: React.FC<TimeDifferenceCalculatorProps> = ({
     console.log('handleCategorySelect:');
     setItem(id.toString());
 
-    // let updatedPath = currentPath + " / " + value;
-
     if (id === 3 && !isSubcategory) {
       setShowMainCategories(false);
     }
     
-    // setPath(updatedPath);
     fullPath(id)
     console.log('Updated path:', currentPath);
-    // console.log('Updated path:', updatedPath);
-    // if (selectAwariaOption) {
-    //   const awariaOption = categoryAwaria.find(cat => cat.id === selectAwariaOption)?.value;
-    //   if (awariaOption && !updatedPath.includes(awariaOption)) {
-    //     updatedPath += awariaOption.toString();
-    //   }
-    // }
 
-    // if (isSubcategory && selectAwariaSubcategoryOption) {
-    //   const awariaSubcategory = categoryAwaria.find(cat => cat.id === selectAwariaSubcategoryOption)?.value;
-    //   if (awariaSubcategory && !updatedPath.includes(awariaSubcategory)) {
-    //     updatedPath += awariaSubcategory.toString();
-    //   }
-    // }
 }, [selectAwariaOption, selectAwariaSubcategoryOption]);
 
   const handleStart1 = () => {
@@ -122,9 +84,9 @@ const TimeDifferenceCalculator: React.FC<TimeDifferenceCalculatorProps> = ({
     }
   }
 
-  const getIntervalDiff = (id: TimeElement) => {
-    return ((id.endDate.getTime() - id.startDate.getTime()) / 1000).toFixed(1);
-  };
+  // const getIntervalDiff = (id: TimeElement) => {
+  //   return ((id.endDate.getTime() - id.startDate.getTime()) / 1000).toFixed(1);
+  // };
 
   // const handleFinish1 = () => {
   //   if (!initialStartTime || !endTime1) return;
@@ -191,44 +153,6 @@ const TimeDifferenceCalculator: React.FC<TimeDifferenceCalculatorProps> = ({
 
     resetTimers();
   };
-
-//   const downloadFile = () => {
-//     axios.get('http://localhost:5000/get-time-data')
-//       .then(response => {
-//         let fileData = response.data;
-//         // let fileData = '';
-//         console.log('fileData:', fileData);
-
-//             intervalDates.forEach(id => {
-              
-//               fileData += id.startDate.toLocaleString() + `: ${id.endDate.toLocaleString()}` + `: ${id.category}`;
-              
-//               if(Array.isArray(selectAwariaOption)) {
-//                 const hasSubcategories = selectAwariaOption.some((subCat : number) => Math.floor(subCat) === id.category);
-//                 if(hasSubcategories) {
-//                   const selectedSubcategories = selectAwariaOption.filter((subCat : number) => Math.floor(subCat) === id.category);
-//                   fileData += `: ${selectedSubcategories.join(', ')}`;
-//                 }
-//               }
-
-//               fileData += '\n';
-//             })
-
-//         const blob = new Blob([fileData], { type: 'text/plain;charset=utf-8' });
-//         saveAs(blob, 'time-difference.txt');
-
-//         const url = window.URL.createObjectURL(blob);
-//         const link = document.createElement('a');
-//         link.href = url;
-//         link.setAttribute('download', 'time-difference.txt');
-//         document.body.appendChild(link);
-//         link.click();
-//         document.body.removeChild(link);
-//     })
-//     .catch(error => {
-//         console.error('Błąd podczas pobierania pliku:', error);
-//     });
-// };
 
 const downloadFile = () => {
   axios.get('http://localhost:5000/get-time-data')
@@ -306,13 +230,9 @@ const downloadFile = () => {
     console.log('handleSubCategorySelect:');
     setSelectAwariaSubcategoryOption(id);
 
-    // let updatedPath = currentPath + " / " + value;
-    // setPath(updatedPath);
     fullPath(id)
 
     console.log('Updated path:', currentPath);
-    // console.log('Updated path:', updatedPath);
-
   };
 
   const toggleCategoriesVisibility = () => {
@@ -364,11 +284,8 @@ const downloadFile = () => {
   
     setSelectAwariaOption(id);
 
-    // let updatedPath = currentPath + " / " + value;
-    // setPath(updatedPath);
     fullPath(id)
     console.log('Updated path:', currentPath);
-    // console.log('Updated path:', updatedPath);
 
   }, []);
   
