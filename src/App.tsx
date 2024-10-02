@@ -39,20 +39,51 @@ const TimeDifferenceCalculator: React.FC<TimeDifferenceCalculatorProps> = ({
   //   console.log('Updated path:', path);
     
   // }, [showMainCategories, path]);
-  
+
+  const fullPath = (id : number) => {
+    console.log('fullPath', id);
+    let searchId = id;
+    let pathComplited = false;
+    let newFullPathComplited = '';
+
+
+    while(pathComplited === false) {
+      pathComplited = true;
+      let awaria = categoryAwaria.find(cat => cat.id === searchId)
+      console.log(" awaria ", awaria);
+      if(awaria !== undefined) {
+        newFullPathComplited = awaria.value + newFullPathComplited;
+        if(awaria.parent !== -1) {
+          pathComplited = false;
+          searchId = awaria.parent;
+          newFullPathComplited = " / " + newFullPathComplited;
+        } else {
+          pathComplited = true;
+          newFullPathComplited = currentCategry + ' / ' + newFullPathComplited;
+        }
+      }
+    }
+    console.log('newFullPathComplited', newFullPathComplited);
+    setPath(newFullPathComplited);
+
+
+  }
+
+
   const handleCategorySelect = useCallback((id: number, value: string, isSubcategory: boolean = false, currentPath : string) => {
     console.log('handleCategorySelect:');
     setItem(id.toString());
 
-    let updatedPath = currentPath + " / " + value;
+    // let updatedPath = currentPath + " / " + value;
 
     if (id === 3 && !isSubcategory) {
       setShowMainCategories(false);
     }
     
-    setPath(updatedPath);
+    // setPath(updatedPath);
+    fullPath(id)
     console.log('Updated path:', currentPath);
-    console.log('Updated path:', updatedPath);
+    // console.log('Updated path:', updatedPath);
     // if (selectAwariaOption) {
     //   const awariaOption = categoryAwaria.find(cat => cat.id === selectAwariaOption)?.value;
     //   if (awariaOption && !updatedPath.includes(awariaOption)) {
@@ -202,7 +233,7 @@ const TimeDifferenceCalculator: React.FC<TimeDifferenceCalculatorProps> = ({
 const downloadFile = () => {
   axios.get('http://localhost:5000/get-time-data')
     .then(response => {
-      let fileData = response.data;
+      let fileData = '';
 
       intervalDates.forEach(id => {
         fileData += id.startDate.toLocaleString() + `: ${id.endDate.toLocaleString()}` + `: ${id.category}`;
@@ -271,13 +302,16 @@ const downloadFile = () => {
     return null;
 };
 
-  const handleSubCategorySelect = (subCategoryId : number, value : string, currentPath : string) => {
+  const handleSubCategorySelect = (id : number, value : string, currentPath : string) => {
     console.log('handleSubCategorySelect:');
-    setSelectAwariaSubcategoryOption(subCategoryId);
-    let updatedPath = currentPath + " / " + value;
-    setPath(updatedPath);
+    setSelectAwariaSubcategoryOption(id);
+
+    // let updatedPath = currentPath + " / " + value;
+    // setPath(updatedPath);
+    fullPath(id)
+
     console.log('Updated path:', currentPath);
-    console.log('Updated path:', updatedPath);
+    // console.log('Updated path:', updatedPath);
 
   };
 
@@ -320,20 +354,21 @@ const downloadFile = () => {
   return null;
   };
 
-  const handleOptionChange = useCallback((selectedId: number, value : string, currentPath : string) => {
+  const handleOptionChange = useCallback((id: number, value : string, currentPath : string) => {
     console.log('handleOptionChange:');
-    const selectedSubcategory = categoryAwaria.find(cat => cat.id === selectedId);
+    const selectedSubcategory = categoryAwaria.find(cat => cat.id === id);
   
     if (selectedSubcategory) {
       console.log('Selected subcategory parent ID:', selectedSubcategory.parent);
     }
   
-    setSelectAwariaOption(selectedId);
+    setSelectAwariaOption(id);
 
-    let updatedPath = currentPath + " / " + value;
-    setPath(updatedPath);
+    // let updatedPath = currentPath + " / " + value;
+    // setPath(updatedPath);
+    fullPath(id)
     console.log('Updated path:', currentPath);
-    console.log('Updated path:', updatedPath);
+    // console.log('Updated path:', updatedPath);
 
   }, []);
   
@@ -365,7 +400,7 @@ const downloadFile = () => {
     setItem('1');
     setSelectAwariaOption(null);
     setSelectAwariaSubcategoryOption(null);
-    // setPath(currentCategry);
+    setPath(currentCategry);
   };
 
   return (

@@ -1,26 +1,21 @@
 {
-  "initialStartTime": "02.10.2024, 19:13:45",
-  "finalEndTime": "02.10.2024, 19:13:54",
-  "totalTime": "8.42",
+  "initialStartTime": "02.10.2024, 21:06:32",
+  "finalEndTime": "02.10.2024, 21:06:39",
+  "totalTime": "7.54",
   "intervals": [
     {
-      "startDate": "02.10.2024, 19:13:45",
-      "endtDate": "02.10.2024, 19:13:46",
+      "startDate": "02.10.2024, 21:06:32",
+      "endtDate": "02.10.2024, 21:06:32",
       "category": 0
     },
     {
-      "startDate": "02.10.2024, 19:13:47",
-      "endtDate": "02.10.2024, 19:13:47",
-      "category": 2
-    },
-    {
-      "startDate": "02.10.2024, 19:13:49",
-      "endtDate": "02.10.2024, 19:13:49",
+      "startDate": "02.10.2024, 21:06:34",
+      "endtDate": "02.10.2024, 21:06:35",
       "category": 4
     },
     {
-      "startDate": "02.10.2024, 19:13:53",
-      "endtDate": "02.10.2024, 19:13:54",
+      "startDate": "02.10.2024, 21:06:39",
+      "endtDate": "02.10.2024, 21:06:39",
       "category": 3
     }
   ]
