@@ -18,7 +18,7 @@ const TimeDifferenceCalculator: React.FC<TimeDifferenceCalculatorProps> = ({
   const [item, setItem] = useState<string>('0');
   const [selectAwariaOption, setSelectAwariaOption] = useState<number | null>(null);
   const [selectAwariaSubcategoryOption, setSelectAwariaSubcategoryOption] = useState<number | null>(null);
-  const [path, setPath] = useState<string>(currentCategry);
+  const [path, setPath] = useState<string>('');
   const [showMainCategories, setShowMainCategories] = useState<boolean>(true);
   
   // useEffect(() => {
@@ -34,41 +34,38 @@ const TimeDifferenceCalculator: React.FC<TimeDifferenceCalculatorProps> = ({
   //   }
   // }, [currentCategry]);
 
-  useEffect(() => {
-    console.log('Updated showMainCategories:', showMainCategories);
-    console.log('Updated path:', path);
-
-  }, [showMainCategories, path]);
-
-  const handleCategorySelect = useCallback((id: number, value: string, isSubcategory: boolean = false) => {
-  setItem(id.toString());
-  let updatedPath = path + " / " + value;
-
-  setPath(prev => {
-    let updatedPath = path + " / " + value;
+  // useEffect(() => {
+  //   console.log('Updated showMainCategories:', showMainCategories);
+  //   console.log('Updated path:', path);
     
+  // }, [showMainCategories, path]);
+  
+  const handleCategorySelect = useCallback((id: number, value: string, isSubcategory: boolean = false, currentPath : string) => {
+    console.log('handleCategorySelect:');
+    setItem(id.toString());
 
-    if (selectAwariaOption) {
-      const awariaOption = categoryAwaria.find(cat => cat.id === selectAwariaOption)?.value;
-      if (awariaOption && !updatedPath.includes(awariaOption)) {
-        updatedPath += awariaOption.toString();
-      }
-    }
-
-    if (isSubcategory && selectAwariaSubcategoryOption) {
-      const awariaSubcategory = categoryAwaria.find(cat => cat.id === selectAwariaSubcategoryOption)?.value;
-      if (awariaSubcategory && !updatedPath.includes(awariaSubcategory)) {
-        updatedPath += awariaSubcategory.toString();
-      }
-    }
+    let updatedPath = currentPath + " / " + value;
 
     if (id === 3 && !isSubcategory) {
       setShowMainCategories(false);
     }
+    
+    setPath(updatedPath);
+    console.log('Updated path:', currentPath);
+    console.log('Updated path:', updatedPath);
+    // if (selectAwariaOption) {
+    //   const awariaOption = categoryAwaria.find(cat => cat.id === selectAwariaOption)?.value;
+    //   if (awariaOption && !updatedPath.includes(awariaOption)) {
+    //     updatedPath += awariaOption.toString();
+    //   }
+    // }
 
-    return updatedPath;
-  }
-);
+    // if (isSubcategory && selectAwariaSubcategoryOption) {
+    //   const awariaSubcategory = categoryAwaria.find(cat => cat.id === selectAwariaSubcategoryOption)?.value;
+    //   if (awariaSubcategory && !updatedPath.includes(awariaSubcategory)) {
+    //     updatedPath += awariaSubcategory.toString();
+    //   }
+    // }
 }, [selectAwariaOption, selectAwariaSubcategoryOption]);
 
   const handleStart1 = () => {
@@ -264,7 +261,7 @@ const downloadFile = () => {
                 <button
                     key={id}
                     className={item === id.toString() ? "selected" : "not-selected"}
-                    onClick={() => handleCategorySelect(id, value, false)}
+                    onClick={() => handleCategorySelect(id, value, false, path)}
                 >
                     {value} {item === id.toString() && '✓'}
                 </button>
@@ -274,9 +271,15 @@ const downloadFile = () => {
     return null;
 };
 
-  const handleSubCategorySelect = useCallback((subCategoryId : number) => {
+  const handleSubCategorySelect = (subCategoryId : number, value : string, currentPath : string) => {
+    console.log('handleSubCategorySelect:');
     setSelectAwariaSubcategoryOption(subCategoryId);
-  }, []);
+    let updatedPath = currentPath + " / " + value;
+    setPath(updatedPath);
+    console.log('Updated path:', currentPath);
+    console.log('Updated path:', updatedPath);
+
+  };
 
   const toggleCategoriesVisibility = () => {
     setShowMainCategories(prev => !prev);
@@ -305,7 +308,7 @@ const downloadFile = () => {
                     <button
                         key={cat.id}
                         className={selectAwariaSubcategoryOption === cat.id ? "selected" : "not-selected"}
-                        onClick={() => handleSubCategorySelect(cat.id,)}
+                        onClick={() => handleSubCategorySelect(cat.id, cat.value, path)}
                     >
                         {cat.value} {selectAwariaSubcategoryOption === cat.id && '✓'}
                     </button>
@@ -317,7 +320,8 @@ const downloadFile = () => {
   return null;
   };
 
-  const handleOptionChange = useCallback((selectedId: number) => {
+  const handleOptionChange = useCallback((selectedId: number, value : string, currentPath : string) => {
+    console.log('handleOptionChange:');
     const selectedSubcategory = categoryAwaria.find(cat => cat.id === selectedId);
   
     if (selectedSubcategory) {
@@ -325,6 +329,12 @@ const downloadFile = () => {
     }
   
     setSelectAwariaOption(selectedId);
+
+    let updatedPath = currentPath + " / " + value;
+    setPath(updatedPath);
+    console.log('Updated path:', currentPath);
+    console.log('Updated path:', updatedPath);
+
   }, []);
   
 
@@ -337,7 +347,7 @@ const downloadFile = () => {
       <div key={subcat.id}>
         <button 
           className={selectAwariaOption === subcat.id ? "selected" : "not-selected"}
-          onClick={() => handleOptionChange(subcat.id)}
+          onClick={() => handleOptionChange(subcat.id, subcat.value, path)}
         >
           {subcat.value} {selectAwariaOption === subcat.id && '✓'}
         </button>
@@ -355,7 +365,7 @@ const downloadFile = () => {
     setItem('1');
     setSelectAwariaOption(null);
     setSelectAwariaSubcategoryOption(null);
-    setPath(currentCategry);
+    // setPath(currentCategry);
   };
 
   return (
