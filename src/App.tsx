@@ -5,6 +5,7 @@ import { createTimeElement, CategoryAwaria, TimeElement, categoryAwaria, TimeDif
 import "./App.css"
 import { response } from 'express';
 
+
 const TimeDifferenceCalculator: React.FC<TimeDifferenceCalculatorProps> = ({ 
     filteredCategories, 
     currentCategry,
@@ -213,6 +214,7 @@ const downloadFile = () => {
     if (showMainCategories) {
         return getActiveCattegory().map(({ id, value }) => {
             return (  
+              <div className='container-category-option'>
                 <button
                     key={id}
                     className={item === id.toString() ? "selected" : "not-selected"}
@@ -220,6 +222,7 @@ const downloadFile = () => {
                 >
                     {value} {item === id.toString() && '✓'}
                 </button>
+              </div>
             );
         });
     }
@@ -249,7 +252,7 @@ const downloadFile = () => {
     if (item === "3") {
       return (
           <div>
-            <div>
+            <div className='container-wstecz-button'>
               <button 
                 onClick={toggleCategoriesVisibility}
                 className='wstecz-button'  
@@ -257,17 +260,18 @@ const downloadFile = () => {
                 ←
               </button>
             </div>
-            <div>
                 {filteredCategories.map((cat) => (
+                  <div className='container-awaria-option'>                
                     <button
                         key={cat.id}
                         className={selectAwariaSubcategoryOption === cat.id ? "selected" : "not-selected"}
                         onClick={() => handleSubCategorySelect(cat.id, cat.value, path)}
                     >
-                        {cat.value} {selectAwariaSubcategoryOption === cat.id && '✓'}
+                        {cat.value} 
+                        {selectAwariaSubcategoryOption === cat.id && '✓'}
                     </button>
+                  </div>
                 ))}
-            </div>
           </div>
       );
   }
@@ -296,12 +300,16 @@ const downloadFile = () => {
     );
 
     return subCategories.map(subcat => (
-      <div key={subcat.id}>
+      <div 
+        key={subcat.id}
+        className='container-awaria-subcategory'
+      >
         <button 
           className={selectAwariaOption === subcat.id ? "selected" : "not-selected"}
           onClick={() => handleOptionChange(subcat.id, subcat.value, path)}
         >
-          {subcat.value} {selectAwariaOption === subcat.id && '✓'}
+          {subcat.value} 
+          {selectAwariaOption === subcat.id && '✓'}
         </button>
       </div>
     ));
@@ -322,7 +330,9 @@ const downloadFile = () => {
 
   return (
     <div className='main-container'>
-      <p>{path}</p>
+      <div className='container-path'>
+        <p>{path}</p>
+      </div>
       <div className='btn-container'>
         <button
             onClick={handleStart1}
@@ -345,7 +355,7 @@ const downloadFile = () => {
         >
           Finish
         </button>
-        <button onClick={downloadFile}>Pobierz plik</button>
+        {/* <button onClick={downloadFile}>Pobierz plik</button> */}
       </div>
 
       <div className='category-container'>
