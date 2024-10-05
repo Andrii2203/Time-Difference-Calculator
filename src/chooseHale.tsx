@@ -6,7 +6,7 @@ import TimeDifferenceCalculator from "./App";
 const ChooseYourL1L2: React.FC = () => {
     const [selectedOption, setSelectedOption] = useState<"L1" | "L2" | null>(null);
     const [categories, setCategories] = useState<{ L1Categories: CategoryAwaria[], L2Categories: CategoryAwaria[] }>({ L1Categories: [], L2Categories: [] });
-
+    console.log('categories', categories);
     const handleL1Click = () => {
         setSelectedOption("L1");
     };

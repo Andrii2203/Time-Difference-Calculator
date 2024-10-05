@@ -188,7 +188,7 @@ button.not-selected {
 
 
 /* tutaj zminec z powrotem na 1080 */
-/* @media (max-width: 780px) {
+@media (max-width: 1080px) {
   p {
     font-size: 50px;
     margin: 10px 0px;
@@ -229,4 +229,4 @@ button.not-selected {
     background-color: transparent;
   }
 
-} */
+}

@@ -102,13 +102,15 @@ export interface TimeElement {
     startDate: Date;
     endDate: Date;
     category: number;
+    path: string;
 
 }
-export const createTimeElement = ( startDate: Date, endDate: Date, categoryNumber: number ): TimeElement =>  {
+export const createTimeElement = ( startDate: Date, endDate: Date, categoryNumber: number, path: string ): TimeElement =>  {
    return  {
       startDate: startDate,
       endDate: endDate,
       category: categoryNumber,
+      path: path,
     };
 }
 

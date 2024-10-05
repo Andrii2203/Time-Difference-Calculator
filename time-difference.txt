@@ -1,22 +1,19 @@
 {
-  "initialStartTime": "02.10.2024, 21:06:32",
-  "finalEndTime": "02.10.2024, 21:06:39",
-  "totalTime": "7.54",
+  "initialStartTime": "05.10.2024, 10:47:09",
+  "finalEndTime": "05.10.2024, 10:47:14",
+  "totalTime": "5.07",
   "intervals": [
     {
-      "startDate": "02.10.2024, 21:06:32",
-      "endtDate": "02.10.2024, 21:06:32",
-      "category": 0
+      "startDate": "05.10.2024, 10:47:09",
+      "endtDate": "05.10.2024, 10:47:09",
+      "category": 0,
+      "path": "L1 / Prygotowanie"
     },
     {
-      "startDate": "02.10.2024, 21:06:34",
-      "endtDate": "02.10.2024, 21:06:35",
-      "category": 4
-    },
-    {
-      "startDate": "02.10.2024, 21:06:39",
-      "endtDate": "02.10.2024, 21:06:39",
-      "category": 3
+      "startDate": "05.10.2024, 10:47:13",
+      "endtDate": "05.10.2024, 10:47:14",
+      "category": 3,
+      "path": "L1 / Awaria / Silosy / Zmiana Surowda"
     }
   ]
 }

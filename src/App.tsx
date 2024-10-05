@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { saveAs } from 'file-saver';
+import ChooseYourL1L2 from './chooseHale';
 import axios from 'axios';
 import { createTimeElement, CategoryAwaria, TimeElement, categoryAwaria, TimeDifferenceCalculatorProps } from "./Interfaces";
 import "./App.css"
@@ -21,22 +22,48 @@ const TimeDifferenceCalculator: React.FC<TimeDifferenceCalculatorProps> = ({
   const [selectAwariaSubcategoryOption, setSelectAwariaSubcategoryOption] = useState<number | null>(null);
   const [path, setPath] = useState<string>('');
   const [showMainCategories, setShowMainCategories] = useState<boolean>(true);
-  
-  const fullPath = (id : number) => {
+  const [isFinished, setIsFinished] = useState<boolean>(false);
+
+  // const fullPath = (id : number) => {
+  //   console.log('fullPath', id);
+  //   let searchId = id;
+  //   let pathComplited = false;
+  //   let newFullPathComplited = '';
+
+  //   while(pathComplited === false) {
+  //     pathComplited = true;
+  //     let awaria = categoryAwaria.find(cat => cat.id === searchId)
+  //     console.log(" awaria ", awaria);
+  //     if(awaria !== undefined) {
+  //       newFullPathComplited = awaria.value + newFullPathComplited;
+  //       if(awaria.parent !== -1) {
+  //         pathComplited = false;
+  //         searchId = awaria.parent;
+  //         newFullPathComplited = " / " + newFullPathComplited;
+  //       } else {
+  //         pathComplited = true;
+  //         newFullPathComplited = currentCategry + ' / ' + newFullPathComplited;
+  //       }
+  //     }
+  //   }
+  //   console.log('newFullPathComplited', newFullPathComplited);
+  //   setPath(newFullPathComplited);
+  // }
+  const fullPath = (id: string) => {  // Змінюємо тип параметра на string
     console.log('fullPath', id);
-    let searchId = id;
+    let searchId = id;  // Залишаємо змінну як рядок
     let pathComplited = false;
     let newFullPathComplited = '';
-
-    while(pathComplited === false) {
+  
+    while (pathComplited === false) {
       pathComplited = true;
-      let awaria = categoryAwaria.find(cat => cat.id === searchId)
+      let awaria = categoryAwaria.find(cat => cat.id.toString() === searchId);  // Використовуємо рядок для пошуку
       console.log(" awaria ", awaria);
-      if(awaria !== undefined) {
+      if (awaria !== undefined) {
         newFullPathComplited = awaria.value + newFullPathComplited;
-        if(awaria.parent !== -1) {
+        if (awaria.parent.toString() !== "-1") {  // Порівнюємо з рядком "-1"
           pathComplited = false;
-          searchId = awaria.parent;
+          searchId = awaria.parent.toString();
           newFullPathComplited = " / " + newFullPathComplited;
         } else {
           pathComplited = true;
@@ -46,7 +73,7 @@ const TimeDifferenceCalculator: React.FC<TimeDifferenceCalculatorProps> = ({
     }
     console.log('newFullPathComplited', newFullPathComplited);
     setPath(newFullPathComplited);
-  }
+  };
 
 
   const handleCategorySelect = useCallback((id: number, value: string, isSubcategory: boolean = false, currentPath : string) => {
@@ -57,7 +84,7 @@ const TimeDifferenceCalculator: React.FC<TimeDifferenceCalculatorProps> = ({
       setShowMainCategories(false);
     }
     
-    fullPath(id)
+    fullPath(id.toString())
     console.log('Updated path:', currentPath);
 
 }, [selectAwariaOption, selectAwariaSubcategoryOption]);
@@ -78,54 +105,70 @@ const TimeDifferenceCalculator: React.FC<TimeDifferenceCalculatorProps> = ({
     setEndTime1(now);
 
     if(lastStartDate) {
-      const id = createTimeElement(lastStartDate, now, parseInt(item));
+      const id = createTimeElement(lastStartDate, now, parseInt(item), path);
       setTimeIsRuning(!timeIsRuning);
       setIntervalDates([...intervalDates, id]);
       setItem('');
+      setShowMainCategories(true);
     }
+
+
   }
 
-  // const getIntervalDiff = (id: TimeElement) => {
-  //   return ((id.endDate.getTime() - id.startDate.getTime()) / 1000).toFixed(1);
-  // };
 
-  // const handleFinish1 = () => {
-  //   if (!initialStartTime || !endTime1) return;
+//   const handleFinish1 = () => {
+//     if (!initialStartTime || !endTime1) return;
 
-  //   const firstStartTime = initialStartTime;
-  //   const finalEndTime = endTime1;
-  //   const totalTime = (finalEndTime.getTime() - firstStartTime.getTime()) / 1000;
+//     const firstStartTime = initialStartTime;
+//     const finalEndTime = endTime1;
+//     const totalTime = (finalEndTime.getTime() - firstStartTime.getTime()) / 1000;
 
-  //   console.log(intervalDates.length);
+//     const dataToSend = {
+//       initialStartTime: initialStartTime.toLocaleString(),
+//       finalEndTime: finalEndTime.toLocaleString(),
+//       totalTime: totalTime.toFixed(2),
+//       intervals: intervalDates.map(id => {
+//         console.log('Обробляється інтервал з id:', id.category);
+//         const pathValue = id.path;
+//         console.log('Значення pathValue:', pathValue);
+//         return {
+//           startDate: id.startDate.toLocaleString(),
+//           endtDate: id.endDate.toLocaleString(),
+//           category: id.category,
+//           path: pathValue,
+//         }
+//       })
+//     };
 
-  //   let output = '';
+//     axios.post('http://localhost:5000/save-time-data', dataToSend)
+//       .then(response => {
+//         console.log("Odpowiedż z serwera:", response.data);
+//       })
+//       .catch(error => {
+//         console.error("Bląd podczas wysyłania danych na serwer:", error);
+//       });
 
-  //   intervalDates.forEach(id => {
-  //     console.log(getIntervalDiff(id));
-  //     output += id.startDate.toLocaleString() + `: ${id.endDate.toLocaleString()}` + `: ${id.category}`;
-      
-  //     if(Array.isArray(selectAwariaOption)) {
-  //       const hasSubcategories = selectAwariaOption.some((subCat : number) => Math.floor(subCat) === id.category);
-  //       if(hasSubcategories) {
-  //         const selectedSubcategories = selectAwariaOption.filter((subCat : number) => Math.floor(subCat) === id.category);
-  //         output += `: ${selectedSubcategories.join(', ')}`;
-  //       }
-  //     }
+//     resetTimers();
+//   };
 
-  //     output += '\n';
-  //   })
+// const downloadFile = () => {
+//   axios.get('http://localhost:5000/get-time-data')
+//     .then(response => {
+//       let fileData = '';
 
-  //   const textToSave = 
-  //     `Initial Start Time: ${initialStartTime.toLocaleString()}
-  //     Final End Time: ${finalEndTime.toLocaleString()}
-  //     Total Time: ${totalTime.toFixed(2)} sec
-  //   `;
+//       intervalDates.forEach(id => {
+//         const pathValue = id.path;
+//         fileData += id.startDate.toLocaleString() + `: ${id.endDate.toLocaleString()}` + `: ${id.category}` + `: ${pathValue}`;
+//         fileData += '\n';
+//       });
 
-  //   const blob = new Blob([output], { type: 'text/plain;charset=utf-8' });
-  //   saveAs(blob, 'time-difference.txt');
-
-  //   resetTimers();
-  // };
+//       const blob = new Blob([fileData], { type: 'text/plain;charset=utf-8' });
+//       saveAs(blob, 'time-difference.txt');
+//     })
+//     .catch(error => {
+//       console.error('Błąd podczas pobierania pliku:', error);
+//     });
+// };
   const handleFinish1 = () => {
     if (!initialStartTime || !endTime1) return;
 
@@ -137,49 +180,44 @@ const TimeDifferenceCalculator: React.FC<TimeDifferenceCalculatorProps> = ({
       initialStartTime: initialStartTime.toLocaleString(),
       finalEndTime: finalEndTime.toLocaleString(),
       totalTime: totalTime.toFixed(2),
-      intervals: intervalDates.map(id => ({
-        startDate: id.startDate.toLocaleString(),
-        endtDate: id.endDate.toLocaleString(),
-        category: id.category
-      }))
+      intervals: intervalDates.map(id => {
+        console.log('Обробляється інтервал з id:', id.category);
+        const pathValue = id.path;
+        console.log('Значення pathValue:', pathValue);
+        return {
+          startDate: id.startDate.toLocaleString(),
+          endtDate: id.endDate.toLocaleString(),
+          category: id.category,
+          path: pathValue,
+        }
+      })
     };
 
     axios.post('http://localhost:5000/save-time-data', dataToSend)
       .then(response => {
         console.log("Odpowiedż z serwera:", response.data);
+      
+        return   axios.get('http://localhost:5000/get-time-data');
+      })
+      .then(response => {
+        let fileData = '';
+
+        intervalDates.forEach(id => {
+          const pathValue = id.path;
+          fileData += id.startDate.toLocaleString() + `: ${id.endDate.toLocaleString()}` + `: ${id.category}` + `: ${pathValue}`;
+          fileData += '\n';
+        });
+
+        const blob = new Blob([fileData], { type: 'text/plain;charset=utf-8' });
+        saveAs(blob, 'time-difference.txt');
       })
       .catch(error => {
-        console.error("Bląd podczas wysyłania danych na serwer:", error);
+        console.error('Błąd podczas pobierania pliku:', error);
       });
-
     resetTimers();
-  };
+  
+    setIsFinished(true);
 
-const downloadFile = () => {
-  axios.get('http://localhost:5000/get-time-data')
-    .then(response => {
-      let fileData = '';
-
-      intervalDates.forEach(id => {
-        fileData += id.startDate.toLocaleString() + `: ${id.endDate.toLocaleString()}` + `: ${id.category}`;
-
-        if (Array.isArray(selectAwariaOption)) {
-          const hasSubcategories = selectAwariaOption.some((subCat : number) => Math.floor(subCat) === id.category);
-          if (hasSubcategories) {
-            const selectedSubcategories = selectAwariaOption.filter((subCat : number) => Math.floor(subCat) === id.category);
-            fileData += `: ${selectedSubcategories.join(', ')}`;
-          }
-        }
-
-        fileData += '\n';
-      });
-
-      const blob = new Blob([fileData], { type: 'text/plain;charset=utf-8' });
-      saveAs(blob, 'time-difference.txt');
-    })
-    .catch(error => {
-      console.error('Błąd podczas pobierania pliku:', error);
-    });
 };
 
   const getActiveCattegory = (): CategoryAwaria[] => {
@@ -233,7 +271,7 @@ const downloadFile = () => {
     console.log('handleSubCategorySelect:');
     setSelectAwariaSubcategoryOption(id);
 
-    fullPath(id)
+    fullPath(id.toString())
 
     console.log('Updated path:', currentPath);
   };
@@ -288,7 +326,7 @@ const downloadFile = () => {
   
     setSelectAwariaOption(id);
 
-    fullPath(id)
+    fullPath(id.toString())
     console.log('Updated path:', currentPath);
 
   }, []);
@@ -322,14 +360,19 @@ const downloadFile = () => {
     setTimeIsRuning(true);
     setLastStartDate(null);
     setIntervalDates([]);
-    setItem('1');
+    setItem('');
     setSelectAwariaOption(null);
     setSelectAwariaSubcategoryOption(null);
     setPath(currentCategry);
+    // setIsFinished(false);
   };
 
   return (
     <div className='main-container'>
+    {isFinished ? (
+      <ChooseYourL1L2 />
+    ) : (
+      <>
       <div className='container-path'>
         <p>{path}</p>
       </div>
@@ -348,14 +391,14 @@ const downloadFile = () => {
         >
           Stop
         </button>
-        <button
-            onClick={handleFinish1}
-            disabled={initialStartTime == null || !timeIsRuning}
-            className={`btn-finish ${!timeIsRuning ? "btn-disabled" : ""}`}
-        >
-          Finish
-        </button>
-        {/* <button onClick={downloadFile}>Pobierz plik</button> */}
+
+          <button
+              onClick={handleFinish1}
+              disabled={initialStartTime == null || !timeIsRuning}
+              className={`btn-finish ${!timeIsRuning ? "btn-disabled" : ""}`}
+          >
+            Finish
+          </button>
       </div>
 
       <div className='category-container'>
@@ -397,8 +440,11 @@ const downloadFile = () => {
           Current: {currentCategry}
         </p>
       </div>
+      </>
+  )};
     </div>
-  );
-};
+    
+)};
+
 
 export default TimeDifferenceCalculator;
