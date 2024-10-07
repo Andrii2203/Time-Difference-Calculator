@@ -441,7 +441,7 @@ const TimeDifferenceCalculator: React.FC<TimeDifferenceCalculatorProps> = ({
         </p>
       </div>
       </>
-  )};
+  )}
     </div>
     
 )};
