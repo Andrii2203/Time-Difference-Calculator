@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/Time-Difference-Calculator/static/css/main.1c618c96.css",
-    "main.js": "/Time-Difference-Calculator/static/js/main.f67e4d7b.js",
+    "main.css": "/Time-Difference-Calculator/static/css/main.dbe03678.css",
+    "main.js": "/Time-Difference-Calculator/static/js/main.a1f304c7.js",
     "static/js/453.9216e151.chunk.js": "/Time-Difference-Calculator/static/js/453.9216e151.chunk.js",
     "index.html": "/Time-Difference-Calculator/index.html",
-    "main.1c618c96.css.map": "/Time-Difference-Calculator/static/css/main.1c618c96.css.map",
-    "main.f67e4d7b.js.map": "/Time-Difference-Calculator/static/js/main.f67e4d7b.js.map",
+    "main.dbe03678.css.map": "/Time-Difference-Calculator/static/css/main.dbe03678.css.map",
+    "main.a1f304c7.js.map": "/Time-Difference-Calculator/static/js/main.a1f304c7.js.map",
     "453.9216e151.chunk.js.map": "/Time-Difference-Calculator/static/js/453.9216e151.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.1c618c96.css",
-    "static/js/main.f67e4d7b.js"
+    "static/css/main.dbe03678.css",
+    "static/js/main.a1f304c7.js"
   ]
 }
