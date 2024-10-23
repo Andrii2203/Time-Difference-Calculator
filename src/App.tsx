@@ -1,10 +1,10 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useCallback } from 'react';
 import { saveAs } from 'file-saver';
 import ChooseYourL1L2 from './chooseHale';
 import axios from 'axios';
 import { createTimeElement, CategoryAwaria, TimeElement, categoryAwaria, TimeDifferenceCalculatorProps } from "./Interfaces";
 import "./App.css"
-import { response } from 'express';
+// import { response } from 'express';
 
 
 const TimeDifferenceCalculator: React.FC<TimeDifferenceCalculatorProps> = ({ 
@@ -24,44 +24,19 @@ const TimeDifferenceCalculator: React.FC<TimeDifferenceCalculatorProps> = ({
   const [showMainCategories, setShowMainCategories] = useState<boolean>(true);
   const [isFinished, setIsFinished] = useState<boolean>(false);
 
-  // const fullPath = (id : number) => {
-  //   console.log('fullPath', id);
-  //   let searchId = id;
-  //   let pathComplited = false;
-  //   let newFullPathComplited = '';
-
-  //   while(pathComplited === false) {
-  //     pathComplited = true;
-  //     let awaria = categoryAwaria.find(cat => cat.id === searchId)
-  //     console.log(" awaria ", awaria);
-  //     if(awaria !== undefined) {
-  //       newFullPathComplited = awaria.value + newFullPathComplited;
-  //       if(awaria.parent !== -1) {
-  //         pathComplited = false;
-  //         searchId = awaria.parent;
-  //         newFullPathComplited = " / " + newFullPathComplited;
-  //       } else {
-  //         pathComplited = true;
-  //         newFullPathComplited = currentCategry + ' / ' + newFullPathComplited;
-  //       }
-  //     }
-  //   }
-  //   console.log('newFullPathComplited', newFullPathComplited);
-  //   setPath(newFullPathComplited);
-  // }
-  const fullPath = (id: string) => {  // Змінюємо тип параметра на string
+  const fullPath = (id: string) => {
     console.log('fullPath', id);
-    let searchId = id;  // Залишаємо змінну як рядок
+    let searchId = id;
     let pathComplited = false;
     let newFullPathComplited = '';
   
     while (pathComplited === false) {
       pathComplited = true;
-      let awaria = categoryAwaria.find(cat => cat.id.toString() === searchId);  // Використовуємо рядок для пошуку
+      let awaria = categoryAwaria.find(cat => cat.id.toString() === searchId);
       console.log(" awaria ", awaria);
       if (awaria !== undefined) {
         newFullPathComplited = awaria.value + newFullPathComplited;
-        if (awaria.parent.toString() !== "-1") {  // Порівнюємо з рядком "-1"
+        if (awaria.parent.toString() !== "-1") {
           pathComplited = false;
           searchId = awaria.parent.toString();
           newFullPathComplited = " / " + newFullPathComplited;
@@ -111,64 +86,8 @@ const TimeDifferenceCalculator: React.FC<TimeDifferenceCalculatorProps> = ({
       setItem('');
       setShowMainCategories(true);
     }
-
-
   }
 
-
-//   const handleFinish1 = () => {
-//     if (!initialStartTime || !endTime1) return;
-
-//     const firstStartTime = initialStartTime;
-//     const finalEndTime = endTime1;
-//     const totalTime = (finalEndTime.getTime() - firstStartTime.getTime()) / 1000;
-
-//     const dataToSend = {
-//       initialStartTime: initialStartTime.toLocaleString(),
-//       finalEndTime: finalEndTime.toLocaleString(),
-//       totalTime: totalTime.toFixed(2),
-//       intervals: intervalDates.map(id => {
-//         console.log('Обробляється інтервал з id:', id.category);
-//         const pathValue = id.path;
-//         console.log('Значення pathValue:', pathValue);
-//         return {
-//           startDate: id.startDate.toLocaleString(),
-//           endtDate: id.endDate.toLocaleString(),
-//           category: id.category,
-//           path: pathValue,
-//         }
-//       })
-//     };
-
-//     axios.post('http://localhost:5000/save-time-data', dataToSend)
-//       .then(response => {
-//         console.log("Odpowiedż z serwera:", response.data);
-//       })
-//       .catch(error => {
-//         console.error("Bląd podczas wysyłania danych na serwer:", error);
-//       });
-
-//     resetTimers();
-//   };
-
-// const downloadFile = () => {
-//   axios.get('http://localhost:5000/get-time-data')
-//     .then(response => {
-//       let fileData = '';
-
-//       intervalDates.forEach(id => {
-//         const pathValue = id.path;
-//         fileData += id.startDate.toLocaleString() + `: ${id.endDate.toLocaleString()}` + `: ${id.category}` + `: ${pathValue}`;
-//         fileData += '\n';
-//       });
-
-//       const blob = new Blob([fileData], { type: 'text/plain;charset=utf-8' });
-//       saveAs(blob, 'time-difference.txt');
-//     })
-//     .catch(error => {
-//       console.error('Błąd podczas pobierania pliku:', error);
-//     });
-// };
   const handleFinish1 = () => {
     if (!initialStartTime || !endTime1) return;
 

@@ -18,16 +18,12 @@
   font-style: normal;
 }
 .container-path p {
-  /* font-family: "Shadows Into Light", cursive; */
-  /* font-family: "Edu AU VIC WA NT Guides", cursive; */
-  /* font-family: "The Girl Next Door", cursive; */
   font-optical-sizing: auto;
   font-weight: 600;
   font-style: normal;
   font-size: 24px;
   margin: 0;
   padding: 0;
-
 }
 .btn-container {
   display: flex;
@@ -156,7 +152,6 @@ button.not-selected {
   font-size: 24px;
 }
 
-/* tutaj zminec z powrotem na 1080 */
 @media (max-width: 1080px) {
   p {
     font-size: 30px;
@@ -182,8 +177,6 @@ button.not-selected {
   .second-container button,
   .sub-container button {
     width: 45vw;
-    /* padding: 15px; */
-    /* margin-bottom: 25px; */
     font-size: 36px;
     word-break: break-word;
   }

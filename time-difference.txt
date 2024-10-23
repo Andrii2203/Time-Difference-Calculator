@@ -1,13 +1,19 @@
 {
-  "initialStartTime": "07.10.2024, 09:58:36",
-  "finalEndTime": "07.10.2024, 09:58:36",
-  "totalTime": "0.38",
+  "initialStartTime": "23.10.2024, 18:16:15",
+  "finalEndTime": "23.10.2024, 18:16:18",
+  "totalTime": "2.91",
   "intervals": [
     {
-      "startDate": "07.10.2024, 09:58:36",
-      "endtDate": "07.10.2024, 09:58:36",
+      "startDate": "23.10.2024, 18:16:15",
+      "endtDate": "23.10.2024, 18:16:16",
       "category": 0,
-      "path": ""
+      "path": "L1 / Prygotowanie"
+    },
+    {
+      "startDate": "23.10.2024, 18:16:17",
+      "endtDate": "23.10.2024, 18:16:18",
+      "category": 2,
+      "path": "L1 / Praca"
     }
   ]
 }
