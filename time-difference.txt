@@ -1,19 +1,43 @@
 {
-  "initialStartTime": "23.10.2024, 18:16:15",
-  "finalEndTime": "23.10.2024, 18:16:18",
-  "totalTime": "2.91",
+  "initialStartTime": "17.02.2025, 23:48:43",
+  "finalEndTime": "17.02.2025, 23:48:53",
+  "totalTime": "9.85",
   "intervals": [
     {
-      "startDate": "23.10.2024, 18:16:15",
-      "endtDate": "23.10.2024, 18:16:16",
-      "category": 0,
-      "path": "L1 / Prygotowanie"
+      "startDate": "17.02.2025, 23:48:43",
+      "endDate": "17.02.2025, 23:48:43",
+      "category": [
+        "L2",
+        "Prygotowanie"
+      ],
+      "path": "Prygotowanie"
     },
     {
-      "startDate": "23.10.2024, 18:16:17",
-      "endtDate": "23.10.2024, 18:16:18",
-      "category": 2,
-      "path": "L1 / Praca"
+      "startDate": "17.02.2025, 23:48:44",
+      "endDate": "17.02.2025, 23:48:47",
+      "category": [
+        "L2",
+        "Prygotowanie"
+      ],
+      "path": "Mieszalnik"
+    },
+    {
+      "startDate": "17.02.2025, 23:48:49",
+      "endDate": "17.02.2025, 23:48:49",
+      "category": [
+        "L2",
+        "Prygotowanie"
+      ],
+      "path": "Przerwa"
+    },
+    {
+      "startDate": "17.02.2025, 23:48:50",
+      "endDate": "17.02.2025, 23:48:53",
+      "category": [
+        "L2",
+        "Prygotowanie"
+      ],
+      "path": "Praca"
     }
   ]
 }

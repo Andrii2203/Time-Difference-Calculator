@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import ChooseYourL1L2 from './chooseHale';
 import "./App.css"
 import { TimeElement, TimeDifferenceCalculatorProps, Item } from "./Interfaces"
+import axios from 'axios';
 
 
 
@@ -130,8 +131,46 @@ const handleStart1 = () => {
     }
   }
 
-  const handleFinish1 = () => {
+  const handleFinish1 = async () => {
     if (!initialStartTime || !endTime1) return;
+
+    const firstStartTime = initialStartTime;
+    const finalEndTime = endTime1;
+    const totalTime = (finalEndTime.getTime() - firstStartTime.getTime()) / 1000;
+
+    const dataToSend = {
+      initialStartTime: initialStartTime.toLocaleString(),
+      finalEndTime: finalEndTime.toLocaleString(),
+      totalTime: totalTime.toFixed(2),
+      intervals: intervalDates.map(id => {
+        console.log("id", id);
+        const pathValue = id.path;
+        console.log("pathValue", pathValue);
+        return {
+          startDate: id.startDate.toLocaleString(),
+          endDate: id.endDate.toLocaleString(),
+          category: pathLine,
+          path: id.path,
+        }
+      })
+    }
+
+    // axios.post('http://localhost:5000/save-time-data', dataToSend)
+    //   .then(response => {
+    //     console.log("Odpowiedż z serwera:", response.data);
+    //   })
+    //   .catch(error => {
+    //     console.error("Bląd podczas wysyłania danych na serwer:", error);
+    //   })
+    await fetch("http://localhost:5000/save-time-data", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(dataToSend),
+    })
+    .then(response => response.text())
+    .then(message => alert(message))
+    .catch(error => console.error("Błąd:", error))
+
     resetTimers();
     setIsFinished(true);
 };
