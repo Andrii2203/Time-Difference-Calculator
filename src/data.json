@@ -1,0 +1,399 @@
+[
+    {
+        "name": "L1",
+        "children": [
+            {
+                "name": "Prygotowanie",
+                "children": [
+                    {
+                        "name": "Praca",
+                        "children": []
+                    },
+                    {
+                        "name": "Awaria",
+                        "children": [
+                            {
+                                "name": "Silosy",
+                                "children": [
+                                    {
+                                        "name": "Zmiana Surowda",
+                                        "children": []
+                                    },
+                                    {
+                                        "name": "Brak Surowca",
+                                        "children": []
+                                    },
+                                    {
+                                        "name": "Brak Badań",
+                                        "children": []
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "Zbiorniki Mikro",
+                                "children": [
+                                    {
+                                        "name": "Brak Mikrododatku",
+                                        "children": []
+                                    },
+                                    {
+                                        "name": "SZFD",
+                                        "children": []
+                                    },
+                                    {
+                                        "name": "TESTY",
+                                        "children": []
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "Podajnik Worków",
+                                "children": [
+                                    {
+                                        "name": "Zjechanie Prowadnic",
+                                        "children": []
+                                    },
+                                    {
+                                        "name": "Regulacja Biegu",
+                                        "children": []
+                                    },
+                                    {
+                                        "name": "Kornery",
+                                        "children": []
+                                    },
+                                    {
+                                        "name": "Zmiana Rolki",
+                                        "children": []
+                                    },
+                                    {
+                                        "name": "Urwana Łapa",
+                                        "children": []
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "Adams",
+                                "children": [
+                                    {
+                                        "name": "Awaria Spawna",
+                                        "children": []
+                                    },
+                                    {
+                                        "name": "Awaria Stołu",
+                                        "children": []
+                                    },
+                                    {
+                                        "name": "Awaria Buławy",
+                                        "children": []
+                                    },
+                                    {
+                                        "name": "Awaria Wagi",
+                                        "children": []
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "Taśmy",
+                                "children": [
+                                    {
+                                        "name": "Zator",
+                                        "children": []
+                                    },
+                                    {
+                                        "name": "Rozerwany Worek",
+                                        "children": []
+                                    },
+                                    {
+                                        "name": "Ślizganie Worków",
+                                        "children": []
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "EtyieCiarka",
+                                "children": [
+                                    {
+                                        "name": "Zerwana Etykieta",
+                                        "children": []
+                                    },
+                                    {
+                                        "name": "Brak Etykiety",
+                                        "children": []
+                                    },
+                                    {
+                                        "name": "Zmiana Rolki",
+                                        "children": []
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "Drukarka",
+                                "children": [
+                                    {
+                                        "name": "Głowica",
+                                        "children": []
+                                    },
+                                    {
+                                        "name": "Tusz",
+                                        "children": []
+                                    },
+                                    {
+                                        "name": "Solvent",
+                                        "children": []
+                                    },
+                                    {
+                                        "name": "Przegląd",
+                                        "children": []
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "Paletpac",
+                                "children": [
+                                    {
+                                        "name": "Podajnik",
+                                        "children": []
+                                    },
+                                    {
+                                        "name": "Folia Płaska",
+                                        "children": []
+                                    },
+                                    {
+                                        "name": "Zrzucony Worek",
+                                        "children": []
+                                    },
+                                    {
+                                        "name": "Czyszczenie",
+                                        "children": []
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "Strech-Hord",
+                                "children": [
+                                    {
+                                        "name": "Wymiana Foli",
+                                        "children": []
+                                    },
+                                    {
+                                        "name": "Jonizator",
+                                        "children": []
+                                    },
+                                    {
+                                        "name": "Czujnik Obecności",
+                                        "children": []
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "Brak Zasypu",
+                                "children": [
+                                    {
+                                        "name": "Brak Surowca",
+                                        "children": []
+                                    },
+                                    {
+                                        "name": "Brak MikroDodatku",
+                                        "children": []
+                                    },
+                                    {
+                                        "name": "Brak Czyściwa",
+                                        "children": []
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "Inne",
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Przerwa",
+                        "children": []
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "L2",
+        "children": [
+            {
+                "name": "Prygotowanie",
+                "children": [
+                    {
+                        "name": "Praca",
+                        "children": []
+                    },
+                    {
+                        "name": "Awaria",
+                        "children": [
+                            {
+                                "name": "Mieszalnik",
+                                "children": [
+                                    {
+                                        "name": "Awaria Klap Otwarcia",
+                                        "children": []
+                                    },
+                                    {
+                                        "name": "Awaria Klap Zamknięcia",
+                                        "children": []
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "Kosz Podmieszarkowy",
+                                "children": [
+                                    {
+                                        "name": "Awaria Ślimaka Wybierającego",
+                                        "children": []
+                                    },
+                                    {
+                                        "name": "Awaria Kubełków",
+                                        "children": []
+                                    },
+                                    {
+                                        "name": "Awaria Ślimaka",
+                                        "children": []
+                                    },
+                                    {
+                                        "name": "Awaria Zasuwy",
+                                        "children": []
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "Hangar",
+                                "children": [
+                                    {
+                                        "name": "Awaria Imak",
+                                        "children": []
+                                    },
+                                    {
+                                        "name": "Awaria Zgrzewania",
+                                        "children": []
+                                    },
+                                    {
+                                        "name": "Uszkodzony Worek ( sprzątanie )",
+                                        "children": []
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "Radimat",
+                                "children": [
+                                    {
+                                        "name": "Brak Worków",
+                                        "children": []
+                                    },
+                                    {
+                                        "name": "Brak Ciśnienia",
+                                        "children": []
+                                    },
+                                    {
+                                        "name": "Regulacja ustawień",
+                                        "children": []
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "Taśmociąg",
+                                "children": [
+                                    {
+                                        "name": "Zaklinowane Worki",
+                                        "children": []
+                                    },
+                                    {
+                                        "name": "Regulacja",
+                                        "children": []
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "Drukarka",
+                                "children": [
+                                    {
+                                        "name": "Głowica",
+                                        "children": []
+                                    },
+                                    {
+                                        "name": "Tusz",
+                                        "children": []
+                                    },
+                                    {
+                                        "name": "Solvent",
+                                        "children": []
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "Robot",
+                                "children": [
+                                    {
+                                        "name": "Pozycja Robota",
+                                        "children": []
+                                    },
+                                    {
+                                        "name": "Zły schemat",
+                                        "children": []
+                                    },
+                                    {
+                                        "name": "Rozerwany Worek (Łapa)",
+                                        "children": []
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "Podajnik Palet",
+                                "children": [
+                                    {
+                                        "name": "Awaria Łapy",
+                                        "children": []
+                                    },
+                                    {
+                                        "name": "Brak Palet",
+                                        "children": []
+                                    },
+                                    {
+                                        "name": "Uszkodzona Paleta",
+                                        "children": []
+                                    },
+                                    {
+                                        "name": "Bezpieczniki",
+                                        "children": []
+                                    },
+                                    {
+                                        "name": "Bariera",
+                                        "children": []
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "Rolotoki",
+                                "children": [
+                                    {
+                                        "name": "Zaklinowana Paleta",
+                                        "children": []
+                                    },
+                                    {
+                                        "name": "Czujniki Pozycji",
+                                        "children": []
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "Inne",
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Przerwa",
+                        "children": []
+                    }
+                ]
+            }
+        ]
+    }
+]

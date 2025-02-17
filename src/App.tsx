@@ -1,10 +1,8 @@
-import React, { useState, useCallback } from 'react';
-import { saveAs } from 'file-saver';
+import React, { useState, useEffect } from 'react';
 import ChooseYourL1L2 from './chooseHale';
-import axios from 'axios';
-import { createTimeElement, CategoryAwaria, TimeElement, categoryAwaria, TimeDifferenceCalculatorProps } from "./Interfaces";
 import "./App.css"
-// import { response } from 'express';
+import { TimeElement, TimeDifferenceCalculatorProps, Item } from "./Interfaces"
+
 
 
 const TimeDifferenceCalculator: React.FC<TimeDifferenceCalculatorProps> = ({ 
@@ -17,261 +15,108 @@ const TimeDifferenceCalculator: React.FC<TimeDifferenceCalculatorProps> = ({
   const [timeIsRuning, setTimeIsRuning] = useState<boolean>(true);
   const [lastStartDate, setLastStartDate] = useState<Date | null>(null);
   const [intervalDates, setIntervalDates] = useState<TimeElement[]>([]);
-  const [item, setItem] = useState<string>('0');
-  const [selectAwariaOption, setSelectAwariaOption] = useState<number | null>(null);
-  const [selectAwariaSubcategoryOption, setSelectAwariaSubcategoryOption] = useState<number | null>(null);
-  const [path, setPath] = useState<string>('');
-  const [showMainCategories, setShowMainCategories] = useState<boolean>(true);
   const [isFinished, setIsFinished] = useState<boolean>(false);
+  const [parent, setParent] = useState<Item[]>(filteredCategories);
+  const [newParent, setNewParent] = useState<Item[]>([]);
+  const [children, setChildren] = useState<Item[]>([]);
+  const [newChildren, setNewChildren] = useState<Item[]>([]);
+  const [newChildrenName, setNewChildrenName] = useState<string>('');
+  const [name, setName] = useState<string>('');
+  const [currentPath, setCurrentPath] = useState<string>('');
+  const [ifAwariaChoosen, setIfAwariaChoosen] = useState<boolean>(false);
+  const [pathLine, setPathLine] = useState<string[]>([currentCategry]);
 
-  const fullPath = (id: string) => {
-    console.log('fullPath', id);
-    let searchId = id;
-    let pathComplited = false;
-    let newFullPathComplited = '';
-  
-    while (pathComplited === false) {
-      pathComplited = true;
-      let awaria = categoryAwaria.find(cat => cat.id.toString() === searchId);
-      console.log(" awaria ", awaria);
-      if (awaria !== undefined) {
-        newFullPathComplited = awaria.value + newFullPathComplited;
-        if (awaria.parent.toString() !== "-1") {
-          pathComplited = false;
-          searchId = awaria.parent.toString();
-          newFullPathComplited = " / " + newFullPathComplited;
-        } else {
-          pathComplited = true;
-          newFullPathComplited = currentCategry + ' / ' + newFullPathComplited;
-        }
+  const fullPath = (pathName : string) => {
+    setPathLine((prev) => [...prev, pathName]);
+  }
+
+  const handleCategorySelect = (itemObject: Item, path: string) => {
+    setCurrentPath(path);
+    setNewChildrenName(path)
+    setName(itemObject.name);
+    if(itemObject.children.length <= 0) return ;
+    setChildren(itemObject.children);
+
+    if(ifAwariaChoosen) {
+      setNewChildren(itemObject.children); 
+    }
+  };
+  const handleSubCategorySelect = (itemObject: Item, path: string) => {
+    setNewChildrenName(path)
+
+    if(itemObject.children.length <= 0) return ;
+    setChildren(itemObject.children);
+
+    if(ifAwariaChoosen) {
+      setNewChildren(itemObject.children); 
+    }
+  };
+
+  const ifYouChooseAwariaOption = () => {
+      if (name === "Awaria") {
+        setIfAwariaChoosen(true);
+        setParent(children);
+        setNewParent(parent);
+        setNewChildren(parent);    
       }
     }
-    console.log('newFullPathComplited', newFullPathComplited);
-    setPath(newFullPathComplited);
-  };
 
+  useEffect(() => {
+  }, [parent, children, newParent, newChildren, newChildrenName, currentPath]);
 
-  const handleCategorySelect = useCallback((id: number, value: string, isSubcategory: boolean = false, currentPath : string) => {
-    console.log('handleCategorySelect:');
-    setItem(id.toString());
-
-    if (id === 3 && !isSubcategory) {
-      setShowMainCategories(false);
-    }
-    
-    fullPath(id.toString())
-    console.log('Updated path:', currentPath);
-
-}, [selectAwariaOption, selectAwariaSubcategoryOption]);
-
-  const handleStart1 = () => {
-    const now = new Date();
-    if(!initialStartTime) {
-      setInitialStartTime(now);
-    }
-    setLastStartDate(now);
-    setStartTime1(now);
-    setEndTime1(null);
-    setTimeIsRuning(!timeIsRuning);
-  };
+const handleStart1 = () => {
+  if(!name) return;
+  const now = new Date();
+  if(!initialStartTime) {
+    setInitialStartTime(now);
+  }
+  setLastStartDate(now);
+  setStartTime1(now);
+  setEndTime1(null);
+  setTimeIsRuning(!timeIsRuning);
+  ifYouChooseAwariaOption();
+  setNewChildren([]);
+  fullPath(name);
+};
 
   const handleStop1 = () => {
     const now = new Date();
     setEndTime1(now);
+  
+    if(lastStartDate && startTime1) {
+      const id: TimeElement = {
+        startDate: startTime1,
+        endDate: now,
+        path: currentPath,
+      };
 
-    if(lastStartDate) {
-      const id = createTimeElement(lastStartDate, now, parseInt(item), path);
       setTimeIsRuning(!timeIsRuning);
       setIntervalDates([...intervalDates, id]);
-      setItem('');
-      setShowMainCategories(true);
+      setIfAwariaChoosen(false);
+
+      if ( name === "Praca" ) {
+        setCurrentPath('');
+        setChildren([]);
+      } else if ( name === "Przerwa" ) {
+        setParent((prev) => prev.filter((item) => item.name !== "Przerwa"));
+      } else if (name === "Awaria" && ifAwariaChoosen){
+        setNewParent(children);
+      } else if (ifAwariaChoosen) {
+        setParent(newParent);
+      } else {
+        setParent(children);
+        setChildren([]);
+      }
+
+      setName('');
     }
   }
 
   const handleFinish1 = () => {
     if (!initialStartTime || !endTime1) return;
-
-    const firstStartTime = initialStartTime;
-    const finalEndTime = endTime1;
-    const totalTime = (finalEndTime.getTime() - firstStartTime.getTime()) / 1000;
-
-    const dataToSend = {
-      initialStartTime: initialStartTime.toLocaleString(),
-      finalEndTime: finalEndTime.toLocaleString(),
-      totalTime: totalTime.toFixed(2),
-      intervals: intervalDates.map(id => {
-        console.log('Обробляється інтервал з id:', id.category);
-        const pathValue = id.path;
-        console.log('Значення pathValue:', pathValue);
-        return {
-          startDate: id.startDate.toLocaleString(),
-          endtDate: id.endDate.toLocaleString(),
-          category: id.category,
-          path: pathValue,
-        }
-      })
-    };
-
-    axios.post('http://localhost:5000/save-time-data', dataToSend)
-      .then(response => {
-        console.log("Odpowiedż z serwera:", response.data);
-      
-        return   axios.get('http://localhost:5000/get-time-data');
-      })
-      .then(response => {
-        let fileData = '';
-
-        intervalDates.forEach(id => {
-          const pathValue = id.path;
-          fileData += id.startDate.toLocaleString() + `: ${id.endDate.toLocaleString()}` + `: ${id.category}` + `: ${pathValue}`;
-          fileData += '\n';
-        });
-
-        const blob = new Blob([fileData], { type: 'text/plain;charset=utf-8' });
-        saveAs(blob, 'time-difference.txt');
-      })
-      .catch(error => {
-        console.error('Błąd podczas pobierania pliku:', error);
-      });
     resetTimers();
-  
     setIsFinished(true);
-
 };
-
-  const getActiveCattegory = (): CategoryAwaria[] => {
-    const result: CategoryAwaria[] = [];
-
-    const mainCategoies = categoryAwaria.filter(
-      (category) =>
-        Number.isInteger(category.id) &&
-        category.parent === -1 &&
-        category.single !== 0
-    );
-
-    if(intervalDates.length === 0) {
-      return [mainCategoies[0]]
-    } 
-
-    mainCategoies.forEach(ciit => {
-      let addToList = true;
-      intervalDates.forEach(it => {
-        if(it.category === ciit.id && ciit.single === 1) {
-          addToList = false;
-        }
-      });
-      if(addToList) {
-        result.push(ciit);
-      }
-    });
-    return result;
-  }
-
-  const mapCategoryToOptions = () => {
-    if (showMainCategories) {
-        return getActiveCattegory().map(({ id, value }) => {
-            return (  
-              <div className='container-category-option'>
-                <button
-                    key={id}
-                    className={item === id.toString() ? "selected" : "not-selected"}
-                    onClick={() => handleCategorySelect(id, value, false, path)}
-                >
-                    {value} {item === id.toString() && '✓'}
-                </button>
-              </div>
-            );
-        });
-    }
-    return null;
-};
-
-  const handleSubCategorySelect = (id : number, value : string, currentPath : string) => {
-    console.log('handleSubCategorySelect:');
-    setSelectAwariaSubcategoryOption(id);
-
-    fullPath(id.toString())
-
-    console.log('Updated path:', currentPath);
-  };
-
-  const toggleCategoriesVisibility = () => {
-    setShowMainCategories(prev => !prev);
-
-    if(!showMainCategories) {
-      setSelectAwariaSubcategoryOption(null);
-      setItem("0");
-    }
-  }
-
-  const awariaOption = () => {
-
-    if (item === "3") {
-      return (
-          <div>
-            <div className='container-wstecz-button'>
-              <button 
-                onClick={toggleCategoriesVisibility}
-                className='wstecz-button'  
-              >
-                ←
-              </button>
-            </div>
-                {filteredCategories.map((cat) => (
-                  <div className='container-awaria-option'>                
-                    <button
-                        key={cat.id}
-                        className={selectAwariaSubcategoryOption === cat.id ? "selected" : "not-selected"}
-                        onClick={() => handleSubCategorySelect(cat.id, cat.value, path)}
-                    >
-                        {cat.value} 
-                        {selectAwariaSubcategoryOption === cat.id && '✓'}
-                    </button>
-                  </div>
-                ))}
-          </div>
-      );
-  }
-  return null;
-  };
-
-  const handleOptionChange = useCallback((id: number, value : string, currentPath : string) => {
-    console.log('handleOptionChange:');
-    const selectedSubcategory = categoryAwaria.find(cat => cat.id === id);
-  
-    if (selectedSubcategory) {
-      console.log('Selected subcategory parent ID:', selectedSubcategory.parent);
-    }
-  
-    setSelectAwariaOption(id);
-
-    fullPath(id.toString())
-    console.log('Updated path:', currentPath);
-
-  }, []);
-  
-
-  const renderAwariaOption = useCallback(() => {
-    const subCategories = categoryAwaria.filter(cat => 
-      cat.parent === selectAwariaSubcategoryOption && item === '3'
-    );
-
-    return subCategories.map(subcat => (
-      <div 
-        key={subcat.id}
-        className='container-awaria-subcategory'
-      >
-        <button 
-          className={selectAwariaOption === subcat.id ? "selected" : "not-selected"}
-          onClick={() => handleOptionChange(subcat.id, subcat.value, path)}
-        >
-          {subcat.value} 
-          {selectAwariaOption === subcat.id && '✓'}
-        </button>
-      </div>
-    ));
-  }, [selectAwariaSubcategoryOption, item, selectAwariaOption, handleOptionChange]);
-
   const resetTimers = () => {
     setInitialStartTime(null);
     setStartTime1(null);
@@ -279,11 +124,10 @@ const TimeDifferenceCalculator: React.FC<TimeDifferenceCalculatorProps> = ({
     setTimeIsRuning(true);
     setLastStartDate(null);
     setIntervalDates([]);
-    setItem('');
-    setSelectAwariaOption(null);
-    setSelectAwariaSubcategoryOption(null);
-    setPath(currentCategry);
-    // setIsFinished(false);
+    setChildren([]);
+    setParent(filteredCategories);
+    setCurrentPath('');
+    setIsFinished(false);
   };
 
   return (
@@ -293,7 +137,7 @@ const TimeDifferenceCalculator: React.FC<TimeDifferenceCalculatorProps> = ({
     ) : (
       <>
       <div className='container-path'>
-        <p>{path}</p>
+        {pathLine.join('/')}
       </div>
       <div className='btn-container'>
         <button
@@ -322,16 +166,34 @@ const TimeDifferenceCalculator: React.FC<TimeDifferenceCalculatorProps> = ({
 
       <div className='category-container'>
 
-        <div className='item-container'>
-          {mapCategoryToOptions()}
+        <div className='item-container'>        
+
+          {parent.map(category => (
+            <button
+              key={category.name}
+              className={currentPath === category.name ? "selected" : "not-selected"}
+              onClick={() => handleCategorySelect(category, category.name)}
+            >
+              {category.name} {currentPath === category.name && "✓"}
+            </button>
+          ))}
         </div>
 
         <div className='second-container'>
-          {awariaOption()}
+
+          {ifAwariaChoosen && (
+            newChildren.map(category => (
+              <button
+                key={category.name}
+                className={newChildrenName === category.name ? "selected" : "not-selected"}
+                onClick={() => handleSubCategorySelect(category, category.name)}
+              >
+                {category.name} {newChildrenName === category.name && "✓"}
+              </button>))
+          )}
         </div>
 
         <div className='sub-container'>
-          {renderAwariaOption()}
         </div>
       </div>
 
