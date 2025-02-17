@@ -26,27 +26,45 @@ const TimeDifferenceCalculator: React.FC<TimeDifferenceCalculatorProps> = ({
   const [ifAwariaChoosen, setIfAwariaChoosen] = useState<boolean>(false);
   const [pathLine, setPathLine] = useState<string[]>([currentCategry]);
 
-  const fullPath = (pathName : string) => {
-    setPathLine((prev) => [...prev, pathName]);
+  const fullPath = (pathName : string, index: number) => {
+    if(!ifAwariaChoosen) {
+      setPathLine((prev) => [...prev, pathName]);
+    } else {
+      setPathLine(prev => {
+        const updatedPathLine = [...prev];
+          updatedPathLine[index] = pathName;
+        return updatedPathLine;
+      })
+    }
   }
+  const startingPath = () => {
+    setPathLine((prev) => prev.slice(0, 2));
+  }
+
+  useEffect(() => {
+    console.log("pathLine", pathLine);
+  }, [pathLine])
 
   const handleCategorySelect = (itemObject: Item, path: string) => {
     setCurrentPath(path);
     setNewChildrenName(path)
     setName(itemObject.name);
+    
     if(itemObject.children.length <= 0) return ;
     setChildren(itemObject.children);
-
+    
     if(ifAwariaChoosen) {
       setNewChildren(itemObject.children); 
+      fullPath(path, 3);
     }
   };
   const handleSubCategorySelect = (itemObject: Item, path: string) => {
     setNewChildrenName(path)
-
+    fullPath(path, 4)
+    
     if(itemObject.children.length <= 0) return ;
     setChildren(itemObject.children);
-
+    
     if(ifAwariaChoosen) {
       setNewChildren(itemObject.children); 
     }
@@ -61,8 +79,6 @@ const TimeDifferenceCalculator: React.FC<TimeDifferenceCalculatorProps> = ({
       }
     }
 
-  useEffect(() => {
-  }, [parent, children, newParent, newChildren, newChildrenName, currentPath]);
 
 const handleStart1 = () => {
   if(!name) return;
@@ -76,7 +92,7 @@ const handleStart1 = () => {
   setTimeIsRuning(!timeIsRuning);
   ifYouChooseAwariaOption();
   setNewChildren([]);
-  fullPath(name);
+  fullPath(name, 0);
 };
 
   const handleStop1 = () => {
@@ -93,6 +109,7 @@ const handleStart1 = () => {
       setTimeIsRuning(!timeIsRuning);
       setIntervalDates([...intervalDates, id]);
       setIfAwariaChoosen(false);
+      startingPath();
 
       if ( name === "Praca" ) {
         setCurrentPath('');
@@ -103,6 +120,7 @@ const handleStart1 = () => {
         setNewParent(children);
       } else if (ifAwariaChoosen) {
         setParent(newParent);
+        console.log("pathLine", pathLine);
       } else {
         setParent(children);
         setChildren([]);
