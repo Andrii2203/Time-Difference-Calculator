@@ -26,18 +26,31 @@ const TimeDifferenceCalculator: React.FC<TimeDifferenceCalculatorProps> = ({
   const [ifAwariaChoosen, setIfAwariaChoosen] = useState<boolean>(false);
   const [pathLine, setPathLine] = useState<string[]>([currentCategry]);
   const [pathLineString, setPathLineString] = useState<string>('');
-  const [disableButton, setDisableButton] = useState<boolean>(false);
+  const [disableCategoryButton, setDisableCategoryButton] = useState<boolean>(false);
+  const [disableStopButton, setDisableStopButton] = useState<boolean>(false);
   
   const fullPath = (pathName : string, index: number) => {
+
     if(!ifAwariaChoosen) {
       setPathLine((prev) => [...prev, pathName]);
     } else {
       setPathLine(prev => {
         const updatedPathLine = [...prev];
-          updatedPathLine[index] = pathName;
+        updatedPathLine[index] = pathName;
+        if(updatedPathLine[index + 1]) {
+          setDisableStopButton(true);           
+          updatedPathLine.pop();
+        }
+        console.log("updatedPathLine.length", updatedPathLine.length);
+        if(updatedPathLine.length === 5) {
+          setDisableStopButton(false);           
+          
+        }
         return updatedPathLine;
       })
     }
+
+
   }
   const startingPath = () => {
     setPathLine((prev) => prev.slice(0, 2));
@@ -63,15 +76,16 @@ const TimeDifferenceCalculator: React.FC<TimeDifferenceCalculatorProps> = ({
     }
   };
   const handleSubCategorySelect = (itemObject: Item, childrenName: string) => {
-    setNewChildrenName(childrenName)
-    fullPath(childrenName, 4)
+    setNewChildrenName(childrenName);
+    fullPath(childrenName, 4);
     
     if(itemObject.children.length <= 0) return ;
     setChildren(itemObject.children);
     
     if(ifAwariaChoosen) {
       setNewChildren(itemObject.children); 
-    }
+    };
+
   };
 
   const ifYouChooseAwariaOption = () => {
@@ -80,7 +94,8 @@ const TimeDifferenceCalculator: React.FC<TimeDifferenceCalculatorProps> = ({
         setParent(children);
         setNewParent(parent);
         setNewChildren(parent);    
-        setDisableButton(false);
+        setDisableCategoryButton(false);
+        setDisableStopButton(true);
       }
     }
 
@@ -95,7 +110,7 @@ const handleStart1 = () => {
   setStartTime1(now);
   setEndTime1(null);
   setTimeIsRuning(!timeIsRuning);
-  setDisableButton(true);
+  setDisableCategoryButton(true);
   ifYouChooseAwariaOption();
   setNewChildren([]);
   fullPath(name, 0);
@@ -116,7 +131,8 @@ const handleStart1 = () => {
       setIntervalDates([...intervalDates, id]);
       setIfAwariaChoosen(false);
       startingPath();
-      setDisableButton(false);
+      setDisableCategoryButton(false);
+      setDisableStopButton(false);
 
       if ( name === "Praca" ) {
         setCurrentName('');
@@ -204,7 +220,7 @@ const handleStart1 = () => {
         </button>
         <button
             onClick={handleStop1}
-            disabled={timeIsRuning}
+            disabled={timeIsRuning || disableStopButton}
             className={`btn-stop ${timeIsRuning ? "btn-disabled" : ""}`}
         >
           Stop
@@ -227,7 +243,7 @@ const handleStart1 = () => {
             <button
               key={category.name}
               className={currentName === category.name ? "selected" : "not-selected"}
-              disabled={disableButton}
+              disabled={disableCategoryButton}
               onClick={() => handleCategorySelect(category, category.name)}
             >
               {category.name} {currentName === category.name && "✓"}

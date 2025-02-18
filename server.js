@@ -12,10 +12,8 @@ const app = express();
 app.use(cors());
 app.use(bodyParser.json());
 
-const date = new Date();
-const filename = `data-${date.getDate()}.${date.getMonth() + 1}.${date.getFullYear()}_${date.getHours()}.${date.getMinutes()}.txt`
-const filePath = path.join(__dirname, filename);
-// const filePath = path.join(__dirname, 'time-difference.txt');
+let filename;
+let filePath;
 
 const sendEmail = async (data) => {
     const transporter = nodemailer.createTransport({
@@ -43,7 +41,10 @@ const sendEmail = async (data) => {
 
 app.post('/save-time-data', async (req, res) => {
     const data = req.body;
-
+    const date = new Date();
+    filename = `data-${date.getDate()}.${date.getMonth() + 1}.${date.getFullYear()}_${date.getHours()}.${date.getMinutes()}.txt`
+    filePath = path.join(__dirname, filename);
+    
     fs.writeFile(filePath, JSON.stringify(data, null, 2), async (err) => {
         if (err) {
             return res.status(500).send('Błąd przy zapisywaniu danych');
