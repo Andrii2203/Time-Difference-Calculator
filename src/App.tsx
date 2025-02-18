@@ -2,8 +2,7 @@ import React, { useState, useEffect } from 'react';
 import ChooseYourL1L2 from './chooseHale';
 import "./App.css"
 import { TimeElement, TimeDifferenceCalculatorProps, Item } from "./Interfaces"
-
-
+import { changeTAndDeleteMilisec } from './changeTAndDeleteMilisec';
 
 const TimeDifferenceCalculator: React.FC<TimeDifferenceCalculatorProps> = ({ 
     filteredCategories, 
@@ -41,7 +40,6 @@ const TimeDifferenceCalculator: React.FC<TimeDifferenceCalculatorProps> = ({
           setDisableStopButton(true);           
           updatedPathLine.pop();
         }
-        console.log("updatedPathLine.length", updatedPathLine.length);
         if(updatedPathLine.length === 5) {
           setDisableStopButton(false);           
           
@@ -57,9 +55,7 @@ const TimeDifferenceCalculator: React.FC<TimeDifferenceCalculatorProps> = ({
   }
 
   useEffect(() => {
-    console.log("pathLine", pathLine);
     setPathLineString(pathLine.join('/'));
-    console.log("pathLineString", pathLineString);
   }, [pathLine, pathLineString])
 
   const handleCategorySelect = (itemObject: Item, parentName: string) => {
@@ -100,21 +96,21 @@ const TimeDifferenceCalculator: React.FC<TimeDifferenceCalculatorProps> = ({
     }
 
 
-const handleStart1 = () => {
-  if(!name) return;
-  const now = new Date();
-  if(!initialStartTime) {
-    setInitialStartTime(now);
-  }
-  setLastStartDate(now);
-  setStartTime1(now);
-  setEndTime1(null);
-  setTimeIsRuning(!timeIsRuning);
-  setDisableCategoryButton(true);
-  ifYouChooseAwariaOption();
-  setNewChildren([]);
-  fullPath(name, 0);
-};
+  const handleStart1 = () => {
+    if(!name) return;
+    const now = new Date();
+    if(!initialStartTime) {
+      setInitialStartTime(now);
+    }
+    setLastStartDate(now);
+    setStartTime1(now);
+    setEndTime1(null);
+    setTimeIsRuning(!timeIsRuning);
+    setDisableCategoryButton(true);
+    ifYouChooseAwariaOption();
+    setNewChildren([]);
+    fullPath(name, 0);
+  };
 
   const handleStop1 = () => {
     const now = new Date();
@@ -143,7 +139,6 @@ const handleStart1 = () => {
         setNewParent(children);
       } else if (ifAwariaChoosen) {
         setParent(newParent);
-        console.log("pathLine", pathLine);
       } else {
         setParent(children);
         setChildren([]);
@@ -158,19 +153,16 @@ const handleStart1 = () => {
 
     const firstStartTime = initialStartTime;
     const finalEndTime = endTime1;
-    const totalTime = (finalEndTime.getTime() - firstStartTime.getTime()) / 1000;
+    const totalTime = Math.floor((finalEndTime.getTime() - firstStartTime.getTime()) / 1000);
 
     const dataToSend = {
-      initialStartTime: initialStartTime.toLocaleString(),
-      finalEndTime: finalEndTime.toLocaleString(),
-      totalTime: totalTime.toFixed(2),
+      initialStartTime: changeTAndDeleteMilisec(initialStartTime),
+      finalEndTime: changeTAndDeleteMilisec(finalEndTime),
+      totalTime: totalTime.toFixed(0),
       intervals: intervalDates.map(id => {
-        console.log("id", id);
-        const pathValue = id.path;
-        console.log("pathValue", pathValue);
         return {
-          startDate: id.startDate.toLocaleString(),
-          endDate: id.endDate.toLocaleString(),
+          startDate: changeTAndDeleteMilisec(id.startDate),
+          endDate: changeTAndDeleteMilisec(id.endDate),
           path: id.path,
         }
       })
@@ -272,19 +264,19 @@ const handleStart1 = () => {
       <div className='container-with-time'>
         {startTime1 && (
             <div>
-              <p>Start: {startTime1.toLocaleString()}</p>
+              <p>Start: {changeTAndDeleteMilisec(startTime1)}</p>
             </div>
         )}
 
         {endTime1 && (
             <div>
-              <p>Stop: {endTime1.toLocaleString()}</p>
+              <p>Stop: {changeTAndDeleteMilisec(endTime1)}</p>
             </div>
         )}
 
         {initialStartTime && (
             <div>
-              <p>Initial Start Time: {initialStartTime.toLocaleString()}</p>
+              <p>Initial Start Time: {changeTAndDeleteMilisec(initialStartTime)}</p>
           </div>
         )}
       </div>

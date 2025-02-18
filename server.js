@@ -42,7 +42,7 @@ const sendEmail = async (data) => {
 app.post('/save-time-data', async (req, res) => {
     const data = req.body;
     const date = new Date();
-    filename = `data-${date.getDate()}.${date.getMonth() + 1}.${date.getFullYear()}_${date.getHours()}.${date.getMinutes()}.txt`
+    filename = `data-${date.getFullYear()}.${date.getMonth() + 1}.${date.getDate()}_${date.getHours()}.${date.getMinutes()}.txt`
     filePath = path.join(__dirname, filename);
     
     fs.writeFile(filePath, JSON.stringify(data, null, 2), async (err) => {
