@@ -5,13 +5,17 @@ const bodyParser = require('body-parser');
 const fs = require('fs');
 const path = require('path'); 
 const nodemailer = require("nodemailer");
+const { get } = require("http");
 
 const app = express();
 
 app.use(cors());
 app.use(bodyParser.json());
 
-const filePath = path.join(__dirname, 'time-difference.txt');
+const date = new Date();
+const filename = `data-${date.getFullYear()}/${date.getMonth() + 1}/${date.getDate()} ${date.getHours()}:${date.getMinutes()}.txt`
+const filePath = path.join(__dirname, filename);
+// const filePath = path.join(__dirname, 'time-difference.txt');
 
 const sendEmail = async (data) => {
     const transporter = nodemailer.createTransport({
@@ -26,7 +30,7 @@ const sendEmail = async (data) => {
         from: process.env.EMAIL_USER,
         to: "qqq91166@gmail.com",
         subject: "Time Difference Data",
-        text: `that are a new data:\n\n${JSON.stringify(data, null, 2)}`
+        text: `\n\n${JSON.stringify(data, null, 2)}`
     };
 
     try{

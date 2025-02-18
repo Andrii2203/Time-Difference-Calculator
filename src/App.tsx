@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import ChooseYourL1L2 from './chooseHale';
 import "./App.css"
 import { TimeElement, TimeDifferenceCalculatorProps, Item } from "./Interfaces"
-import axios from 'axios';
 
 
 
@@ -23,10 +22,12 @@ const TimeDifferenceCalculator: React.FC<TimeDifferenceCalculatorProps> = ({
   const [newChildren, setNewChildren] = useState<Item[]>([]);
   const [newChildrenName, setNewChildrenName] = useState<string>('');
   const [name, setName] = useState<string>('');
-  const [currentPath, setCurrentPath] = useState<string>('');
+  const [currentName, setCurrentName] = useState<string>('');
   const [ifAwariaChoosen, setIfAwariaChoosen] = useState<boolean>(false);
   const [pathLine, setPathLine] = useState<string[]>([currentCategry]);
-
+  const [pathLineString, setPathLineString] = useState<string>('');
+  const [disableButton, setDisableButton] = useState<boolean>(false);
+  
   const fullPath = (pathName : string, index: number) => {
     if(!ifAwariaChoosen) {
       setPathLine((prev) => [...prev, pathName]);
@@ -44,11 +45,13 @@ const TimeDifferenceCalculator: React.FC<TimeDifferenceCalculatorProps> = ({
 
   useEffect(() => {
     console.log("pathLine", pathLine);
-  }, [pathLine])
+    setPathLineString(pathLine.join('/'));
+    console.log("pathLineString", pathLineString);
+  }, [pathLine, pathLineString])
 
-  const handleCategorySelect = (itemObject: Item, path: string) => {
-    setCurrentPath(path);
-    setNewChildrenName(path)
+  const handleCategorySelect = (itemObject: Item, parentName: string) => {
+    setCurrentName(parentName);
+    setNewChildrenName(parentName)
     setName(itemObject.name);
     
     if(itemObject.children.length <= 0) return ;
@@ -56,12 +59,12 @@ const TimeDifferenceCalculator: React.FC<TimeDifferenceCalculatorProps> = ({
     
     if(ifAwariaChoosen) {
       setNewChildren(itemObject.children); 
-      fullPath(path, 3);
+      fullPath(parentName, 3);
     }
   };
-  const handleSubCategorySelect = (itemObject: Item, path: string) => {
-    setNewChildrenName(path)
-    fullPath(path, 4)
+  const handleSubCategorySelect = (itemObject: Item, childrenName: string) => {
+    setNewChildrenName(childrenName)
+    fullPath(childrenName, 4)
     
     if(itemObject.children.length <= 0) return ;
     setChildren(itemObject.children);
@@ -77,6 +80,7 @@ const TimeDifferenceCalculator: React.FC<TimeDifferenceCalculatorProps> = ({
         setParent(children);
         setNewParent(parent);
         setNewChildren(parent);    
+        setDisableButton(false);
       }
     }
 
@@ -91,6 +95,7 @@ const handleStart1 = () => {
   setStartTime1(now);
   setEndTime1(null);
   setTimeIsRuning(!timeIsRuning);
+  setDisableButton(true);
   ifYouChooseAwariaOption();
   setNewChildren([]);
   fullPath(name, 0);
@@ -104,16 +109,17 @@ const handleStart1 = () => {
       const id: TimeElement = {
         startDate: startTime1,
         endDate: now,
-        path: currentPath,
+        path: pathLineString,
       };
 
       setTimeIsRuning(!timeIsRuning);
       setIntervalDates([...intervalDates, id]);
       setIfAwariaChoosen(false);
       startingPath();
+      setDisableButton(false);
 
       if ( name === "Praca" ) {
-        setCurrentPath('');
+        setCurrentName('');
         setChildren([]);
       } else if ( name === "Przerwa" ) {
         setParent((prev) => prev.filter((item) => item.name !== "Przerwa"));
@@ -149,19 +155,11 @@ const handleStart1 = () => {
         return {
           startDate: id.startDate.toLocaleString(),
           endDate: id.endDate.toLocaleString(),
-          category: pathLine,
           path: id.path,
         }
       })
     }
 
-    // axios.post('http://localhost:5000/save-time-data', dataToSend)
-    //   .then(response => {
-    //     console.log("Odpowiedż z serwera:", response.data);
-    //   })
-    //   .catch(error => {
-    //     console.error("Bląd podczas wysyłania danych na serwer:", error);
-    //   })
     await fetch("http://localhost:5000/save-time-data", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -183,7 +181,7 @@ const handleStart1 = () => {
     setIntervalDates([]);
     setChildren([]);
     setParent(filteredCategories);
-    setCurrentPath('');
+    setCurrentName('');
     setIsFinished(false);
   };
 
@@ -228,10 +226,11 @@ const handleStart1 = () => {
           {parent.map(category => (
             <button
               key={category.name}
-              className={currentPath === category.name ? "selected" : "not-selected"}
+              className={currentName === category.name ? "selected" : "not-selected"}
+              disabled={disableButton}
               onClick={() => handleCategorySelect(category, category.name)}
             >
-              {category.name} {currentPath === category.name && "✓"}
+              {category.name} {currentName === category.name && "✓"}
             </button>
           ))}
         </div>
@@ -283,6 +282,5 @@ const handleStart1 = () => {
     </div>
     
 )};
-
 
 export default TimeDifferenceCalculator;

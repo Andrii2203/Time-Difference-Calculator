@@ -1,43 +1,27 @@
 {
-  "initialStartTime": "17.02.2025, 23:48:43",
-  "finalEndTime": "17.02.2025, 23:48:53",
-  "totalTime": "9.85",
+  "initialStartTime": "2/18/2025, 10:45:56 AM",
+  "finalEndTime": "2/18/2025, 10:46:20 AM",
+  "totalTime": "24.53",
   "intervals": [
     {
-      "startDate": "17.02.2025, 23:48:43",
-      "endDate": "17.02.2025, 23:48:43",
-      "category": [
-        "L2",
-        "Prygotowanie"
-      ],
-      "path": "Prygotowanie"
+      "startDate": "2/18/2025, 10:45:56 AM",
+      "endDate": "2/18/2025, 10:45:56 AM",
+      "path": "L1/Prygotowanie"
     },
     {
-      "startDate": "17.02.2025, 23:48:44",
-      "endDate": "17.02.2025, 23:48:47",
-      "category": [
-        "L2",
-        "Prygotowanie"
-      ],
-      "path": "Mieszalnik"
+      "startDate": "2/18/2025, 10:45:57 AM",
+      "endDate": "2/18/2025, 10:46:02 AM",
+      "path": "L1/Prygotowanie/Awaria/Brak Zasypu/Brak MikroDodatku"
     },
     {
-      "startDate": "17.02.2025, 23:48:49",
-      "endDate": "17.02.2025, 23:48:49",
-      "category": [
-        "L2",
-        "Prygotowanie"
-      ],
-      "path": "Przerwa"
+      "startDate": "2/18/2025, 10:46:13 AM",
+      "endDate": "2/18/2025, 10:46:16 AM",
+      "path": "L1/Prygotowanie/Praca"
     },
     {
-      "startDate": "17.02.2025, 23:48:50",
-      "endDate": "17.02.2025, 23:48:53",
-      "category": [
-        "L2",
-        "Prygotowanie"
-      ],
-      "path": "Praca"
+      "startDate": "2/18/2025, 10:46:18 AM",
+      "endDate": "2/18/2025, 10:46:20 AM",
+      "path": "L1/Prygotowanie/Przerwa"
     }
   ]
 }

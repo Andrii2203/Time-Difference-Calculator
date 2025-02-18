@@ -1,0 +1,27 @@
+{
+  "initialStartTime": "2/18/2025, 10:46:58 AM",
+  "finalEndTime": "2/18/2025, 10:47:06 AM",
+  "totalTime": "8.18",
+  "intervals": [
+    {
+      "startDate": "2/18/2025, 10:46:58 AM",
+      "endDate": "2/18/2025, 10:46:58 AM",
+      "path": "L1/Prygotowanie"
+    },
+    {
+      "startDate": "2/18/2025, 10:46:59 AM",
+      "endDate": "2/18/2025, 10:47:00 AM",
+      "path": "L1/Prygotowanie/Praca"
+    },
+    {
+      "startDate": "2/18/2025, 10:47:01 AM",
+      "endDate": "2/18/2025, 10:47:02 AM",
+      "path": "L1/Prygotowanie/Przerwa"
+    },
+    {
+      "startDate": "2/18/2025, 10:47:03 AM",
+      "endDate": "2/18/2025, 10:47:06 AM",
+      "path": "L1/Prygotowanie/Awaria/Zbiorniki Mikro/SZFD"
+    }
+  ]
+}
