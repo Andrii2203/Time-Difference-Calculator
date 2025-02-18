@@ -13,7 +13,7 @@ app.use(cors());
 app.use(bodyParser.json());
 
 const date = new Date();
-const filename = `data-${date.getFullYear()}/${date.getMonth() + 1}/${date.getDate()} ${date.getHours()}:${date.getMinutes()}.txt`
+const filename = `data-${date.getDate()}.${date.getMonth() + 1}.${date.getFullYear()}_${date.getHours()}.${date.getMinutes()}.txt`
 const filePath = path.join(__dirname, filename);
 // const filePath = path.join(__dirname, 'time-difference.txt');
 
