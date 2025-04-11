@@ -7,10 +7,6 @@
                 "children": []
             },
             {
-                "name": "Praca",
-                "children": []
-            },
-            {
                 "name": "Awaria",
                 "children": [
                     {
@@ -220,10 +216,6 @@
         "children": [
             {
                 "name": "Prygotowanie",
-                "children": []
-            },
-            {
-                "name": "Praca",
                 "children": []
             },
             {
