@@ -1,0 +1,1051 @@
+2025-04-09 14:01:33 info: Server is running on port 5000
+2025-04-09 14:02:48 info: ::1 - - [09/Apr/2025:12:02:48 +0000] "GET /check-devices?fingerprint=b2574ad10468885255b5d36f3beb82dc HTTP/1.1" 400 21 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-09 14:02:48 info: ::1 - - [09/Apr/2025:12:02:48 +0000] "POST /save-devices HTTP/1.1" 200 35 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-09 14:02:48 info: ::1 - - [09/Apr/2025:12:02:48 +0000] "GET /check-devices?fingerprint=b2574ad10468885255b5d36f3beb82dc HTTP/1.1" 400 21 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-09 14:02:48 info: ::1 - - [09/Apr/2025:12:02:48 +0000] "POST /save-devices HTTP/1.1" 200 35 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-09 14:02:49 info: ::1 - - [09/Apr/2025:12:02:49 +0000] "GET /login HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-09 14:02:49 info: ::1 - - [09/Apr/2025:12:02:49 +0000] "GET /favicon.ico HTTP/1.1" 302 28 "http://localhost:5000/login" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-09 14:02:49 info: ::1 - - [09/Apr/2025:12:02:49 +0000] "GET /login HTTP/1.1" 304 - "http://localhost:5000/login" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-09 14:03:10 info: ::1 - - [09/Apr/2025:12:03:10 +0000] "GET /check-devices?fingerprint=b2574ad10468885255b5d36f3beb82dc HTTP/1.1" 400 21 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-09 14:03:10 info: ::1 - - [09/Apr/2025:12:03:10 +0000] "GET /check-devices?fingerprint=b2574ad10468885255b5d36f3beb82dc HTTP/1.1" 400 21 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-09 14:03:10 info: ::1 - - [09/Apr/2025:12:03:10 +0000] "POST /save-devices HTTP/1.1" 200 35 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-09 14:03:11 info: ::1 - - [09/Apr/2025:12:03:11 +0000] "POST /save-devices HTTP/1.1" 200 35 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-09 14:03:26 info: ::1 - - [09/Apr/2025:12:03:26 +0000] "POST /api/login HTTP/1.1" 200 155 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-09 14:03:29 info: ::1 - - [09/Apr/2025:12:03:29 +0000] "GET /login HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-09 14:03:29 info: ::1 - - [09/Apr/2025:12:03:29 +0000] "GET /favicon.ico HTTP/1.1" 302 28 "http://localhost:5000/login" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-09 14:03:29 info: ::1 - - [09/Apr/2025:12:03:29 +0000] "GET /login HTTP/1.1" 304 - "http://localhost:5000/login" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-09 14:03:35 info: ::1 - - [09/Apr/2025:12:03:35 +0000] "POST /login HTTP/1.1" 302 43 "http://localhost:5000/login" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-09 14:03:35 info: ::1 - - [09/Apr/2025:12:03:35 +0000] "GET /get-time-data HTTP/1.1" 500 24 "http://localhost:5000/login" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-09 14:03:35 info: ::1 - - [09/Apr/2025:12:03:35 +0000] "GET /favicon.ico HTTP/1.1" 404 150 "http://localhost:5000/get-time-data" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-09 14:03:40 info: ::1 - - [09/Apr/2025:12:03:40 +0000] "POST /save-devices HTTP/1.1" 200 35 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-09 14:03:40 info: ::1 - - [09/Apr/2025:12:03:40 +0000] "POST /save-devices HTTP/1.1" 200 35 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-09 14:03:40 info: ::1 - - [09/Apr/2025:12:03:40 +0000] "GET /check-devices?fingerprint=b2574ad10468885255b5d36f3beb82dc HTTP/1.1" 200 29 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-09 14:03:40 info: ::1 - - [09/Apr/2025:12:03:40 +0000] "GET /check-devices?fingerprint=b2574ad10468885255b5d36f3beb82dc HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-09 14:03:51 info: ::1 - - [09/Apr/2025:12:03:51 +0000] "POST /save-time-data HTTP/1.1" 200 55 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-09 14:03:55 info: ::1 - - [09/Apr/2025:12:03:55 +0000] "GET /get-time-data HTTP/1.1" 200 661 "http://localhost:5000/login" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-09 14:11:23 info: ::1 - - [09/Apr/2025:12:11:23 +0000] "POST /save-devices HTTP/1.1" 200 35 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-09 14:11:24 info: ::1 - - [09/Apr/2025:12:11:24 +0000] "POST /save-devices HTTP/1.1" 200 35 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-09 14:11:24 info: ::1 - - [09/Apr/2025:12:11:24 +0000] "GET /check-devices?fingerprint=92fe2565b0797bde0592f18c4d63d389 HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-09 14:11:25 info: ::1 - - [09/Apr/2025:12:11:25 +0000] "GET /check-devices?fingerprint=92fe2565b0797bde0592f18c4d63d389 HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-09 14:26:15 info: Server is running on port 5000
+2025-04-09 14:26:43 info: Server is running on port 5000
+2025-04-09 14:26:55 info: GET /get-time-data 500 24 - 78.497 ms
+2025-04-09 14:27:00 info: GET /logout 200 23 - 3.447 ms
+2025-04-09 14:27:02 info: GET / 200 17 - 0.557 ms
+2025-04-09 14:27:04 info: GET /login 302 43 - 4.761 ms
+2025-04-09 14:27:04 info: GET /get-time-data 500 24 - 6.962 ms
+2025-04-09 14:27:07 info: GET / 304 - - 2.152 ms
+2025-04-09 14:27:09 info: GET /login 302 43 - 6.759 ms
+2025-04-09 14:27:09 info: GET /get-time-data 500 24 - 50.143 ms
+2025-04-09 14:27:09 info: GET /logout 304 - - 0.749 ms
+2025-04-09 14:27:12 info: GET / 304 - - 1.570 ms
+2025-04-09 14:27:21 info: GET / 304 - - 0.696 ms
+2025-04-09 14:27:26 info: GET /login 302 43 - 0.435 ms
+2025-04-09 14:27:26 info: GET /get-time-data 500 24 - 11.778 ms
+2025-04-09 14:27:33 info: GET /check-devices?fingerprint=b2574ad10468885255b5d36f3beb82dc 400 12 - 1.523 ms
+2025-04-09 14:27:33 info: GET /check-devices?fingerprint=b2574ad10468885255b5d36f3beb82dc 400 12 - 1.094 ms
+2025-04-09 14:27:34 info: POST /save-devices 400 41 - 0.891 ms
+2025-04-09 14:27:34 info: POST /save-devices 400 41 - 0.355 ms
+2025-04-09 14:27:36 info: GET /get-time-data 500 24 - 12.767 ms
+2025-04-09 14:27:39 info: GET /logout 304 - - 1.584 ms
+2025-04-09 14:27:44 info: GET /login 302 43 - 6.877 ms
+2025-04-09 14:27:44 info: GET /get-time-data 500 24 - 16.564 ms
+2025-04-09 14:27:45 info: GET /login 302 43 - 0.641 ms
+2025-04-09 14:27:45 info: GET /get-time-data 500 24 - 6.089 ms
+2025-04-09 14:27:59 info: Server is running on port 5000
+2025-04-09 14:28:05 info: GET / 304 - - 28.827 ms
+2025-04-09 14:28:08 info: GET /logout 200 37 - 2.524 ms
+2025-04-09 14:28:11 info: GET /check-devices?fingerprint=b2574ad10468885255b5d36f3beb82dc 400 12 - 1.847 ms
+2025-04-09 14:28:11 info: GET /check-devices?fingerprint=b2574ad10468885255b5d36f3beb82dc 400 12 - 0.870 ms
+2025-04-09 14:28:12 info: POST /save-devices 400 41 - 1.823 ms
+2025-04-09 14:28:12 info: POST /save-devices 400 41 - 1.917 ms
+2025-04-09 14:28:12 info: GET /check-devices?fingerprint=b2574ad10468885255b5d36f3beb82dc 400 12 - 1.360 ms
+2025-04-09 14:28:12 info: GET /check-devices?fingerprint=b2574ad10468885255b5d36f3beb82dc 400 12 - 2.195 ms
+2025-04-09 14:28:13 info: POST /save-devices 400 41 - 1.305 ms
+2025-04-09 14:28:13 info: POST /save-devices 400 41 - 1.101 ms
+2025-04-09 14:28:22 info: POST /api/login 200 155 - 213.597 ms
+2025-04-09 14:28:33 info: GET /logout 304 - - 4.986 ms
+2025-04-09 14:28:35 info: GET / 304 - - 1.819 ms
+2025-04-09 14:28:39 info: GET /login 200 303 - 0.650 ms
+2025-04-09 14:28:43 info: POST /login 302 43 - 337.120 ms
+2025-04-09 14:28:43 info: GET /get-time-data 500 24 - 18.169 ms
+2025-04-09 14:28:46 info: POST /save-devices 200 35 - 2.951 ms
+2025-04-09 14:28:46 info: POST /save-devices 200 35 - 1.756 ms
+2025-04-09 14:28:46 info: GET /check-devices?fingerprint=b2574ad10468885255b5d36f3beb82dc 200 29 - 588.789 ms
+2025-04-09 14:28:47 info: GET /check-devices?fingerprint=b2574ad10468885255b5d36f3beb82dc 304 - - 775.496 ms
+2025-04-09 14:28:55 info: POST /save-time-data 200 55 - 1960.753 ms
+2025-04-09 14:28:58 info: GET /get-time-data 200 513 - 50.253 ms
+2025-04-09 14:31:00 info: Server is running on port 5000
+2025-04-09 15:12:37 info: Server is running on port 5000
+2025-04-09 15:12:39 info: Logout request received on server
+2025-04-09 15:12:39 info: Access token found, adding to blacklist
+2025-04-09 15:12:39 info: Refresh token found for username: admin, deleting from REFRESH_TOKENS
+2025-04-09 15:12:39 info: User logged out successfully on server
+2025-04-09 15:12:39 info: ::1 - - [09/Apr/2025:13:12:39 +0000] "GET /logout HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-09 15:12:39 info: Incoming request to /favicon.ico
+2025-04-09 15:12:39 info: No access token found in cookies
+2025-04-09 15:12:39 info: ::1 - - [09/Apr/2025:13:12:39 +0000] "GET /favicon.ico HTTP/1.1" 302 28 "http://localhost:5000/logout" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-09 15:12:39 info: Access token found in cookies: No
+2025-04-09 15:12:39 info: No access token found, rendering login form
+2025-04-09 15:12:39 info: ::1 - - [09/Apr/2025:13:12:39 +0000] "GET /login HTTP/1.1" 200 303 "http://localhost:5000/logout" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-09 15:12:40 info: Logout request received on server
+2025-04-09 15:12:40 info: User logged out successfully on server
+2025-04-09 15:12:40 info: ::1 - - [09/Apr/2025:13:12:40 +0000] "GET /logout HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-09 15:12:40 info: Incoming request to /favicon.ico
+2025-04-09 15:12:40 info: No access token found in cookies
+2025-04-09 15:12:40 info: ::1 - - [09/Apr/2025:13:12:40 +0000] "GET /favicon.ico HTTP/1.1" 302 28 "http://localhost:5000/logout" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-09 15:12:40 info: Access token found in cookies: No
+2025-04-09 15:12:40 info: No access token found, rendering login form
+2025-04-09 15:12:40 info: ::1 - - [09/Apr/2025:13:12:40 +0000] "GET /login HTTP/1.1" 304 - "http://localhost:5000/logout" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-09 15:12:43 info: ::1 - - [09/Apr/2025:13:12:43 +0000] "GET / HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-09 15:12:43 info: Incoming request to /favicon.ico
+2025-04-09 15:12:43 info: No access token found in cookies
+2025-04-09 15:12:43 info: ::1 - - [09/Apr/2025:13:12:43 +0000] "GET /favicon.ico HTTP/1.1" 302 28 "http://localhost:5000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-09 15:12:43 info: Access token found in cookies: No
+2025-04-09 15:12:43 info: No access token found, rendering login form
+2025-04-09 15:12:43 info: ::1 - - [09/Apr/2025:13:12:43 +0000] "GET /login HTTP/1.1" 304 - "http://localhost:5000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-09 15:12:46 info: Access token found in cookies: No
+2025-04-09 15:12:46 info: No access token found, rendering login form
+2025-04-09 15:12:46 info: ::1 - - [09/Apr/2025:13:12:46 +0000] "GET /login HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-09 15:12:46 info: Incoming request to /favicon.ico
+2025-04-09 15:12:46 info: No access token found in cookies
+2025-04-09 15:12:46 info: ::1 - - [09/Apr/2025:13:12:46 +0000] "GET /favicon.ico HTTP/1.1" 302 28 "http://localhost:5000/login" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-09 15:12:46 info: Access token found in cookies: No
+2025-04-09 15:12:46 info: No access token found, rendering login form
+2025-04-09 15:12:46 info: ::1 - - [09/Apr/2025:13:12:46 +0000] "GET /login HTTP/1.1" 304 - "http://localhost:5000/login" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-09 15:12:51 info: Login attempt for user: admin on client IP: ::1 on server
+2025-04-09 15:12:51 info: Stored token after login: undefined
+2025-04-09 15:12:52 info: Credentials are correct for username: admin
+2025-04-09 15:12:52 info: Generated access token for user: admin
+2025-04-09 15:12:52 info: Generated refresh token for user: admin
+2025-04-09 15:12:52 info: Generated refresh token
+2025-04-09 15:12:52 info: Generated access token
+2025-04-09 15:12:52 info: Tokens set in cookies redirecting to /get-time-data
+2025-04-09 15:12:52 info: ::1 - - [09/Apr/2025:13:12:52 +0000] "POST /login HTTP/1.1" 302 43 "http://localhost:5000/login" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-09 15:12:52 info: Incoming request to /get-time-data
+2025-04-09 15:12:52 info: Verifying token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiaWF0IjoxNzQ0MjA0MzcyLCJleHAiOjE3NDQyOTA3NzJ9.rd7105xRwkSoiCS_xkEGbkKNvkDy0xb6AeqOeDrfCiY
+2025-04-09 15:12:52 info: Token verified successfully for user: admin
+2025-04-09 15:12:52 info: File path is not defined for user: admin
+2025-04-09 15:12:52 info: ::1 - - [09/Apr/2025:13:12:52 +0000] "GET /get-time-data HTTP/1.1" 500 24 "http://localhost:5000/login" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-09 15:12:52 info: Incoming request to /favicon.ico
+2025-04-09 15:12:52 info: Verifying token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiaWF0IjoxNzQ0MjA0MzcyLCJleHAiOjE3NDQyOTA3NzJ9.rd7105xRwkSoiCS_xkEGbkKNvkDy0xb6AeqOeDrfCiY
+2025-04-09 15:12:52 info: Token verified successfully for user: admin
+2025-04-09 15:12:52 info: ::1 - - [09/Apr/2025:13:12:52 +0000] "GET /favicon.ico HTTP/1.1" 404 150 "http://localhost:5000/get-time-data" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-09 15:12:54 info: Check devices request received for fingerprint: b2574ad10468885255b5d36f3beb82dc
+2025-04-09 15:12:54 info: Refresh token verified for user: admin
+2025-04-09 15:12:54 info: Decoded refresh token for username: admin
+2025-04-09 15:12:54 info: Found 5 devices for user admin
+2025-04-09 15:12:54 info: Comparing refresh token for device with fingerprint 44bb0280dd5aed3e82967d9b86e17caf
+2025-04-09 15:12:55 info: Comparing refresh token for device with fingerprint 51e90e9e12a94d52e13bc388a5692393
+2025-04-09 15:12:55 info: Save device request received. Fingerprint: b2574ad10468885255b5d36f3beb82dc
+2025-04-09 15:12:55 info: Decoded refresh token for user: admin
+2025-04-09 15:12:55 info: Decoded refresh token for username: admin
+2025-04-09 15:12:55 info: Found 5 devices for user admin
+2025-04-09 15:12:55 info: Device already exists for username: admin, fingerprint: b2574ad10468885255b5d36f3beb82dc
+2025-04-09 15:12:55 info: ::1 - - [09/Apr/2025:13:12:55 +0000] "POST /save-devices HTTP/1.1" 200 35 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-09 15:12:55 info: Comparing refresh token for device with fingerprint 3b9cd273c2a66a3e7bdb3a3d5e70f358
+2025-04-09 15:12:55 info: Save device request received. Fingerprint: b2574ad10468885255b5d36f3beb82dc
+2025-04-09 15:12:55 info: Decoded refresh token for user: admin
+2025-04-09 15:12:55 info: Decoded refresh token for username: admin
+2025-04-09 15:12:55 info: Found 5 devices for user admin
+2025-04-09 15:12:55 info: Device already exists for username: admin, fingerprint: b2574ad10468885255b5d36f3beb82dc
+2025-04-09 15:12:55 info: ::1 - - [09/Apr/2025:13:12:55 +0000] "POST /save-devices HTTP/1.1" 200 35 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-09 15:12:55 info: Comparing refresh token for device with fingerprint b2574ad10468885255b5d36f3beb82dc
+2025-04-09 15:12:55 info: Device verified for username: admin
+2025-04-09 15:12:55 info: ::1 - - [09/Apr/2025:13:12:55 +0000] "GET /check-devices?fingerprint=b2574ad10468885255b5d36f3beb82dc HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-09 15:12:55 info: Check devices request received for fingerprint: b2574ad10468885255b5d36f3beb82dc
+2025-04-09 15:12:55 info: Refresh token verified for user: admin
+2025-04-09 15:12:55 info: Decoded refresh token for username: admin
+2025-04-09 15:12:55 info: Found 5 devices for user admin
+2025-04-09 15:12:55 info: Comparing refresh token for device with fingerprint 44bb0280dd5aed3e82967d9b86e17caf
+2025-04-09 15:12:55 info: Comparing refresh token for device with fingerprint 51e90e9e12a94d52e13bc388a5692393
+2025-04-09 15:12:55 info: Comparing refresh token for device with fingerprint 3b9cd273c2a66a3e7bdb3a3d5e70f358
+2025-04-09 15:12:55 info: Comparing refresh token for device with fingerprint b2574ad10468885255b5d36f3beb82dc
+2025-04-09 15:12:55 info: Device verified for username: admin
+2025-04-09 15:12:55 info: ::1 - - [09/Apr/2025:13:12:55 +0000] "GET /check-devices?fingerprint=b2574ad10468885255b5d36f3beb82dc HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-09 15:13:11 info: Check devices request received for fingerprint: b2574ad10468885255b5d36f3beb82dc
+2025-04-09 15:13:11 info: Refresh token verified for user: admin
+2025-04-09 15:13:11 info: Decoded refresh token for username: admin
+2025-04-09 15:13:11 info: Found 5 devices for user admin
+2025-04-09 15:13:11 info: Comparing refresh token for device with fingerprint 44bb0280dd5aed3e82967d9b86e17caf
+2025-04-09 15:13:11 info: Save device request received. Fingerprint: b2574ad10468885255b5d36f3beb82dc
+2025-04-09 15:13:11 info: Decoded refresh token for user: admin
+2025-04-09 15:13:11 info: Decoded refresh token for username: admin
+2025-04-09 15:13:11 info: Found 5 devices for user admin
+2025-04-09 15:13:11 info: Device already exists for username: admin, fingerprint: b2574ad10468885255b5d36f3beb82dc
+2025-04-09 15:13:11 info: ::1 - - [09/Apr/2025:13:13:11 +0000] "POST /save-devices HTTP/1.1" 200 35 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-09 15:13:11 info: Comparing refresh token for device with fingerprint 51e90e9e12a94d52e13bc388a5692393
+2025-04-09 15:13:11 info: Comparing refresh token for device with fingerprint 3b9cd273c2a66a3e7bdb3a3d5e70f358
+2025-04-09 15:13:11 info: Save device request received. Fingerprint: b2574ad10468885255b5d36f3beb82dc
+2025-04-09 15:13:11 info: Decoded refresh token for user: admin
+2025-04-09 15:13:11 info: Decoded refresh token for username: admin
+2025-04-09 15:13:11 info: Found 5 devices for user admin
+2025-04-09 15:13:11 info: Device already exists for username: admin, fingerprint: b2574ad10468885255b5d36f3beb82dc
+2025-04-09 15:13:11 info: ::1 - - [09/Apr/2025:13:13:11 +0000] "POST /save-devices HTTP/1.1" 200 35 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-09 15:13:11 info: Comparing refresh token for device with fingerprint b2574ad10468885255b5d36f3beb82dc
+2025-04-09 15:13:11 info: Device verified for username: admin
+2025-04-09 15:13:11 info: ::1 - - [09/Apr/2025:13:13:11 +0000] "GET /check-devices?fingerprint=b2574ad10468885255b5d36f3beb82dc HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-09 15:13:11 info: Check devices request received for fingerprint: b2574ad10468885255b5d36f3beb82dc
+2025-04-09 15:13:11 info: Refresh token verified for user: admin
+2025-04-09 15:13:11 info: Decoded refresh token for username: admin
+2025-04-09 15:13:11 info: Found 5 devices for user admin
+2025-04-09 15:13:11 info: Comparing refresh token for device with fingerprint 44bb0280dd5aed3e82967d9b86e17caf
+2025-04-09 15:13:11 info: Comparing refresh token for device with fingerprint 51e90e9e12a94d52e13bc388a5692393
+2025-04-09 15:13:12 info: Comparing refresh token for device with fingerprint 3b9cd273c2a66a3e7bdb3a3d5e70f358
+2025-04-09 15:13:12 info: Comparing refresh token for device with fingerprint b2574ad10468885255b5d36f3beb82dc
+2025-04-09 15:13:12 info: Device verified for username: admin
+2025-04-09 15:13:12 info: ::1 - - [09/Apr/2025:13:13:12 +0000] "GET /check-devices?fingerprint=b2574ad10468885255b5d36f3beb82dc HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-09 15:13:13 info: Check devices request received for fingerprint: b2574ad10468885255b5d36f3beb82dc
+2025-04-09 15:13:13 info: Refresh token verified for user: admin
+2025-04-09 15:13:13 info: Decoded refresh token for username: admin
+2025-04-09 15:13:13 info: Found 5 devices for user admin
+2025-04-09 15:13:13 info: Comparing refresh token for device with fingerprint 44bb0280dd5aed3e82967d9b86e17caf
+2025-04-09 15:13:14 info: Comparing refresh token for device with fingerprint 51e90e9e12a94d52e13bc388a5692393
+2025-04-09 15:13:14 info: Save device request received. Fingerprint: b2574ad10468885255b5d36f3beb82dc
+2025-04-09 15:13:14 info: Decoded refresh token for user: admin
+2025-04-09 15:13:14 info: Decoded refresh token for username: admin
+2025-04-09 15:13:14 info: Found 5 devices for user admin
+2025-04-09 15:13:14 info: Device already exists for username: admin, fingerprint: b2574ad10468885255b5d36f3beb82dc
+2025-04-09 15:13:14 info: ::1 - - [09/Apr/2025:13:13:14 +0000] "POST /save-devices HTTP/1.1" 200 35 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-09 15:13:14 info: Comparing refresh token for device with fingerprint 3b9cd273c2a66a3e7bdb3a3d5e70f358
+2025-04-09 15:13:14 info: Save device request received. Fingerprint: b2574ad10468885255b5d36f3beb82dc
+2025-04-09 15:13:14 info: Decoded refresh token for user: admin
+2025-04-09 15:13:14 info: Decoded refresh token for username: admin
+2025-04-09 15:13:14 info: Found 5 devices for user admin
+2025-04-09 15:13:14 info: Device already exists for username: admin, fingerprint: b2574ad10468885255b5d36f3beb82dc
+2025-04-09 15:13:14 info: ::1 - - [09/Apr/2025:13:13:14 +0000] "POST /save-devices HTTP/1.1" 200 35 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-09 15:13:14 info: Comparing refresh token for device with fingerprint b2574ad10468885255b5d36f3beb82dc
+2025-04-09 15:13:14 info: Device verified for username: admin
+2025-04-09 15:13:14 info: ::1 - - [09/Apr/2025:13:13:14 +0000] "GET /check-devices?fingerprint=b2574ad10468885255b5d36f3beb82dc HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-09 15:13:14 info: Check devices request received for fingerprint: b2574ad10468885255b5d36f3beb82dc
+2025-04-09 15:13:14 info: Refresh token verified for user: admin
+2025-04-09 15:13:14 info: Decoded refresh token for username: admin
+2025-04-09 15:13:14 info: Found 5 devices for user admin
+2025-04-09 15:13:14 info: Comparing refresh token for device with fingerprint 44bb0280dd5aed3e82967d9b86e17caf
+2025-04-09 15:13:14 info: Comparing refresh token for device with fingerprint 51e90e9e12a94d52e13bc388a5692393
+2025-04-09 15:13:14 info: Comparing refresh token for device with fingerprint 3b9cd273c2a66a3e7bdb3a3d5e70f358
+2025-04-09 15:13:15 info: Comparing refresh token for device with fingerprint b2574ad10468885255b5d36f3beb82dc
+2025-04-09 15:13:15 info: Device verified for username: admin
+2025-04-09 15:13:15 info: ::1 - - [09/Apr/2025:13:13:15 +0000] "GET /check-devices?fingerprint=b2574ad10468885255b5d36f3beb82dc HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-09 15:13:18 info: Check devices request received for fingerprint: b2574ad10468885255b5d36f3beb82dc
+2025-04-09 15:13:18 info: Refresh token verified for user: admin
+2025-04-09 15:13:18 info: Decoded refresh token for username: admin
+2025-04-09 15:13:18 info: Found 5 devices for user admin
+2025-04-09 15:13:18 info: Comparing refresh token for device with fingerprint 44bb0280dd5aed3e82967d9b86e17caf
+2025-04-09 15:13:19 info: Comparing refresh token for device with fingerprint 51e90e9e12a94d52e13bc388a5692393
+2025-04-09 15:13:19 info: Save device request received. Fingerprint: b2574ad10468885255b5d36f3beb82dc
+2025-04-09 15:13:19 info: Decoded refresh token for user: admin
+2025-04-09 15:13:19 info: Decoded refresh token for username: admin
+2025-04-09 15:13:19 info: Found 5 devices for user admin
+2025-04-09 15:13:19 info: Device already exists for username: admin, fingerprint: b2574ad10468885255b5d36f3beb82dc
+2025-04-09 15:13:19 info: ::1 - - [09/Apr/2025:13:13:19 +0000] "POST /save-devices HTTP/1.1" 200 35 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-09 15:13:19 info: Comparing refresh token for device with fingerprint 3b9cd273c2a66a3e7bdb3a3d5e70f358
+2025-04-09 15:13:19 info: Save device request received. Fingerprint: b2574ad10468885255b5d36f3beb82dc
+2025-04-09 15:13:19 info: Decoded refresh token for user: admin
+2025-04-09 15:13:19 info: Decoded refresh token for username: admin
+2025-04-09 15:13:19 info: Found 5 devices for user admin
+2025-04-09 15:13:19 info: Device already exists for username: admin, fingerprint: b2574ad10468885255b5d36f3beb82dc
+2025-04-09 15:13:19 info: ::1 - - [09/Apr/2025:13:13:19 +0000] "POST /save-devices HTTP/1.1" 200 35 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-09 15:13:19 info: Comparing refresh token for device with fingerprint b2574ad10468885255b5d36f3beb82dc
+2025-04-09 15:13:19 info: Device verified for username: admin
+2025-04-09 15:13:19 info: ::1 - - [09/Apr/2025:13:13:19 +0000] "GET /check-devices?fingerprint=b2574ad10468885255b5d36f3beb82dc HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-09 15:13:19 info: Check devices request received for fingerprint: b2574ad10468885255b5d36f3beb82dc
+2025-04-09 15:13:19 info: Refresh token verified for user: admin
+2025-04-09 15:13:19 info: Decoded refresh token for username: admin
+2025-04-09 15:13:19 info: Found 5 devices for user admin
+2025-04-09 15:13:19 info: Comparing refresh token for device with fingerprint 44bb0280dd5aed3e82967d9b86e17caf
+2025-04-09 15:13:19 info: Comparing refresh token for device with fingerprint 51e90e9e12a94d52e13bc388a5692393
+2025-04-09 15:13:19 info: Comparing refresh token for device with fingerprint 3b9cd273c2a66a3e7bdb3a3d5e70f358
+2025-04-09 15:13:20 info: Comparing refresh token for device with fingerprint b2574ad10468885255b5d36f3beb82dc
+2025-04-09 15:13:20 info: Device verified for username: admin
+2025-04-09 15:13:20 info: ::1 - - [09/Apr/2025:13:13:20 +0000] "GET /check-devices?fingerprint=b2574ad10468885255b5d36f3beb82dc HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-09 15:13:22 info: Received data: {"initialStartTime":"2025-04-09_15:13:21","finalEndTime":"2025-04-09_15:13:21","totalTime":"0","awariaTime":"0","finishTime":"2025-04-09_15:13:22","timeFromFisrtStartTillFinish":"1","intervals":[{"startDate":"2025-04-09_15:13:21","endDate":"2025-04-09_15:13:21","path":"L1 / Prygotowanie"}]} from client IP: ::1
+2025-04-09 15:13:22 info: File path: C:\Users\Andrii\Desktop\timer-app – copy\server\routes\data-2025.4.9_15.13.txt
+2025-04-09 15:13:22 info: Data saved to file: data-2025.4.9_15.13.txt
+2025-04-09 15:13:25 info: Email sent successfully to qqq91166@gmail.com with subject: Time Difference Data data-2025.4.9_15.13.txt and name of file: data-2025.4.9_15.13.txt
+2025-04-09 15:13:25 info: ::1 - - [09/Apr/2025:13:13:25 +0000] "POST /save-time-data HTTP/1.1" 200 55 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-09 15:13:28 info: Incoming request to /get-time-data
+2025-04-09 15:13:28 info: Verifying token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiaWF0IjoxNzQ0MjA0MzcyLCJleHAiOjE3NDQyOTA3NzJ9.rd7105xRwkSoiCS_xkEGbkKNvkDy0xb6AeqOeDrfCiY
+2025-04-09 15:13:28 info: Token verified successfully for user: admin
+2025-04-09 15:13:28 info: File path: C:\Users\Andrii\Desktop\timer-app – copy\server\routes\data-2025.4.9_15.13.txt for user: admin
+2025-04-09 15:13:28 info: ::1 - - [09/Apr/2025:13:13:28 +0000] "GET /get-time-data HTTP/1.1" 200 391 "http://localhost:5000/login" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-09 15:13:31 info: Logout request received on server
+2025-04-09 15:13:31 info: Access token found, adding to blacklist
+2025-04-09 15:13:31 info: Refresh token found for username: admin, deleting from REFRESH_TOKENS
+2025-04-09 15:13:31 info: User logged out successfully on server
+2025-04-09 15:13:31 info: ::1 - - [09/Apr/2025:13:13:31 +0000] "GET /logout HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-09 15:14:30 info: Check devices request received for fingerprint: b2574ad10468885255b5d36f3beb82dc
+2025-04-09 15:14:30 info: Missing data: fingerprint or refresh token
+2025-04-09 15:14:30 info: ::1 - - [09/Apr/2025:13:14:30 +0000] "GET /check-devices?fingerprint=b2574ad10468885255b5d36f3beb82dc HTTP/1.1" 400 12 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-09 15:14:30 info: Check devices request received for fingerprint: b2574ad10468885255b5d36f3beb82dc
+2025-04-09 15:14:30 info: Missing data: fingerprint or refresh token
+2025-04-09 15:14:30 info: ::1 - - [09/Apr/2025:13:14:30 +0000] "GET /check-devices?fingerprint=b2574ad10468885255b5d36f3beb82dc HTTP/1.1" 400 12 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-09 15:14:31 info: Save device request received. Fingerprint: b2574ad10468885255b5d36f3beb82dc
+2025-04-09 15:14:31 info: Missing fingerprint or refreshToken
+2025-04-09 15:14:31 info: ::1 - - [09/Apr/2025:13:14:31 +0000] "POST /save-devices HTTP/1.1" 400 41 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-09 15:14:31 info: Save device request received. Fingerprint: b2574ad10468885255b5d36f3beb82dc
+2025-04-09 15:14:31 info: Missing fingerprint or refreshToken
+2025-04-09 15:14:31 info: ::1 - - [09/Apr/2025:13:14:31 +0000] "POST /save-devices HTTP/1.1" 400 41 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-09 15:15:04 info: Check devices request received for fingerprint: null
+2025-04-09 15:15:04 info: Missing data: fingerprint or refresh token
+2025-04-09 15:15:04 info: ::1 - - [09/Apr/2025:13:15:04 +0000] "GET /check-devices?fingerprint=null HTTP/1.1" 400 12 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-09 15:15:04 info: Check devices request received for fingerprint: null
+2025-04-09 15:15:04 info: Missing data: fingerprint or refresh token
+2025-04-09 15:15:04 info: ::1 - - [09/Apr/2025:13:15:04 +0000] "GET /check-devices?fingerprint=null HTTP/1.1" 400 12 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-09 15:15:04 info: Save device request received. Fingerprint: b2574ad10468885255b5d36f3beb82dc
+2025-04-09 15:15:04 info: Missing fingerprint or refreshToken
+2025-04-09 15:15:04 info: ::1 - - [09/Apr/2025:13:15:04 +0000] "POST /save-devices HTTP/1.1" 400 41 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-09 15:15:04 info: Save device request received. Fingerprint: b2574ad10468885255b5d36f3beb82dc
+2025-04-09 15:15:04 info: Missing fingerprint or refreshToken
+2025-04-09 15:15:04 info: ::1 - - [09/Apr/2025:13:15:04 +0000] "POST /save-devices HTTP/1.1" 400 41 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-09 15:15:09 info: Login attempt for user: user1 on client IP: ::1
+2025-04-09 15:15:10 info: Generated access token for user: user1 for client IP: ::1
+2025-04-09 15:15:10 info: Generated refresh token for user: user1 for client IP: ::1
+2025-04-09 15:15:10 info: ::1 - - [09/Apr/2025:13:15:10 +0000] "POST /api/login HTTP/1.1" 200 155 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-09 15:15:18 info: Check devices request received for fingerprint: null
+2025-04-09 15:15:18 info: Missing data: fingerprint or refresh token
+2025-04-09 15:15:18 info: ::1 - - [09/Apr/2025:13:15:18 +0000] "GET /check-devices?fingerprint=null HTTP/1.1" 400 12 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-09 15:15:18 info: Check devices request received for fingerprint: null
+2025-04-09 15:15:18 info: Missing data: fingerprint or refresh token
+2025-04-09 15:15:18 info: ::1 - - [09/Apr/2025:13:15:18 +0000] "GET /check-devices?fingerprint=null HTTP/1.1" 400 12 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-09 15:15:19 info: Save device request received. Fingerprint: b2574ad10468885255b5d36f3beb82dc
+2025-04-09 15:15:19 info: Missing fingerprint or refreshToken
+2025-04-09 15:15:19 info: ::1 - - [09/Apr/2025:13:15:19 +0000] "POST /save-devices HTTP/1.1" 400 41 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-09 15:15:19 info: Save device request received. Fingerprint: b2574ad10468885255b5d36f3beb82dc
+2025-04-09 15:15:19 info: Missing fingerprint or refreshToken
+2025-04-09 15:15:19 info: ::1 - - [09/Apr/2025:13:15:19 +0000] "POST /save-devices HTTP/1.1" 400 41 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-09 15:15:24 info: Login attempt for user: user2 on client IP: ::1
+2025-04-09 15:15:24 info: Generated access token for user: user2 for client IP: ::1
+2025-04-09 15:15:24 info: Generated refresh token for user: user2 for client IP: ::1
+2025-04-09 15:15:24 info: ::1 - - [09/Apr/2025:13:15:24 +0000] "POST /api/login HTTP/1.1" 200 155 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-09 15:15:28 info: Check devices request received for fingerprint: b2574ad10468885255b5d36f3beb82dc
+2025-04-09 15:15:28 info: Missing data: fingerprint or refresh token
+2025-04-09 15:15:28 info: ::1 - - [09/Apr/2025:13:15:28 +0000] "GET /check-devices?fingerprint=b2574ad10468885255b5d36f3beb82dc HTTP/1.1" 400 12 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-09 15:15:28 info: Check devices request received for fingerprint: b2574ad10468885255b5d36f3beb82dc
+2025-04-09 15:15:28 info: Missing data: fingerprint or refresh token
+2025-04-09 15:15:28 info: ::1 - - [09/Apr/2025:13:15:28 +0000] "GET /check-devices?fingerprint=b2574ad10468885255b5d36f3beb82dc HTTP/1.1" 400 12 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-09 15:15:28 info: Save device request received. Fingerprint: b2574ad10468885255b5d36f3beb82dc
+2025-04-09 15:15:28 info: Missing fingerprint or refreshToken
+2025-04-09 15:15:28 info: ::1 - - [09/Apr/2025:13:15:28 +0000] "POST /save-devices HTTP/1.1" 400 41 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-09 15:15:28 info: Save device request received. Fingerprint: b2574ad10468885255b5d36f3beb82dc
+2025-04-09 15:15:28 info: Missing fingerprint or refreshToken
+2025-04-09 15:15:28 info: ::1 - - [09/Apr/2025:13:15:28 +0000] "POST /save-devices HTTP/1.1" 400 41 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-09 15:15:32 info: Login attempt for user: user1 on client IP: ::1
+2025-04-09 15:15:32 info: Generated access token for user: user1 for client IP: ::1
+2025-04-09 15:15:32 info: Generated refresh token for user: user1 for client IP: ::1
+2025-04-09 15:15:32 info: ::1 - - [09/Apr/2025:13:15:32 +0000] "POST /api/login HTTP/1.1" 200 155 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+2025-04-09 17:46:36 info: Incoming request to /get-time-data
+2025-04-09 17:46:36 info: Verifying token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiaWF0IjoxNzQ0MTk5NzIzLCJleHAiOjE3NDQyODYxMjN9.pRjJ8GJotPbXQdHfiMWq9k2soA5K5sXpC5El1LACJ9Q
+2025-04-09 17:46:36 info: Token verified successfully for user: admin
+2025-04-09 17:46:36 info: File path: C:\Users\Andrii\Desktop\timer-app – copy\server\routes\data-2025.4.9_15.13.txt for user: admin
+2025-04-09 17:46:36 info: ::1 - - [09/Apr/2025:15:46:36 +0000] "GET /get-time-data HTTP/1.1" 200 391 "http://localhost:5000/login" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-09 17:46:42 info: Check devices request received for fingerprint: 92fe2565b0797bde0592f18c4d63d389
+2025-04-09 17:46:42 info: Refresh token verified for user: admin
+2025-04-09 17:46:42 info: Decoded refresh token for username: admin
+2025-04-09 17:46:42 info: Found 5 devices for user admin
+2025-04-09 17:46:42 info: Comparing refresh token for device with fingerprint 44bb0280dd5aed3e82967d9b86e17caf
+2025-04-09 17:46:43 info: Save device request received. Fingerprint: 44bb0280dd5aed3e82967d9b86e17caf
+2025-04-09 17:46:43 info: Decoded refresh token for user: admin
+2025-04-09 17:46:43 info: Decoded refresh token for username: admin
+2025-04-09 17:46:43 info: Found 5 devices for user admin
+2025-04-09 17:46:43 info: Device already exists for username: admin, fingerprint: 44bb0280dd5aed3e82967d9b86e17caf
+2025-04-09 17:46:43 info: ::1 - - [09/Apr/2025:15:46:43 +0000] "POST /save-devices HTTP/1.1" 200 35 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-09 17:46:43 info: Save device request received. Fingerprint: 44bb0280dd5aed3e82967d9b86e17caf
+2025-04-09 17:46:43 info: Decoded refresh token for user: admin
+2025-04-09 17:46:43 info: Decoded refresh token for username: admin
+2025-04-09 17:46:43 info: Found 5 devices for user admin
+2025-04-09 17:46:43 info: Device already exists for username: admin, fingerprint: 44bb0280dd5aed3e82967d9b86e17caf
+2025-04-09 17:46:43 info: ::1 - - [09/Apr/2025:15:46:43 +0000] "POST /save-devices HTTP/1.1" 200 35 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-09 17:46:43 info: Comparing refresh token for device with fingerprint 51e90e9e12a94d52e13bc388a5692393
+2025-04-09 17:46:43 info: Comparing refresh token for device with fingerprint 3b9cd273c2a66a3e7bdb3a3d5e70f358
+2025-04-09 17:46:43 info: Comparing refresh token for device with fingerprint b2574ad10468885255b5d36f3beb82dc
+2025-04-09 17:46:43 info: Comparing refresh token for device with fingerprint 92fe2565b0797bde0592f18c4d63d389
+2025-04-09 17:46:43 info: Device verified for username: admin
+2025-04-09 17:46:43 info: ::1 - - [09/Apr/2025:15:46:43 +0000] "GET /check-devices?fingerprint=92fe2565b0797bde0592f18c4d63d389 HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-09 17:46:43 info: Check devices request received for fingerprint: 92fe2565b0797bde0592f18c4d63d389
+2025-04-09 17:46:43 info: Refresh token verified for user: admin
+2025-04-09 17:46:43 info: Decoded refresh token for username: admin
+2025-04-09 17:46:43 info: Found 5 devices for user admin
+2025-04-09 17:46:43 info: Comparing refresh token for device with fingerprint 44bb0280dd5aed3e82967d9b86e17caf
+2025-04-09 17:46:43 info: Comparing refresh token for device with fingerprint 51e90e9e12a94d52e13bc388a5692393
+2025-04-09 17:46:43 info: Comparing refresh token for device with fingerprint 3b9cd273c2a66a3e7bdb3a3d5e70f358
+2025-04-09 17:46:43 info: Comparing refresh token for device with fingerprint b2574ad10468885255b5d36f3beb82dc
+2025-04-09 17:46:43 info: Comparing refresh token for device with fingerprint 92fe2565b0797bde0592f18c4d63d389
+2025-04-09 17:46:43 info: Device verified for username: admin
+2025-04-09 17:46:43 info: ::1 - - [09/Apr/2025:15:46:43 +0000] "GET /check-devices?fingerprint=92fe2565b0797bde0592f18c4d63d389 HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-09 18:37:59 info: Server is running on port 5000
+2025-04-09 18:38:14 info: Server is running on port 5000
+2025-04-09 19:18:19 info: Server is running on port 5000
+2025-04-09 19:24:13 info: Server is running on port 5000
+2025-04-09 19:25:00 info: Server is running on port 5000
+2025-04-09 19:32:44 info: Server is running on port 5000
+2025-04-09 19:37:21 info: Server is running on port 5000
+2025-04-09 19:46:08 info: Server is running on port 5000
+2025-04-09 19:47:21 info: Server is running on port 5000
+2025-04-09 19:55:59 info: Server is running on port 5000
+2025-04-09 20:00:30 info: Server is running on port 5000
+2025-04-09 20:06:22 info: Server is running on port 5000
+2025-04-09 20:11:26 info: Server is running on port 5000
+2025-04-09 20:12:07 info: Server is running on port 5000
+2025-04-09 20:12:48 info: Server is running on port 5000
+2025-04-09 20:22:43 info: Check devices request received for fingerprint: 44bb0280dd5aed3e82967d9b86e17caf
+2025-04-09 20:22:43 info: Refresh token verified for user: admin
+2025-04-09 20:22:43 info: Decoded refresh token for username: admin
+2025-04-09 20:22:43 info: Found 5 devices for user admin
+2025-04-09 20:22:44 info: Comparing refresh token for device with fingerprint 44bb0280dd5aed3e82967d9b86e17caf
+2025-04-09 20:22:44 info: Device verified for username: admin
+2025-04-09 20:22:44 info: ::1 - - [09/Apr/2025:18:22:44 +0000] "GET /check-devices?fingerprint=44bb0280dd5aed3e82967d9b86e17caf HTTP/1.1" 200 29 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-09 20:22:44 info: Check devices request received for fingerprint: 44bb0280dd5aed3e82967d9b86e17caf
+2025-04-09 20:22:44 info: Refresh token verified for user: admin
+2025-04-09 20:22:44 info: Decoded refresh token for username: admin
+2025-04-09 20:22:44 info: Found 5 devices for user admin
+2025-04-09 20:22:44 info: Save device request received. Fingerprint: 44bb0280dd5aed3e82967d9b86e17caf
+2025-04-09 20:22:44 info: Decoded refresh token for user: admin
+2025-04-09 20:22:44 info: Decoded refresh token for username: admin
+2025-04-09 20:22:44 info: Found 5 devices for user admin
+2025-04-09 20:22:44 info: Device already exists for username: admin, fingerprint: 44bb0280dd5aed3e82967d9b86e17caf
+2025-04-09 20:22:44 info: ::1 - - [09/Apr/2025:18:22:44 +0000] "POST /save-devices HTTP/1.1" 200 35 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-09 20:22:44 info: Comparing refresh token for device with fingerprint 44bb0280dd5aed3e82967d9b86e17caf
+2025-04-09 20:22:44 info: Device verified for username: admin
+2025-04-09 20:22:44 info: ::1 - - [09/Apr/2025:18:22:44 +0000] "GET /check-devices?fingerprint=44bb0280dd5aed3e82967d9b86e17caf HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-09 20:22:44 info: Save device request received. Fingerprint: 44bb0280dd5aed3e82967d9b86e17caf
+2025-04-09 20:22:44 info: Decoded refresh token for user: admin
+2025-04-09 20:22:44 info: Decoded refresh token for username: admin
+2025-04-09 20:22:44 info: Found 5 devices for user admin
+2025-04-09 20:22:44 info: Device already exists for username: admin, fingerprint: 44bb0280dd5aed3e82967d9b86e17caf
+2025-04-09 20:22:44 info: ::1 - - [09/Apr/2025:18:22:44 +0000] "POST /save-devices HTTP/1.1" 200 35 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-09 20:23:30 info: Server is running on port 5000
+2025-04-09 20:24:09 info: Server is running on port 5000
+2025-04-09 20:33:20 info: Server is running on port 5000
+2025-04-09 20:33:42 info: Server is running on port 5000
+2025-04-09 20:34:11 info: Server is running on port 5000
+2025-04-09 20:34:39 info: Server is running on port 5000
+2025-04-09 20:37:45 info: Server is running on port 5000
+2025-04-10 11:29:10 info: Server is running on port 5000
+2025-04-10 11:30:11 info: Server is running on port 5000
+2025-04-10 11:30:32 info: Check devices request received for fingerprint: 44bb0280dd5aed3e82967d9b86e17caf
+2025-04-10 11:30:33 info: Refresh token verified for user: admin
+2025-04-10 11:30:33 info: Decoded refresh token for username: admin
+2025-04-10 11:30:33 info: Found 5 devices for user admin
+2025-04-10 11:30:34 info: Save device request received. Fingerprint: 44bb0280dd5aed3e82967d9b86e17caf
+2025-04-10 11:30:34 info: Decoded refresh token for user: admin
+2025-04-10 11:30:34 info: Decoded refresh token for username: admin
+2025-04-10 11:30:34 info: Found 5 devices for user admin
+2025-04-10 11:30:34 info: Device already exists for username: admin, fingerprint: 44bb0280dd5aed3e82967d9b86e17caf
+2025-04-10 11:30:34 info: ::1 - - [10/Apr/2025:09:30:34 +0000] "POST /save-devices HTTP/1.1" 200 35 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-10 11:30:34 info: Comparing refresh token for device with fingerprint 44bb0280dd5aed3e82967d9b86e17caf
+2025-04-10 11:30:34 info: Device verified for username: admin
+2025-04-10 11:30:34 info: ::1 - - [10/Apr/2025:09:30:34 +0000] "GET /check-devices?fingerprint=44bb0280dd5aed3e82967d9b86e17caf HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-10 11:30:34 info: Save device request received. Fingerprint: 44bb0280dd5aed3e82967d9b86e17caf
+2025-04-10 11:30:34 info: Decoded refresh token for user: admin
+2025-04-10 11:30:34 info: Decoded refresh token for username: admin
+2025-04-10 11:30:34 info: Found 5 devices for user admin
+2025-04-10 11:30:34 info: Device already exists for username: admin, fingerprint: 44bb0280dd5aed3e82967d9b86e17caf
+2025-04-10 11:30:34 info: ::1 - - [10/Apr/2025:09:30:34 +0000] "POST /save-devices HTTP/1.1" 200 35 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-10 11:30:34 info: Check devices request received for fingerprint: 44bb0280dd5aed3e82967d9b86e17caf
+2025-04-10 11:30:34 info: Refresh token verified for user: admin
+2025-04-10 11:30:34 info: Decoded refresh token for username: admin
+2025-04-10 11:30:34 info: Found 5 devices for user admin
+2025-04-10 11:30:34 info: Comparing refresh token for device with fingerprint 44bb0280dd5aed3e82967d9b86e17caf
+2025-04-10 11:30:34 info: Device verified for username: admin
+2025-04-10 11:30:34 info: ::1 - - [10/Apr/2025:09:30:34 +0000] "GET /check-devices?fingerprint=44bb0280dd5aed3e82967d9b86e17caf HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-10 12:05:05 info: Check devices request received for fingerprint: 44bb0280dd5aed3e82967d9b86e17caf
+2025-04-10 12:05:05 info: Refresh token verified for user: admin
+2025-04-10 12:05:05 info: Decoded refresh token for username: admin
+2025-04-10 12:05:05 info: Found 5 devices for user admin
+2025-04-10 12:05:05 info: Comparing refresh token for device with fingerprint 44bb0280dd5aed3e82967d9b86e17caf
+2025-04-10 12:05:05 info: Device verified for username: admin
+2025-04-10 12:05:05 info: ::1 - - [10/Apr/2025:10:05:05 +0000] "GET /check-devices?fingerprint=44bb0280dd5aed3e82967d9b86e17caf HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-10 12:05:05 info: Check devices request received for fingerprint: 44bb0280dd5aed3e82967d9b86e17caf
+2025-04-10 12:05:05 info: Refresh token verified for user: admin
+2025-04-10 12:05:05 info: Decoded refresh token for username: admin
+2025-04-10 12:05:05 info: Found 5 devices for user admin
+2025-04-10 12:05:05 info: Comparing refresh token for device with fingerprint 44bb0280dd5aed3e82967d9b86e17caf
+2025-04-10 12:05:05 info: Device verified for username: admin
+2025-04-10 12:05:05 info: ::1 - - [10/Apr/2025:10:05:05 +0000] "GET /check-devices?fingerprint=44bb0280dd5aed3e82967d9b86e17caf HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-10 12:05:06 info: Save device request received. Fingerprint: 44bb0280dd5aed3e82967d9b86e17caf
+2025-04-10 12:05:06 info: Decoded refresh token for user: admin
+2025-04-10 12:05:06 info: Decoded refresh token for username: admin
+2025-04-10 12:05:06 info: Found 5 devices for user admin
+2025-04-10 12:05:06 info: Device already exists for username: admin, fingerprint: 44bb0280dd5aed3e82967d9b86e17caf
+2025-04-10 12:05:06 info: ::1 - - [10/Apr/2025:10:05:06 +0000] "POST /save-devices HTTP/1.1" 200 35 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-10 12:05:06 info: Save device request received. Fingerprint: 44bb0280dd5aed3e82967d9b86e17caf
+2025-04-10 12:05:06 info: Decoded refresh token for user: admin
+2025-04-10 12:05:06 info: Decoded refresh token for username: admin
+2025-04-10 12:05:06 info: Found 5 devices for user admin
+2025-04-10 12:05:06 info: Device already exists for username: admin, fingerprint: 44bb0280dd5aed3e82967d9b86e17caf
+2025-04-10 12:05:06 info: ::1 - - [10/Apr/2025:10:05:06 +0000] "POST /save-devices HTTP/1.1" 200 35 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-10 12:05:42 info: Check devices request received for fingerprint: 44bb0280dd5aed3e82967d9b86e17caf
+2025-04-10 12:05:42 info: Refresh token verified for user: admin
+2025-04-10 12:05:42 info: Decoded refresh token for username: admin
+2025-04-10 12:05:42 info: Found 5 devices for user admin
+2025-04-10 12:05:43 info: Comparing refresh token for device with fingerprint 44bb0280dd5aed3e82967d9b86e17caf
+2025-04-10 12:05:43 info: Device verified for username: admin
+2025-04-10 12:05:43 info: ::1 - - [10/Apr/2025:10:05:43 +0000] "GET /check-devices?fingerprint=44bb0280dd5aed3e82967d9b86e17caf HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-10 12:05:43 info: Check devices request received for fingerprint: 44bb0280dd5aed3e82967d9b86e17caf
+2025-04-10 12:05:43 info: Refresh token verified for user: admin
+2025-04-10 12:05:43 info: Decoded refresh token for username: admin
+2025-04-10 12:05:43 info: Found 5 devices for user admin
+2025-04-10 12:05:43 info: Comparing refresh token for device with fingerprint 44bb0280dd5aed3e82967d9b86e17caf
+2025-04-10 12:05:43 info: Device verified for username: admin
+2025-04-10 12:05:43 info: ::1 - - [10/Apr/2025:10:05:43 +0000] "GET /check-devices?fingerprint=44bb0280dd5aed3e82967d9b86e17caf HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-10 12:05:43 info: Save device request received. Fingerprint: 44bb0280dd5aed3e82967d9b86e17caf
+2025-04-10 12:05:43 info: Decoded refresh token for user: admin
+2025-04-10 12:05:43 info: Decoded refresh token for username: admin
+2025-04-10 12:05:43 info: Found 5 devices for user admin
+2025-04-10 12:05:43 info: Device already exists for username: admin, fingerprint: 44bb0280dd5aed3e82967d9b86e17caf
+2025-04-10 12:05:43 info: ::1 - - [10/Apr/2025:10:05:43 +0000] "POST /save-devices HTTP/1.1" 200 35 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-10 12:05:43 info: Save device request received. Fingerprint: 44bb0280dd5aed3e82967d9b86e17caf
+2025-04-10 12:05:43 info: Decoded refresh token for user: admin
+2025-04-10 12:05:43 info: Decoded refresh token for username: admin
+2025-04-10 12:05:43 info: Found 5 devices for user admin
+2025-04-10 12:05:43 info: Device already exists for username: admin, fingerprint: 44bb0280dd5aed3e82967d9b86e17caf
+2025-04-10 12:05:43 info: ::1 - - [10/Apr/2025:10:05:43 +0000] "POST /save-devices HTTP/1.1" 200 35 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-10 12:05:47 info: Incoming request to /get-time-data
+2025-04-10 12:05:47 info: Verifying token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiaWF0IjoxNzQ0MTk5NzIzLCJleHAiOjE3NDQyODYxMjN9.pRjJ8GJotPbXQdHfiMWq9k2soA5K5sXpC5El1LACJ9Q
+2025-04-10 12:05:47 info: Token verified successfully for user: admin
+2025-04-10 12:05:47 info: File path is not defined for user: admin
+2025-04-10 12:05:47 info: ::1 - - [10/Apr/2025:10:05:47 +0000] "GET /get-time-data HTTP/1.1" 500 24 "http://localhost:5000/login" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-10 12:05:49 info: Incoming request to /get-time-data
+2025-04-10 12:05:49 info: Verifying token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiaWF0IjoxNzQ0MTk5NzIzLCJleHAiOjE3NDQyODYxMjN9.pRjJ8GJotPbXQdHfiMWq9k2soA5K5sXpC5El1LACJ9Q
+2025-04-10 12:05:49 info: Token verified successfully for user: admin
+2025-04-10 12:05:49 info: File path is not defined for user: admin
+2025-04-10 12:05:49 info: ::1 - - [10/Apr/2025:10:05:49 +0000] "GET /get-time-data HTTP/1.1" 500 24 "http://localhost:5000/login" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-10 12:47:26 info: Check devices request received for fingerprint: 44bb0280dd5aed3e82967d9b86e17caf
+2025-04-10 12:47:26 info: Refresh token verified for user: admin
+2025-04-10 12:47:26 info: Decoded refresh token for username: admin
+2025-04-10 12:47:26 info: Found 5 devices for user admin
+2025-04-10 12:47:26 info: Comparing refresh token for device with fingerprint 44bb0280dd5aed3e82967d9b86e17caf
+2025-04-10 12:47:26 info: Device verified for username: admin
+2025-04-10 12:47:26 info: ::1 - - [10/Apr/2025:10:47:26 +0000] "GET /check-devices?fingerprint=44bb0280dd5aed3e82967d9b86e17caf HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-10 12:47:26 info: Check devices request received for fingerprint: 44bb0280dd5aed3e82967d9b86e17caf
+2025-04-10 12:47:26 info: Refresh token verified for user: admin
+2025-04-10 12:47:26 info: Decoded refresh token for username: admin
+2025-04-10 12:47:26 info: Found 5 devices for user admin
+2025-04-10 12:47:27 info: Comparing refresh token for device with fingerprint 44bb0280dd5aed3e82967d9b86e17caf
+2025-04-10 12:47:27 info: Device verified for username: admin
+2025-04-10 12:47:27 info: ::1 - - [10/Apr/2025:10:47:27 +0000] "GET /check-devices?fingerprint=44bb0280dd5aed3e82967d9b86e17caf HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-10 12:47:27 info: Save device request received. Fingerprint: 92fe2565b0797bde0592f18c4d63d389
+2025-04-10 12:47:27 info: Decoded refresh token for user: admin
+2025-04-10 12:47:27 info: Decoded refresh token for username: admin
+2025-04-10 12:47:27 info: Found 5 devices for user admin
+2025-04-10 12:47:27 info: Device already exists for username: admin, fingerprint: 92fe2565b0797bde0592f18c4d63d389
+2025-04-10 12:47:27 info: ::1 - - [10/Apr/2025:10:47:27 +0000] "POST /save-devices HTTP/1.1" 200 35 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-10 12:47:27 info: Save device request received. Fingerprint: 92fe2565b0797bde0592f18c4d63d389
+2025-04-10 12:47:27 info: Decoded refresh token for user: admin
+2025-04-10 12:47:27 info: Decoded refresh token for username: admin
+2025-04-10 12:47:27 info: Found 5 devices for user admin
+2025-04-10 12:47:27 info: Device already exists for username: admin, fingerprint: 92fe2565b0797bde0592f18c4d63d389
+2025-04-10 12:47:27 info: ::1 - - [10/Apr/2025:10:47:27 +0000] "POST /save-devices HTTP/1.1" 200 35 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-10 12:47:58 info: Check devices request received for fingerprint: 92fe2565b0797bde0592f18c4d63d389
+2025-04-10 12:47:58 info: Refresh token verified for user: admin
+2025-04-10 12:47:58 info: Decoded refresh token for username: admin
+2025-04-10 12:47:58 info: Found 5 devices for user admin
+2025-04-10 12:47:59 info: Comparing refresh token for device with fingerprint 44bb0280dd5aed3e82967d9b86e17caf
+2025-04-10 12:47:59 info: Save device request received. Fingerprint: 92fe2565b0797bde0592f18c4d63d389
+2025-04-10 12:47:59 info: Decoded refresh token for user: admin
+2025-04-10 12:47:59 info: Decoded refresh token for username: admin
+2025-04-10 12:47:59 info: Found 5 devices for user admin
+2025-04-10 12:47:59 info: Device already exists for username: admin, fingerprint: 92fe2565b0797bde0592f18c4d63d389
+2025-04-10 12:47:59 info: ::1 - - [10/Apr/2025:10:47:59 +0000] "POST /save-devices HTTP/1.1" 200 35 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-10 12:47:59 info: Comparing refresh token for device with fingerprint 51e90e9e12a94d52e13bc388a5692393
+2025-04-10 12:47:59 info: Save device request received. Fingerprint: 92fe2565b0797bde0592f18c4d63d389
+2025-04-10 12:47:59 info: Decoded refresh token for user: admin
+2025-04-10 12:47:59 info: Decoded refresh token for username: admin
+2025-04-10 12:47:59 info: Found 5 devices for user admin
+2025-04-10 12:47:59 info: Device already exists for username: admin, fingerprint: 92fe2565b0797bde0592f18c4d63d389
+2025-04-10 12:47:59 info: ::1 - - [10/Apr/2025:10:47:59 +0000] "POST /save-devices HTTP/1.1" 200 35 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-10 12:47:59 info: Comparing refresh token for device with fingerprint 3b9cd273c2a66a3e7bdb3a3d5e70f358
+2025-04-10 12:47:59 info: Comparing refresh token for device with fingerprint b2574ad10468885255b5d36f3beb82dc
+2025-04-10 12:47:59 info: Comparing refresh token for device with fingerprint 92fe2565b0797bde0592f18c4d63d389
+2025-04-10 12:47:59 info: Device verified for username: admin
+2025-04-10 12:47:59 info: ::1 - - [10/Apr/2025:10:47:59 +0000] "GET /check-devices?fingerprint=92fe2565b0797bde0592f18c4d63d389 HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-10 12:47:59 info: Check devices request received for fingerprint: 92fe2565b0797bde0592f18c4d63d389
+2025-04-10 12:47:59 info: Refresh token verified for user: admin
+2025-04-10 12:47:59 info: Decoded refresh token for username: admin
+2025-04-10 12:47:59 info: Found 5 devices for user admin
+2025-04-10 12:47:59 info: Comparing refresh token for device with fingerprint 44bb0280dd5aed3e82967d9b86e17caf
+2025-04-10 12:48:00 info: Comparing refresh token for device with fingerprint 51e90e9e12a94d52e13bc388a5692393
+2025-04-10 12:48:00 info: Comparing refresh token for device with fingerprint 3b9cd273c2a66a3e7bdb3a3d5e70f358
+2025-04-10 12:48:00 info: Comparing refresh token for device with fingerprint b2574ad10468885255b5d36f3beb82dc
+2025-04-10 12:48:00 info: Comparing refresh token for device with fingerprint 92fe2565b0797bde0592f18c4d63d389
+2025-04-10 12:48:00 info: Device verified for username: admin
+2025-04-10 12:48:00 info: ::1 - - [10/Apr/2025:10:48:00 +0000] "GET /check-devices?fingerprint=92fe2565b0797bde0592f18c4d63d389 HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-10 12:48:02 info: Incoming request to /get-time-data
+2025-04-10 12:48:02 info: Verifying token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiaWF0IjoxNzQ0MTk5NzIzLCJleHAiOjE3NDQyODYxMjN9.pRjJ8GJotPbXQdHfiMWq9k2soA5K5sXpC5El1LACJ9Q
+2025-04-10 12:48:02 info: Token verified successfully for user: admin
+2025-04-10 12:48:02 info: File path is not defined for user: admin
+2025-04-10 12:48:02 info: ::1 - - [10/Apr/2025:10:48:02 +0000] "GET /get-time-data HTTP/1.1" 500 24 "http://localhost:5000/login" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-10 12:48:03 info: Incoming request to /get-time-data
+2025-04-10 12:48:03 info: Verifying token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiaWF0IjoxNzQ0MTk5NzIzLCJleHAiOjE3NDQyODYxMjN9.pRjJ8GJotPbXQdHfiMWq9k2soA5K5sXpC5El1LACJ9Q
+2025-04-10 12:48:03 info: Token verified successfully for user: admin
+2025-04-10 12:48:03 info: File path is not defined for user: admin
+2025-04-10 12:48:03 info: ::1 - - [10/Apr/2025:10:48:03 +0000] "GET /get-time-data HTTP/1.1" 500 24 "http://localhost:5000/login" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-10 20:59:12 info: Server is running on port 5000
+2025-04-10 21:00:07 info: Check devices request received for fingerprint: 44bb0280dd5aed3e82967d9b86e17caf
+2025-04-10 21:00:07 info: Refresh token verified for user: admin
+2025-04-10 21:00:07 info: Decoded refresh token for username: admin
+2025-04-10 21:00:07 info: Found 5 devices for user admin
+2025-04-10 21:00:08 info: Comparing refresh token for device with fingerprint 44bb0280dd5aed3e82967d9b86e17caf
+2025-04-10 21:00:08 info: Device verified for username: admin
+2025-04-10 21:00:08 info: ::1 - - [10/Apr/2025:19:00:08 +0000] "GET /check-devices?fingerprint=44bb0280dd5aed3e82967d9b86e17caf HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-10 21:00:08 info: Check devices request received for fingerprint: 44bb0280dd5aed3e82967d9b86e17caf
+2025-04-10 21:00:08 info: Refresh token verified for user: admin
+2025-04-10 21:00:08 info: Decoded refresh token for username: admin
+2025-04-10 21:00:08 info: Found 5 devices for user admin
+2025-04-10 21:00:08 info: Save device request received. Fingerprint: 44bb0280dd5aed3e82967d9b86e17caf
+2025-04-10 21:00:08 info: Decoded refresh token for user: admin
+2025-04-10 21:00:08 info: Decoded refresh token for username: admin
+2025-04-10 21:00:08 info: Found 5 devices for user admin
+2025-04-10 21:00:08 info: Device already exists for username: admin, fingerprint: 44bb0280dd5aed3e82967d9b86e17caf
+2025-04-10 21:00:08 info: ::1 - - [10/Apr/2025:19:00:08 +0000] "POST /save-devices HTTP/1.1" 200 35 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-10 21:00:08 info: Comparing refresh token for device with fingerprint 44bb0280dd5aed3e82967d9b86e17caf
+2025-04-10 21:00:08 info: Device verified for username: admin
+2025-04-10 21:00:08 info: ::1 - - [10/Apr/2025:19:00:08 +0000] "GET /check-devices?fingerprint=44bb0280dd5aed3e82967d9b86e17caf HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-10 21:00:08 info: Save device request received. Fingerprint: 44bb0280dd5aed3e82967d9b86e17caf
+2025-04-10 21:00:08 info: Decoded refresh token for user: admin
+2025-04-10 21:00:08 info: Decoded refresh token for username: admin
+2025-04-10 21:00:08 info: Found 5 devices for user admin
+2025-04-10 21:00:08 info: Device already exists for username: admin, fingerprint: 44bb0280dd5aed3e82967d9b86e17caf
+2025-04-10 21:00:08 info: ::1 - - [10/Apr/2025:19:00:08 +0000] "POST /save-devices HTTP/1.1" 200 35 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-10 21:00:22 info: Incoming request to /get-time-data
+2025-04-10 21:00:22 info: No access token found in cookies
+2025-04-10 21:00:22 info: ::1 - - [10/Apr/2025:19:00:22 +0000] "GET /get-time-data HTTP/1.1" 302 35 "http://localhost:5000/login" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-10 21:00:22 info: Access token found in cookies: No
+2025-04-10 21:00:22 info: No access token found, rendering login form
+2025-04-10 21:00:22 info: ::1 - - [10/Apr/2025:19:00:22 +0000] "GET /login HTTP/1.1" 200 303 "http://localhost:5000/login" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-10 21:00:23 info: Access token found in cookies: No
+2025-04-10 21:00:23 info: No access token found, rendering login form
+2025-04-10 21:00:23 info: ::1 - - [10/Apr/2025:19:00:23 +0000] "GET /login HTTP/1.1" 304 - "http://localhost:5000/login" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-10 21:00:24 info: Access token found in cookies: No
+2025-04-10 21:00:24 info: No access token found, rendering login form
+2025-04-10 21:00:24 info: ::1 - - [10/Apr/2025:19:00:24 +0000] "GET /login HTTP/1.1" 304 - "http://localhost:5000/login" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-10 21:00:29 info: Login attempt for user: admin on client IP: ::1 on server
+2025-04-10 21:00:29 info: Stored token after login: undefined
+2025-04-10 21:00:29 info: Credentials are correct for username: admin
+2025-04-10 21:00:29 info: Generated access token for user: admin
+2025-04-10 21:00:29 info: Generated refresh token for user: admin
+2025-04-10 21:00:29 info: Generated refresh token
+2025-04-10 21:00:29 info: Generated access token
+2025-04-10 21:00:29 info: Tokens set in cookies redirecting to /get-time-data
+2025-04-10 21:00:29 info: ::1 - - [10/Apr/2025:19:00:29 +0000] "POST /login HTTP/1.1" 302 43 "http://localhost:5000/login" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-10 21:00:29 info: Incoming request to /get-time-data
+2025-04-10 21:00:29 info: Verifying token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiaWF0IjoxNzQ0MzExNjI5LCJleHAiOjE3NDQzOTgwMjl9.9kZPSF8luF6YrEOnVmL8Il0oNCp1jBIiesoKuT2bcTY
+2025-04-10 21:00:29 info: Token verified successfully for user: admin
+2025-04-10 21:00:29 info: File path is not defined for user: admin
+2025-04-10 21:00:29 info: ::1 - - [10/Apr/2025:19:00:29 +0000] "GET /get-time-data HTTP/1.1" 500 24 "http://localhost:5000/login" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-10 21:00:32 info: Check devices request received for fingerprint: 44bb0280dd5aed3e82967d9b86e17caf
+2025-04-10 21:00:32 info: Refresh token verified for user: admin
+2025-04-10 21:00:32 info: Decoded refresh token for username: admin
+2025-04-10 21:00:32 info: Found 5 devices for user admin
+2025-04-10 21:00:33 info: Comparing refresh token for device with fingerprint 44bb0280dd5aed3e82967d9b86e17caf
+2025-04-10 21:00:33 info: Device verified for username: admin
+2025-04-10 21:00:33 info: ::1 - - [10/Apr/2025:19:00:33 +0000] "GET /check-devices?fingerprint=44bb0280dd5aed3e82967d9b86e17caf HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-10 21:00:33 info: Check devices request received for fingerprint: 44bb0280dd5aed3e82967d9b86e17caf
+2025-04-10 21:00:33 info: Refresh token verified for user: admin
+2025-04-10 21:00:33 info: Decoded refresh token for username: admin
+2025-04-10 21:00:33 info: Found 5 devices for user admin
+2025-04-10 21:00:33 info: Save device request received. Fingerprint: 44bb0280dd5aed3e82967d9b86e17caf
+2025-04-10 21:00:33 info: Decoded refresh token for user: admin
+2025-04-10 21:00:33 info: Decoded refresh token for username: admin
+2025-04-10 21:00:33 info: Found 5 devices for user admin
+2025-04-10 21:00:33 info: Device already exists for username: admin, fingerprint: 44bb0280dd5aed3e82967d9b86e17caf
+2025-04-10 21:00:33 info: ::1 - - [10/Apr/2025:19:00:33 +0000] "POST /save-devices HTTP/1.1" 200 35 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-10 21:00:33 info: Comparing refresh token for device with fingerprint 44bb0280dd5aed3e82967d9b86e17caf
+2025-04-10 21:00:33 info: Device verified for username: admin
+2025-04-10 21:00:33 info: ::1 - - [10/Apr/2025:19:00:33 +0000] "GET /check-devices?fingerprint=44bb0280dd5aed3e82967d9b86e17caf HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-10 21:00:33 info: Save device request received. Fingerprint: 44bb0280dd5aed3e82967d9b86e17caf
+2025-04-10 21:00:33 info: Decoded refresh token for user: admin
+2025-04-10 21:00:33 info: Decoded refresh token for username: admin
+2025-04-10 21:00:33 info: Found 5 devices for user admin
+2025-04-10 21:00:33 info: Device already exists for username: admin, fingerprint: 44bb0280dd5aed3e82967d9b86e17caf
+2025-04-10 21:00:33 info: ::1 - - [10/Apr/2025:19:00:33 +0000] "POST /save-devices HTTP/1.1" 200 35 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-10 21:12:25 info: Incoming request to /get-time-data
+2025-04-10 21:12:25 info: Verifying token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiaWF0IjoxNzQ0MzExNjI5LCJleHAiOjE3NDQzOTgwMjl9.9kZPSF8luF6YrEOnVmL8Il0oNCp1jBIiesoKuT2bcTY
+2025-04-10 21:12:25 info: Token verified successfully for user: admin
+2025-04-10 21:12:25 info: File path is not defined for user: admin
+2025-04-10 21:12:25 info: ::1 - - [10/Apr/2025:19:12:25 +0000] "GET /get-time-data HTTP/1.1" 500 24 "http://localhost:5000/login" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-10 21:12:29 info: Incoming request to /get-time-data
+2025-04-10 21:12:29 info: Verifying token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiaWF0IjoxNzQ0MzExNjI5LCJleHAiOjE3NDQzOTgwMjl9.9kZPSF8luF6YrEOnVmL8Il0oNCp1jBIiesoKuT2bcTY
+2025-04-10 21:12:29 info: Token verified successfully for user: admin
+2025-04-10 21:12:29 info: File path is not defined for user: admin
+2025-04-10 21:12:29 info: ::1 - - [10/Apr/2025:19:12:29 +0000] "GET /get-time-data HTTP/1.1" 500 24 "http://localhost:5000/login" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-10 21:12:38 info: Logout request received on server
+2025-04-10 21:12:38 info: Access token found, adding to blacklist
+2025-04-10 21:12:38 info: Refresh token found for username: admin, deleting from REFRESH_TOKENS
+2025-04-10 21:12:38 info: User logged out successfully on server
+2025-04-10 21:12:38 info: ::1 - - [10/Apr/2025:19:12:38 +0000] "GET /logout HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-10 21:12:41 info: ::1 - - [10/Apr/2025:19:12:41 +0000] "GET / HTTP/1.1" 200 17 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-10 21:12:44 info: Access token found in cookies: No
+2025-04-10 21:12:44 info: No access token found, rendering login form
+2025-04-10 21:12:44 info: ::1 - - [10/Apr/2025:19:12:44 +0000] "GET /login HTTP/1.1" 200 303 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-10 21:12:55 info: Server is running on port 5000
+2025-04-10 21:12:59 info: Login attempt for user: admin on client IP: ::1 on server
+2025-04-10 21:12:59 info: Stored token after login: undefined
+2025-04-10 21:12:59 info: Credentials are correct for username: admin
+2025-04-10 21:13:16 info: Server is running on port 5000
+2025-04-10 21:13:19 info: Login attempt for user: admin on client IP: ::1 on server
+2025-04-10 21:13:19 info: Stored token after login: undefined
+2025-04-10 21:13:19 info: Credentials are correct for username: admin
+2025-04-10 21:13:19 info: Generated access token for user: admin
+2025-04-10 21:13:19 info: Generated refresh token for user: admin
+2025-04-10 21:13:19 info: Generated refresh token
+2025-04-10 21:13:19 info: Generated access token
+2025-04-10 21:13:19 info: Tokens set in cookies redirecting to main options
+2025-04-10 21:13:19 info: ::1 - - [10/Apr/2025:19:13:19 +0000] "POST /login HTTP/1.1" 404 257 "http://localhost:5000/login" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-10 21:13:22 info: Access token found in cookies: Yes
+2025-04-10 21:13:22 info: Already logged in, redirecting to main options
+2025-04-10 21:13:22 info: ::1 - - [10/Apr/2025:19:13:22 +0000] "GET /login HTTP/1.1" 404 257 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-10 21:14:35 info: Server is running on port 5000
+2025-04-10 21:14:38 info: Access token found in cookies: Yes
+2025-04-10 21:14:38 info: Already logged in, redirecting to main options
+2025-04-10 21:14:38 info: ::1 - - [10/Apr/2025:19:14:38 +0000] "GET /login HTTP/1.1" 404 250 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-10 21:15:07 info: Server is running on port 5000
+2025-04-10 21:15:09 info: Access token found in cookies: Yes
+2025-04-10 21:15:09 info: Already logged in, redirecting to main options
+2025-04-10 21:15:09 info: ::1 - - [10/Apr/2025:19:15:09 +0000] "GET /login HTTP/1.1" 200 341 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-10 21:15:17 info: Incoming request to /filter
+2025-04-10 21:15:17 info: Verifying token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiaWF0IjoxNzQ0MzEyMzk5LCJleHAiOjE3NDQzOTg3OTl9.OOYU05VwdQ-PyoVXN8wj3m0cIRTjPFKo4XXHaSjkQ3s
+2025-04-10 21:15:18 info: Token verified successfully for user: admin
+2025-04-10 21:15:18 info: ::1 - - [10/Apr/2025:19:15:18 +0000] "GET /filter HTTP/1.1" 404 145 "http://localhost:5000/login" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-10 21:51:40 info: Server is running on port 5000
+2025-04-10 21:51:46 info: Incoming request to /filter
+2025-04-10 21:51:46 info: Verifying token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiaWF0IjoxNzQ0MzEyMzk5LCJleHAiOjE3NDQzOTg3OTl9.OOYU05VwdQ-PyoVXN8wj3m0cIRTjPFKo4XXHaSjkQ3s
+2025-04-10 21:51:46 info: Token verified successfully for user: admin
+2025-04-10 21:51:46 info: ::1 - - [10/Apr/2025:19:51:46 +0000] "GET /filter HTTP/1.1" 404 145 "http://localhost:5000/login" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-10 21:51:55 info: ::1 - - [10/Apr/2025:19:51:55 +0000] "GET / HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-10 21:51:59 info: Access token found in cookies: Yes
+2025-04-10 21:51:59 info: Already logged in, redirecting to main options
+2025-04-10 21:51:59 info: ::1 - - [10/Apr/2025:19:51:59 +0000] "GET /login HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-10 21:53:51 info: Server is running on port 5000
+2025-04-10 21:53:54 info: Access token found in cookies: Yes
+2025-04-10 21:53:54 info: Already logged in, redirecting to main options
+2025-04-10 21:53:54 info: ::1 - - [10/Apr/2025:19:53:54 +0000] "GET /login HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-10 21:54:00 info: ::1 - - [10/Apr/2025:19:54:00 +0000] "GET / HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-10 21:54:07 info: Logout request received on server
+2025-04-10 21:54:07 info: Access token found, adding to blacklist
+2025-04-10 21:54:07 info: Refresh token found for username: admin, deleting from REFRESH_TOKENS
+2025-04-10 21:54:07 info: User logged out successfully on server
+2025-04-10 21:54:07 info: ::1 - - [10/Apr/2025:19:54:07 +0000] "GET /logout HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-10 21:54:11 info: Access token found in cookies: No
+2025-04-10 21:54:11 info: No access token found, rendering login form
+2025-04-10 21:54:11 info: ::1 - - [10/Apr/2025:19:54:11 +0000] "GET /login HTTP/1.1" 200 303 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-10 21:54:15 info: Login attempt for user: admin on client IP: ::1 on server
+2025-04-10 21:54:15 info: Stored token after login: undefined
+2025-04-10 21:54:15 info: Credentials are correct for username: admin
+2025-04-10 21:54:15 info: Generated access token for user: admin
+2025-04-10 21:54:15 info: Generated refresh token for user: admin
+2025-04-10 21:54:15 info: Generated refresh token
+2025-04-10 21:54:15 info: Generated access token
+2025-04-10 21:54:15 info: Tokens set in cookies redirecting to main options
+2025-04-10 21:54:15 info: ::1 - - [10/Apr/2025:19:54:15 +0000] "POST /login HTTP/1.1" 200 341 "http://localhost:5000/login" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-10 21:54:18 info: Incoming request to /filter
+2025-04-10 21:54:18 info: Verifying token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiaWF0IjoxNzQ0MzE0ODU1LCJleHAiOjE3NDQ0MDEyNTV9.-BRQ3MuYiXjGG5C_CtHyBky2gHG-NpCBXj3muLUMwDc
+2025-04-10 21:54:18 info: Token verified successfully for user: admin
+2025-04-10 21:54:18 info: ::1 - - [10/Apr/2025:19:54:18 +0000] "GET /filter HTTP/1.1" 404 145 "http://localhost:5000/login" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-10 21:54:50 info: Server is running on port 5000
+2025-04-10 21:54:51 info: Incoming request to /filter
+2025-04-10 21:54:51 info: Verifying token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiaWF0IjoxNzQ0MzE0ODU1LCJleHAiOjE3NDQ0MDEyNTV9.-BRQ3MuYiXjGG5C_CtHyBky2gHG-NpCBXj3muLUMwDc
+2025-04-10 21:54:51 info: Token verified successfully for user: admin
+2025-04-10 21:54:51 info: ::1 - - [10/Apr/2025:19:54:51 +0000] "GET /filter HTTP/1.1" 404 145 "http://localhost:5000/login" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-10 21:54:54 info: ::1 - - [10/Apr/2025:19:54:54 +0000] "GET / HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-10 21:54:58 info: ::1 - - [10/Apr/2025:19:54:58 +0000] "GET / HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-10 21:55:06 info: Server is running on port 5000
+2025-04-10 21:56:21 info: Access token found in cookies: Yes
+2025-04-10 21:56:21 info: Already logged in, redirecting to main options
+2025-04-10 21:56:21 info: ::1 - - [10/Apr/2025:19:56:21 +0000] "GET /login HTTP/1.1" 200 341 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-10 21:56:23 info: Incoming request to /filter
+2025-04-10 21:56:23 info: Verifying token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiaWF0IjoxNzQ0MzE0ODU1LCJleHAiOjE3NDQ0MDEyNTV9.-BRQ3MuYiXjGG5C_CtHyBky2gHG-NpCBXj3muLUMwDc
+2025-04-10 21:56:23 info: Token verified successfully for user: admin
+2025-04-10 21:56:23 info: ::1 - - [10/Apr/2025:19:56:23 +0000] "GET /filter HTTP/1.1" 404 145 "http://localhost:5000/login" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-11 11:05:16 info: Incoming request to /filter
+2025-04-11 11:05:16 info: Verifying token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiaWF0IjoxNzQ0MzE0ODU1LCJleHAiOjE3NDQ0MDEyNTV9.-BRQ3MuYiXjGG5C_CtHyBky2gHG-NpCBXj3muLUMwDc
+2025-04-11 11:05:16 info: Token verified successfully for user: admin
+2025-04-11 11:05:16 info: ::1 - - [11/Apr/2025:09:05:16 +0000] "GET /filter HTTP/1.1" 404 145 "http://localhost:5000/login" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-11 11:32:34 info: Server is running on port 5000
+2025-04-11 11:32:50 info: ::1 - - [11/Apr/2025:09:32:50 +0000] "GET /filter HTTP/1.1" 200 7149 "http://localhost:5000/login" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-11 11:32:59 info: ::1 - - [11/Apr/2025:09:32:59 +0000] "GET / HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-11 11:33:02 info: Access token found in cookies: Yes
+2025-04-11 11:33:02 info: Already logged in, redirecting to main options
+2025-04-11 11:33:02 info: ::1 - - [11/Apr/2025:09:33:02 +0000] "GET /login HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-11 11:33:05 info: Incoming request to /get-time-data
+2025-04-11 11:33:05 info: Verifying token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiaWF0IjoxNzQ0MzE0ODU1LCJleHAiOjE3NDQ0MDEyNTV9.-BRQ3MuYiXjGG5C_CtHyBky2gHG-NpCBXj3muLUMwDc
+2025-04-11 11:33:05 info: Token verified successfully for user: admin
+2025-04-11 11:33:05 info: File path is not defined for user: admin
+2025-04-11 11:33:05 info: ::1 - - [11/Apr/2025:09:33:05 +0000] "GET /get-time-data HTTP/1.1" 500 24 "http://localhost:5000/login" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-11 11:33:08 info: ::1 - - [11/Apr/2025:09:33:08 +0000] "GET /filter HTTP/1.1" 304 - "http://localhost:5000/login" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-11 12:32:30 info: Server is running on port 5000
+2025-04-11 12:32:57 info: ::1 - - [11/Apr/2025:10:32:57 +0000] "GET /filter HTTP/1.1" 200 632 "http://localhost:5000/login" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-11 12:33:06 info: ::1 - - [11/Apr/2025:10:33:06 +0000] "GET /filter/views HTTP/1.1" 200 1694 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-11 12:33:06 info: ::1 - - [11/Apr/2025:10:33:06 +0000] "GET /filter HTTP/1.1" 304 - "http://localhost:5000/filter/views" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-11 12:33:09 info: ::1 - - [11/Apr/2025:10:33:09 +0000] "GET /filter/2025-04-15_11-29-09.json HTTP/1.1" 200 238 "http://localhost:5000/filter/views" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-11 12:33:10 info: ::1 - - [11/Apr/2025:10:33:10 +0000] "GET /filter/2025-04-17_11-29-09.json HTTP/1.1" 200 237 "http://localhost:5000/filter/views" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-11 12:33:24 info: Server is running on port 5000
+2025-04-11 12:33:25 info: ::1 - - [11/Apr/2025:10:33:25 +0000] "GET /filter/views HTTP/1.1" 200 1663 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-11 12:33:25 info: ::1 - - [11/Apr/2025:10:33:25 +0000] "GET /filter HTTP/1.1" 304 - "http://localhost:5000/filter/views" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-11 12:33:28 info: ::1 - - [11/Apr/2025:10:33:28 +0000] "GET /filter/2025-04-09_20-37-45.json HTTP/1.1" 200 237 "http://localhost:5000/filter/views" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-11 12:33:29 info: ::1 - - [11/Apr/2025:10:33:29 +0000] "GET /filter/2025-04-10_11-29-09.json HTTP/1.1" 200 237 "http://localhost:5000/filter/views" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-11 12:33:30 info: ::1 - - [11/Apr/2025:10:33:30 +0000] "GET /filter/2025-04-11_11-29-09.json HTTP/1.1" 200 238 "http://localhost:5000/filter/views" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-11 12:33:30 info: ::1 - - [11/Apr/2025:10:33:30 +0000] "GET /filter/2025-04-12_20-37-45.json HTTP/1.1" 200 237 "http://localhost:5000/filter/views" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-11 12:33:31 info: ::1 - - [11/Apr/2025:10:33:31 +0000] "GET /filter/2025-04-13_20-37-45.json HTTP/1.1" 200 237 "http://localhost:5000/filter/views" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-11 12:33:32 info: ::1 - - [11/Apr/2025:10:33:32 +0000] "GET /filter/2025-04-15_11-29-09.json HTTP/1.1" 304 - "http://localhost:5000/filter/views" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-11 12:33:32 info: ::1 - - [11/Apr/2025:10:33:32 +0000] "GET /filter/2025-04-16_20-37-45.json HTTP/1.1" 200 237 "http://localhost:5000/filter/views" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-11 12:33:34 info: ::1 - - [11/Apr/2025:10:33:34 +0000] "GET /filter/2025-04-19_11-29-09.json HTTP/1.1" 200 237 "http://localhost:5000/filter/views" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-11 12:33:34 info: ::1 - - [11/Apr/2025:10:33:34 +0000] "GET /filter/3.json HTTP/1.1" 200 237 "http://localhost:5000/filter/views" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-11 12:33:35 info: ::1 - - [11/Apr/2025:10:33:35 +0000] "GET /filter/4.json HTTP/1.1" 200 237 "http://localhost:5000/filter/views" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-11 12:33:35 info: ::1 - - [11/Apr/2025:10:33:35 +0000] "GET /filter/6.json HTTP/1.1" 200 237 "http://localhost:5000/filter/views" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-11 12:33:36 info: ::1 - - [11/Apr/2025:10:33:36 +0000] "GET /filter/3.json HTTP/1.1" 304 - "http://localhost:5000/filter/views" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-11 12:33:38 info: ::1 - - [11/Apr/2025:10:33:38 +0000] "GET /filter/views HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-11 12:33:39 info: ::1 - - [11/Apr/2025:10:33:39 +0000] "GET /filter HTTP/1.1" 304 - "http://localhost:5000/filter/views" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-11 12:33:48 info: ::1 - - [11/Apr/2025:10:33:48 +0000] "GET /filter/2025-04-12_20-37-45.json HTTP/1.1" 304 - "http://localhost:5000/filter/views" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-11 12:34:30 info: Server is running on port 5000
+2025-04-11 12:34:33 info: ::1 - - [11/Apr/2025:10:34:33 +0000] "GET / HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-11 12:34:36 info: Access token found in cookies: Yes
+2025-04-11 12:34:36 info: Already logged in, redirecting to main options
+2025-04-11 12:34:36 info: ::1 - - [11/Apr/2025:10:34:36 +0000] "GET /login HTTP/1.1" 200 496 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-11 12:34:39 info: Incoming request to /filter
+2025-04-11 12:34:39 info: Verifying token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiaWF0IjoxNzQ0MzE0ODU1LCJleHAiOjE3NDQ0MDEyNTV9.-BRQ3MuYiXjGG5C_CtHyBky2gHG-NpCBXj3muLUMwDc
+2025-04-11 12:34:39 info: Token verified successfully for user: admin
+2025-04-11 12:34:40 info: ::1 - - [11/Apr/2025:10:34:40 +0000] "GET /filter HTTP/1.1" 404 145 "http://localhost:5000/login" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-11 12:35:00 info: Server is running on port 5000
+2025-04-11 12:35:03 info: Incoming request to /filter
+2025-04-11 12:35:03 info: Verifying token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiaWF0IjoxNzQ0MzE0ODU1LCJleHAiOjE3NDQ0MDEyNTV9.-BRQ3MuYiXjGG5C_CtHyBky2gHG-NpCBXj3muLUMwDc
+2025-04-11 12:35:03 info: Token verified successfully for user: admin
+2025-04-11 12:35:03 info: ::1 - - [11/Apr/2025:10:35:03 +0000] "GET /filter HTTP/1.1" 404 145 "http://localhost:5000/login" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-11 12:35:05 info: ::1 - - [11/Apr/2025:10:35:05 +0000] "GET / HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-11 12:35:08 info: Access token found in cookies: Yes
+2025-04-11 12:35:08 info: Already logged in, redirecting to main options
+2025-04-11 12:35:08 info: ::1 - - [11/Apr/2025:10:35:08 +0000] "GET /login HTTP/1.1" 200 502 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-11 12:35:10 info: ::1 - - [11/Apr/2025:10:35:10 +0000] "GET /filter/views HTTP/1.1" 200 632 "http://localhost:5000/login" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-11 12:35:15 info: ::1 - - [11/Apr/2025:10:35:15 +0000] "GET /filter/views/ HTTP/1.1" 200 632 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-11 12:36:25 info: ::1 - - [11/Apr/2025:10:36:25 +0000] "GET /filter/views HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-11 12:36:29 info: Incoming request to /filter/view
+2025-04-11 12:36:29 info: Verifying token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiaWF0IjoxNzQ0MzE0ODU1LCJleHAiOjE3NDQ0MDEyNTV9.-BRQ3MuYiXjGG5C_CtHyBky2gHG-NpCBXj3muLUMwDc
+2025-04-11 12:36:29 info: Token verified successfully for user: admin
+2025-04-11 12:36:29 info: ::1 - - [11/Apr/2025:10:36:29 +0000] "GET /filter/view HTTP/1.1" 404 150 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-11 12:36:33 info: ::1 - - [11/Apr/2025:10:36:33 +0000] "GET /filter/views HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-11 12:48:20 info: ::1 - - [11/Apr/2025:10:48:20 +0000] "GET /filter/views/ HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-11 12:48:31 info: ::1 - - [11/Apr/2025:10:48:31 +0000] "GET /filter/views/filter.html/ HTTP/1.1" 404 14 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-11 12:48:33 info: ::1 - - [11/Apr/2025:10:48:33 +0000] "GET /filter/views/filter.html HTTP/1.1" 404 14 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-11 12:48:37 info: ::1 - - [11/Apr/2025:10:48:37 +0000] "GET /filter/views/ HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-11 12:50:04 info: Server is running on port 5000
+2025-04-11 12:50:07 info: ::1 - - [11/Apr/2025:10:50:07 +0000] "GET /filter/views/ HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-11 12:50:09 info: ::1 - - [11/Apr/2025:10:50:09 +0000] "GET /filter/views HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-11 12:52:41 info: ::1 - - [11/Apr/2025:10:52:41 +0000] "GET /filter/views HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-11 12:52:43 info: Incoming request to /filter/view
+2025-04-11 12:52:43 info: Verifying token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiaWF0IjoxNzQ0MzE0ODU1LCJleHAiOjE3NDQ0MDEyNTV9.-BRQ3MuYiXjGG5C_CtHyBky2gHG-NpCBXj3muLUMwDc
+2025-04-11 12:52:43 info: Token verified successfully for user: admin
+2025-04-11 12:52:43 info: ::1 - - [11/Apr/2025:10:52:43 +0000] "GET /filter/view HTTP/1.1" 404 150 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-11 12:52:45 info: ::1 - - [11/Apr/2025:10:52:45 +0000] "GET /filter/views HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-11 12:53:02 info: ::1 - - [11/Apr/2025:10:53:02 +0000] "GET /filter/views/ HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-11 12:54:35 info: Server is running on port 5000
+2025-04-11 12:54:38 info: ::1 - - [11/Apr/2025:10:54:38 +0000] "GET /filter/views/ HTTP/1.1" 200 1662 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-11 12:54:38 info: ::1 - - [11/Apr/2025:10:54:38 +0000] "GET /filter HTTP/1.1" 200 632 "http://localhost:5000/filter/views/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-11 12:54:44 info: Logout request received on server
+2025-04-11 12:54:44 info: Access token found, adding to blacklist
+2025-04-11 12:54:44 info: Refresh token found for username: admin, deleting from REFRESH_TOKENS
+2025-04-11 12:54:44 info: User logged out successfully on server
+2025-04-11 12:54:44 info: ::1 - - [11/Apr/2025:10:54:44 +0000] "GET /logout HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-11 12:54:49 info: Access token found in cookies: No
+2025-04-11 12:54:49 info: No access token found, rendering login form
+2025-04-11 12:54:49 info: ::1 - - [11/Apr/2025:10:54:49 +0000] "GET /login HTTP/1.1" 200 303 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-11 12:54:55 info: Login attempt for user: admin on client IP: ::1 on server
+2025-04-11 12:54:55 info: Stored token after login: undefined
+2025-04-11 12:54:55 info: Credentials are correct for username: admin
+2025-04-11 12:54:55 info: Generated access token for user: admin
+2025-04-11 12:54:55 info: Generated refresh token for user: admin
+2025-04-11 12:54:55 info: Generated refresh token
+2025-04-11 12:54:55 info: Generated access token
+2025-04-11 12:54:55 info: Tokens set in cookies redirecting to main options
+2025-04-11 12:54:55 info: ::1 - - [11/Apr/2025:10:54:55 +0000] "POST /login HTTP/1.1" 200 496 "http://localhost:5000/login" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-11 12:54:56 info: ::1 - - [11/Apr/2025:10:54:56 +0000] "GET /filter HTTP/1.1" 304 - "http://localhost:5000/login" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-11 12:55:36 info: Server is running on port 5000
+2025-04-11 12:55:42 info: ::1 - - [11/Apr/2025:10:55:42 +0000] "GET / HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-11 12:55:44 info: Access token found in cookies: Yes
+2025-04-11 12:55:44 info: Already logged in, redirecting to main options
+2025-04-11 12:55:44 info: ::1 - - [11/Apr/2025:10:55:44 +0000] "GET /login HTTP/1.1" 200 502 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-11 12:55:46 info: ::1 - - [11/Apr/2025:10:55:46 +0000] "GET /filter/views HTTP/1.1" 200 1662 "http://localhost:5000/login" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-11 12:55:46 info: ::1 - - [11/Apr/2025:10:55:46 +0000] "GET /filter HTTP/1.1" 304 - "http://localhost:5000/filter/views" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-11 12:55:54 info: ::1 - - [11/Apr/2025:10:55:54 +0000] "GET /filter/1.json HTTP/1.1" 200 237 "http://localhost:5000/filter/views" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-11 12:55:55 info: ::1 - - [11/Apr/2025:10:55:55 +0000] "GET /filter/10.json HTTP/1.1" 200 237 "http://localhost:5000/filter/views" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-11 12:55:55 info: ::1 - - [11/Apr/2025:10:55:55 +0000] "GET /filter/2.json HTTP/1.1" 200 237 "http://localhost:5000/filter/views" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-11 12:55:56 info: ::1 - - [11/Apr/2025:10:55:56 +0000] "GET /filter/2025-04-10_20-37-45.json HTTP/1.1" 200 237 "http://localhost:5000/filter/views" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-11 12:56:06 info: ::1 - - [11/Apr/2025:10:56:06 +0000] "GET /filter/2025-04-17_20-37-45.json HTTP/1.1" 200 237 "http://localhost:5000/filter/views" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-11 12:56:07 info: ::1 - - [11/Apr/2025:10:56:07 +0000] "GET /filter/2025-04-19_11-29-09.json HTTP/1.1" 304 - "http://localhost:5000/filter/views" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-11 12:56:09 info: ::1 - - [11/Apr/2025:10:56:09 +0000] "GET /filter/3.json HTTP/1.1" 304 - "http://localhost:5000/filter/views" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-11 12:56:09 info: ::1 - - [11/Apr/2025:10:56:09 +0000] "GET /filter/4.json HTTP/1.1" 304 - "http://localhost:5000/filter/views" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-11 12:57:01 info: Logout request received on server
+2025-04-11 12:57:01 info: Access token found, adding to blacklist
+2025-04-11 12:57:01 info: Refresh token found for username: admin, deleting from REFRESH_TOKENS
+2025-04-11 12:57:01 info: User logged out successfully on server
+2025-04-11 12:57:01 info: ::1 - - [11/Apr/2025:10:57:01 +0000] "GET /logout HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-11 13:01:34 info: ::1 - - [11/Apr/2025:11:01:34 +0000] "GET / HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-11 13:01:45 info: ::1 - - [11/Apr/2025:11:01:45 +0000] "GET / HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-11 13:01:49 info: Access token found in cookies: No
+2025-04-11 13:01:49 info: No access token found, rendering login form
+2025-04-11 13:01:49 info: ::1 - - [11/Apr/2025:11:01:49 +0000] "GET /login HTTP/1.1" 200 303 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-11 13:01:55 info: Login attempt for user: admin on client IP: ::1 on server
+2025-04-11 13:01:55 info: Stored token after login: undefined
+2025-04-11 13:01:55 info: Credentials are correct for username: admin
+2025-04-11 13:01:55 info: Generated access token for user: admin
+2025-04-11 13:01:55 info: Generated refresh token for user: admin
+2025-04-11 13:01:55 info: Generated refresh token
+2025-04-11 13:01:55 info: Generated access token
+2025-04-11 13:01:55 info: Tokens set in cookies redirecting to main options
+2025-04-11 13:01:55 info: ::1 - - [11/Apr/2025:11:01:55 +0000] "POST /login HTTP/1.1" 200 502 "http://localhost:5000/login" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-11 13:01:57 info: Incoming request to /get-time-data
+2025-04-11 13:01:57 info: Verifying token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiaWF0IjoxNzQ0MzY5MzE1LCJleHAiOjE3NDQ0NTU3MTV9.l_niBpL6G22S5NS2zS27mcImjqWtRVF_AHVX07UBLcw
+2025-04-11 13:01:57 info: Token verified successfully for user: admin
+2025-04-11 13:01:57 info: File path is not defined for user: admin
+2025-04-11 13:01:57 info: ::1 - - [11/Apr/2025:11:01:57 +0000] "GET /get-time-data HTTP/1.1" 500 24 "http://localhost:5000/login" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-11 13:01:59 info: ::1 - - [11/Apr/2025:11:01:59 +0000] "GET /filter/views HTTP/1.1" 304 - "http://localhost:5000/login" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-11 13:02:00 info: ::1 - - [11/Apr/2025:11:02:00 +0000] "GET /filter HTTP/1.1" 304 - "http://localhost:5000/filter/views" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-11 13:03:26 info: ::1 - - [11/Apr/2025:11:03:26 +0000] "GET /filter/2025-04-11_11-29-09.json HTTP/1.1" 304 - "http://localhost:5000/filter/views" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-11 13:03:26 info: ::1 - - [11/Apr/2025:11:03:26 +0000] "GET /filter/2025-04-11_11-29-09.json HTTP/1.1" 304 - "http://localhost:5000/filter/views" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-11 13:03:26 info: ::1 - - [11/Apr/2025:11:03:26 +0000] "GET /filter/2025-04-12_11-29-09.json HTTP/1.1" 200 238 "http://localhost:5000/filter/views" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-11 13:03:27 info: ::1 - - [11/Apr/2025:11:03:27 +0000] "GET /filter/2025-04-13_11-29-09.json HTTP/1.1" 200 237 "http://localhost:5000/filter/views" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-11 13:03:27 info: ::1 - - [11/Apr/2025:11:03:27 +0000] "GET /filter/2025-04-14_11-29-09.json HTTP/1.1" 200 238 "http://localhost:5000/filter/views" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-11 13:03:37 info: ::1 - - [11/Apr/2025:11:03:37 +0000] "GET /filter/views HTTP/1.1" 200 1687 "http://localhost:5000/login" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-11 13:03:38 info: ::1 - - [11/Apr/2025:11:03:38 +0000] "GET /filter HTTP/1.1" 304 - "http://localhost:5000/filter/views" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-11 13:03:39 info: ::1 - - [11/Apr/2025:11:03:39 +0000] "GET /filter/2025-04-09_20-37-45.json HTTP/1.1" 304 - "http://localhost:5000/filter/views" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-11 13:03:40 info: ::1 - - [11/Apr/2025:11:03:40 +0000] "GET /filter/2025-04-10_20-37-45.json HTTP/1.1" 304 - "http://localhost:5000/filter/views" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-11 13:03:48 info: ::1 - - [11/Apr/2025:11:03:48 +0000] "GET /filter/2025-04-11_20-37-45.json HTTP/1.1" 200 238 "http://localhost:5000/filter/views" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-11 13:03:48 info: ::1 - - [11/Apr/2025:11:03:48 +0000] "GET /filter/2025-04-13_20-37-45.json HTTP/1.1" 304 - "http://localhost:5000/filter/views" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-11 13:03:49 info: ::1 - - [11/Apr/2025:11:03:49 +0000] "GET /filter/2025-04-17_11-29-09.json HTTP/1.1" 304 - "http://localhost:5000/filter/views" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-11 13:03:49 info: ::1 - - [11/Apr/2025:11:03:49 +0000] "GET /filter/2025-04-17_20-37-45.json HTTP/1.1" 304 - "http://localhost:5000/filter/views" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-11 13:03:50 info: ::1 - - [11/Apr/2025:11:03:50 +0000] "GET /filter/2025-04-19_11-29-09.json HTTP/1.1" 304 - "http://localhost:5000/filter/views" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-11 13:03:51 info: ::1 - - [11/Apr/2025:11:03:51 +0000] "GET /filter/3.json HTTP/1.1" 304 - "http://localhost:5000/filter/views" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-11 13:03:52 info: ::1 - - [11/Apr/2025:11:03:52 +0000] "GET /filter/6.json HTTP/1.1" 304 - "http://localhost:5000/filter/views" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-11 13:03:52 info: ::1 - - [11/Apr/2025:11:03:52 +0000] "GET /filter/7.json HTTP/1.1" 200 238 "http://localhost:5000/filter/views" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-11 13:11:32 info: Server is running on port 5000
+2025-04-11 13:12:05 info: Server is running on port 5000
+2025-04-11 13:14:15 info: Server is running on port 5000
+2025-04-11 13:18:15 info: Server is running on port 5000
+2025-04-11 13:19:06 info: Server is running on port 5000
+2025-04-11 13:19:46 info: Server is running on port 5000
+2025-04-11 13:20:36 info: Server is running on port 5000
+2025-04-11 13:21:02 info: ::1 - - [11/Apr/2025:11:21:02 +0000] "GET /filter/views HTTP/1.1" 304 - "http://localhost:5000/login" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-11 13:21:03 info: ::1 - - [11/Apr/2025:11:21:03 +0000] "GET /filter HTTP/1.1" 200 541 "http://localhost:5000/filter/views" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-11 13:21:05 info: ::1 - - [11/Apr/2025:11:21:05 +0000] "GET /filter/2025-04-12_13-20-36.json HTTP/1.1" 200 260 "http://localhost:5000/filter/views" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-11 13:21:06 info: ::1 - - [11/Apr/2025:11:21:06 +0000] "GET /filter/2025-04-19_13-20-36.json HTTP/1.1" 200 260 "http://localhost:5000/filter/views" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-11 13:21:06 info: ::1 - - [11/Apr/2025:11:21:06 +0000] "GET /filter/2025-04-20_13-20-36.json HTTP/1.1" 200 259 "http://localhost:5000/filter/views" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-11 13:21:07 info: ::1 - - [11/Apr/2025:11:21:07 +0000] "GET /filter/2025-04-22_13-20-36.json HTTP/1.1" 200 260 "http://localhost:5000/filter/views" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-11 13:21:07 info: ::1 - - [11/Apr/2025:11:21:07 +0000] "GET /filter/2025-04-24_13-20-36.json HTTP/1.1" 200 259 "http://localhost:5000/filter/views" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-11 13:21:07 info: ::1 - - [11/Apr/2025:11:21:07 +0000] "GET /filter/2025-04-25_13-20-36.json HTTP/1.1" 200 259 "http://localhost:5000/filter/views" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-11 13:21:08 info: ::1 - - [11/Apr/2025:11:21:08 +0000] "GET /filter/2025-04-28_13-20-36.json HTTP/1.1" 200 260 "http://localhost:5000/filter/views" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-11 13:21:39 info: ::1 - - [11/Apr/2025:11:21:39 +0000] "GET /filter/2025-04-25_13-20-36.json HTTP/1.1" 304 - "http://localhost:5000/filter/views" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-11 13:21:40 info: ::1 - - [11/Apr/2025:11:21:40 +0000] "GET /filter/2025-04-24_13-20-36.json HTTP/1.1" 304 - "http://localhost:5000/filter/views" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-11 13:21:40 info: ::1 - - [11/Apr/2025:11:21:40 +0000] "GET /filter/2025-04-22_13-20-36.json HTTP/1.1" 304 - "http://localhost:5000/filter/views" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-11 13:21:41 info: ::1 - - [11/Apr/2025:11:21:41 +0000] "GET /filter/2025-04-20_13-20-36.json HTTP/1.1" 304 - "http://localhost:5000/filter/views" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-11 13:21:42 info: ::1 - - [11/Apr/2025:11:21:42 +0000] "GET /filter/2025-04-19_13-20-36.json HTTP/1.1" 304 - "http://localhost:5000/filter/views" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-11 13:23:45 info: Server is running on port 5000
+2025-04-11 13:23:48 info: ::1 - - [11/Apr/2025:11:23:48 +0000] "GET /filter/views HTTP/1.1" 200 1763 "http://localhost:5000/login" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-11 13:23:49 info: ::1 - - [11/Apr/2025:11:23:49 +0000] "GET /filter HTTP/1.1" 304 - "http://localhost:5000/filter/views" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-11 13:23:50 info: ::1 - - [11/Apr/2025:11:23:50 +0000] "GET /filter/2025-04-19_13-20-36.json HTTP/1.1" 304 - "http://localhost:5000/filter/views" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-11 13:23:51 info: ::1 - - [11/Apr/2025:11:23:51 +0000] "GET /filter/2025-04-20_13-20-36.json HTTP/1.1" 304 - "http://localhost:5000/filter/views" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-11 13:23:51 info: ::1 - - [11/Apr/2025:11:23:51 +0000] "GET /filter/2025-04-21_13-20-36.json HTTP/1.1" 200 259 "http://localhost:5000/filter/views" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-11 13:23:52 info: ::1 - - [11/Apr/2025:11:23:52 +0000] "GET /filter/2025-04-22_13-20-36.json HTTP/1.1" 304 - "http://localhost:5000/filter/views" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-11 13:23:53 info: ::1 - - [11/Apr/2025:11:23:53 +0000] "GET /filter/2025-04-23_13-20-36.json HTTP/1.1" 200 259 "http://localhost:5000/filter/views" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-11 13:23:54 info: ::1 - - [11/Apr/2025:11:23:54 +0000] "GET /filter/2025-04-24_13-20-36.json HTTP/1.1" 304 - "http://localhost:5000/filter/views" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-11 13:23:55 info: ::1 - - [11/Apr/2025:11:23:55 +0000] "GET /filter/2025-04-25_13-20-36.json HTTP/1.1" 304 - "http://localhost:5000/filter/views" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-11 13:23:57 info: ::1 - - [11/Apr/2025:11:23:57 +0000] "GET /filter/2025-04-26_13-20-36.json HTTP/1.1" 200 259 "http://localhost:5000/filter/views" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-11 13:23:58 info: ::1 - - [11/Apr/2025:11:23:58 +0000] "GET /filter/2025-04-27_13-20-36.json HTTP/1.1" 200 259 "http://localhost:5000/filter/views" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-11 13:23:59 info: ::1 - - [11/Apr/2025:11:23:59 +0000] "GET /filter/2025-04-28_13-20-36.json HTTP/1.1" 304 - "http://localhost:5000/filter/views" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-11 13:27:35 info: Server is running on port 5000
+2025-04-11 13:27:37 info: ::1 - - [11/Apr/2025:11:27:37 +0000] "GET /filter/views HTTP/1.1" 200 2062 "http://localhost:5000/login" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-11 13:27:37 info: ::1 - - [11/Apr/2025:11:27:37 +0000] "GET /filter HTTP/1.1" 304 - "http://localhost:5000/filter/views" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-11 13:27:40 info: ::1 - - [11/Apr/2025:11:27:40 +0000] "GET /filter/2025-04-18_13-20-36.json HTTP/1.1" 200 259 "http://localhost:5000/filter/views" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-11 13:27:41 info: ::1 - - [11/Apr/2025:11:27:41 +0000] "GET /filter/2025-04-19_13-20-36.json HTTP/1.1" 304 - "http://localhost:5000/filter/views" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-11 13:27:41 info: ::1 - - [11/Apr/2025:11:27:41 +0000] "GET /filter/2025-04-20_13-20-36.json HTTP/1.1" 304 - "http://localhost:5000/filter/views" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-11 13:27:42 info: ::1 - - [11/Apr/2025:11:27:42 +0000] "GET /filter/2025-04-23_13-20-36.json HTTP/1.1" 304 - "http://localhost:5000/filter/views" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-11 13:27:43 info: ::1 - - [11/Apr/2025:11:27:43 +0000] "GET /filter/2025-04-26_13-20-36.json HTTP/1.1" 304 - "http://localhost:5000/filter/views" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-11 13:27:44 info: ::1 - - [11/Apr/2025:11:27:44 +0000] "GET /filter/2025-04-28_13-20-36.json HTTP/1.1" 304 - "http://localhost:5000/filter/views" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-11 13:27:44 info: ::1 - - [11/Apr/2025:11:27:44 +0000] "GET /filter/2025-04-29_13-20-36.json HTTP/1.1" 200 259 "http://localhost:5000/filter/views" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-11 13:27:44 info: ::1 - - [11/Apr/2025:11:27:44 +0000] "GET /filter/2025-04-29_13-20-36.json HTTP/1.1" 304 - "http://localhost:5000/filter/views" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-11 13:27:46 info: ::1 - - [11/Apr/2025:11:27:46 +0000] "GET /filter/2025-04-30_13-20-36.json HTTP/1.1" 200 260 "http://localhost:5000/filter/views" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-11 13:27:48 info: ::1 - - [11/Apr/2025:11:27:48 +0000] "GET /filter/2025-04-29_13-20-36.json HTTP/1.1" 304 - "http://localhost:5000/filter/views" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-11 13:27:49 info: ::1 - - [11/Apr/2025:11:27:49 +0000] "GET /filter/2025-04-29_13-20-36.json HTTP/1.1" 304 - "http://localhost:5000/filter/views" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-11 13:27:50 info: ::1 - - [11/Apr/2025:11:27:50 +0000] "GET /filter/2025-04-28_13-20-36.json HTTP/1.1" 304 - "http://localhost:5000/filter/views" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-11 13:27:53 info: ::1 - - [11/Apr/2025:11:27:53 +0000] "GET /filter/2025-04-27_13-20-36.json HTTP/1.1" 304 - "http://localhost:5000/filter/views" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-11 13:27:56 info: ::1 - - [11/Apr/2025:11:27:56 +0000] "GET /filter/2025-04-11_13-20-36.json HTTP/1.1" 200 259 "http://localhost:5000/filter/views" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-11 13:27:56 info: ::1 - - [11/Apr/2025:11:27:56 +0000] "GET /filter/2025-04-12_13-20-36.json HTTP/1.1" 304 - "http://localhost:5000/filter/views" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-11 13:27:57 info: ::1 - - [11/Apr/2025:11:27:57 +0000] "GET /filter/2025-04-13_13-20-36.json HTTP/1.1" 200 259 "http://localhost:5000/filter/views" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-11 13:27:57 info: ::1 - - [11/Apr/2025:11:27:57 +0000] "GET /filter/2025-04-13_13-20-36.json HTTP/1.1" 304 - "http://localhost:5000/filter/views" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-11 13:27:58 info: ::1 - - [11/Apr/2025:11:27:58 +0000] "GET /filter/2025-04-14_13-20-36.json HTTP/1.1" 200 260 "http://localhost:5000/filter/views" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-11 13:30:22 info: Server is running on port 5000
+2025-04-11 13:35:43 info: Server is running on port 5000
+2025-04-11 13:36:11 info: Server is running on port 5000
+2025-04-11 14:01:13 info: Server is running on port 5000
+2025-04-11 14:01:25 info: ::1 - - [11/Apr/2025:12:01:25 +0000] "GET /filter/views HTTP/1.1" 200 2037 "http://localhost:5000/login" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-11 14:01:25 info: ::1 - - [11/Apr/2025:12:01:25 +0000] "GET /filter HTTP/1.1" 200 1081 "http://localhost:5000/filter/views" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-11 14:01:27 info: ::1 - - [11/Apr/2025:12:01:27 +0000] "GET /filter/2025-04-11_08-27-00.json HTTP/1.1" 200 259 "http://localhost:5000/filter/views" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-11 14:01:28 info: ::1 - - [11/Apr/2025:12:01:28 +0000] "GET /filter/2025-04-12_08-07-00.json HTTP/1.1" 200 259 "http://localhost:5000/filter/views" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-11 14:01:28 info: ::1 - - [11/Apr/2025:12:01:28 +0000] "GET /filter/2025-04-12_08-30-00.json HTTP/1.1" 200 259 "http://localhost:5000/filter/views" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-11 14:01:29 info: ::1 - - [11/Apr/2025:12:01:29 +0000] "GET /filter/2025-04-13_08-13-00.json HTTP/1.1" 200 260 "http://localhost:5000/filter/views" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-11 14:01:30 info: ::1 - - [11/Apr/2025:12:01:30 +0000] "GET /filter/2025-04-13_08-22-00.json HTTP/1.1" 200 259 "http://localhost:5000/filter/views" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-11 14:01:30 info: ::1 - - [11/Apr/2025:12:01:30 +0000] "GET /filter/2025-04-14_08-05-00.json HTTP/1.1" 200 259 "http://localhost:5000/filter/views" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-11 14:01:36 info: ::1 - - [11/Apr/2025:12:01:36 +0000] "GET /filter/2025-04-13_08-22-00.json HTTP/1.1" 304 - "http://localhost:5000/filter/views" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-11 14:01:58 info: Server is running on port 5000
+2025-04-11 14:02:01 info: ::1 - - [11/Apr/2025:12:02:01 +0000] "GET /filter/views HTTP/1.1" 200 2037 "http://localhost:5000/login" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-11 14:02:01 info: ::1 - - [11/Apr/2025:12:02:01 +0000] "GET /filter HTTP/1.1" 200 1621 "http://localhost:5000/filter/views" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-11 14:02:02 info: ::1 - - [11/Apr/2025:12:02:02 +0000] "GET /filter/2025-04-11_08-09-00.json HTTP/1.1" 200 259 "http://localhost:5000/filter/views" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-11 14:02:04 info: ::1 - - [11/Apr/2025:12:02:04 +0000] "GET /filter/2025-04-12_08-07-00.json HTTP/1.1" 304 - "http://localhost:5000/filter/views" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-11 14:02:04 info: ::1 - - [11/Apr/2025:12:02:04 +0000] "GET /filter/2025-04-12_08-22-00.json HTTP/1.1" 200 258 "http://localhost:5000/filter/views" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-11 14:02:06 info: ::1 - - [11/Apr/2025:12:02:06 +0000] "GET /filter/2025-04-13_08-13-00.json HTTP/1.1" 304 - "http://localhost:5000/filter/views" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-11 14:02:06 info: ::1 - - [11/Apr/2025:12:02:06 +0000] "GET /filter/2025-04-14_08-05-00.json HTTP/1.1" 304 - "http://localhost:5000/filter/views" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-11 14:02:12 info: ::1 - - [11/Apr/2025:12:02:12 +0000] "GET /filter/2025-04-19_08-12-00.json HTTP/1.1" 200 260 "http://localhost:5000/filter/views" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-11 14:02:52 info: ::1 - - [11/Apr/2025:12:02:52 +0000] "GET /filter/2025-04-11_08-27-00.json HTTP/1.1" 304 - "http://localhost:5000/filter/views" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-11 14:02:54 info: ::1 - - [11/Apr/2025:12:02:54 +0000] "GET /filter/2025-04-11_08-27-00.json HTTP/1.1" 304 - "http://localhost:5000/filter/views" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-11 14:02:55 info: ::1 - - [11/Apr/2025:12:02:55 +0000] "GET /filter/2025-04-11_08-27-00.json HTTP/1.1" 304 - "http://localhost:5000/filter/views" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-11 14:02:59 info: ::1 - - [11/Apr/2025:12:02:59 +0000] "GET /filter/2025-04-15_08-07-00.json HTTP/1.1" 200 259 "http://localhost:5000/filter/views" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-11 14:03:00 info: ::1 - - [11/Apr/2025:12:03:00 +0000] "GET /filter/2025-04-15_08-15-00.json HTTP/1.1" 200 259 "http://localhost:5000/filter/views" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-11 14:03:00 info: ::1 - - [11/Apr/2025:12:03:00 +0000] "GET /filter/2025-04-15_08-23-00.json HTTP/1.1" 200 259 "http://localhost:5000/filter/views" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-11 14:03:01 info: ::1 - - [11/Apr/2025:12:03:01 +0000] "GET /filter/2025-04-16_08-05-00.json HTTP/1.1" 200 259 "http://localhost:5000/filter/views" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-11 14:03:04 info: ::1 - - [11/Apr/2025:12:03:04 +0000] "GET /filter/2025-04-16_08-06-00.json HTTP/1.1" 200 259 "http://localhost:5000/filter/views" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-11 14:03:08 info: ::1 - - [11/Apr/2025:12:03:08 +0000] "GET /filter/2025-04-18_08-05-00.json HTTP/1.1" 200 259 "http://localhost:5000/filter/views" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-11 14:12:12 info: Check devices request received for fingerprint: 44bb0280dd5aed3e82967d9b86e17caf
+2025-04-11 14:12:12 info: Refresh token verified for user: admin
+2025-04-11 14:12:12 info: Decoded refresh token for username: admin
+2025-04-11 14:12:12 info: Found 5 devices for user admin
+2025-04-11 14:12:13 info: Comparing refresh token for device with fingerprint 44bb0280dd5aed3e82967d9b86e17caf
+2025-04-11 14:12:13 info: Device verified for username: admin
+2025-04-11 14:12:13 info: ::1 - - [11/Apr/2025:12:12:13 +0000] "GET /check-devices?fingerprint=44bb0280dd5aed3e82967d9b86e17caf HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-11 14:12:13 info: Check devices request received for fingerprint: 44bb0280dd5aed3e82967d9b86e17caf
+2025-04-11 14:12:13 info: Refresh token verified for user: admin
+2025-04-11 14:12:13 info: Decoded refresh token for username: admin
+2025-04-11 14:12:13 info: Found 5 devices for user admin
+2025-04-11 14:12:13 info: Comparing refresh token for device with fingerprint 44bb0280dd5aed3e82967d9b86e17caf
+2025-04-11 14:12:13 info: Device verified for username: admin
+2025-04-11 14:12:13 info: ::1 - - [11/Apr/2025:12:12:13 +0000] "GET /check-devices?fingerprint=44bb0280dd5aed3e82967d9b86e17caf HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-11 14:12:14 info: Save device request received. Fingerprint: 92fe2565b0797bde0592f18c4d63d389
+2025-04-11 14:12:14 info: Decoded refresh token for user: admin
+2025-04-11 14:12:14 info: Decoded refresh token for username: admin
+2025-04-11 14:12:14 info: Found 5 devices for user admin
+2025-04-11 14:12:14 info: Device already exists for username: admin, fingerprint: 92fe2565b0797bde0592f18c4d63d389
+2025-04-11 14:12:14 info: ::1 - - [11/Apr/2025:12:12:14 +0000] "POST /save-devices HTTP/1.1" 200 35 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-11 14:12:14 info: Save device request received. Fingerprint: 92fe2565b0797bde0592f18c4d63d389
+2025-04-11 14:12:14 info: Decoded refresh token for user: admin
+2025-04-11 14:12:14 info: Decoded refresh token for username: admin
+2025-04-11 14:12:14 info: Found 5 devices for user admin
+2025-04-11 14:12:14 info: Device already exists for username: admin, fingerprint: 92fe2565b0797bde0592f18c4d63d389
+2025-04-11 14:12:14 info: ::1 - - [11/Apr/2025:12:12:14 +0000] "POST /save-devices HTTP/1.1" 200 35 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-11 14:13:24 info: Server is running on port 5000
+2025-04-11 14:13:29 info: ::1 - - [11/Apr/2025:12:13:29 +0000] "GET /filter/views HTTP/1.1" 200 2034 "http://localhost:5000/login" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-11 14:13:29 info: ::1 - - [11/Apr/2025:12:13:29 +0000] "GET /filter HTTP/1.1" 500 1416 "http://localhost:5000/filter/views" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-11 14:14:09 info: Server is running on port 5000
+2025-04-11 14:14:11 info: ::1 - - [11/Apr/2025:12:14:11 +0000] "GET /filter/views HTTP/1.1" 304 - "http://localhost:5000/login" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-11 14:14:11 info: ::1 - - [11/Apr/2025:12:14:11 +0000] "GET /filter HTTP/1.1" 500 1422 "http://localhost:5000/filter/views" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-11 14:14:14 info: ::1 - - [11/Apr/2025:12:14:14 +0000] "GET /filter/views HTTP/1.1" 304 - "http://localhost:5000/login" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-11 14:14:14 info: ::1 - - [11/Apr/2025:12:14:14 +0000] "GET /filter HTTP/1.1" 500 1422 "http://localhost:5000/filter/views" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-11 14:14:16 info: ::1 - - [11/Apr/2025:12:14:16 +0000] "GET /filter/views HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-11 14:14:16 info: ::1 - - [11/Apr/2025:12:14:16 +0000] "GET /filter HTTP/1.1" 500 1422 "http://localhost:5000/filter/views" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-11 14:14:42 info: Server is running on port 5000
+2025-04-11 14:14:50 info: ::1 - - [11/Apr/2025:12:14:50 +0000] "GET /filter/views HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-11 14:14:50 info: ::1 - - [11/Apr/2025:12:14:50 +0000] "GET /filter HTTP/1.1" 200 1621 "http://localhost:5000/filter/views" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-11 14:14:52 info: ::1 - - [11/Apr/2025:12:14:52 +0000] "GET /filter/2025-04-26_08-04-00.json HTTP/1.1" 200 259 "http://localhost:5000/filter/views" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-11 14:14:53 info: ::1 - - [11/Apr/2025:12:14:53 +0000] "GET /filter/2025-04-26_08-04-00.json HTTP/1.1" 304 - "http://localhost:5000/filter/views" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-11 14:14:54 info: ::1 - - [11/Apr/2025:12:14:54 +0000] "GET /filter/2025-04-15_08-15-00.json HTTP/1.1" 304 - "http://localhost:5000/filter/views" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-11 14:14:55 info: ::1 - - [11/Apr/2025:12:14:55 +0000] "GET /filter/2025-04-15_08-07-00.json HTTP/1.1" 304 - "http://localhost:5000/filter/views" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-11 14:14:56 info: ::1 - - [11/Apr/2025:12:14:56 +0000] "GET /filter/2025-04-14_08-14-00.json HTTP/1.1" 200 259 "http://localhost:5000/filter/views" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-11 14:16:09 info: Server is running on port 5000
+2025-04-11 14:16:53 info: Server is running on port 5000

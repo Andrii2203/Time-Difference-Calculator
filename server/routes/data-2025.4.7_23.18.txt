@@ -1,0 +1,15 @@
+{
+  "initialStartTime": "2025-04-07_23:18:19",
+  "finalEndTime": "2025-04-07_23:18:21",
+  "totalTime": "1",
+  "awariaTime": "0",
+  "finishTime": "2025-04-07_23:18:27",
+  "timeFromFisrtStartTillFinish": "7",
+  "intervals": [
+    {
+      "startDate": "2025-04-07_23:18:19",
+      "endDate": "2025-04-07_23:18:21",
+      "path": "L1 / Prygotowanie"
+    }
+  ]
+}

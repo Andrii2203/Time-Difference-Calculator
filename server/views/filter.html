@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            display: flex;
+        }
+        #file-list {
+            width: 30%;
+            border-right: 1px solid #ccc;
+            padding: 1rem;
+        }
+        #file-content {
+            flex-grow: 1;
+            width: 10%;
+            padding: 1rem;
+            white-space: pre-wrap;
+            background: #f9f9f9;
+        }
+        li {
+            cursor: pointer;
+            margin-bottom: 0.5rem;
+        }
+        li:active {
+            background-color: yellowgreen;
+        }
+    </style>
+</head>
+<body>
+    <div id="file-list">
+        <h3>Files</h3>
+        <ul id="files"></ul>
+    </div>
+    <div id="file-content">
+        <h3>Data:</h3>
+        <div id="content">Choose file to read</div>
+    </div>
+    <script>
+        async function fetchFiles() {
+            const res = await fetch('/filter');
+            const files = await res.json();
+            const list = document.getElementById("files");
+            list.innerHTML = '';
+
+            files.forEach(file => {
+                const li = document.createElement("li");
+                li.textContent = file;
+
+                li.addEventListener("click", function() {
+                    const listItem = document.querySelectorAll("li");
+                    listItem.forEach(li => li.classList.remove("active"));
+
+                    this.classList.add('active');
+
+                    fetchFileContent(file);
+                });
+
+                list.appendChild(li);
+            });
+        }
+
+        async function fetchFileContent(fileName) {
+            const res = await fetch('/filter/' + fileName);
+            const data = await res.json();
+            document.getElementById("content").textContent = JSON.stringify(data, null, 2);
+        }
+
+        fetchFiles();
+    </script>
+</body>
+</html>

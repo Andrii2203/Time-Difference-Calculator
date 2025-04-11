@@ -1,0 +1,20 @@
+{
+  "initialStartTime": "2025-04-06_16:01:59",
+  "finalEndTime": "2025-04-06_16:02:02",
+  "totalTime": "2",
+  "awariaTime": "1",
+  "finishTime": "2025-04-06_16:02:04",
+  "timeFromFisrtStartTillFinish": "4",
+  "intervals": [
+    {
+      "startDate": "2025-04-06_16:01:59",
+      "endDate": "2025-04-06_16:02:00",
+      "path": "L1 / Prygotowanie"
+    },
+    {
+      "startDate": "2025-04-06_16:02:00",
+      "endDate": "2025-04-06_16:02:02",
+      "path": "L1 / Awaria / Silosy / Zmiana Surowda"
+    }
+  ]
+}

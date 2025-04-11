@@ -1,0 +1,25 @@
+{
+  "initialStartTime": "2025-04-09_14:03:43",
+  "finalEndTime": "2025-04-09_14:03:48",
+  "totalTime": "5",
+  "awariaTime": "2",
+  "finishTime": "2025-04-09_14:03:49",
+  "timeFromFisrtStartTillFinish": "6",
+  "intervals": [
+    {
+      "startDate": "2025-04-09_14:03:43",
+      "endDate": "2025-04-09_14:03:43",
+      "path": "L1 / Prygotowanie"
+    },
+    {
+      "startDate": "2025-04-09_14:03:45",
+      "endDate": "2025-04-09_14:03:45",
+      "path": "L1 / Praca"
+    },
+    {
+      "startDate": "2025-04-09_14:03:46",
+      "endDate": "2025-04-09_14:03:48",
+      "path": "L1 / Awaria / Zbiorniki Mikro / SZFD"
+    }
+  ]
+}

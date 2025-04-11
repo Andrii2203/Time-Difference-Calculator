@@ -1,0 +1,20 @@
+{
+  "initialStartTime": "2025-04-07_19:46:11",
+  "finalEndTime": "2025-04-07_19:46:14",
+  "totalTime": "3",
+  "awariaTime": "0",
+  "finishTime": "2025-04-07_19:46:15",
+  "timeFromFisrtStartTillFinish": "4",
+  "intervals": [
+    {
+      "startDate": "2025-04-07_19:46:11",
+      "endDate": "2025-04-07_19:46:11",
+      "path": "L1 / Prygotowanie"
+    },
+    {
+      "startDate": "2025-04-07_19:46:13",
+      "endDate": "2025-04-07_19:46:14",
+      "path": "L1 / Praca"
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "events": [
+    {
+      "name": "Prygotowanie",
+      "duration": 900
+    },
+    {
+      "name": "Przerwa",
+      "duration": 1800
+    },
+    {
+      "name": "Praca",
+      "duration": 1777
+    },
+    {
+      "name": "Awaria: Subcategory1 / Child1",
+      "duration": 24323
+    }
+  ],
+  "dateAndTime": {
+    "date": "2025-04-11",
+    "start time": "08-09-00",
+    "end time": "16-09-00"
+  }
+}

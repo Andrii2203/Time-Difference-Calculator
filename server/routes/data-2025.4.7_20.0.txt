@@ -1,0 +1,20 @@
+{
+  "initialStartTime": "2025-04-07_20:00:19",
+  "finalEndTime": "2025-04-07_20:00:26",
+  "totalTime": "6",
+  "awariaTime": "5",
+  "finishTime": "2025-04-07_20:00:29",
+  "timeFromFisrtStartTillFinish": "9",
+  "intervals": [
+    {
+      "startDate": "2025-04-07_20:00:19",
+      "endDate": "2025-04-07_20:00:20",
+      "path": "L1 / Prygotowanie"
+    },
+    {
+      "startDate": "2025-04-07_20:00:21",
+      "endDate": "2025-04-07_20:00:26",
+      "path": "L1 / Awaria / Zbiorniki Mikro / SZFD"
+    }
+  ]
+}

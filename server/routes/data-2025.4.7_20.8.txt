@@ -1,0 +1,30 @@
+{
+  "initialStartTime": "2025-04-07_20:08:29",
+  "finalEndTime": "2025-04-07_20:08:43",
+  "totalTime": "14",
+  "awariaTime": "3",
+  "finishTime": "2025-04-07_20:08:45",
+  "timeFromFisrtStartTillFinish": "16",
+  "intervals": [
+    {
+      "startDate": "2025-04-07_20:08:29",
+      "endDate": "2025-04-07_20:08:30",
+      "path": "L1 / Prygotowanie"
+    },
+    {
+      "startDate": "2025-04-07_20:08:31",
+      "endDate": "2025-04-07_20:08:33",
+      "path": "L1 / Praca"
+    },
+    {
+      "startDate": "2025-04-07_20:08:37",
+      "endDate": "2025-04-07_20:08:39",
+      "path": "L2 / Przerwa"
+    },
+    {
+      "startDate": "2025-04-07_20:08:39",
+      "endDate": "2025-04-07_20:08:43",
+      "path": "L2 / Awaria / Kosz Podmieszarkowy / Awaria Kubełków"
+    }
+  ]
+}

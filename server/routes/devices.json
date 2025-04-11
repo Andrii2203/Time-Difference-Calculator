@@ -1,0 +1,56 @@
+{
+  "admin": [
+    {
+      "fingerprint": "44bb0280dd5aed3e82967d9b86e17caf",
+      "refreshToken": "$2b$10$uSNqwLjP3UvYZIWDLZxXBu7Zv7g1MbXQ5Chl6nDzZE8zHRE81pESW",
+      "createAt": "2025-04-07T13:08:55.983Z"
+    },
+    {
+      "fingerprint": "51e90e9e12a94d52e13bc388a5692393",
+      "refreshToken": "$2b$10$4H7nq5WtlYMM79/xq2Gh1uQyLePjt5IfI4SlhkTR8cupc5ocI3pBi",
+      "createAt": "2025-04-07T14:22:57.148Z"
+    },
+    {
+      "fingerprint": "3b9cd273c2a66a3e7bdb3a3d5e70f358",
+      "refreshToken": "$2b$10$W0eDJTzqoMIQ2o5jV04i..xEbYVf.p.OxgNntMeTVeoMt7JnHHkzS",
+      "createAt": "2025-04-07T15:10:03.534Z"
+    },
+    {
+      "fingerprint": "b2574ad10468885255b5d36f3beb82dc",
+      "refreshToken": "$2b$10$2HeYjbc6c8aSj4IM6XRNLOz8BtQ7yuKVeSBZTEU0MGgdDiIyrw8Qi",
+      "createAt": "2025-04-07T17:05:42.469Z"
+    },
+    {
+      "fingerprint": "92fe2565b0797bde0592f18c4d63d389",
+      "refreshToken": "$2b$10$/pPB6rycBR/icZs7mZQmSuLuTll4CvoJ3Ei0W.hi6Ved/BuLYzJru",
+      "createAt": "2025-04-08T12:15:02.757Z"
+    }
+  ],
+  "undefined": [
+    {
+      "fingerprint": "b2574ad10468885255b5d36f3beb82dc",
+      "refreshToken": "$2b$10$nm3E1x8JoNeMCxyA318uiuNU8wfWiDpywQU6ZSlAyozekP74bpqQe",
+      "createAt": "2025-04-08T13:58:41.453Z"
+    },
+    {
+      "fingerprint": "b5c9bcd88f7792bac98a69c7cd295756",
+      "refreshToken": "$2b$10$Z9pnlwen9AQUKOt.H4h1/.ONpziwLwMi6jNW1u8hDhRTpiYyT.bZW",
+      "createAt": "2025-04-08T14:09:51.930Z"
+    },
+    {
+      "fingerprint": "7bd4cdcb9d7b214324e421664eb0b1ac",
+      "refreshToken": "$2b$10$rYOkuppfweUaa7t4aZO5Rui5tg2Ty7ydxTE10odoV7Bqr/E.x6rK2",
+      "createAt": "2025-04-08T14:33:01.329Z"
+    },
+    {
+      "fingerprint": "92fe2565b0797bde0592f18c4d63d389",
+      "refreshToken": "$2b$10$XEzTF626K.yH2ITDi8vsVOW38qvP6vpKgC1P6hCA0jeuTeCNnlfZ.",
+      "createAt": "2025-04-08T14:53:42.098Z"
+    },
+    {
+      "fingerprint": "44bb0280dd5aed3e82967d9b86e17caf",
+      "refreshToken": "$2b$10$ZjQ3dbr7cz92d24/dEITVe4e7WJaAXGIvEoUpPYQUyhKnTPaJfYbS",
+      "createAt": "2025-04-08T16:32:50.684Z"
+    }
+  ]
+}
