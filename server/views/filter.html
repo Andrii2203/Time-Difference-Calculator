@@ -1,73 +1,129 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-        body {
-            display: flex;
-        }
-        #file-list {
-            width: 30%;
-            border-right: 1px solid #ccc;
-            padding: 1rem;
-        }
-        #file-content {
-            flex-grow: 1;
-            width: 10%;
-            padding: 1rem;
-            white-space: pre-wrap;
-            background: #f9f9f9;
-        }
-        li {
-            cursor: pointer;
-            margin-bottom: 0.5rem;
-        }
-        li:active {
-            background-color: yellowgreen;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      display: flex;
+    }
+    #file-list {
+      width: 30%;
+      border-right: 1px solid #ccc;
+      padding: 1rem;
+    }
+    #file-content {
+      flex-grow: 1;
+      padding: 1rem;
+      white-space: pre-wrap;
+      background: #f9f9f9;
+    }
+    li {
+      cursor: pointer;
+      margin-bottom: 0.5rem;
+    }
+    li.active {
+      background-color: yellowgreen;
+    }
+    #totals {
+      margin-top: 2rem;
+      padding: 1rem;
+      background: #eef;
+    }
+  </style>
 </head>
 <body>
-    <div id="file-list">
-        <h3>Files</h3>
-        <ul id="files"></ul>
+  <div id="file-list">
+    <h3>Files</h3>
+    <ul id="files"></ul>
+
+    <div id="totals">
+      <h4>Total Time (seconds):</h4>
+      <div id="summary">Calculating...</div>
     </div>
-    <div id="file-content">
-        <h3>Data:</h3>
-        <div id="content">Choose file to read</div>
-    </div>
-    <script>
-        async function fetchFiles() {
-            const res = await fetch('/filter');
-            const files = await res.json();
-            const list = document.getElementById("files");
-            list.innerHTML = '';
+  </div>
 
-            files.forEach(file => {
-                const li = document.createElement("li");
-                li.textContent = file;
+  <div id="file-content">
+    <h3>Data:</h3>
+    <div id="content">Choose file to read</div>
+  </div>
 
-                li.addEventListener("click", function() {
-                    const listItem = document.querySelectorAll("li");
-                    listItem.forEach(li => li.classList.remove("active"));
+  <script>
+    async function fetchFiles() {
+      const res = await fetch('/filter');
+      const files = await res.json();
+      const list = document.getElementById("files");
+      list.innerHTML = '';
 
-                    this.classList.add('active');
+      files.forEach(file => {
+        const li = document.createElement("li");
+        li.textContent = file;
 
-                    fetchFileContent(file);
-                });
+        li.addEventListener("click", function () {
+          const listItem = document.querySelectorAll("li");
+          listItem.forEach(li => li.classList.remove("active"));
+          this.classList.add('active');
+          fetchFileContent(file);
+        });
 
-                list.appendChild(li);
-            });
-        }
+        list.appendChild(li);
+      });
 
-        async function fetchFileContent(fileName) {
-            const res = await fetch('/filter/' + fileName);
-            const data = await res.json();
-            document.getElementById("content").textContent = JSON.stringify(data, null, 2);
-        }
+      calculateTotalDurations(files);
+    }
 
-        fetchFiles();
-    </script>
+    async function fetchFileContent(fileName) {
+      const res = await fetch('/filter/' + fileName);
+      const data = await res.json();
+      document.getElementById("content").textContent = JSON.stringify(data, null, 2);
+    }
+
+    async function calculateTotalDurations(files) {
+  const totals = {
+    Prygotowanie: 0,
+    Przerwa: 0,
+    Praca: 0,
+    Awaria: 0,
+  };
+
+  const summaryDiv = document.getElementById("summary");
+  summaryDiv.innerHTML = `Processing ${files.length} files...`;
+
+  let counter = 0;
+
+  for (const file of files) {
+    try {
+      const res = await fetch('/filter/' + file);
+      const data = await res.json();
+
+      for (const item of data) {
+        if (item.name === "Prygotowanie") totals.Prygotowanie += item.duration || 0;
+        else if (item.name === "Przerwa") totals.Przerwa += item.duration || 0;
+        else if (item.name === "Praca") totals.Praca += item.duration || 0;
+        else if (item.name && item.name.startsWith("Awaria")) totals.Awaria += item.duration || 0;
+      }
+
+      counter++;
+      summaryDiv.innerHTML = `Loading file ${counter} of ${files.length}...`;
+
+    } catch (err) {
+      console.error("Error loading file:", file, err);
+      summaryDiv.innerHTML += `<br>Error loading ${file}`;
+    }
+  }
+
+  // Показати результат
+  summaryDiv.innerHTML = `
+    <p>✅ Calculation done (${files.length} files)</p>
+    <p>Prygotowanie: ${totals.Prygotowanie} сек</p>
+    <p>Przerwa: ${totals.Przerwa} сек</p>
+    <p>Praca: ${totals.Praca} сек</p>
+    <p>Awaria: ${totals.Awaria} сек</p>
+  `;
+}
+
+
+    fetchFiles();
+  </script>
 </body>
 </html>
