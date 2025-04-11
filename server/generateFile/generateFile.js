@@ -125,4 +125,4 @@ function startLoop() {
     }
 }
 
-module.exports = startLoop();
+// module.exports = startLoop();

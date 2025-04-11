@@ -10,16 +10,16 @@
     },
     {
       "name": "Praca",
-      "duration": 1777
+      "duration": 10249
     },
     {
-      "name": "Awaria: Subcategory1 / Child1",
-      "duration": 24323
+      "name": "Awaria: Subcategory1 / Child3",
+      "duration": 15851
     }
   ],
   "dateAndTime": {
-    "date": "2025-04-11",
-    "start time": "08-09-00",
-    "end time": "16-09-00"
+    "date": "2025-04-29",
+    "start time": "08-07-00",
+    "end time": "16-07-00"
   }
 }
