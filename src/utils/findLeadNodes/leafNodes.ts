@@ -12,6 +12,5 @@ export const findLeadNodes = (items: Item[]): Item[] => {
         });
     };
     traverse(items);
-    console.log(leaf);
     return leaf;
 }

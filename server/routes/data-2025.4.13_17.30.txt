@@ -1,0 +1,20 @@
+{
+  "initialStartTime": "2025-04-13_17:30:16",
+  "finalEndTime": "2025-04-13_17:30:22",
+  "totalTime": "5",
+  "awariaTime": "0",
+  "finishTime": "2025-04-13_17:30:22",
+  "timeFromFisrtStartTillFinish": "5",
+  "intervals": [
+    {
+      "startDate": "2025-04-13_17:30:16",
+      "endDate": "2025-04-13_17:30:19",
+      "path": "L1 / Prygotowanie"
+    },
+    {
+      "startDate": "2025-04-13_17:30:20",
+      "endDate": "2025-04-13_17:30:22",
+      "path": "L1 / Przerwa"
+    }
+  ]
+}

@@ -8,6 +8,9 @@ import { TimeElement, Item } from './Interfaces';
 import Breadcrumbs from './Breadcrumb';
 import { fetchWithAuth, useDeviceFingerprint } from './auth';
 import { findLeadNodes } from './utils/findLeadNodes/leafNodes';
+import { RenderLeaf } from "./components/renderLeaf/RenderLeaf"
+import { filteredItems } from './utils/helper/filteredItems';
+import { DeleteLastElementButton } from './components/backBtn/DeleteLastElementButton';
 
 const TimeDifferenceCalculator: React.FC = () => {
   const [initialStartTime, setInitialStartTime] = useState<Date | null>(null);
@@ -54,8 +57,8 @@ const TimeDifferenceCalculator: React.FC = () => {
   }
 
   useEffect(() => {
-    // console.log('parents', parents);
-    // console.log('data', dataTree);
+    console.log('parents', parents);
+    console.log('data', dataTree);
     // console.log('singleItem', singleItem);
     // console.log("finish time,", finishTime1);
     if(singleItem?.name === "Awaria") {
@@ -75,7 +78,7 @@ const TimeDifferenceCalculator: React.FC = () => {
     if(disableBtn) {
       return;
     }
-
+    console.log("item", item);
     if(item.name === "Prygotowanie") {
       handleStart1();
       return;
@@ -105,67 +108,38 @@ const TimeDifferenceCalculator: React.FC = () => {
     }
   };
 
-  const filteredItems = (items: Item[]): Item[] => {
-    if(parents.length === 0) {
-      return items.filter(i => i.children.length > 0);
-    }
-    const lastEl = parents[parents.length - 1];
-    return lastEl.children;
-  } 
+  // const removeAndLiftItem = (items: Item[], nameToRemove: string): Item[] => {
+  //   let count = 0;
+  //   const recursiveRemove = (nodes: Item[]): void => {
+  //     nodes.forEach((node, index) => {
+  //       if (node.name === nameToRemove) {
+  //         count++;
+  //         nodes.splice(index, 1, ...node.children);
+  //       } else {
+  //         recursiveRemove(node.children);
+  //       }
+  //     });
+  //   };
+  //   const updatedItems = produce(items, (draft) => {
+  //     recursiveRemove(draft);
+  //   });
 
-  const renderItems = () => {
-    let itemsToRender = filteredItems(dataTree);
-    return itemsToRender.map((child, i) => {
-      return(
-        <div key={child.name}>
-          <button 
-            onClick={() => handleSelectItem(child)}
-            className={singleItem?.name === child.name ? "selected" : "not-selected"}
-            disabled={disableBtn}
-          >{child.name}</button>
-        </div>      
-      )
-    })
-  };
+  //   setDataTree((prev) => {
+  //     const newTree = updatedItems;
+  //     setParents((prev) => {
+  //       const newP = prev.map((p) => {
+  //         const upI = newTree.find((i) => i.name === p.name);
+  //         return upI ? upI : p;
+  //       })
 
-  const handleDeleteLastElementFromParentsArr = () => {
-    setParents(prev => prev.slice(0, prev.length - 1));
-    setSingleItem(null);
-  }
+  //       return newP;
+  //     });
+  //     return newTree;
+  //   })
 
-  const removeAndLiftItem = (items: Item[], nameToRemove: string): Item[] => {
-    let count = 0;
-    const recursiveRemove = (nodes: Item[]): void => {
-      nodes.forEach((node, index) => {
-        if (node.name === nameToRemove) {
-          count++;
-          nodes.splice(index, 1, ...node.children);
-        } else {
-          recursiveRemove(node.children);
-        }
-      });
-    };
-    const updatedItems = produce(items, (draft) => {
-      recursiveRemove(draft);
-    });
-
-    setDataTree((prev) => {
-      const newTree = updatedItems;
-      setParents((prev) => {
-        const newP = prev.map((p) => {
-          const upI = newTree.find((i) => i.name === p.name);
-          return upI ? upI : p;
-        })
-
-        return newP;
-      });
-      return newTree;
-    })
-
-    return updatedItems;
-  };
+  //   return updatedItems;
+  // };
   
-
   const handleStart1 = () => {
     if(singleItem?.name.length === 0) {
       return;
@@ -198,13 +172,13 @@ const TimeDifferenceCalculator: React.FC = () => {
       setIntervalDates([...intervalDates, id]);
     }
 
-    if(singleItem?.name === "Prygotowanie") {
-      setParents((prev) => singleItem ? [...prev, singleItem] : prev);
-      removeAndLiftItem(dataTree, "Prygotowanie");
-    }    
-    if(singleItem?.name === "Przerwa") {
-      removeAndLiftItem(dataTree, "Przerwa");
-    }    
+    // if(singleItem?.name === "Prygotowanie") {
+    //   setParents((prev) => singleItem ? [...prev, singleItem] : prev);
+    //   removeAndLiftItem(dataTree, "Prygotowanie");
+    // }    
+    // if(singleItem?.name === "Przerwa") {
+    //   removeAndLiftItem(dataTree, "Przerwa");
+    // }    
 
     setSingleItem(null);
     setDisableBtn(false);
@@ -280,13 +254,12 @@ const TimeDifferenceCalculator: React.FC = () => {
         throw new Error("Failed to save data");
       }
       const message = await res.text();
+      resetTimers();
       alert(message);
     } catch (error) {
       console.error("Error:", error);
       alert("Error occurred while saving data");
     }
-
-    resetTimers();
   };
 
   const resetTimers = () => {
@@ -348,14 +321,17 @@ const TimeDifferenceCalculator: React.FC = () => {
 
       <div className='category-container'>
         <div className='item-container'>
-          {renderItems()}
+          <RenderLeaf 
+            items={filteredItems(dataTree, parents)}
+            singleItem={singleItem}
+            disableBtn={disableBtn}
+            handleSelectItem={handleSelectItem}
+          />
           {parents.length > 2 && (
-            <button 
-              onClick={handleDeleteLastElementFromParentsArr}
-              className={"not-selected"}
-            >
-            back
-            </button>
+            <DeleteLastElementButton 
+              setParents={setParents}
+              setSingleItem={setSingleItem}
+            />
           )}
         </div>
         <div className='second-container'></div>
