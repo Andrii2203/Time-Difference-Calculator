@@ -6,8 +6,8 @@ import { produce } from 'immer';
 import CurrentCategry from './CurrentCategory';
 import { TimeElement, Item } from './Interfaces';
 import Breadcrumbs from './Breadcrumb';
-import FingerprintJS from '@fingerprintjs/fingerprintjs';
 import { fetchWithAuth, useDeviceFingerprint } from './auth';
+import { findLeadNodes } from './utils/findLeadNodes/leafNodes';
 
 const TimeDifferenceCalculator: React.FC = () => {
   const [initialStartTime, setInitialStartTime] = useState<Date | null>(null);
@@ -25,7 +25,6 @@ const TimeDifferenceCalculator: React.FC = () => {
   const [singleItem, setSingleItem] = useState<Item | null>(null);
   const [disableBtn, setDisableBtn] = useState<boolean>(false);
 
-  // useDeviceFingerprint();
   useEffect(() => {
     const interval = setInterval(() => {
       console.log("Interval is running...");
@@ -48,27 +47,7 @@ const TimeDifferenceCalculator: React.FC = () => {
     return () => clearInterval(interval);
   }, []);
   
-  const findLeadNodes = (items: Item[]): Item[] => {
-    let leaf : Item[] = [];
-
-    const traverse = (nodes: Item[]) => {
-      nodes.forEach(node => {
-        if(node.children.length === 0) {
-          leaf.push(node);
-        } else {
-          traverse(node.children);
-        }
-      })
-    }
-    traverse(items);
-    return leaf;
-  }
-
-  const leaf = useMemo(() => {
-    const l = findLeadNodes(dataTree);
-    return l;
-  }, [dataTree]);
-
+  const leaf = useMemo(() => findLeadNodes(dataTree), []);
   const isSelectedLeaf = () => {
     if(singleItem?.name === "Prygotowanie") return true;
     return singleItem ? leaf.some(l => l.name === singleItem.name) : false;

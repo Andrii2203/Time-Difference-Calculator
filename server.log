@@ -1149,3 +1149,243 @@
 2025-04-11 15:20:00 info: ::1 - - [11/Apr/2025:13:20:00 +0000] "GET /filter/2025-04-29_08-07-00.json HTTP/1.1" 200 260 "http://localhost:5000/filter/views" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
 2025-04-11 15:20:00 info: ::1 - - [11/Apr/2025:13:20:00 +0000] "GET /filter/2025-04-30_08-04-00.json HTTP/1.1" 304 - "http://localhost:5000/filter/views" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
 2025-04-11 17:41:22 info: Server is running on port 5000
+2025-04-11 21:15:20 info: Server is running on port 5000
+2025-04-11 21:15:48 info: Check devices request received for fingerprint: 44bb0280dd5aed3e82967d9b86e17caf
+2025-04-11 21:15:48 info: Refresh token verified for user: admin
+2025-04-11 21:15:48 info: Decoded refresh token for username: admin
+2025-04-11 21:15:48 info: Found 5 devices for user admin
+2025-04-11 21:15:48 info: Comparing refresh token for device with fingerprint 44bb0280dd5aed3e82967d9b86e17caf
+2025-04-11 21:15:48 info: Device verified for username: admin
+2025-04-11 21:15:48 info: ::1 - - [11/Apr/2025:19:15:48 +0000] "GET /check-devices?fingerprint=44bb0280dd5aed3e82967d9b86e17caf HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-11 21:15:48 info: Check devices request received for fingerprint: 44bb0280dd5aed3e82967d9b86e17caf
+2025-04-11 21:15:48 info: Refresh token verified for user: admin
+2025-04-11 21:15:48 info: Decoded refresh token for username: admin
+2025-04-11 21:15:48 info: Found 5 devices for user admin
+2025-04-11 21:15:48 info: Save device request received. Fingerprint: 44bb0280dd5aed3e82967d9b86e17caf
+2025-04-11 21:15:48 info: Decoded refresh token for user: admin
+2025-04-11 21:15:48 info: Decoded refresh token for username: admin
+2025-04-11 21:15:48 info: Found 5 devices for user admin
+2025-04-11 21:15:48 info: Device already exists for username: admin, fingerprint: 44bb0280dd5aed3e82967d9b86e17caf
+2025-04-11 21:15:48 info: ::1 - - [11/Apr/2025:19:15:48 +0000] "POST /save-devices HTTP/1.1" 200 35 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-11 21:15:48 info: Save device request received. Fingerprint: 44bb0280dd5aed3e82967d9b86e17caf
+2025-04-11 21:15:48 info: Decoded refresh token for user: admin
+2025-04-11 21:15:48 info: Decoded refresh token for username: admin
+2025-04-11 21:15:48 info: Found 5 devices for user admin
+2025-04-11 21:15:48 info: Device already exists for username: admin, fingerprint: 44bb0280dd5aed3e82967d9b86e17caf
+2025-04-11 21:15:48 info: ::1 - - [11/Apr/2025:19:15:48 +0000] "POST /save-devices HTTP/1.1" 200 35 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-11 21:15:48 info: Comparing refresh token for device with fingerprint 44bb0280dd5aed3e82967d9b86e17caf
+2025-04-11 21:15:48 info: Device verified for username: admin
+2025-04-11 21:15:49 info: ::1 - - [11/Apr/2025:19:15:49 +0000] "GET /check-devices?fingerprint=44bb0280dd5aed3e82967d9b86e17caf HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-11 21:28:34 info: Check devices request received for fingerprint: 44bb0280dd5aed3e82967d9b86e17caf
+2025-04-11 21:28:34 info: Refresh token verified for user: admin
+2025-04-11 21:28:34 info: Decoded refresh token for username: admin
+2025-04-11 21:28:34 info: Found 5 devices for user admin
+2025-04-11 21:28:35 info: Comparing refresh token for device with fingerprint 44bb0280dd5aed3e82967d9b86e17caf
+2025-04-11 21:28:35 info: Device verified for username: admin
+2025-04-11 21:28:35 info: ::1 - - [11/Apr/2025:19:28:35 +0000] "GET /check-devices?fingerprint=44bb0280dd5aed3e82967d9b86e17caf HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-11 21:28:35 info: Check devices request received for fingerprint: 44bb0280dd5aed3e82967d9b86e17caf
+2025-04-11 21:28:35 info: Refresh token verified for user: admin
+2025-04-11 21:28:35 info: Decoded refresh token for username: admin
+2025-04-11 21:28:35 info: Found 5 devices for user admin
+2025-04-11 21:28:35 info: Save device request received. Fingerprint: 44bb0280dd5aed3e82967d9b86e17caf
+2025-04-11 21:28:35 info: Decoded refresh token for user: admin
+2025-04-11 21:28:35 info: Decoded refresh token for username: admin
+2025-04-11 21:28:35 info: Found 5 devices for user admin
+2025-04-11 21:28:35 info: Device already exists for username: admin, fingerprint: 44bb0280dd5aed3e82967d9b86e17caf
+2025-04-11 21:28:35 info: ::1 - - [11/Apr/2025:19:28:35 +0000] "POST /save-devices HTTP/1.1" 200 35 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-11 21:28:35 info: Comparing refresh token for device with fingerprint 44bb0280dd5aed3e82967d9b86e17caf
+2025-04-11 21:28:35 info: Device verified for username: admin
+2025-04-11 21:28:35 info: ::1 - - [11/Apr/2025:19:28:35 +0000] "GET /check-devices?fingerprint=44bb0280dd5aed3e82967d9b86e17caf HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-11 21:28:35 info: Save device request received. Fingerprint: 44bb0280dd5aed3e82967d9b86e17caf
+2025-04-11 21:28:35 info: Decoded refresh token for user: admin
+2025-04-11 21:28:35 info: Decoded refresh token for username: admin
+2025-04-11 21:28:35 info: Found 5 devices for user admin
+2025-04-11 21:28:35 info: Device already exists for username: admin, fingerprint: 44bb0280dd5aed3e82967d9b86e17caf
+2025-04-11 21:28:35 info: ::1 - - [11/Apr/2025:19:28:35 +0000] "POST /save-devices HTTP/1.1" 200 35 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-11 21:28:40 info: Check devices request received for fingerprint: 44bb0280dd5aed3e82967d9b86e17caf
+2025-04-11 21:28:40 info: Refresh token verified for user: admin
+2025-04-11 21:28:40 info: Decoded refresh token for username: admin
+2025-04-11 21:28:40 info: Found 5 devices for user admin
+2025-04-11 21:28:40 info: Save device request received. Fingerprint: 44bb0280dd5aed3e82967d9b86e17caf
+2025-04-11 21:28:40 info: Decoded refresh token for user: admin
+2025-04-11 21:28:40 info: Decoded refresh token for username: admin
+2025-04-11 21:28:40 info: Found 5 devices for user admin
+2025-04-11 21:28:40 info: Device already exists for username: admin, fingerprint: 44bb0280dd5aed3e82967d9b86e17caf
+2025-04-11 21:28:40 info: ::1 - - [11/Apr/2025:19:28:40 +0000] "POST /save-devices HTTP/1.1" 200 35 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-11 21:28:40 info: Comparing refresh token for device with fingerprint 44bb0280dd5aed3e82967d9b86e17caf
+2025-04-11 21:28:40 info: Device verified for username: admin
+2025-04-11 21:28:40 info: ::1 - - [11/Apr/2025:19:28:40 +0000] "GET /check-devices?fingerprint=44bb0280dd5aed3e82967d9b86e17caf HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-11 21:28:40 info: Check devices request received for fingerprint: 44bb0280dd5aed3e82967d9b86e17caf
+2025-04-11 21:28:40 info: Refresh token verified for user: admin
+2025-04-11 21:28:40 info: Decoded refresh token for username: admin
+2025-04-11 21:28:40 info: Found 5 devices for user admin
+2025-04-11 21:28:40 info: Comparing refresh token for device with fingerprint 44bb0280dd5aed3e82967d9b86e17caf
+2025-04-11 21:28:40 info: Device verified for username: admin
+2025-04-11 21:28:40 info: ::1 - - [11/Apr/2025:19:28:40 +0000] "GET /check-devices?fingerprint=44bb0280dd5aed3e82967d9b86e17caf HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-11 21:28:40 info: Save device request received. Fingerprint: 44bb0280dd5aed3e82967d9b86e17caf
+2025-04-11 21:28:40 info: Decoded refresh token for user: admin
+2025-04-11 21:28:40 info: Decoded refresh token for username: admin
+2025-04-11 21:28:40 info: Found 5 devices for user admin
+2025-04-11 21:28:40 info: Device already exists for username: admin, fingerprint: 44bb0280dd5aed3e82967d9b86e17caf
+2025-04-11 21:28:40 info: ::1 - - [11/Apr/2025:19:28:40 +0000] "POST /save-devices HTTP/1.1" 200 35 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-11 21:43:59 info: Check devices request received for fingerprint: 44bb0280dd5aed3e82967d9b86e17caf
+2025-04-11 21:43:59 info: Refresh token verified for user: admin
+2025-04-11 21:43:59 info: Decoded refresh token for username: admin
+2025-04-11 21:43:59 info: Found 5 devices for user admin
+2025-04-11 21:43:59 info: Comparing refresh token for device with fingerprint 44bb0280dd5aed3e82967d9b86e17caf
+2025-04-11 21:43:59 info: Device verified for username: admin
+2025-04-11 21:43:59 info: ::1 - - [11/Apr/2025:19:43:59 +0000] "GET /check-devices?fingerprint=44bb0280dd5aed3e82967d9b86e17caf HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-11 21:43:59 info: Check devices request received for fingerprint: 44bb0280dd5aed3e82967d9b86e17caf
+2025-04-11 21:43:59 info: Refresh token verified for user: admin
+2025-04-11 21:43:59 info: Decoded refresh token for username: admin
+2025-04-11 21:43:59 info: Found 5 devices for user admin
+2025-04-11 21:44:00 info: Save device request received. Fingerprint: 44bb0280dd5aed3e82967d9b86e17caf
+2025-04-11 21:44:00 info: Decoded refresh token for user: admin
+2025-04-11 21:44:00 info: Decoded refresh token for username: admin
+2025-04-11 21:44:00 info: Found 5 devices for user admin
+2025-04-11 21:44:00 info: Device already exists for username: admin, fingerprint: 44bb0280dd5aed3e82967d9b86e17caf
+2025-04-11 21:44:00 info: ::1 - - [11/Apr/2025:19:44:00 +0000] "POST /save-devices HTTP/1.1" 200 35 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-11 21:44:00 info: Comparing refresh token for device with fingerprint 44bb0280dd5aed3e82967d9b86e17caf
+2025-04-11 21:44:00 info: Device verified for username: admin
+2025-04-11 21:44:00 info: ::1 - - [11/Apr/2025:19:44:00 +0000] "GET /check-devices?fingerprint=44bb0280dd5aed3e82967d9b86e17caf HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-11 21:44:00 info: Save device request received. Fingerprint: 44bb0280dd5aed3e82967d9b86e17caf
+2025-04-11 21:44:00 info: Decoded refresh token for user: admin
+2025-04-11 21:44:00 info: Decoded refresh token for username: admin
+2025-04-11 21:44:00 info: Found 5 devices for user admin
+2025-04-11 21:44:00 info: Device already exists for username: admin, fingerprint: 44bb0280dd5aed3e82967d9b86e17caf
+2025-04-11 21:44:00 info: ::1 - - [11/Apr/2025:19:44:00 +0000] "POST /save-devices HTTP/1.1" 200 35 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-13 15:38:14 info: Server is running on port 5000
+2025-04-13 15:43:12 info: Login attempt for user: user2 on client IP: ::1
+2025-04-13 15:43:12 info: Generated access token for user: user2 for client IP: ::1
+2025-04-13 15:43:12 info: Generated refresh token for user: user2 for client IP: ::1
+2025-04-13 15:43:12 info: ::1 - - [13/Apr/2025:13:43:12 +0000] "POST /api/login HTTP/1.1" 200 155 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"
+2025-04-13 15:44:00 info: ::1 - - [13/Apr/2025:13:44:00 +0000] "GET /filter/2025-04-13_08-29-00.json HTTP/1.1" 304 - "http://localhost:5000/filter/views" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"
+2025-04-13 15:44:00 info: ::1 - - [13/Apr/2025:13:44:00 +0000] "GET /filter/2025-04-14_08-15-00.json HTTP/1.1" 304 - "http://localhost:5000/filter/views" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"
+2025-04-13 15:44:00 info: Incoming request to /favicon.ico
+2025-04-13 15:44:00 info: No access token found in cookies
+2025-04-13 15:44:00 info: ::1 - - [13/Apr/2025:13:44:00 +0000] "GET /favicon.ico HTTP/1.1" 302 28 "http://localhost:5000/filter/views" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"
+2025-04-13 15:44:00 info: Access token found in cookies: No
+2025-04-13 15:44:00 info: No access token found, rendering login form
+2025-04-13 15:44:00 info: ::1 - - [13/Apr/2025:13:44:00 +0000] "GET /login HTTP/1.1" 200 303 "http://localhost:5000/filter/views" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"
+2025-04-13 15:44:00 info: ::1 - - [13/Apr/2025:13:44:00 +0000] "GET /filter/2025-04-15_08-24-00.json HTTP/1.1" 304 - "http://localhost:5000/filter/views" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"
+2025-04-13 15:44:01 info: ::1 - - [13/Apr/2025:13:44:01 +0000] "GET /filter/2025-04-16_08-30-00.json HTTP/1.1" 304 - "http://localhost:5000/filter/views" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"
+2025-04-13 15:44:01 info: ::1 - - [13/Apr/2025:13:44:01 +0000] "GET /filter/2025-04-17_08-12-00.json HTTP/1.1" 304 - "http://localhost:5000/filter/views" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"
+2025-04-13 15:44:02 info: ::1 - - [13/Apr/2025:13:44:02 +0000] "GET /filter/2025-04-18_08-25-00.json HTTP/1.1" 304 - "http://localhost:5000/filter/views" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"
+2025-04-13 15:44:02 info: ::1 - - [13/Apr/2025:13:44:02 +0000] "GET /filter/2025-04-19_08-26-00.json HTTP/1.1" 304 - "http://localhost:5000/filter/views" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"
+2025-04-13 15:44:02 info: ::1 - - [13/Apr/2025:13:44:02 +0000] "GET /filter/2025-04-20_08-21-00.json HTTP/1.1" 304 - "http://localhost:5000/filter/views" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"
+2025-04-13 15:44:02 info: ::1 - - [13/Apr/2025:13:44:02 +0000] "GET /filter/2025-04-21_08-27-00.json HTTP/1.1" 304 - "http://localhost:5000/filter/views" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"
+2025-04-13 15:44:02 info: ::1 - - [13/Apr/2025:13:44:02 +0000] "GET /filter/2025-04-22_08-27-00.json HTTP/1.1" 304 - "http://localhost:5000/filter/views" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"
+2025-04-13 15:44:02 info: ::1 - - [13/Apr/2025:13:44:02 +0000] "GET /filter/2025-04-23_08-01-00.json HTTP/1.1" 304 - "http://localhost:5000/filter/views" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"
+2025-04-13 15:44:02 info: ::1 - - [13/Apr/2025:13:44:02 +0000] "GET /filter/2025-04-24_08-02-00.json HTTP/1.1" 304 - "http://localhost:5000/filter/views" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"
+2025-04-13 15:44:02 info: ::1 - - [13/Apr/2025:13:44:02 +0000] "GET /filter/2025-04-25_08-01-00.json HTTP/1.1" 304 - "http://localhost:5000/filter/views" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"
+2025-04-13 15:44:02 info: ::1 - - [13/Apr/2025:13:44:02 +0000] "GET /filter/2025-04-26_08-18-00.json HTTP/1.1" 304 - "http://localhost:5000/filter/views" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"
+2025-04-13 15:44:03 info: ::1 - - [13/Apr/2025:13:44:03 +0000] "GET /filter/2025-04-27_08-04-00.json HTTP/1.1" 304 - "http://localhost:5000/filter/views" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"
+2025-04-13 15:44:03 info: ::1 - - [13/Apr/2025:13:44:03 +0000] "GET /filter/2025-04-28_08-18-00.json HTTP/1.1" 304 - "http://localhost:5000/filter/views" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"
+2025-04-13 15:44:03 info: ::1 - - [13/Apr/2025:13:44:03 +0000] "GET /filter/2025-04-29_08-07-00.json HTTP/1.1" 304 - "http://localhost:5000/filter/views" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"
+2025-04-13 15:44:03 info: ::1 - - [13/Apr/2025:13:44:03 +0000] "GET /filter/2025-04-30_08-04-00.json HTTP/1.1" 304 - "http://localhost:5000/filter/views" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"
+2025-04-13 16:59:28 info: Check devices request received for fingerprint: aacff2dc53e1357d97615bed94b1555a
+2025-04-13 16:59:28 info: Invalid refresh token: invalid signature
+2025-04-13 16:59:28 info: ::1 - - [13/Apr/2025:14:59:28 +0000] "GET /check-devices?fingerprint=aacff2dc53e1357d97615bed94b1555a HTTP/1.1" 400 21 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"
+2025-04-13 16:59:28 info: Check devices request received for fingerprint: aacff2dc53e1357d97615bed94b1555a
+2025-04-13 16:59:28 info: Invalid refresh token: invalid signature
+2025-04-13 16:59:28 info: ::1 - - [13/Apr/2025:14:59:28 +0000] "GET /check-devices?fingerprint=aacff2dc53e1357d97615bed94b1555a HTTP/1.1" 400 21 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"
+2025-04-13 16:59:28 info: Save device request received. Fingerprint: aacff2dc53e1357d97615bed94b1555a
+2025-04-13 16:59:28 info: Decoded refresh token for user: undefined
+2025-04-13 16:59:28 info: Decoded refresh token for username: undefined
+2025-04-13 16:59:28 info: Found 5 devices for user undefined
+2025-04-13 16:59:28 info: Save device request received. Fingerprint: aacff2dc53e1357d97615bed94b1555a
+2025-04-13 16:59:28 info: Decoded refresh token for user: undefined
+2025-04-13 16:59:28 info: Decoded refresh token for username: undefined
+2025-04-13 16:59:28 info: Found 5 devices for user undefined
+2025-04-13 16:59:28 info: Refresh token hashed for user undefined
+2025-04-13 16:59:28 info: Device added for username: undefined, fingerprint: aacff2dc53e1357d97615bed94b1555a
+2025-04-13 16:59:28 info: Devices saved successfully
+2025-04-13 16:59:28 info: ::1 - - [13/Apr/2025:14:59:28 +0000] "POST /save-devices HTTP/1.1" 200 31 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"
+2025-04-13 16:59:28 info: Refresh token hashed for user undefined
+2025-04-13 16:59:28 info: Device added for username: undefined, fingerprint: aacff2dc53e1357d97615bed94b1555a
+2025-04-13 16:59:28 info: Devices saved successfully
+2025-04-13 16:59:28 info: ::1 - - [13/Apr/2025:14:59:28 +0000] "POST /save-devices HTTP/1.1" 200 31 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"
+2025-04-13 16:59:37 info: Login attempt for user: user1 on client IP: ::1
+2025-04-13 16:59:38 info: Generated access token for user: user1 for client IP: ::1
+2025-04-13 16:59:38 info: Generated refresh token for user: user1 for client IP: ::1
+2025-04-13 16:59:38 info: ::1 - - [13/Apr/2025:14:59:38 +0000] "POST /api/login HTTP/1.1" 200 155 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"
+2025-04-13 17:01:18 info: Check devices request received for fingerprint: aacff2dc53e1357d97615bed94b1555a
+2025-04-13 17:01:18 info: Invalid refresh token: invalid signature
+2025-04-13 17:01:18 info: ::1 - - [13/Apr/2025:15:01:18 +0000] "GET /check-devices?fingerprint=aacff2dc53e1357d97615bed94b1555a HTTP/1.1" 400 21 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"
+2025-04-13 17:01:18 info: Check devices request received for fingerprint: aacff2dc53e1357d97615bed94b1555a
+2025-04-13 17:01:18 info: Invalid refresh token: invalid signature
+2025-04-13 17:01:18 info: ::1 - - [13/Apr/2025:15:01:18 +0000] "GET /check-devices?fingerprint=aacff2dc53e1357d97615bed94b1555a HTTP/1.1" 400 21 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"
+2025-04-13 17:01:18 info: Save device request received. Fingerprint: aacff2dc53e1357d97615bed94b1555a
+2025-04-13 17:01:18 info: Decoded refresh token for user: undefined
+2025-04-13 17:01:18 info: Decoded refresh token for username: undefined
+2025-04-13 17:01:18 info: Found 6 devices for user undefined
+2025-04-13 17:01:18 info: Device already exists for username: undefined, fingerprint: aacff2dc53e1357d97615bed94b1555a
+2025-04-13 17:01:18 info: ::1 - - [13/Apr/2025:15:01:18 +0000] "POST /save-devices HTTP/1.1" 200 35 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"
+2025-04-13 17:01:19 info: Save device request received. Fingerprint: aacff2dc53e1357d97615bed94b1555a
+2025-04-13 17:01:19 info: Decoded refresh token for user: undefined
+2025-04-13 17:01:19 info: Decoded refresh token for username: undefined
+2025-04-13 17:01:19 info: Found 6 devices for user undefined
+2025-04-13 17:01:19 info: Device already exists for username: undefined, fingerprint: aacff2dc53e1357d97615bed94b1555a
+2025-04-13 17:01:19 info: ::1 - - [13/Apr/2025:15:01:19 +0000] "POST /save-devices HTTP/1.1" 200 35 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"
+2025-04-13 17:06:18 info: Check devices request received for fingerprint: aacff2dc53e1357d97615bed94b1555a
+2025-04-13 17:06:18 info: Invalid refresh token: invalid signature
+2025-04-13 17:06:18 info: ::1 - - [13/Apr/2025:15:06:18 +0000] "GET /check-devices?fingerprint=aacff2dc53e1357d97615bed94b1555a HTTP/1.1" 400 21 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"
+2025-04-13 17:06:18 info: Check devices request received for fingerprint: aacff2dc53e1357d97615bed94b1555a
+2025-04-13 17:06:18 info: Invalid refresh token: invalid signature
+2025-04-13 17:06:18 info: ::1 - - [13/Apr/2025:15:06:18 +0000] "GET /check-devices?fingerprint=aacff2dc53e1357d97615bed94b1555a HTTP/1.1" 400 21 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"
+2025-04-13 17:06:19 info: Save device request received. Fingerprint: aacff2dc53e1357d97615bed94b1555a
+2025-04-13 17:06:19 info: Decoded refresh token for user: undefined
+2025-04-13 17:06:19 info: Decoded refresh token for username: undefined
+2025-04-13 17:06:19 info: Found 6 devices for user undefined
+2025-04-13 17:06:19 info: Device already exists for username: undefined, fingerprint: aacff2dc53e1357d97615bed94b1555a
+2025-04-13 17:06:19 info: ::1 - - [13/Apr/2025:15:06:19 +0000] "POST /save-devices HTTP/1.1" 200 35 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"
+2025-04-13 17:06:19 info: Save device request received. Fingerprint: aacff2dc53e1357d97615bed94b1555a
+2025-04-13 17:06:19 info: Decoded refresh token for user: undefined
+2025-04-13 17:06:19 info: Decoded refresh token for username: undefined
+2025-04-13 17:06:19 info: Found 6 devices for user undefined
+2025-04-13 17:06:19 info: Device already exists for username: undefined, fingerprint: aacff2dc53e1357d97615bed94b1555a
+2025-04-13 17:06:19 info: ::1 - - [13/Apr/2025:15:06:19 +0000] "POST /save-devices HTTP/1.1" 200 35 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"
+2025-04-13 17:06:31 info: Login attempt for user: user1 on client IP: ::1
+2025-04-13 17:06:32 info: Generated access token for user: user1 for client IP: ::1
+2025-04-13 17:06:32 info: Generated refresh token for user: user1 for client IP: ::1
+2025-04-13 17:06:32 info: ::1 - - [13/Apr/2025:15:06:32 +0000] "POST /api/login HTTP/1.1" 200 155 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"
+2025-04-13 17:06:54 info: Check devices request received for fingerprint: aacff2dc53e1357d97615bed94b1555a
+2025-04-13 17:06:54 info: Invalid refresh token: invalid signature
+2025-04-13 17:06:54 info: ::1 - - [13/Apr/2025:15:06:54 +0000] "GET /check-devices?fingerprint=aacff2dc53e1357d97615bed94b1555a HTTP/1.1" 400 21 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"
+2025-04-13 17:06:54 info: Check devices request received for fingerprint: aacff2dc53e1357d97615bed94b1555a
+2025-04-13 17:06:54 info: Invalid refresh token: invalid signature
+2025-04-13 17:06:54 info: ::1 - - [13/Apr/2025:15:06:54 +0000] "GET /check-devices?fingerprint=aacff2dc53e1357d97615bed94b1555a HTTP/1.1" 400 21 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"
+2025-04-13 17:06:55 info: Save device request received. Fingerprint: aacff2dc53e1357d97615bed94b1555a
+2025-04-13 17:06:55 info: Decoded refresh token for user: undefined
+2025-04-13 17:06:55 info: Decoded refresh token for username: undefined
+2025-04-13 17:06:55 info: Found 6 devices for user undefined
+2025-04-13 17:06:55 info: Device already exists for username: undefined, fingerprint: aacff2dc53e1357d97615bed94b1555a
+2025-04-13 17:06:55 info: ::1 - - [13/Apr/2025:15:06:55 +0000] "POST /save-devices HTTP/1.1" 200 35 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"
+2025-04-13 17:06:55 info: Save device request received. Fingerprint: aacff2dc53e1357d97615bed94b1555a
+2025-04-13 17:06:55 info: Decoded refresh token for user: undefined
+2025-04-13 17:06:55 info: Decoded refresh token for username: undefined
+2025-04-13 17:06:55 info: Found 6 devices for user undefined
+2025-04-13 17:06:55 info: Device already exists for username: undefined, fingerprint: aacff2dc53e1357d97615bed94b1555a
+2025-04-13 17:06:55 info: ::1 - - [13/Apr/2025:15:06:55 +0000] "POST /save-devices HTTP/1.1" 200 35 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"
+2025-04-13 17:07:00 info: Check devices request received for fingerprint: aacff2dc53e1357d97615bed94b1555a
+2025-04-13 17:07:00 info: Invalid refresh token: invalid signature
+2025-04-13 17:07:00 info: ::1 - - [13/Apr/2025:15:07:00 +0000] "GET /check-devices?fingerprint=aacff2dc53e1357d97615bed94b1555a HTTP/1.1" 400 21 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"
+2025-04-13 17:07:00 info: Check devices request received for fingerprint: aacff2dc53e1357d97615bed94b1555a
+2025-04-13 17:07:00 info: Invalid refresh token: invalid signature
+2025-04-13 17:07:00 info: ::1 - - [13/Apr/2025:15:07:00 +0000] "GET /check-devices?fingerprint=aacff2dc53e1357d97615bed94b1555a HTTP/1.1" 400 21 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"
+2025-04-13 17:07:01 info: Save device request received. Fingerprint: aacff2dc53e1357d97615bed94b1555a
+2025-04-13 17:07:01 info: Decoded refresh token for user: undefined
+2025-04-13 17:07:01 info: Decoded refresh token for username: undefined
+2025-04-13 17:07:01 info: Found 6 devices for user undefined
+2025-04-13 17:07:01 info: Device already exists for username: undefined, fingerprint: aacff2dc53e1357d97615bed94b1555a
+2025-04-13 17:07:01 info: ::1 - - [13/Apr/2025:15:07:01 +0000] "POST /save-devices HTTP/1.1" 200 35 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"
+2025-04-13 17:07:01 info: Save device request received. Fingerprint: aacff2dc53e1357d97615bed94b1555a
+2025-04-13 17:07:01 info: Decoded refresh token for user: undefined
+2025-04-13 17:07:01 info: Decoded refresh token for username: undefined
+2025-04-13 17:07:01 info: Found 6 devices for user undefined
+2025-04-13 17:07:01 info: Device already exists for username: undefined, fingerprint: aacff2dc53e1357d97615bed94b1555a
+2025-04-13 17:07:01 info: ::1 - - [13/Apr/2025:15:07:01 +0000] "POST /save-devices HTTP/1.1" 200 35 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"
+2025-04-13 17:07:06 info: Login attempt for user: user1 on client IP: ::1
+2025-04-13 17:07:06 info: Generated access token for user: user1 for client IP: ::1
+2025-04-13 17:07:06 info: Generated refresh token for user: user1 for client IP: ::1
+2025-04-13 17:07:06 info: ::1 - - [13/Apr/2025:15:07:06 +0000] "POST /api/login HTTP/1.1" 200 155 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"
