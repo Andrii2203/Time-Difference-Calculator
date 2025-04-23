@@ -17,9 +17,14 @@ export interface BreadcrumbsProps {
 export interface TimeElement {
   startDate: Date;
   endDate: Date;
+  durationInSeconds: number;
   path: string;
 }
- export interface Item {
+export interface Item {
   name: string;
   children: Item[];
+  meta?: {
+    exclusive?: boolean;
+    [key: string]: any;
+  }
 }

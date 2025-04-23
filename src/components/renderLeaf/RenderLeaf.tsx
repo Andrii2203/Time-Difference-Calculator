@@ -1,5 +1,5 @@
 import React from "react";
-import { Item } from "../../Interfaces";
+import { Item } from "../../interfaces/Interfaces";
 
 interface RenderItemsProps {
   items: Item[];

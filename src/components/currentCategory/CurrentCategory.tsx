@@ -1,5 +1,5 @@
 import React from "react";
-import { CurrentCategoryProps } from "./Interfaces";
+import { CurrentCategoryProps } from "../../interfaces/Interfaces";
 
 
 const CurrentCategry: React.FC<CurrentCategoryProps> = ({ timeIsRuning, parents, setParents, setButtonsLoad, setSingleItem }) => (

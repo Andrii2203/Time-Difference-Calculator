@@ -10,7 +10,7 @@ router.get('/views', (req, res) => {
 })
 
 router.get("/", (req, res) => {
-    const files = fs.readdirSync(dirPath).filter(file => file.endsWith('.json'));
+    const files = fs.readdirSync(dirPath).filter(file => file.endsWith('.txt'));
     res.json(files);
 });
 
@@ -19,7 +19,8 @@ router.get('/:filename', (req, res) => {
     if(!fs.existsSync(filePath)) return res.status(404).send("File not found");
 
     const content = fs.readFileSync(filePath, "utf-8");
-    res.json(JSON.parse(content));
+    // res.json(JSON.parse(content));
+    res.send(content);
 })
 
 module.exports = router;

@@ -1,5 +1,5 @@
 import React from "react";
-import { Item } from "../../Interfaces";
+import { Item } from "../../interfaces/Interfaces";
 
 interface DeleteLastElementButtonProps {
   setParents: React.Dispatch<React.SetStateAction<Item[]>>;

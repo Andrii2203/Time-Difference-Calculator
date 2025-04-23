@@ -25,6 +25,7 @@
     "react-dom": "^18.3.1",
     "react-scripts": "^5.0.1",
     "react-treeview": "^0.4.7",
+    "recharts": "^2.15.3",
     "typescript": "4.9.5",
     "web-vitals": "^2.1.4",
     "winston": "^3.17.0"
@@ -54,6 +55,7 @@
     ]
   },
   "devDependencies": {
+    "@types/file-saver": "^2.0.7",
     "@types/react": "^18.3.5",
     "@types/react-dom": "^18.3.0",
     "@types/react-treeview": "^0.4.6",

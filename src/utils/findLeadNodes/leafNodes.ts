@@ -1,4 +1,4 @@
-import { Item } from "../../Interfaces";
+import { Item } from "../../interfaces/Interfaces";
 
 export const findLeadNodes = (items: Item[]): Item[] => {
     let leaf: Item[] = [];

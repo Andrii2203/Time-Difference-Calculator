@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import TimeDifferenceCalculator from './TimeDifferenceCalculator';
-import LoginPage from './LoginPage';
-import { useDeviceFingerprint } from './auth';
+import TimeDifferenceCalculator from './pages/timeDifferenceCalculator/TimeDifferenceCalculator';
+import LoginPage from './pages/loginPage/LoginPage';
+import { useDeviceFingerprint } from './utils/auth/auth';
 
 const App: React.FC = () => {
     const [isLoggedIn, setIsLoggedIn] = useState<boolean | null>(null);

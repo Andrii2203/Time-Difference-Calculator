@@ -1,129 +1,457 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+      overflow-x: hidden;
+    }
     body {
       display: flex;
+      flex-direction: column;
+      font-family: sans-serif;
     }
+
     #file-list {
-      width: 30%;
-      border-right: 1px solid #ccc;
+      width: 100%;
+      border-bottom: 1px solid #ccc;
       padding: 1rem;
+      display: flex;
+      gap: 2rem;
     }
-    #file-content {
+
+    #files {
+      width: 25%;
+      display: flex;
+      flex-direction: column;
+      max-height: 100vh;
+      overflow: hidden;
+    }
+    #file-buttons {
       flex-grow: 1;
+      overflow-y: auto;
+      margin-bottom: 1rem;
+      max-height: 300px;
+      background: #f9f9f9;
+    }
+
+    #file-content {
       padding: 1rem;
       white-space: pre-wrap;
       background: #f9f9f9;
+      flex-grow: 1;
+      margin: 0;
     }
-    li {
+
+    span.file-item {
+      display: block;
       cursor: pointer;
       margin-bottom: 0.5rem;
+      padding: 0.25rem 0.5rem;
+      border-radius: 5px;
     }
-    li.active {
+
+    span.file-item.active {
       background-color: yellowgreen;
     }
+
     #totals {
-      margin-top: 2rem;
+      margin-top: 1rem;
       padding: 1rem;
       background: #eef;
+      overflow-y: auto;
+      max-height: 300px;
     }
+
+    #chart-container {
+      display: flex;
+      align-items: flex-end;
+      gap: 2px;
+      height: 100%;
+      min-height: 300px;
+      max-height: 500px;
+      background: #eee;
+      padding: 1rem;
+      overflow-x: auto;
+      width: 100%;
+      box-sizing: border-box;
+      overflow-x: auto;
+    }
+
+    .bar {
+      /* width: 40px; */
+      display: flex;
+      flex-shrink: 0;
+      flex-direction: column-reverse;
+      justify-content: flex-end;
+      border: 1px solid #333;
+      background: white;
+      position: relative;
+      transition: width 0.3s ease;
+    }
+
+    .bar-segment {
+      width: 100%;
+      color: white;
+      font-size: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .bar-label {
+      text-align: center;
+      font-size: 10px;
+      margin-top: 4px;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      max-width: 100%;
+    }
+
+    #visualization-wrapper {
+      padding: 1rem;
+    }
+    
+    #tooltip {
+      position: fixed;
+      background: rgba(50, 50, 50, 0.85);
+      color: #fff;
+      padding: 8px 12px;
+      border-radius: 6px;
+      font-size: 13px;
+      max-width: 300px;
+      z-index: 1000;
+      pointer-events: none;
+      white-space: pre-line;
+    }
+
   </style>
 </head>
 <body>
-  <div id="file-list">
-    <h3>Files</h3>
-    <ul id="files"></ul>
 
-    <div id="totals">
-      <h4>Total Time (seconds):</h4>
-      <div id="summary">Calculating...</div>
+  <div id="file-list">
+    <div id="files">
+      <h3>Files</h3>
+      <div id="file-buttons"></div>
+      <div id="totals">
+        <h4>Total Time (seconds):</h4>
+        <div id="summary">Calculating...</div>
+      </div>
+    </div>
+
+    <div id="file-content">
+      <h3>Data:</h3>
+      <div id="content">Choose file to read</div>
     </div>
   </div>
 
-  <div id="file-content">
-    <h3>Data:</h3>
-    <div id="content">Choose file to read</div>
+
+  <div id="visualization-wrapper">
+    <h3>Visualization:</h3>
+    <label for="barCountSlider">Zoom (Bar count):</label>
+    <div style="display: flex; gap: 10px; align-items: center;">
+      <button id="zoomOut">-</button>
+      <input type="range" id="barCountSlider" min="20" max="365" value="100" />
+      <button id="zoomIn">+</button>
+      <span id="barCountDisplay">100</span>
+    </div>
+    <div id="chart-container"></div>
   </div>
 
   <script>
+
+    const fileCache = {};
+
+    async function getFileData(fileName) {
+      if(!fileCache[fileName]) {
+        const res = await fetch('/filter/' + fileName);
+        const text = await res.text();
+        fileCache[fileName] = await parseTxtData(text);
+      }
+      return fileCache[fileName];
+    }
+
     async function fetchFiles() {
       const res = await fetch('/filter');
-      const files = await res.json();
-      const list = document.getElementById("files");
+      const allFiles = await res.json();
+      const txtFiles = allFiles.filter(file => file.endsWith('.txt'));
+      const list = document.getElementById("file-buttons");
       list.innerHTML = '';
 
-      files.forEach(file => {
-        const li = document.createElement("li");
-        li.textContent = file;
+      txtFiles.forEach(file => {
+        const span = document.createElement("span");
+        span.textContent = file;
+        span.classList.add("file-item");
 
-        li.addEventListener("click", function () {
-          const listItem = document.querySelectorAll("li");
-          listItem.forEach(li => li.classList.remove("active"));
+        span.addEventListener("click", function () {
+          const allSpans = document.querySelectorAll("span.file-item");
+          allSpans.forEach(el => el.classList.remove("active"));
           this.classList.add('active');
           fetchFileContent(file);
         });
 
-        list.appendChild(li);
+        list.appendChild(span);
       });
 
-      calculateTotalDurations(files);
+      calculateTotalDurations(txtFiles);
+      renderChart(txtFiles);
+      slider.value = Math.min(txtFiles.length, 365);
+    }
+
+    async function parseTxtData(txtData) {
+      try {
+        return JSON.parse(txtData);
+      } catch (err) {
+        console.error('Error parsing JSON', err);
+        return {};
+      }
     }
 
     async function fetchFileContent(fileName) {
-      const res = await fetch('/filter/' + fileName);
-      const data = await res.json();
-      document.getElementById("content").textContent = JSON.stringify(data, null, 2);
+      const parsedData = await getFileData(fileName);
+      document.getElementById("content").textContent = JSON.stringify(parsedData, null, 2);
+    }
+
+    function convertTime(seconds) {
+      const hours = Math.floor(seconds / 3600);
+      const minutes = Math.floor((seconds % 3600) / 60);
+      const days = Math.floor(seconds / 86400);
+
+      return {
+        seconds: seconds,
+        hours: `${hours} hours ${minutes} minutes`,
+        days: `${days} days ${hours} hours`,
+      };
+    }
+
+    function toValidDate(str) {
+      return new Date(str.replace('_', 'T'));
     }
 
     async function calculateTotalDurations(files) {
-  const totals = {
-    Prygotowanie: 0,
-    Przerwa: 0,
-    Praca: 0,
-    Awaria: 0,
-  };
+      const totals = {};
+      const summaryDiv = document.getElementById("summary");
+      summaryDiv.innerHTML = `Processing ${files.length} files...`;
 
-  const summaryDiv = document.getElementById("summary");
-  summaryDiv.innerHTML = `Processing ${files.length} files...`;
+      let counter = 0;
 
-  let counter = 0;
+      for (const file of files) {
+        try {
+          const data = await getFileData(file);
 
-  for (const file of files) {
-    try {
-      const res = await fetch('/filter/' + file);
-      const data = await res.json();
+          if (data && Array.isArray(data.Intervals)) {
+            data.Intervals.forEach(interval => {
+              const path = interval.path;
 
-      for (const item of data) {
-        if (item.name === "Prygotowanie") totals.Prygotowanie += item.duration || 0;
-        else if (item.name === "Przerwa") totals.Przerwa += item.duration || 0;
-        else if (item.name === "Praca") totals.Praca += item.duration || 0;
-        else if (item.name && item.name.startsWith("Awaria")) totals.Awaria += item.duration || 0;
+              if (!totals[path]) {
+                totals[path] = 0;
+              }
+
+              if (!interval.duration && interval.startDate && interval.endDate) {
+                const start = toValidDate(interval.startDate);
+                const end = toValidDate(interval.endDate);
+                interval.duration = Math.floor((end - start) / 1000);
+              }
+
+              totals[path] += interval.duration || 0;
+            });
+          }
+
+          counter++;
+          summaryDiv.innerHTML = `Loading file ${counter} of ${files.length}...`;
+        } catch (err) {
+          console.error("Error loading file:", file, err);
+          summaryDiv.innerHTML += `<br>Error loading ${file}`;
+        }
       }
 
-      counter++;
-      summaryDiv.innerHTML = `Loading file ${counter} of ${files.length}...`;
+      summaryDiv.innerHTML = `<p>Calculation done (${files.length})</p>`;
 
-    } catch (err) {
-      console.error("Error loading file:", file, err);
-      summaryDiv.innerHTML += `<br>Error loading ${file}`;
+      for (const path in totals) {
+        const totalTime = convertTime(totals[path]);
+        summaryDiv.innerHTML += `<p>${path}: ${totalTime.hours} (${totals[path]} sec)</p>`;
+      }
     }
-  }
 
-  // Показати результат
-  summaryDiv.innerHTML = `
-    <p>✅ Calculation done (${files.length} files)</p>
-    <p>Prygotowanie: ${totals.Prygotowanie} сек</p>
-    <p>Przerwa: ${totals.Przerwa} сек</p>
-    <p>Praca: ${totals.Praca} сек</p>
-    <p>Awaria: ${totals.Awaria} сек</p>
-  `;
-}
+    function showTooltip(text, mouseX, mouseY) {
+      const tooltip = document.getElementById('tooltip');
+      tooltip.style.display = 'block';
+      tooltip.textContent = text;
+
+      tooltip.style.left = '-9999px';
+      tooltip.style.top = '-9999px';
+
+      requestAnimationFrame(() => {
+        const tooltipRect = tooltip.getBoundingClientRect();
+
+        let top = mouseY + 15;
+        let left = mouseX + 15;
+
+        if (left + tooltipRect.width > window.innerWidth) {
+          left = mouseX - tooltipRect.width - 15;
+        }
+
+        if (top + tooltipRect.height > window.innerHeight) {
+          top = mouseY - tooltipRect.height - 15;
+        }
+
+        top = Math.max(0, top);
+        left = Math.max(0, left);
+
+        tooltip.style.left = `${left}px`;
+        tooltip.style.top = `${top}px`;
+      });
+    }
 
 
+    function hideTooltip() {
+      document.getElementById("tooltip").style.display = 'none';
+    }
+    async function renderChart(files) {
+      const chartContainer = document.getElementById("chart-container");
+      chartContainer.innerHTML = '';
+
+      const allData = [];
+
+      for (const file of files) {
+        const data = await getFileData(file);
+        data.__filename = file;
+        data.__totalDuration = parseInt(data.FinishMinusFirstStart || "0");
+        allData.push(data);
+      }
+
+      const maxDuration = Math.max(...allData.map(d => d.__totalDuration || 0));
+
+      for (const data of allData) {
+        const file = data.__filename;
+        const totalDuration = data.__totalDuration;
+
+        if (!totalDuration || isNaN(totalDuration)) continue;
+
+        const intervals = data.Intervals || [];
+        const barWrapper = document.createElement('div');
+        barWrapper.style.display = 'flex';
+        barWrapper.style.flexDirection = 'column';
+        barWrapper.style.alignItems = 'center';
+
+        const bar = document.createElement('div');
+        bar.className = 'bar';
+
+        const relativeHeight = (totalDuration / maxDuration) * 450;
+        bar.style.height = `${relativeHeight}px`;
+
+        let usedTime = 0;
+        const colors = ['#4caf50', '#2196f3', '#f44336', '#ff9800', '#9c27b0'];
+        let colorIndex = 0;
+        for (let interval of intervals) {
+          const start = toValidDate(interval.startDate);
+          const end = toValidDate(interval.endDate);
+          const duration = (end - start) / 1000;
+          usedTime += duration;
+
+          const percent = (duration / totalDuration) * 100;
+
+          const segment = document.createElement('div');
+          segment.className = 'bar-segment';
+          segment.style.height = `${percent}%`;
+          segment.style.background = colors[colorIndex++ % colors.length];
+          segment.title = `${interval.path} (${duration}s)`;
+          segment.textContent = ' ';
+          segment.style.minHeight = "2px";
+
+          bar.appendChild(segment);
+        }
+
+        const remainingTime = totalDuration - usedTime;
+        const remainingPercent = (remainingTime / totalDuration) * 100;
+
+        if (remainingTime > 0) {
+          const filler = document.createElement('div');
+          filler.className = 'bar-segment';
+          filler.style.height = `${remainingPercent}%`;
+          filler.style.background = '#bbb';
+          filler.title = `Praca (${remainingTime}s)`;
+          filler.textContent = ' ';
+          filler.style.minHeight = "2px";
+
+          bar.appendChild(filler);
+        }
+
+        let tooltipText = `📄 ${file}\n`;
+        for (let interval of intervals) {
+          const start = toValidDate(interval.startDate);
+          const end = toValidDate(interval.endDate);
+          const duration = (end - start) / 1000;
+          tooltipText += `🔹 ${interval.path}: ${duration}s\n`;
+        }
+        tooltipText += `⬜ Praca: ${remainingTime}s`;
+
+        bar.addEventListener('mousemove', (e) => {
+          showTooltip(tooltipText, e.clientX, e.clientY);
+        });
+        bar.addEventListener('mouseleave', hideTooltip);
+
+        const label = document.createElement('div');
+        label.className = 'bar-label';
+        label.textContent = file.replace('.txt', '');
+
+        barWrapper.appendChild(bar);
+        // barWrapper.appendChild(label);
+        chartContainer.appendChild(barWrapper);
+
+      }
+      updateBarWidth(parseInt(slider.value));
+    }
+
+    const slider = document.getElementById("barCountSlider");
+    const zoomIn = document.getElementById("zoomIn");
+    const zoomOut= document.getElementById("zoomOut");
+    const barCountDisplay = document.getElementById("barCountDisplay");
+
+    function updateBarWidth(barCount) {
+      const chartContainer = document.getElementById("chart-container");
+      const bars = chartContainer.querySelectorAll('.bar');
+      const wrappers = chartContainer.querySelectorAll("div[style*='flex-direction: column']");
+
+      const barWidth = Math.max(1000 / barCount, 2);
+      bars.forEach(bar => {
+        bar.style.width = `${barWidth}px`;
+      });
+
+      wrappers.forEach(wrapper => {
+        const label = wrapper.querySelector('.bar-label');
+        if(barWidth < 8) {
+          label.style.display = 'none';
+        } else {
+          label.style.display = 'block';
+        }
+      });
+
+      slider.value = barCount;
+      barCountDisplay.textContent = barCount;
+    }
+
+    slider.addEventListener('input', () => {
+      updateBarWidth(parseInt(slider.value));
+    });
+
+    zoomIn.addEventListener('click', () => {
+      let current = parseInt(slider.value);
+      if (current < 365) updateBarWidth(current + 10);
+    });
+
+    zoomOut.addEventListener('click', () => {
+      let current = parseInt(slider.value);
+      if (current > 20) updateBarWidth(current - 10);
+    });
+        
     fetchFiles();
   </script>
+  <div id="tooltip" style="display: none;"></div>
+
 </body>
 </html>

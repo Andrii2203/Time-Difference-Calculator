@@ -1,5 +1,5 @@
 import React from "react";
-import { BreadcrumbsProps } from "./Interfaces";
+import { BreadcrumbsProps } from "../../interfaces/Interfaces";
 
 const Breadcrumbs: React.FC<BreadcrumbsProps> = ({ timeIsRuning, parents, setParents, singleItem, setSingleItem }) => {
     

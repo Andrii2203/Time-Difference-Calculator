@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './loginPage.css';
 
 type LoginPageProps = {
     onLoginSuccess: () => void;
@@ -37,9 +38,9 @@ const LoginPage: React.FC<LoginPageProps> = ({ onLoginSuccess }) => {
     };
 
     return (
-        <form onSubmit={handleLogin} style={{ display: 'flex', flexDirection: 'column', width: '300px', margin: 'auto' }}>
+        <form onSubmit={handleLogin}>
             <h2>Login</h2>
-            {error && <p style={{ color: 'red' }}>{error}</p>}
+            {error && <p>{error}</p>}
             <input
                 type="text"
                 placeholder='Username'

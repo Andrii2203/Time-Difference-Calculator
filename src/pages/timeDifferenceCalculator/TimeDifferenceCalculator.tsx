@@ -1,24 +1,23 @@
 import React, { useEffect, useMemo, useState } from 'react';
-import "./App.css"
-import { changeTAndDeleteMilisec } from './changeTAndDeleteMilisec';
-import data from './data.json';
-import { produce } from 'immer';
-import CurrentCategry from './CurrentCategory';
-import { TimeElement, Item } from './Interfaces';
-import Breadcrumbs from './Breadcrumb';
-import { fetchWithAuth, useDeviceFingerprint } from './auth';
-import { findLeadNodes } from './utils/findLeadNodes/leafNodes';
-import { RenderLeaf } from "./components/renderLeaf/RenderLeaf"
-import { filteredItems } from './utils/helper/filteredItems';
-import { DeleteLastElementButton } from './components/backBtn/DeleteLastElementButton';
+import './timeDifferenceCalculator.css'
+import { changeTAndDeleteMilisec } from '../../utils/changeTAndDeleteMilisec/changeTAndDeleteMilisec';
+import data from '../../data.json';
+import CurrentCategry from '../../components/currentCategory/CurrentCategory';
+import { TimeElement, Item } from '../../interfaces/Interfaces';
+import Breadcrumbs from '../../components/breadcrumb/Breadcrumb';
+import { fetchWithAuth } from '../../utils/auth/auth';
+import { findLeadNodes } from '../../utils/findLeadNodes/leafNodes';
+import { RenderLeaf } from "../../components/renderLeaf/RenderLeaf"
+import { filteredItems } from '../../utils/helper/filteredItems';
+import { DeleteLastElementButton } from '../../components/backBtn/DeleteLastElementButton';
+import { modifyItem } from '../../utils/modifyItem/modifyItem';
+import { getPath } from '../../utils/getPath/getPath';
 
 const TimeDifferenceCalculator: React.FC = () => {
   const [initialStartTime, setInitialStartTime] = useState<Date | null>(null);
-  const [startTime1, setStartTime1] = useState<Date | null>(null);
-  const [endTime1, setEndTime1] = useState<Date | null>(null);
-  const [finishTime1, setFinishTime1] = useState<Date | null>(null);
-  const [awariaStartTime1, setAwariaStartTime1] = useState<Date | null>(null);
-  const [awariaStopTime1Number, setAwariaStopTime1Number] = useState<number>(0);
+  const [startTime, setStartTime] = useState<Date | null>(null);
+  const [endTime, setEndTime] = useState<Date | null>(null);
+  const [finishTime, setFinishTime] = useState<Date | null>(null);
   const [timeIsRuning, setTimeIsRuning] = useState<boolean>(true);
   const [buttonsLoad, setButtonsLoad] = useState<boolean>(false);
   const [lastStartDate, setLastStartDate] = useState<Date | null>(null);
@@ -27,7 +26,11 @@ const TimeDifferenceCalculator: React.FC = () => {
   const [parents, setParents] = useState<Item[]>([]);
   const [singleItem, setSingleItem] = useState<Item | null>(null);
   const [disableBtn, setDisableBtn] = useState<boolean>(false);
-
+  useEffect(() => {
+    const update = modifyItem(dataTree, 'addMeta', "Prygotowanie", { exclusive: true });
+    setDataTree(update);
+  }, []);
+  
   useEffect(() => {
     const interval = setInterval(() => {
       console.log("Interval is running...");
@@ -60,14 +63,12 @@ const TimeDifferenceCalculator: React.FC = () => {
     console.log('parents', parents);
     console.log('data', dataTree);
     // console.log('singleItem', singleItem);
-    // console.log("finish time,", finishTime1);
+    console.log("finish time,", finishTime);
     if(singleItem?.name === "Awaria") {
       setDisableBtn(false);
-      // console.log("awaria start Time1,", awariaStartTime1);
-      // console.log("awaria stop Time1,", awariaStopTime1Number);
     }
-  }, [parents, dataTree, singleItem, finishTime1, awariaStartTime1, awariaStopTime1Number]);
-  
+  }, [parents, dataTree, singleItem, finishTime]);
+
   const handleSelectItem = (item: Item) => {
     if(item.name === "L1" || item.name === "L2") {
       setSingleItem(null);
@@ -88,10 +89,6 @@ const TimeDifferenceCalculator: React.FC = () => {
     }
     if(item.name === "Awaria") {
       handleStart1();
-      const now = new Date();
-      if(!awariaStartTime1) {
-        setAwariaStartTime1(now);
-      }
     }
 
     if(item.children.length === 0){
@@ -107,38 +104,6 @@ const TimeDifferenceCalculator: React.FC = () => {
         setButtonsLoad(true);
     }
   };
-
-  // const removeAndLiftItem = (items: Item[], nameToRemove: string): Item[] => {
-  //   let count = 0;
-  //   const recursiveRemove = (nodes: Item[]): void => {
-  //     nodes.forEach((node, index) => {
-  //       if (node.name === nameToRemove) {
-  //         count++;
-  //         nodes.splice(index, 1, ...node.children);
-  //       } else {
-  //         recursiveRemove(node.children);
-  //       }
-  //     });
-  //   };
-  //   const updatedItems = produce(items, (draft) => {
-  //     recursiveRemove(draft);
-  //   });
-
-  //   setDataTree((prev) => {
-  //     const newTree = updatedItems;
-  //     setParents((prev) => {
-  //       const newP = prev.map((p) => {
-  //         const upI = newTree.find((i) => i.name === p.name);
-  //         return upI ? upI : p;
-  //       })
-
-  //       return newP;
-  //     });
-  //     return newTree;
-  //   })
-
-  //   return updatedItems;
-  // };
   
   const handleStart1 = () => {
     if(singleItem?.name.length === 0) {
@@ -153,32 +118,17 @@ const TimeDifferenceCalculator: React.FC = () => {
       setDisableBtn(false);
     }
     setLastStartDate(now);
-    setStartTime1(now);
-    setEndTime1(null);
+    setStartTime(now);
+    setEndTime(null);
     setTimeIsRuning(!timeIsRuning);
   };
 
   const handleStop1 = () => {
     const now = new Date();
-    setEndTime1(now);
-    setAwariaStartTime1(null);
-    if(lastStartDate && startTime1) {
-      const id: TimeElement = {
-        startDate: startTime1,
-        endDate: now,
-        path: getPath(singleItem, parents),
-      };
-      setTimeIsRuning(!timeIsRuning);
-      setIntervalDates([...intervalDates, id]);
-    }
+    setEndTime(now);
 
-    // if(singleItem?.name === "Prygotowanie") {
-    //   setParents((prev) => singleItem ? [...prev, singleItem] : prev);
-    //   removeAndLiftItem(dataTree, "Prygotowanie");
-    // }    
-    // if(singleItem?.name === "Przerwa") {
-    //   removeAndLiftItem(dataTree, "Przerwa");
-    // }    
+    stopRunningTime(now);
+    handleRemoveSpacialItems();
 
     setSingleItem(null);
     setDisableBtn(false);
@@ -186,55 +136,71 @@ const TimeDifferenceCalculator: React.FC = () => {
     if(parents && parents[0]) {
       setParents([parents[0]]);
     }
-    if(parents.some(p=> p.name === "Awaria")) {
-      if (!awariaStartTime1) {
-        console.warn("awaria Start Time1 is not activeted, exit...")
-        return;
-      };
-      const awariaStart = awariaStartTime1;
-      console.warn("awaria Started time: ", awariaStart);
-
-      const awariaStopped = new Date();
-      console.warn("awaria Stopped time: ", awariaStopped);
-      
-      const awariaDuration = Math.floor((awariaStopped.getTime() - awariaStart.getTime()) / 1000);
-      console.log("🕒 Розрахований час простою через аварію:", awariaDuration, "секунд");
-
-      setAwariaStopTime1Number((prev) => {
-        const update = prev + awariaDuration;
-        console.log("📊 Оновлений загальний час аварій:", update, "секунд");
-        return update;
-      });
-    }
-  };
-
-  const getPath = (item: Item | null, parents: Item[]): string => {
-    if(!item) return "";
-    const pathArray = [...parents.map((p) => p.name), item.name];
-    return pathArray.join(" / ");
   }
 
-  const handleFinish1 = async () => {
-    if (!initialStartTime || !endTime1) return;
+  const stopRunningTime = (now: Date) => {
+    if(lastStartDate && startTime) {
+      const duration = Math.floor((now.getTime() - startTime.getTime()) / 1000)
+      const id: TimeElement = {
+        startDate: startTime,
+        endDate: now,
+        durationInSeconds: duration,
+        path: getPath(singleItem, parents),
+      };
+      setTimeIsRuning(!timeIsRuning);
+      setIntervalDates([...intervalDates, id]);
+    }
+  }
+
+  const handleRemoveSpacialItems = () => {
+    if(singleItem?.name === "Prygotowanie" || singleItem?.name === "Przerwa") {
+      const update = modifyItem(dataTree, "removeItem", singleItem.name);
+
+      setDataTree((prev) => {
+        const newTree = update;
+        setParents((prev) => {
+          return prev.map((p) => {
+            const upI = newTree.find(i => i.name === p.name);
+            return upI ? upI : p;
+          });
+        });
+        return newTree;
+      })
+    }
+  }
+
+  const handleFinish = async () => {
+    if (!initialStartTime || !endTime) return;
     
     const now = new Date();
-    if(!finishTime1) {
-      setFinishTime1(now);
+    if(!finishTime) {
+      setFinishTime(now);
     }
-    const firstStartTime = initialStartTime;
-    const finalEndTime = endTime1;
-    const finishTime = finishTime1 ?? now;
-    const timeFromStartTillFinish = Math.floor((finishTime.getTime() - firstStartTime.getTime()) / 1000);
-    const totalTime = Math.floor((finalEndTime.getTime() - firstStartTime.getTime()) / 1000);
+
+    const finishT = finishTime ?? now;
+    const timeFromStartTillFinishWithDifferentOptions = Math.floor((finishT.getTime() - initialStartTime.getTime()) / 1000);
+    const totalTime = Math.floor((endTime.getTime() - initialStartTime.getTime()) / 1000);
+    
+    const sumOfIntervals = intervalDates.reduce((acc, curr) => acc + curr.durationInSeconds, 0);
+    const pracaTime = timeFromStartTillFinishWithDifferentOptions - sumOfIntervals;
+
+    const awariaDurationFromIntervals = intervalDates.reduce((acc, curr) => {
+      const isAwaria = curr.path.split(" / ").includes("Awaria");
+      if (!isAwaria) return acc;
+      const duration = (curr.endDate.getTime() - curr.startDate.getTime()) / 1000;
+      return acc + duration;
+    }, 0);
 
     const dataToSend = {
-      initialStartTime: changeTAndDeleteMilisec(initialStartTime),
-      finalEndTime: changeTAndDeleteMilisec(finalEndTime),
-      totalTime: totalTime.toFixed(0),
-      awariaTime: awariaStopTime1Number.toFixed(0),
-      finishTime: changeTAndDeleteMilisec(finishTime),
-      timeFromFisrtStartTillFinish: timeFromStartTillFinish.toFixed(0),
-      intervals: intervalDates.map(id => {
+      FirstStart: changeTAndDeleteMilisec(initialStartTime),
+      LastStop: changeTAndDeleteMilisec(endTime),
+      TimeFromLastStopMinusFirstStart: totalTime.toFixed(0),
+      AwariaTime: awariaDurationFromIntervals.toFixed(0),
+      FinishTime: changeTAndDeleteMilisec(finishT),
+      FinishMinusFirstStart: timeFromStartTillFinishWithDifferentOptions.toFixed(0),
+      PracaTimeIsFinishMinusFirstStartMinusIntervalsTime: pracaTime.toFixed(0),
+      IntervalsTime: sumOfIntervals.toFixed(0),
+      Intervals: intervalDates.map(id => {
         return {
           startDate: changeTAndDeleteMilisec(id.startDate),
           endDate: changeTAndDeleteMilisec(id.endDate),
@@ -264,19 +230,17 @@ const TimeDifferenceCalculator: React.FC = () => {
 
   const resetTimers = () => {
     setInitialStartTime(null);
-    setStartTime1(null);
-    setEndTime1(null);
-    setFinishTime1(null);
-    setAwariaStartTime1(null);
-    setAwariaStopTime1Number(0);
+    setStartTime(null);
+    setEndTime(null);
+    setFinishTime(null);
     setTimeIsRuning(true);
+    setButtonsLoad(false);
     setLastStartDate(null);
     setIntervalDates([]);
     setDataTree(data);
     setParents([]);
     setSingleItem(null);
     setDisableBtn(false);
-    setButtonsLoad(false);
   };
               
 
@@ -304,13 +268,14 @@ const TimeDifferenceCalculator: React.FC = () => {
           <button
               onClick={handleStop1}
               disabled={timeIsRuning || !isSelectedLeaf()}
+              // disabled={timeIsRuning}
               className={`btn-stop ${timeIsRuning ? "btn-disabled" : ""}`}
           >
             Stop
           </button>
 
             <button
-                onClick={handleFinish1}
+                onClick={handleFinish}
                 disabled={initialStartTime == null || !timeIsRuning}
                 className={`btn-finish ${!timeIsRuning ? "btn-disabled" : ""}`}
             >
@@ -340,15 +305,15 @@ const TimeDifferenceCalculator: React.FC = () => {
       </div>
 
       <div className='container-with-time'>
-        {startTime1 && (
+        {startTime && (
             <div>
-              <p>Start: {changeTAndDeleteMilisec(startTime1)}</p>
+              <p>Start: {changeTAndDeleteMilisec(startTime)}</p>
             </div>
         )}
 
-        {endTime1 && (
+        {endTime && (
             <div>
-              <p>Stop: {changeTAndDeleteMilisec(endTime1)}</p>
+              <p>Stop: {changeTAndDeleteMilisec(endTime)}</p>
             </div>
         )}
 

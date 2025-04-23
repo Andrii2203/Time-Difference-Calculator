@@ -30,16 +30,11 @@ function generateDailyFiles(currentDate) {
     });
     remainingTime -= 30 * 60;
 
-    const pracaDuration = Math.floor(Math.random() * remainingTime);
-    const awariaDuration = remainingTime - pracaDuration;
-
-    events.push({
-        name: "Praca",
-        duration: pracaDuration,
-    });
-
     const randomAwaria = getRandomAwaria();
     if (randomAwaria) {
+        const maxAwaria = remainingTime - 10800;
+        const awariaDuration = maxAwaria > 0 ? Math.floor(Math.random() * maxAwaria) : 0;
+
         events.push({
             name: `Awaria: ${randomAwaria.name}`,
             duration: awariaDuration,
@@ -59,6 +54,7 @@ function generateDailyFiles(currentDate) {
 }
 
 function getRandomAwaria() {
+    if(Math.random() < 0.3) return null;
     const randomIndex = Math.floor(Math.random() * categories[0].children.length);
     const selectedAwaria = categories[0].children[randomIndex];
 
@@ -83,22 +79,72 @@ function calculateEndTime(startTime, totalDurationInSeconds) {
     const totalMinutes = totalDurationInSeconds / 60;
     const endDate = new Date();
     endDate.setHours(startHour, startMinute, startSecond);
-    
     endDate.setMinutes(endDate.getMinutes() + totalMinutes);
-    
     const endHour = String(endDate.getHours()).padStart(2, '0');
     const endMinute = String(endDate.getMinutes()).padStart(2, '0');
     const endSecond = String(endDate.getSeconds()).padStart(2, '0');
-    
     return `${endHour}-${endMinute}-${endSecond}`;
 }
 
-function saveEventsToFile(data, currentDate) {
-    const startTime = data.dateAndTime["start time"];
-    const filename = `${currentDate}_${startTime}.json`;
-    const filePath = path.join(__dirname, filename);
+function formatDateTime(date) {
+    const yyyy = date.getFullYear();
+    const MM = String(date.getMonth() + 1).padStart(2, '0');
+    const dd = String(date.getDate()).padStart(2, '0');
+    const HH = String(date.getHours()).padStart(2, '0');
+    const mm = String(date.getMinutes()).padStart(2, '0');
+    const ss = String(date.getSeconds()).padStart(2, '0');
+    return `${yyyy}-${MM}-${dd}_${HH}:${mm}:${ss}`;
+}
+function generateAndSave(currentDate) {
+    const { events, dateAndTime } = generateDailyFiles(currentDate);
+    const start = new Date(`${dateAndTime.date}T${dateAndTime["start time"].replace(/-/g, ":")}`);
+    let currentTime = new Date(start);
 
-    const content = JSON.stringify(data, null, 2);
+    const Intervals = events.map(ev => {
+        const startDate = new Date(currentTime);
+        currentTime.setSeconds(currentTime.getSeconds() + ev.duration);
+        const endDate = new Date(currentTime);
+
+        return {
+            startDate: formatDateTime(startDate),
+            endDate: formatDateTime(endDate),
+            path: `L1 / ${ev.name}`,
+        };
+    });
+
+    const FirstStart = Intervals[0].startDate;
+    const LastStop = Intervals[Intervals.length - 1].endDate;
+    const FinishTime = new Date(new Date(FirstStart.replace(/_/g, "T")).getTime() + 1000 * 60 * 60 * 8);
+
+    const timeDiffSeconds = (str1, str2) =>
+        (new Date(str2.replace(/_/g, "T")).getTime() - new Date(str1.replace(/_/g, "T")).getTime()) / 1000;
+
+    const IntervalsTime = events.reduce((acc, ev) => acc + ev.duration, 0);
+    const TimeFromLastStopMinusFirstStart = timeDiffSeconds(FirstStart, LastStop);
+    const FinishMinusFirstStart = timeDiffSeconds(FirstStart, formatDateTime(FinishTime));
+    const PracaTimeIsFinishMinusFirstStartMinusIntervalsTime =
+        FinishMinusFirstStart - IntervalsTime;
+
+    const AwariaTime = events
+        .filter(ev => ev.name.startsWith("Awaria"))
+        .reduce((acc, ev) => acc + ev.duration, 0);
+
+    const output = {
+        FirstStart,
+        LastStop,
+        TimeFromLastStopMinusFirstStart: `${TimeFromLastStopMinusFirstStart}`,
+        AwariaTime: `${AwariaTime}`,
+        FinishTime: formatDateTime(FinishTime),
+        FinishMinusFirstStart: `${FinishMinusFirstStart}`,
+        PracaTimeIsFinishMinusFirstStartMinusIntervalsTime: `${PracaTimeIsFinishMinusFirstStartMinusIntervalsTime}`,
+        IntervalsTime: `${IntervalsTime}`,
+        Intervals,
+    };
+    
+    const fileName = `data-${dateAndTime.date.replace(/-/g, ".")}_${dateAndTime["start time"].replace(/-/g, ".")}.txt`;
+    const filePath = path.join(__dirname, fileName);
+    
+    const content = JSON.stringify(output, null, 2);
 
     fs.writeFile(filePath, content, (err) => {
         if (err) {
@@ -108,16 +154,10 @@ function saveEventsToFile(data, currentDate) {
         }
     });
 }
-
-function generateAndSave(currentDate) {
-    const data = generateDailyFiles(currentDate);
-    saveEventsToFile(data, currentDate);
-}
-
 function startLoop() {
     let currentDate = new Date();
 
-    for (let i = 0; i < 20; i++) {
+    for (let i = 0; i < 1; i++) {
         const formattedDate = getFormattedDate(currentDate);
         generateAndSave(formattedDate);
 
@@ -125,4 +165,4 @@ function startLoop() {
     }
 }
 
-// module.exports = startLoop();
+module.exports = startLoop();
