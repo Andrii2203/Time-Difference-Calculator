@@ -28,7 +28,7 @@ function loadAllowedOrigins() {
             .split('\n')
             .map(line => line.trim())
             .filter(line => line.length > 0);
-        console.log('Allowed Origins updated:', allowedOrigin);
+        // console.log('Allowed Origins updated:', allowedOrigin);
         logger.info('Allowed Origins updated:', allowedOrigin);
     } catch (err) {
         logger.error('Error reading allowed-origin.txt:', err);
@@ -38,18 +38,21 @@ function loadAllowedOrigins() {
 loadAllowedOrigins();
 
 fs.watchFile(path.join(__dirname, 'allowed-origin.txt'), (curr, prev) => {
-    console.log('allowed-origin.txt file changed, reloading...');
+    // console.log('allowed-origin.txt file changed, reloading...');
+    logger.info('allowed-origin.txt file changed, reloading...');
     loadAllowedOrigins();
 });
 app.use(express.json());
 
 const corsOptions = {
     origin: function (origin, callback) {
-        console.log('Incoming request from origin:', origin);
+        // console.log('Incoming request from origin:', origin);
+        logger.info('Incoming request from origin:', origin);
         if (!origin || allowedOrigin.includes(origin)) {
             callback(null, true);
         } else {
-            console.log('Blocked request from origin:', origin);
+            // console.log('Blocked request from origin:', origin);
+            logger.info('Blocked request from origin:', origin);
             callback(new Error('Not allowed by CORS'));
         }
     },
