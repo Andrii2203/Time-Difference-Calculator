@@ -303,7 +303,7 @@
 
 .category-container {
   width: 100vw;
-  margin: 1em 0;
+  /* margin: 1rem; */
   display: flex;
   justify-content: center;
 
@@ -318,7 +318,9 @@
   display: flex;
   justify-content: center;
 }
-
+.item-container {
+  margin-top: 1rem;
+}
 .container-with-time {
   margin: 0 0 10px 10px;
 }
@@ -326,7 +328,6 @@
 button.selected,
 button.not-selected {
   padding: 9px;
-  margin: 18px;
   border-radius: 50px;
   font-weight: 700;
   font-size: 16px;
@@ -375,11 +376,11 @@ button.not-selected {
     padding: 0;
   }
 
-  .btn-start,
+  /* .btn-start,
   .btn-stop,
   .btn-finish {
     font-size: 54px;
-  }
+  } */
 
   .category-container {
     width: 100vw;
@@ -388,7 +389,7 @@ button.not-selected {
   .item-container button,
   .second-container button,
   .sub-container button {
-    width: 45vw;
+    width: 90vw;
     font-size: 36px;
     word-break: break-word;
   }

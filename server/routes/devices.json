@@ -39,6 +39,51 @@
       "fingerprint": "9d355277a0efd3b82e54400a04cf501c",
       "refreshToken": "$2b$10$RGLtexoFHQyUch8R/yk4gOGbGgtqgl8jkxu2Hr8IjZ0EhuJEWZtbC",
       "createAt": "2025-04-29T12:25:32.100Z"
+    },
+    {
+      "fingerprint": "3a21886a10a3410f22ee8c59f22cc4f8",
+      "refreshToken": "$2b$10$C1prT4a9t.RH821AQ4hlb.5MYMVmmdr7OngV1Q/GgWD36r7LpQ11m",
+      "createAt": "2025-04-29T16:09:42.816Z"
+    },
+    {
+      "fingerprint": "410bf7455cec746d3aed7066acf4c7eb",
+      "refreshToken": "$2b$10$66FisSinqFrk3gnUXSRiFuqM35iZd0XNNGAxjwtF6dc.N6B82.8nK",
+      "createAt": "2025-04-29T16:10:55.177Z"
+    },
+    {
+      "fingerprint": "783c6b56ff122a61752947449febafd0",
+      "refreshToken": "$2b$10$1goEWgfs76xdfSPJNTzX7.zLx4eLnu3/itYstHq1rTPAiZZrYNWJ2",
+      "createAt": "2025-04-29T16:11:28.045Z"
+    },
+    {
+      "fingerprint": "ba81fda47441f3a62cc143c95d6d7adb",
+      "refreshToken": "$2b$10$0ow8nvjcqJdnlwe9c9DmEOO0b0B9QNCkWF1EqdngjFWLEJhbB6AIi",
+      "createAt": "2025-04-29T16:11:50.931Z"
+    },
+    {
+      "fingerprint": "ca3ea5c2db10a5a069b71c3b74fc4d64",
+      "refreshToken": "$2b$10$kf6QYTgk7zClo1sOWM1zX.1sLMgyW4e1./xVbhKia6tvadMtM2INW",
+      "createAt": "2025-04-29T16:13:56.071Z"
+    },
+    {
+      "fingerprint": "09401f68fff2deb42cdc67ba1643d9bd",
+      "refreshToken": "$2b$10$HWW0s8d6.iytU2GBU5J6aesxbb7O2MsmBKy4x2Ck8dUfk5orMOZ1K",
+      "createAt": "2025-04-29T16:14:50.900Z"
+    },
+    {
+      "fingerprint": "b89a4d1b9d1c119ad6bf4a2ac7ae6272",
+      "refreshToken": "$2b$10$79JkMA5eGS6.Ik1KdWqDk.Z3KQmaJQ5TOO4vXSqNms1gVyibHL4IG",
+      "createAt": "2025-04-29T16:15:46.366Z"
+    },
+    {
+      "fingerprint": "6f8b930e5b8a765dbc8038322fe6e4dd",
+      "refreshToken": "$2b$10$JEdAFtP9t7SE/dp2bPM9hee2NyoIe1022FmiZL7kXchl8d9kRCni6",
+      "createAt": "2025-04-29T16:19:26.270Z"
+    },
+    {
+      "fingerprint": "eebc5432e3dea3f4c22090b9256889ae",
+      "refreshToken": "$2b$10$rS11kVD1aRuankTvaBq6gOfKnL9C7M4TzqKeGUcspilAC8TibGeBS",
+      "createAt": "2025-04-29T16:22:46.532Z"
     }
   ],
   "undefined": [

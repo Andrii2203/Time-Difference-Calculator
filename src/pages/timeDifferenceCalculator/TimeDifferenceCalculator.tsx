@@ -262,7 +262,7 @@ const TimeDifferenceCalculator: React.FC = () => {
           <button
               onClick={handleStart1}
               disabled={!timeIsRuning || singleItem === null}
-              className={`btn-start ${!timeIsRuning ? "btn-disabled" : ""}`}
+              className={`btn-start ${!timeIsRuning || singleItem === null ? "btn-disabled" : ""}`}
           >
             Start
           </button>

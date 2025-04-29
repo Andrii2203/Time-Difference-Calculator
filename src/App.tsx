@@ -64,7 +64,8 @@ const App: React.FC = () => {
                     }} />
                 )
             } />
-            <Route path='/Time-Difference-Calculator/sourse' element={<SourcePage />} />            
+            <Route path='/Time-Difference-Calculator/sourse' element={<SourcePage />} />   
+            <Route path="*" element={<Navigate to="/Time-Difference-Calculator" replace />} />         
         </Routes>
     );
 }
