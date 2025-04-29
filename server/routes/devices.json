@@ -29,6 +29,16 @@
       "fingerprint": "5c298d99ae194ee236ea476deef7ee33",
       "refreshToken": "$2b$10$sYR/Y2Z75K91kcb.GXDpaOLoKVKS0Up.s8qTW2QVF1H7l9.XnFOme",
       "createAt": "2025-04-23T10:45:49.675Z"
+    },
+    {
+      "fingerprint": "aacff2dc53e1357d97615bed94b1555a",
+      "refreshToken": "$2b$10$QBZ0tviVb.J2cd0d5YTSGOSJa839tThtQhF0BuXLSXLLu06ozzEfW",
+      "createAt": "2025-04-25T16:34:04.494Z"
+    },
+    {
+      "fingerprint": "9d355277a0efd3b82e54400a04cf501c",
+      "refreshToken": "$2b$10$RGLtexoFHQyUch8R/yk4gOGbGgtqgl8jkxu2Hr8IjZ0EhuJEWZtbC",
+      "createAt": "2025-04-29T12:25:32.100Z"
     }
   ],
   "undefined": [
@@ -61,6 +71,41 @@
       "fingerprint": "aacff2dc53e1357d97615bed94b1555a",
       "refreshToken": "$2b$10$P8KAv8X.Klxl1gOVj/EVHe47A4wndGlfM2tO6kP1UnvO7R0NPxqs2",
       "createAt": "2025-04-13T14:59:28.569Z"
+    },
+    {
+      "fingerprint": "6734a6e7ab441ce287daa4dae4a49fe1",
+      "refreshToken": "$2b$10$rbuV0KCLqUgS94hfJQHha.8nRpwVfkd2gSV6BaTuxYgmFkf56uRp6",
+      "createAt": "2025-04-27T13:53:21.970Z"
+    },
+    {
+      "fingerprint": "5c298d99ae194ee236ea476deef7ee33",
+      "refreshToken": "$2b$10$P6CiL3vMDv7NpqYcL.9Ff.gqpz110YT3cWuOjuaHDWjWuknPwk8lG",
+      "createAt": "2025-04-27T16:09:24.127Z"
+    },
+    {
+      "fingerprint": "402ff09bc5cf4a395a735a2d497798c3",
+      "refreshToken": "$2b$10$zd2bF0GnBrj7AmTL8vfJp.9nkUmoADF3F9xeiiXgHkDw74ox3BYxq",
+      "createAt": "2025-04-27T16:41:48.065Z"
+    },
+    {
+      "fingerprint": "51e90e9e12a94d52e13bc388a5692393",
+      "refreshToken": "$2b$10$OF34b62PaqRqd7Hk08zIn.ojXlP5x.NiKz.ICFwVgdyB7tCVpfHsS",
+      "createAt": "2025-04-27T16:42:40.631Z"
+    },
+    {
+      "fingerprint": "e8e0d39048d194078f05796cfa93bb31",
+      "refreshToken": "$2b$10$jKz1sED9SQoodo/p0d438O922dKnexOGwsyhmw/LmPCbGNY8zqi/K",
+      "createAt": "2025-04-27T17:38:57.227Z"
+    },
+    {
+      "fingerprint": "93d3d926f561ef2e1e10fb0982af5756",
+      "refreshToken": "$2b$10$TBeMKmE8HFjQ4fZbwTJZFOL.HBr7Tg6MTPd9aTSBFsjn3eNzS69M6",
+      "createAt": "2025-04-27T17:40:51.690Z"
+    },
+    {
+      "fingerprint": "8c2de5610bb42de94ee2e46e6bc1e13f",
+      "refreshToken": "$2b$10$S.vypSuioxNeYErNTqcFjeaW5yRw76YzrzTDQLa5ayZRZvk/N5Lim",
+      "createAt": "2025-04-27T18:44:29.646Z"
     }
   ]
 }

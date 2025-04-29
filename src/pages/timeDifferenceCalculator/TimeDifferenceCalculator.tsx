@@ -12,6 +12,7 @@ import { filteredItems } from '../../utils/helper/filteredItems';
 import { DeleteLastElementButton } from '../../components/backBtn/DeleteLastElementButton';
 import { modifyItem } from '../../utils/modifyItem/modifyItem';
 import { getPath } from '../../utils/getPath/getPath';
+import AppVersion from '../../components/аppVersion/AppVersion';
 
 const TimeDifferenceCalculator: React.FC = () => {
   const [initialStartTime, setInitialStartTime] = useState<Date | null>(null);
@@ -29,7 +30,7 @@ const TimeDifferenceCalculator: React.FC = () => {
   useEffect(() => {
     const update = modifyItem(dataTree, 'addMeta', "Prygotowanie", { exclusive: true });
     setDataTree(update);
-  }, []);
+  }, [finishTime]);
   
   useEffect(() => {
     const interval = setInterval(() => {
@@ -332,6 +333,7 @@ const TimeDifferenceCalculator: React.FC = () => {
         setSingleItem={setSingleItem}
         />
       )}
+      <AppVersion />
   </div>
     
 )};

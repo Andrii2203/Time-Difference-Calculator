@@ -1,7 +1,10 @@
 import React, { useState, useEffect } from 'react';
+import { Route, Routes, Navigate } from 'react-router-dom';
 import TimeDifferenceCalculator from './pages/timeDifferenceCalculator/TimeDifferenceCalculator';
 import LoginPage from './pages/loginPage/LoginPage';
+import SourcePage from './pages/sourcePage/SourcePage';
 import { useDeviceFingerprint } from './utils/auth/auth';
+import Spinner from './components/spinner/Spinner';
 
 const App: React.FC = () => {
     const [isLoggedIn, setIsLoggedIn] = useState<boolean | null>(null);
@@ -37,22 +40,32 @@ const App: React.FC = () => {
 
     if (isLoggedIn === null) {
         console.log("Loading state...");
-        return <div>Loading...</div>;
+        return <Spinner />;
     }
 
     console.log("Rendering component:", isLoggedIn ? "TimeDifferenceCalculator" : "LoginPage");
 
     return (
-        <div>
-            {isLoggedIn ? (
-                <TimeDifferenceCalculator />
-            ) : (
-                <LoginPage onLoginSuccess={() => {
-                    console.log("Login success callback called");
-                    setIsLoggedIn(true);
-                }} />
-            )}
-        </div>
+        <Routes>
+            <Route path="/Time-Difference-Calculator" element={
+                isLoggedIn ? (
+                    <TimeDifferenceCalculator />
+                ) : (
+                    <Navigate to="/Time-Difference-Calculator/login" replace />
+                )
+            } />
+            <Route path='/Time-Difference-Calculator/login' element={
+                isLoggedIn ? (
+                    <Navigate to="/Time-Difference-Calculator" replace />
+                ) : (
+                    <LoginPage onLoginSuccess={() => {
+                        console.log('Login succes callback called');
+                        setIsLoggedIn(true);
+                    }} />
+                )
+            } />
+            <Route path='/Time-Difference-Calculator/sourse' element={<SourcePage />} />            
+        </Routes>
     );
 }
 

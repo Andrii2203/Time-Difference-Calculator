@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
+import { replace, useNavigate } from 'react-router-dom';
 import './loginPage.css';
+import AppVersion from '../../components/аppVersion/AppVersion';
 
 type LoginPageProps = {
     onLoginSuccess: () => void;
@@ -9,6 +11,7 @@ const LoginPage: React.FC<LoginPageProps> = ({ onLoginSuccess }) => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
+    const navigate = useNavigate();
 
     const handleLogin = async (e: React.FormEvent) => {
         e.preventDefault();
@@ -29,6 +32,7 @@ const LoginPage: React.FC<LoginPageProps> = ({ onLoginSuccess }) => {
             localStorage.setItem("accessToken", data.accessToken);
             console.log("Access token stored in localStorage");
             onLoginSuccess();
+            navigate('/Time-Difference-Calculator', { replace: true });
             console.log("onLoginSuccess callback called");
         } else {
             const data = await res.json();
@@ -37,32 +41,42 @@ const LoginPage: React.FC<LoginPageProps> = ({ onLoginSuccess }) => {
         }
     };
 
+    const handleRedirectToSourse = () => {
+        navigate('/Time-Difference-Calculator/sourse', { replace: true });
+    }
+
     return (
-        <form onSubmit={handleLogin}>
-            <h2>Login</h2>
-            {error && <p>{error}</p>}
-            <input
-                type="text"
-                placeholder='Username'
-                value={username}
-                onChange={(e) => {
-                    setUsername(e.target.value);
-                    console.log("Username updated:", e.target.value);
-                }}
-                required
-            />
-            <input
-                type="password"
-                placeholder='Password'
-                value={password}
-                onChange={(e) => {
-                    setPassword(e.target.value);
-                    console.log("Password updated:", e.target.value);
-                }}
-                required
-            />
-            <button type="submit">Login</button>
-        </form>
+        <div className='login-page'>
+            <h1>Header</h1>
+            <form onSubmit={handleLogin}>
+                <h2>Login</h2>
+                {error && <p>{error}</p>}
+                <input
+                    type="text"
+                    placeholder='Username'
+                    value={username}
+                    onChange={(e) => {
+                        setUsername(e.target.value);
+                        console.log("Username updated:", e.target.value);
+                    }}
+                    required
+                />
+                <input
+                    type="password"
+                    placeholder='Password'
+                    value={password}
+                    onChange={(e) => {
+                        setPassword(e.target.value);
+                        console.log("Password updated:", e.target.value);
+                    }}
+                    required
+                />
+                <button type="submit">Login</button>
+                <button type="button" onClick={handleRedirectToSourse}>How to use...</button>
+            </form>
+            <div className='sign'><p>made by Andrii  / /  shandrij1@gmail.com</p></div>
+            <AppVersion />
+        </div>
     );
 };
 

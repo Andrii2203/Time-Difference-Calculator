@@ -4,6 +4,8 @@ const cors = require('cors');
 const bodyParser = require('body-parser');
 const cookieParser = require("cookie-parser");
 const morgan = require('morgan');
+const fs = require('fs');
+const path = require('path');
 
 const logger = require("./server/logsFile/logger");
 
@@ -16,11 +18,45 @@ const checkAuth = require("./server/middleware/authMiddleware");
 
 const app = express();
 const PORT = 5000;
+
+let allowedOrigin = ['http://localhost:3000'];
+
+function loadAllowedOrigins() {
+    try {
+        const data = fs.readFileSync(path.join(__dirname, 'allowed-origin.txt'), 'utf8');
+        allowedOrigin = data
+            .split('\n')
+            .map(line => line.trim())
+            .filter(line => line.length > 0);
+        console.log('Allowed Origins updated:', allowedOrigin);
+        logger.info('Allowed Origins updated:', allowedOrigin);
+    } catch (err) {
+        logger.error('Error reading allowed-origin.txt:', err);
+        console.error('Error reading allowed-origin.txt:', err);
+    }
+}
+loadAllowedOrigins();
+
+fs.watchFile(path.join(__dirname, 'allowed-origin.txt'), (curr, prev) => {
+    console.log('allowed-origin.txt file changed, reloading...');
+    loadAllowedOrigins();
+});
 app.use(express.json());
-app.use(cors({
-    origin: 'http://localhost:3000',
+
+const corsOptions = {
+    origin: function (origin, callback) {
+        console.log('Incoming request from origin:', origin);
+        if (!origin || allowedOrigin.includes(origin)) {
+            callback(null, true);
+        } else {
+            console.log('Blocked request from origin:', origin);
+            callback(new Error('Not allowed by CORS'));
+        }
+    },
     credentials: true,
-}));
+};
+
+app.use(cors(corsOptions));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser());

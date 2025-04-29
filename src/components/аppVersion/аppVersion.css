@@ -1,0 +1,8 @@
+.app-version {
+    position: fixed;
+    background-color: transparent;
+    color: rgba(111, 61, 5, 0.5);
+    bottom: 5vh;
+    right: 2px;
+    font-size: 14px;
+}
