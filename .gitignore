@@ -22,6 +22,7 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-server.log
+
 /server/generateFile/*.txt
 /server/routes/*.txt
+server.log
