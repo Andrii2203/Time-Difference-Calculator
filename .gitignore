@@ -2,6 +2,7 @@
 
 # dependencies
 /node_modules
+node_modules
 /.pnp
 .pnp.js
 
@@ -26,3 +27,15 @@ yarn-error.log*
 /server/generateFile/*.txt
 /server/routes/*.txt
 server.log
+
+.dockerignore
+
+# Default ignored files
+/shelf/
+/workspace.xml
+# Editor-based HTTP Client requests
+/httpRequests/
+# Datasource local storage ignored files
+/dataSources/
+/dataSources.local.xml
+/node_modules
