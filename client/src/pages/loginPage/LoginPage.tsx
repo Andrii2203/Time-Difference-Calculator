@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { replace, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import './loginPage.css';
 import AppVersion from '../../components/аppVersion/AppVersion';
 
@@ -17,27 +17,32 @@ const LoginPage: React.FC<LoginPageProps> = ({ onLoginSuccess }) => {
         e.preventDefault();
         console.log("Login form submitted");
 
-        const res = await fetch("http://localhost:5000/api/login", {
-            method: "POST",
-            credentials: "include",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ username, password }),
-        });
+        try {
+            const res = await fetch("http://localhost:5000/api/login", {
+                method: "POST",
+                credentials: "include",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ username, password }),
+            });
 
-        console.log("Received response from login API:", res.status);
+            console.log("Received response from login API:", res.status);
 
-        if (res.ok) {
             const data = await res.json();
+
+            if (!res.ok) {
+                throw new Error(data.message || "Login failed. Please try again.");
+            }
+
             console.log("Login successful, received data:", data);
             localStorage.setItem("accessToken", data.accessToken);
             console.log("Access token stored in localStorage");
             onLoginSuccess();
             navigate('/Time-Difference-Calculator', { replace: true });
             console.log("onLoginSuccess callback called");
-        } else {
-            const data = await res.json();
-            console.log("Login failed, received error data:", data);
-            setError(data.message || "Login failed. Please try again.");
+
+        } catch (error: any) {
+            console.error("Login failed:", error);
+            setError(error.message || "Something went wrong.");
         }
     };
 
@@ -50,7 +55,7 @@ const LoginPage: React.FC<LoginPageProps> = ({ onLoginSuccess }) => {
             <h1>Header</h1>
             <form onSubmit={handleLogin}>
                 <h2>Login</h2>
-                {error && <p>{error}</p>}
+                {error && <p role="alert" className="error-message">{error}</p>}
                 <input
                     type="text"
                     placeholder='Username'

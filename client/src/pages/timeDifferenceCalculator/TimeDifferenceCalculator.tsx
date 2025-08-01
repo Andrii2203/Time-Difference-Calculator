@@ -82,14 +82,14 @@ const TimeDifferenceCalculator: React.FC = () => {
     }
     console.log("item", item);
     if(item.name === "Prygotowanie") {
-      handleStart1();
+      handleStart();
       return;
     }
     if(item.name === "Przerwa") {
       return;
     }
     if(item.name === "Awaria") {
-      handleStart1();
+      handleStart();
     }
 
     if(item.children.length === 0){
@@ -106,7 +106,7 @@ const TimeDifferenceCalculator: React.FC = () => {
     }
   };
   
-  const handleStart1 = () => {
+  const handleStart = () => {
     if(singleItem?.name.length === 0) {
       return;
     }
@@ -124,7 +124,7 @@ const TimeDifferenceCalculator: React.FC = () => {
     setTimeIsRuning(!timeIsRuning);
   };
 
-  const handleStop1 = () => {
+  const handleStop = () => {
     const now = new Date();
     setEndTime(now);
 
@@ -260,14 +260,14 @@ const TimeDifferenceCalculator: React.FC = () => {
       {buttonsLoad && (
         <div className='btn-container'>
           <button
-              onClick={handleStart1}
+              onClick={handleStart}
               disabled={!timeIsRuning || singleItem === null}
               className={`btn-start ${!timeIsRuning || singleItem === null ? "btn-disabled" : ""}`}
           >
             Start
           </button>
           <button
-              onClick={handleStop1}
+              onClick={handleStop}
               disabled={timeIsRuning || !isSelectedLeaf()}
               // disabled={timeIsRuning}
               className={`btn-stop ${timeIsRuning ? "btn-disabled" : ""}`}

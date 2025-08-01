@@ -11,7 +11,7 @@ const AppVersion: React.FC = () => {
                 const text = await res.text();
                 setVersion(text.trim());
             } catch (error) {
-                console.error("Не вдалося завантажити версію:", error);
+                console.error("Can not download version:", error);
             }
         };
 

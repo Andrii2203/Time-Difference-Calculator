@@ -84,6 +84,11 @@
       "fingerprint": "eebc5432e3dea3f4c22090b9256889ae",
       "refreshToken": "$2b$10$rS11kVD1aRuankTvaBq6gOfKnL9C7M4TzqKeGUcspilAC8TibGeBS",
       "createAt": "2025-04-29T16:22:46.532Z"
+    },
+    {
+      "fingerprint": "777a296742d86be4357185ca9b8031e4",
+      "refreshToken": "$2b$10$QjWml0iebf4r9nmk0OXjEe/u.5mPBnhAn6NMhXHJZd/q6rIasTnnS",
+      "createAt": "2025-06-09T15:59:23.646Z"
     }
   ],
   "undefined": [
